@@ -66,14 +66,8 @@ function popup_about_draw()
 			open_url(link_donate)
 	}
 	
-	// Created by
-	dy += 12
-	draw_label(text_get("aboutcreatedby"), dx, dy, fa_left, fa_bottom, c_text_tertiary, a_text_tertiary, font_subheading)
-	dy += 26
-	draw_button_text("David Andrei", dx, dy, popup_open_url, "https://www.stuffbydavid.com", "https://www.stuffbydavid.com", font_label)
-	
 	// Development
-	dy += 34
+	dy += 12
 	draw_label(text_get("aboutdevelopment"), dx, dy, fa_left, fa_bottom, c_text_tertiary, a_text_tertiary, font_subheading)
 	dy += 26
 	draw_button_text("David", dx, dy, popup_open_url, "https://www.stuffbydavid.com", "https://www.stuffbydavid.com", font_label)
@@ -82,20 +76,35 @@ function popup_about_draw()
 	dy += 19
 	draw_label("Marvin", dx, dy, fa_left, fa_bottom, c_text_secondary, a_text_secondary, font_label)
 	
-	// UI/Branding
+	// Mod Development
 	dy += 34
-	draw_label(text_get("aboutuibranding"), dx, dy, fa_left, fa_bottom, c_text_tertiary, a_text_tertiary, font_subheading)
+	draw_label(text_get("aboutmoddevelopment"), dx, dy, fa_left, fa_bottom, c_text_tertiary, a_text_tertiary, font_subheading)
 	dy += 26
-	draw_label("Voxy", dx, dy, fa_left, fa_bottom, c_text_secondary, a_text_secondary, font_label)
+	draw_label("mbanders", dx, dy, fa_left, fa_bottom, c_text_secondary, a_text_secondary, font_label)
 	
 	dx += 130 + 24
 	dy = content_y + 176
 	
-	// Mod Development
+	// Created by
 	dy += 12
-	draw_label(text_get("aboutmoddevelopment"), dx, dy, fa_left, fa_bottom, c_text_tertiary, a_text_tertiary, font_subheading)
+	draw_label(text_get("aboutcreatedby"), dx, dy, fa_left, fa_bottom, c_text_tertiary, a_text_tertiary, font_subheading)
 	dy += 26
-	draw_label("mbanders", dx, dy, fa_left, fa_bottom, c_text_secondary, a_text_secondary, font_label)
+	draw_button_text("David Andrei", dx, dy, popup_open_url, "https://www.stuffbydavid.com", "https://www.stuffbydavid.com", font_label)
+	
+	dx += 130 + 24
+	dy = content_y + 176
+	
+	// UI/Branding
+	dy += 12
+	draw_label(text_get("aboutuibranding"), dx, dy, fa_left, fa_bottom, c_text_tertiary, a_text_tertiary, font_subheading)
+	dy += 26
+	draw_label("Voxy", dx, dy, fa_left, fa_bottom, c_text_secondary, a_text_secondary, font_label)
+	
+	dx -= 130 + 24
+	dy += 34
+	
+	draw_label(text_get("aboutbetatesting"), dx, dy, fa_left, fa_bottom, c_text_tertiary, a_text_tertiary, font_subheading)
+	dy += 26
 	
 	// Beta testing
 	var list = [
@@ -114,10 +123,6 @@ function popup_about_draw()
 		"Vash",
 		"__Mine__"
 	]
-	
-	dy += 34
-	draw_label(text_get("aboutbetatesting"), dx, dy, fa_left, fa_bottom, c_text_tertiary, a_text_tertiary, font_subheading)
-	dy += 26
 	
 	for (var i = 0; i < array_length(list); i++)
 	{

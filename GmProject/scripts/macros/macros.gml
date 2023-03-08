@@ -20,11 +20,11 @@ function macros()
 	
 	// Versions
 	#macro mineimator_version			"2.0.0"
-	#macro mineimator_version_extra		"Continuation Build 1.0.0"
+	#macro mineimator_version_extra		"Continuation Build Indev"
 	#macro mineimator_version_full		mineimator_version + " " + mineimator_version_extra
-	#macro mineimator_version_date		"2023.03.07"
+	#macro mineimator_version_date		"2023.03.08"
 	#macro gm_runtime					GM_runtime_version
-	#macro minecraft_version			"1.19.4-pre3"
+	#macro minecraft_version			"1.19.4"
 	
 	// File formats
 	#macro project_format				e_project.FORMAT_200_PRE_5

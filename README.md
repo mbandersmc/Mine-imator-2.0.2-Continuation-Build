@@ -23,13 +23,13 @@ Additions:
   <li>Added support for more unicode characters in Minecraft font.</li>
   <li>Splash screen now shows which Minecraft assets version is being loaded.</li>
   <li>Signs in imported worlds now have a 'text_scale' field (defined in .midata file).</li>
+  <li>Added a ? somewhere.</li>
 </ul>
 
 Changes:
 <ul>
   <li>Updated Minecraft assets to 1.19.4-pre3 (includes experimental features).</li>
-  <li>Individual blocks for Chorus Plant and Fire can now be fully customized in the workbench.</li>
-  <li>Individual blocks and vertically repeating stacks for Iron Bars, Glass Panes, Fences, Walls, and Tripwire can now be fully customized in the workbench.</li>
+  <li>Individual blocks for Iron Bars, Glass Panes, Fences, Walls, Chorus Plant, Fire, and Tripwire can now be fully customized in the workbench.</li>
   <li>Custom item slot interpolation is now floored instead of rounded.</li>
   <li>Updated credits.</li>
 </ul>
