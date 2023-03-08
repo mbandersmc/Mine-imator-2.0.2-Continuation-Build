@@ -28,12 +28,12 @@ Additions:
 
 Changes:
 <ul>
-  <li>Updated Minecraft assets to 1.19.4-pre3 (includes experimental features).</li>
+  <li>Updated Minecraft assets to 1.19.4.</li>
   <li>Individual blocks for Iron Bars, Glass Panes, Fences, Walls, Chorus Plant, Fire, and Tripwire can now be fully customized in the workbench.</li>
   <li>Custom item slot interpolation is now floored instead of rounded.</li>
   <li>Updated credits.</li>
 </ul>
-  
+
 Bugfixes:
 <ul>
   <li>Fixed custom object fog color not being animatable with environment timelines.</li>
