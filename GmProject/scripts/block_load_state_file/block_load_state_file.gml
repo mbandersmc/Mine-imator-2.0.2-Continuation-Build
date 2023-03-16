@@ -114,7 +114,7 @@ function block_load_state_file(fname, block, state)
 					total_weight = 0
 					
 					// Check if a list of models
-					if (ds_map_find_value(jsontypemap[?variantsmap], variant) = e_json_type.ARRAY)
+					if (ds_map_find_value(jsontypemap[?variantsmap], variant) == e_json_type.ARRAY)
 					{
 						var modellist = variantsmap[?variant];
 						for (var i = 0; i < ds_list_size(modellist); i++)
@@ -145,8 +145,10 @@ function block_load_state_file(fname, block, state)
 					
 					if (ds_map_valid(whenmap) && ds_map_size(whenmap) > 0)
 					{
-						// OR, one of multiple sets of conditions must match
 						var orlist = whenmap[?"OR"];
+						var andlist = whenmap[?"AND"];
+						
+						// OR, one of multiple sets of conditions must match
 						if (ds_list_valid(orlist))
 						{
 							for (var oc = 0; oc < ds_list_size(orlist); oc++)
@@ -159,7 +161,38 @@ function block_load_state_file(fname, block, state)
 								while (!is_undefined(cond))
 								{
 									var val = curcondmap[?cond];
-									if (ds_map_find_value(jsontypemap[?curcondmap], cond) = e_json_type.BOOL) // Booleans must be string
+									if (ds_map_find_value(jsontypemap[?curcondmap], cond) == e_json_type.BOOL) // Booleans must be string
+										val = (val ? "true" : "false")
+									
+									if (string_contains(val, "|")) // OR
+										state_vars_set_value(condvars, cond, string_split(val, "|"))
+									else
+										state_vars_set_value(condvars, cond, val)
+									
+									cond = ds_map_find_next(curcondmap, cond)
+								}
+								
+								// Apply to matching state IDs
+								for (var i = 0; i < block.state_id_amount; i++)
+									if (state_vars_match_state_id(condvars, block, i))
+										other.state_id_map[?i] = array_add(other.state_id_map[?i], id)
+							}
+						}
+						
+						// AND, all of multiple sets of conditions must match (WIP)
+						else if (ds_list_valid(andlist))
+						{
+							for (var oc = 0; oc < ds_list_size(andlist); oc++)
+							{
+								var curcondmap, condvars, cond;
+								curcondmap = andlist[|oc]
+								condvars = array()
+								cond = ds_map_find_first(curcondmap)
+								
+								while (!is_undefined(cond))
+								{
+									var val = curcondmap[?cond];
+									if (ds_map_find_value(jsontypemap[?curcondmap], cond) == e_json_type.BOOL) // Booleans must be string
 										val = (val ? "true" : "false")
 									
 									if (string_contains(val, "|")) // OR
@@ -187,7 +220,7 @@ function block_load_state_file(fname, block, state)
 							while (!is_undefined(cond))
 							{
 								var val = whenmap[?cond];
-								if (ds_map_find_value(jsontypemap[?whenmap], cond) = e_json_type.BOOL) // Booleans must be string
+								if (ds_map_find_value(jsontypemap[?whenmap], cond) == e_json_type.BOOL) // Booleans must be string
 									val = (val ? "true" : "false")
 								
 								if (string_contains(val, "|")) // OR
@@ -234,7 +267,7 @@ function block_load_state_file(fname, block, state)
 					total_weight = 0
 					
 					// Check if a list of models
-					if (ds_map_find_value(jsontypemap[?mcase], "apply") = e_json_type.ARRAY)
+					if (ds_map_find_value(jsontypemap[?mcase], "apply") == e_json_type.ARRAY)
 					{
 						var modellist = mcase[?"apply"];
 						for (var i = 0; i < ds_list_size(modellist); i++)

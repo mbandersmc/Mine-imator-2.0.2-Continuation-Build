@@ -14,7 +14,7 @@ function macros()
 	#macro dev_mode_full				dev_mode && false
 	#macro dev_mode_advanced			dev_mode && true
 	#macro dev_mode_show_bones			dev_mode && false
-	#macro dev_mode_skip_tangents		dev_mode && true
+	#macro dev_mode_skip_tangents		dev_mode && false
 	#macro dev_mode_check_assets		dev_mode && false
 	#macro dev_mode_name_translation_message " is not defined in the translation, the key will be formatted"
 	
@@ -22,7 +22,7 @@ function macros()
 	#macro mineimator_version			"2.0.0"
 	#macro mineimator_version_extra		"Continuation Build Indev"
 	#macro mineimator_version_full		mineimator_version + " " + mineimator_version_extra
-	#macro mineimator_version_date		"2023.03.08"
+	#macro mineimator_version_date		"2023.03.16"
 	#macro gm_runtime					GM_runtime_version
 	#macro minecraft_version			"1.19.4"
 	
@@ -98,6 +98,7 @@ function macros()
 	#macro link_twitter					"https://www.mineimator.com/tweets"
 	#macro link_discord					"https://www.mineimator.com/discord"
 	#macro link_donate					"https://www.mineimator.com/donate"
+	#macro link_article_drivers			"https://www.thewindowsclub.com/how-to-update-graphics-drivers-windows"
 	#macro show_modelbench_popup		true
 	#macro http_ok						200
 	#macro http_bad_request				400

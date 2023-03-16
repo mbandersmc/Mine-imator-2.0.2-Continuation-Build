@@ -5,7 +5,7 @@
 		"locale": "en-US",
 		"translator": "David & Nimi",
 		"forversion": "2.0",
-		"lastchange": "2023.03.03"
+		"lastchange": "2023.03.16"
 	},
 	"particle/": {
 		"default": "Default spawner",
@@ -3134,7 +3134,7 @@
 		"sound/": {
 			"file": "File",
 			"volume": "Volume",
-			"pitch": "Pitch",
+			"pitch": "Speed / Pitch",
 			"start": "Start time",
 			"end": "End time",
 			"seconds": "seconds"

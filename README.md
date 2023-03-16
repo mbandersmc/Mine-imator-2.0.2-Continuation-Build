@@ -16,10 +16,11 @@ The software is written using GameMaker Language and converted to a separate C++
 <hr/>
 
 Continuation Build Changelog since Mine-imator 2.0.0:
+<i>(not tested outside of windows-x64)</i>
 
 Additions:
 <ul>
-  <li>Added pitch setting for sounds in audio timelines <i>(not tested outside of windows-x64)</i>.</li>
+  <li>Added 'Speed / Pitch' setting for sounds in audio timelines.</li>
   <li>Added support for more unicode characters in Minecraft font.</li>
   <li>Splash screen now shows which Minecraft assets version is being loaded.</li>
   <li>Signs in imported worlds now have a 'text_scale' field (defined in .midata file).</li>
@@ -28,8 +29,8 @@ Additions:
 
 Changes:
 <ul>
-  <li>Updated Minecraft assets to 1.19.4-pre3 (includes experimental features).</li>
-  <li>Individual blocks for Iron Bars, Glass Panes, Fences, Walls, Chorus Plant, Fire, and Tripwire can now be fully customized in the workbench.</li>
+  <li>Updated Minecraft assets to 1.19.4.</li>
+  <li>Individual blocks for Iron Bars, Glass Panes, Fences, Walls, Chorus Plants, Fire, and Tripwire can now be fully customized in the workbench.</li>
   <li>Custom item slot interpolation is now floored instead of rounded.</li>
   <li>Updated credits.</li>
 </ul>
@@ -37,8 +38,10 @@ Changes:
 Bugfixes:
 <ul>
   <li>Fixed custom object fog color not being animatable with environment timelines.</li>
+  <li>Fixed lens dirt glow not working.</li>
+  <li>Fixed lens dirt not being affected by distort and chromatic aberration.</li>
   <li>Fixed sounds with extended end time not repeating in animation playback.</li>
   <li>Fixed "Randomize blocks" setting for blocks not being saved.</li>
   <li>Fixed minutes counter in timeline timer not resetting when an hour has passed.</li>
-  <li>Fixed incorrect frame order with interpolated textures.</li>
+  <li>Fixed some minor issues with block texture animations.</li>
 </ul>

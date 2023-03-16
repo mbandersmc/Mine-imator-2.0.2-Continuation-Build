@@ -57,7 +57,6 @@ function settings_startup()
 	setting_interface_scale_auto = true
 	setting_interface_scale = interface_scale_default_get()
 	setting_interface_compact = false
-	setting_reduced_motion = false
 	
 	setting_panel_left_bottom_size = 300
 	setting_panel_right_bottom_size = 300
