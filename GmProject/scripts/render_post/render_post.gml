@@ -3,8 +3,19 @@
 /// @sceneeffects
 /// @posteffects
 
-function render_post(finalsurf, sceneeffects = true, posteffects = true)
+function render_post()
 {
+	var finalsurf, sceneeffects, posteffects;
+	finalsurf = argument[0]
+	
+	sceneeffects = true
+	if (argument_count > 1)
+		sceneeffects = argument[1]
+	
+	posteffects = true
+	if (argument_count > 2)
+		posteffects = argument[2]
+	
 	// Start post processing
 	finalsurf = render_high_post_start(finalsurf)
 	
@@ -14,12 +25,12 @@ function render_post(finalsurf, sceneeffects = true, posteffects = true)
 	render_update_effects()
 	
 	// Glow
-	if (render_glow && posteffects)
+	if (render_glow && (sceneeffects || posteffects))
 		finalsurf = render_high_glow(finalsurf)
 	render_update_effects()
 	
 	// Glow (Falloff)
-	if (render_glow_falloff && posteffects)
+	if (render_glow_falloff && (sceneeffects || posteffects))
 		finalsurf = render_high_glow(finalsurf, true)
 	render_update_effects()
 	
@@ -29,7 +40,7 @@ function render_post(finalsurf, sceneeffects = true, posteffects = true)
 	render_update_effects()
 	
 	// Lens dirt overlay
-	if (render_camera_lens_dirt && posteffects)
+	if (render_camera_lens_dirt)
 		finalsurf = render_high_lens_dirt(finalsurf)
 	render_update_effects()
 	

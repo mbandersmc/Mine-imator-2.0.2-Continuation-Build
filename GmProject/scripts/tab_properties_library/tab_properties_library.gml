@@ -455,7 +455,7 @@ function tab_properties_library()
 				}
 			}
 			
-			if (temp_edit.shape_tex)
+			if (temp_edit.shape_tex || temp_edit.shape_tex_material || temp_edit.shape_tex_normal)
 			{
 				if (!temp_edit.shape_tex_mapped)
 				{

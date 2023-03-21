@@ -20,15 +20,17 @@ Continuation Build Changelog since Mine-imator 2.0.0:
 
 Additions:
 <ul>
-  <li>Added 'Speed / Pitch' setting for sounds in audio timelines.</li>
+  <li>Added 'Speed / Pitch' setting for sounds in audio timelines (C++ only right now).</li>
   <li>Added support for more unicode characters in Minecraft font.</li>
-  <li>Splash screen now shows which Minecraft assets version is being loaded.</li>
+  <li>Shape texture offset, repeat, and mirror options are now visible when a material or normal map is applied.</li>
   <li>Signs in imported worlds now have a 'text_scale' field (defined in .midata file).</li>
+  <li>Splash screen now shows which Minecraft assets version is being loaded.</li>
   <li>Added a ? somewhere.</li>
 </ul>
 
 Changes:
 <ul>
+  <li>Rotation wheels now snap to 0.000001 instead of 0.1 (when snapping is disabled).</li>
   <li>Updated Minecraft assets to 1.19.4.</li>
   <li>Individual blocks for Iron Bars, Glass Panes, Fences, Walls, Chorus Plants, Fire, and Tripwire can now be fully customized in the workbench.</li>
   <li>Custom item slot interpolation is now floored instead of rounded.</li>
@@ -37,11 +39,14 @@ Changes:
   
 Bugfixes:
 <ul>
-  <li>Fixed custom object fog color not being animatable with environment timelines.</li>
   <li>Fixed lens dirt glow not working.</li>
   <li>Fixed lens dirt not being affected by distort and chromatic aberration.</li>
   <li>Fixed sounds with extended end time not repeating in animation playback.</li>
+  <li>Fixed custom object fog color not being animatable with environment timelines.</li>
+  <li>Fixed custom fog object color background setting not being saved.</li>
   <li>Fixed "Randomize blocks" setting for blocks not being saved.</li>
+  <li>Fixed material map and normal map settings for items not being saved.</li>
   <li>Fixed minutes counter in timeline timer not resetting when an hour has passed.</li>
+  <li>Fixed Subsurface scattering Blur quality of 0 breaking certain render passes.</li>
   <li>Fixed some minor issues with block texture animations.</li>
 </ul>

@@ -2,15 +2,25 @@
 /// @arg sceneeffects
 /// @arg posteffects
 
-function render_refresh_effects(sceneeffects = true, posteffects = true)
+function render_refresh_effects()
 {
+	var sceneeffects, posteffects;
+	
+	sceneeffects = true
+	if (argument_count > 1)
+		sceneeffects = argument[1]
+	
+	posteffects = true
+	if (argument_count > 2)
+		posteffects = argument[2]
+	
 	ds_list_clear(render_effects_list)
 	ds_list_add(render_effects_list,
 		render_camera_dof && sceneeffects,
-		render_glow && posteffects,
-		render_glow_falloff && posteffects,
+		render_glow && (sceneeffects || posteffects),
+		render_glow_falloff && (sceneeffects || posteffects),
 		render_camera_bloom && posteffects,
-		render_camera_lens_dirt && posteffects,
+		render_camera_lens_dirt,
 		render_camera_ca && posteffects,
 		render_camera_distort && posteffects,
 		render_camera_color_correction && posteffects,
