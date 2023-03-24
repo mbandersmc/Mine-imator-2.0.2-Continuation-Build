@@ -8,25 +8,10 @@
 /// @arg [right]]
 /// @desc Draws a box with editable text at the given position and with the given dimensions.
 
-function textbox_draw()
+function textbox_draw(tbx, xx, yy, w, h, contextmenu = true, right = false)
 {
-	var tbx, xx, yy, w, h, contextmenu, right;
 	var changetext, deletetext, inserttext, lineheight, mouseover;
 	var a, b, c, l, p, k, ww, hh, str, textx;
-	
-	tbx = argument[0]
-	xx = argument[1]
-	yy = argument[2]
-	w = argument[3]
-	h = argument[4]
-	contextmenu = true
-	right = false
-	
-	if (argument_count > 5)
-		contextmenu = argument[5]
-	
-	if (argument_count > 6)
-		right = argument[6]
 	
 	// Colors
 	var prevalpha, textnormal, textnormala, textsuffix, textsuffixa, highlight, texthighlight, texthighlighta;

@@ -3,19 +3,8 @@
 /// @sceneeffects
 /// @posteffects
 
-function render_post()
+function render_post(finalsurf, sceneeffects = true, posteffects = true)
 {
-	var finalsurf, sceneeffects, posteffects;
-	finalsurf = argument[0]
-	
-	sceneeffects = true
-	if (argument_count > 1)
-		sceneeffects = argument[1]
-	
-	posteffects = true
-	if (argument_count > 2)
-		posteffects = argument[2]
-	
 	// Start post processing
 	finalsurf = render_high_post_start(finalsurf)
 	

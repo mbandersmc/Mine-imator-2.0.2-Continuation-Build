@@ -34,6 +34,7 @@ Changes:
   <li>Updated Minecraft assets to 1.19.4.</li>
   <li>Individual blocks for Iron Bars, Glass Panes, Fences, Walls, Chorus Plants, Fire, and Tripwire can now be fully customized in the workbench.</li>
   <li>Custom item slot interpolation is now floored instead of rounded.</li>
+  <li>Updated 'unknown_pack' image.</li>
   <li>Updated credits.</li>
 </ul>
   
@@ -46,6 +47,7 @@ Bugfixes:
   <li>Fixed custom fog object color background setting not being saved.</li>
   <li>Fixed "Randomize blocks" setting for blocks not being saved.</li>
   <li>Fixed material map and normal map settings for items not being saved.</li>
+  <li>Fixed texture repeat fields for shapes resetting to 0 instead of 1.</li>
   <li>Fixed minutes counter in timeline timer not resetting when an hour has passed.</li>
   <li>Fixed Subsurface scattering Blur quality of 0 breaking certain render passes.</li>
   <li>Fixed some minor issues with block texture animations.</li>

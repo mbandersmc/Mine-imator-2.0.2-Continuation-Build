@@ -21,11 +21,7 @@
 
 function project_load()
 {
-	var fn;
-	if (argument_count > 0)
-		fn = argument[0]
-	else
-		fn = file_dialog_open_project()
+	var fn = (argument_count > 0 ? argument[0] : file_dialog_open_project())
 	
 	if (fn = "")
 		return 0
