@@ -20,7 +20,7 @@ Continuation Build Changelog since Mine-imator 2.0.0:
 
 Additions:
 <ul>
-  <li>Added 'Speed / Pitch' setting for sounds in audio timelines (C++ only right now).</li>
+  <li>Added Speed / Pitch setting for sounds in audio timelines.</li>
   <li>Added support for more unicode characters in Minecraft font.</li>
   <li>Shape texture offset, repeat, and mirror options are now visible when a material or normal map is applied.</li>
   <li>Signs in imported worlds now have a 'text_scale' field (defined in .midata file).</li>
@@ -37,15 +37,15 @@ Changes:
   <li>Updated 'unknown_pack' image.</li>
   <li>Updated credits.</li>
 </ul>
-  
+
 Bugfixes:
 <ul>
   <li>Fixed lens dirt glow not working.</li>
   <li>Fixed lens dirt not being affected by distort and chromatic aberration.</li>
   <li>Fixed sounds with extended end time not repeating in animation playback.</li>
-  <li>Fixed custom object fog color not being animatable with environment timelines.</li>
-  <li>Fixed custom fog object color background setting not being saved.</li>
-  <li>Fixed "Randomize blocks" setting for blocks not being saved.</li>
+  <li>Fixed custom fog object color not being animatable with environment timelines.</li>
+  <li>Fixed custom fog object color toggle not being saved.</li>
+  <li>Fixed Randomize blocks setting for blocks not being saved.</li>
   <li>Fixed material map and normal map settings for items not being saved.</li>
   <li>Fixed texture repeat fields for shapes resetting to 0 instead of 1.</li>
   <li>Fixed minutes counter in timeline timer not resetting when an hour has passed.</li>

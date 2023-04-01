@@ -1451,7 +1451,7 @@
 		{
 			"name": "sponge",
 			"states": {
-				"wet": [ 
+				"wet": [
 					{ "value": "false", "file": "sponge.json" },
 					{ "value": "true", "file": "wet_sponge.json" }
 				]
@@ -2448,7 +2448,7 @@
 					{ "value": "redstone_ore", "file": "redstone_ore.json" },
 					{ "value": "deepslate_redstone_ore", "file": "deepslate_redstone_ore.json" }
 				],
-				"lit": [ 
+				"lit": [
 					{ "value": "false" },
 					{ "value": "true", "emissive": 0.75 }
 				]
@@ -2463,7 +2463,7 @@
 			"name": "redstone_torch",
 			"file": "redstone_torch.json",
 			"states": {
-				"lit": [ 
+				"lit": [
 					{ "value": "false" },
 					{ "value": "true", "emissive": 0.75 }
 				]
@@ -2475,7 +2475,7 @@
 			"name": "redstone_wall_torch",
 			"file": "redstone_wall_torch.json",
 			"states": {
-				"lit": [ 
+				"lit": [
 					{ "value": "false" },
 					{ "value": "true", "emissive": 0.75 }
 				],
@@ -2657,7 +2657,7 @@
 		{
 			"name": "jack_o_lantern",
 			"states": {
-				"lit": [ 
+				"lit": [
 					{ "value": "false", "file": "carved_pumpkin.json" },
 					{ "value": "true", "emissive": 0.75, "file": "jack_o_lantern.json" }
 				],
@@ -2693,7 +2693,7 @@
 					{ "value": "red", "file": "red_candle_cake.json" },
 					{ "value": "black", "file": "black_candle_cake.json" }
 				],
-				"lit": [ 
+				"lit": [
 					{ "value": "false" },
 					{ "value": "true", "emissive": 0.5 }
 				]
@@ -2725,7 +2725,7 @@
 			"file": "repeater.json",
 			"type": "redstone_repeater",
 			"states": {
-				"powered": [ 
+				"powered": [
 					{ "value": "false" },
 					{ "value": "true", "emissive": 0.75 }
 				],
@@ -3195,7 +3195,7 @@
 			"name": "redstone_lamp",
 			"file": "redstone_lamp.json",
 			"states": {
-				"lit": [ 
+				"lit": [
 					{ "value": "false" },
 					{ "value": "true", "emissive": 0.75 }
 				]
@@ -3572,7 +3572,7 @@
 				"minecraft:anvil": "damage=0",
 				"minecraft:chipped_anvil": "damage=1",
 				"minecraft:damaged_anvil": "damage=2"
-			} 
+			}
 		},
 		{
 			"name": "trapped_chest",
@@ -3628,11 +3628,11 @@
 			"type": "redstone_comparator",
 			"states": {
 				"facing": [ "north", "south", "east", "west" ],
-				"mode": [ 
+				"mode": [
 					{ "value": "compare" },
 					{ "value": "subtract", "emissive": 0.5 }
 				],
-				"powered": [ 
+				"powered": [
 					{ "value": "false" },
 					{ "value": "true", "emissive": 0.75 }
 				]
@@ -4824,7 +4824,7 @@
 					{ "value": "soul_campfire", "file": "soul_campfire.json" }
 				],
 				"facing": [ "north", "south", "east", "west" ],
-				"lit": [ 
+				"lit": [
 					{ "value": "false" },
 					{ "value": "true", "emissive": 0.75 }
 				]
@@ -5112,7 +5112,7 @@
 					{ "value": "red", "file": "red_candle.json" },
 					{ "value": "black", "file": "black_candle.json" }
 				],
-				"lit": [ 
+				"lit": [
 					{ "value": "false" },
 					{ "value": "true", "emissive": 0.5 }
 				]
@@ -5349,7 +5349,7 @@
 					{ "value": "cave_vines_plant", "file": "cave_vines_plant.json" },
 					{ "value": "cave_vines", "file": "cave_vines.json" }
 				],
-				"berries": [ 
+				"berries": [
 					{ "value": "false" },
 					{ "value": "true", "emissive": 0.5 }
 				]
@@ -7708,6 +7708,18 @@
 		"particle/sonic_boom_13",
 		"particle/sonic_boom_14",
 		"particle/sonic_boom_15",
+		"particle/soul_0",
+		"particle/soul_1",
+		"particle/soul_2",
+		"particle/soul_3",
+		"particle/soul_4",
+		"particle/soul_5",
+		"particle/soul_6",
+		"particle/soul_7",
+		"particle/soul_8",
+		"particle/soul_9",
+		"particle/soul_10",
+		"particle/soul_fire_flame",
 		"particle/spark_0",
 		"particle/spark_1",
 		"particle/spark_2",
@@ -7735,19 +7747,7 @@
 		"particle/sweep_4",
 		"particle/sweep_5",
 		"particle/sweep_6",
-		"particle/sweep_7",
-		"particle/soul_0",
-		"particle/soul_1",
-		"particle/soul_2",
-		"particle/soul_3",
-		"particle/soul_4",
-		"particle/soul_5",
-		"particle/soul_6",
-		"particle/soul_7",
-		"particle/soul_8",
-		"particle/soul_9",
-		"particle/soul_10",
-		"particle/soul_fire_flame"
+		"particle/sweep_7"
 	],
 	"particles": [
 		{
@@ -7759,7 +7759,8 @@
 		{
 			"name": "bubble_pop",
 			"texture": "particle/bubble_pop",
-			"frames": 4
+			"frames": 5,
+			"size": 16
 		},
 		{
 			"name": "effect",
@@ -7785,17 +7786,20 @@
 		{
 			"name": "sculk_charge",
 			"texture": "particle/sculk_charge",
-			"frames": 7
+			"frames": 7,
+			"size": 16
 		},
 		{
 			"name": "sculk_charge_pop",
 			"texture": "particle/sculk_charge_pop",
-			"frames": 4
+			"frames": 4,
+			"size": 16
 		},
 		{
 			"name": "sculk_soul",
 			"texture": "particle/sculk_soul",
-			"frames": 11
+			"frames": 11,
+			"size": 16
 		},
 		{
 			"name": "sga",
@@ -7812,7 +7816,8 @@
 		{
 			"name": "soul",
 			"texture": "particle/soul",
-			"frames": 11
+			"frames": 11,
+			"size": 16
 		},
 		{
 			"name": "spark",
