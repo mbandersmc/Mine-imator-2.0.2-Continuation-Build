@@ -375,7 +375,7 @@ function enums()
 		
 		LIGHT_SOURCE,
 		SHAPE,
-		AMOUNT
+		amount
 	} // Update app_startup_lists() when adding types
 	
 	// Resource types

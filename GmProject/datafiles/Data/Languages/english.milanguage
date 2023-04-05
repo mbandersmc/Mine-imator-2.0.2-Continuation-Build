@@ -5,7 +5,7 @@
 		"locale": "en-US",
 		"translator": "David, Nimi, mbanders",
 		"forversion": "2.0.0",
-		"lastchange": "2023.03.30"
+		"lastchange": "2023.04.05"
 	},
 	"particle/": {
 		"default": "Default spawner",
@@ -440,6 +440,7 @@
 	"newproject/": {
 		"caption": "New project",
 		"name": "Project name",
+		"author": "Project author",
 		"description": "Project description",
 		"location": "Project location",
 		"namedefault": "New project",
@@ -639,6 +640,10 @@
 			},
 			"bitrate": "Bit rate",
 			"framerate": "Framerate",
+			"framerate/": {
+				"custom": "Custom"
+			},
+			"framespersecond": "Frames per second",
 			"includeaudio": "Include audio",
 			"removebackground": "Remove background",
 			"blendmodewarning": "Custom blend modes on objects may not render correctly.",

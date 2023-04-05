@@ -20,11 +20,12 @@ function macros()
 	
 	// Versions
 	#macro mineimator_version			"2.0.0"
-	#macro mineimator_version_extra		"Continuation Build 1.0.0"
-	#macro mineimator_version_full		mineimator_version + " " + mineimator_version_extra
-	#macro mineimator_version_date		"2023.04.01"
-	#macro gm_runtime					GM_runtime_version
+	#macro mineimator_version_sub		"Continuation Build 1.0.1"
+	#macro mineimator_version_extra		"Alpha 1"
+	#macro mineimator_version_full		mineimator_version + " " + mineimator_version_sub + " " + mineimator_version_extra
+	#macro mineimator_version_date		"2023.04.05"
 	#macro minecraft_version			"1.19.4"
+	#macro gm_runtime					GM_runtime_version
 	
 	// File formats
 	#macro project_format				e_project.FORMAT_200_PRE_5
@@ -34,10 +35,10 @@ function macros()
 	// Directories
 	#macro file_directory				game_save_id
 	#macro data_directory				working_directory + "Data/"
-	#macro fonts_directory				data_directory + "Fonts/"
 	#macro projects_directory			working_directory + "Projects/"
 	#macro schematics_directory			working_directory + "Schematics/"
 	#macro particles_directory			working_directory + "Particles/"
+	#macro fonts_directory				data_directory + "Fonts/"
 	#macro languages_directory			data_directory + "Languages/"
 	#macro minecraft_directory			data_directory + "Minecraft/"
 	#macro render_directory				data_directory + "Render/"
@@ -62,7 +63,6 @@ function macros()
 	// Minecraft structure
 	#macro mc_file_directory			file_directory + "Minecraft_unzip/"
 	#macro mc_assets_directory			"assets/minecraft/"
-	#macro mi_assets_directory			"assets/mineimator/"
 	#macro mc_models_directory			mc_assets_directory + "models/"
 	#macro mc_blockstates_directory		mc_assets_directory + "blockstates/"
 	#macro mc_textures_directory		mc_assets_directory + "textures/"

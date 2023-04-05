@@ -106,6 +106,7 @@ function settings_startup()
 	
 	setting_export_movie_format = "mp4"
 	setting_export_movie_frame_rate = 30
+	setting_export_movie_framespersecond = 30
 	setting_export_movie_bit_rate = 2500000
 	setting_export_movie_include_audio = true
 	setting_export_movie_remove_background = false
