@@ -23,8 +23,9 @@ Forums post: https://www.mineimatorforums.com/index.php?/topic/91003-mine-imator
 <h2>Continuation Build 1.0.1 (indeterminate), changes since 1.0.0:</h2>
 Features:
 <ul>
+  <li>Added "backfaces" tag for .mimodel parts, allowing them to have "Show backfaces" enabled by default.</li>
   <li>Added custom frame rate export option.</li>
-  <li>Readded author field to New project and Save as popups.</li>
+  <li>Readded Author field to New project and Save as popups.</li>
 </ul>
 Changes:
 <ul>
@@ -34,6 +35,7 @@ Bugfixes:
 <ul>
   <li>Fixed crash when using custom JSON models as particles.</li>
   <li>Fixed clouds being affected by fog even when fog is disabled (when ground is disabled).</li>
+  <li>Fixed inverse kinematics option appearing for some incompatible parts.</li>
 </ul>
 
 <h2>Continuation Build 1.0.0 (April 1, 2023), changes since Mine-imator 2.0.0:</h2>

@@ -150,7 +150,7 @@ function particle_spawner_update(spawner)
 							continue
 						
 						// Don't bother updating if particles are disabled (and not exporting)
-						if (!app.view_main.particles && (!app.view_second.particles || !app.view_second.show) && app.window_state != "export_movie"  && app.window_state != "export_image")
+						if (!app.view_main.particles && (!app.view_second.particles || !app.view_second.show) && app.window_state != "export_movie" && app.window_state != "export_image")
 							continue
 					}
 					

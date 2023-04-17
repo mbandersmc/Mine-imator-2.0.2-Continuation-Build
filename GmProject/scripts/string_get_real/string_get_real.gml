@@ -2,8 +2,8 @@
 /// @arg string
 /// @arg [invalid]
 /// @desc An acceptable real number takes the following form:
-///		  [whitespaces] [sign] [digits] [. [digits]] [{e |E} [sign] [digits]] [whitespaces]
-///		  At least one digit or a decimal point must be present in prior to the exponent part
+/// [whitespaces] [sign] [digits] [. [digits]] [{e |E} [sign] [digits]] [whitespaces]
+/// At least one digit or a decimal point must be present in prior to the exponent part
 
 function string_get_real(str, inv = undefined)
 {

@@ -167,7 +167,7 @@ function model_shape_generate_plane(bend)
 		}
 		
 		// Apply transform
-		if (isbent)  // Apply segment bend
+		if (isbent) // Apply segment bend
 		{
 			var segp, bendvec;
 			if (segpos < bendstart) // Below bend, no angle

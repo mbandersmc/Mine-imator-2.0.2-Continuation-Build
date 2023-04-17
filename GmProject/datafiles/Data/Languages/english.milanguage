@@ -4,8 +4,8 @@
 		"language": "English",
 		"locale": "en-US",
 		"translator": "David, Nimi, mbanders",
-		"forversion": "2.0.0",
-		"lastchange": "2023.04.05"
+		"forversion": "2.0.0 Continuation Build 1.0.1",
+		"lastchange": "2023.04.17"
 	},
 	"particle/": {
 		"default": "Default spawner",
