@@ -433,7 +433,7 @@ function block_load_render_model(model, rot, uvlock, opaque, wei, res = null)
 								}
 							}
 							
-							texpos = point2D((slot mod sheetwidth) * block_size, (slot div sheetwidth) *  block_size)
+							texpos = point2D((slot mod sheetwidth) * block_size, (slot div sheetwidth) * block_size)
 							texsize = vec2(sheetwidth * block_size, sheetheight * block_size)
 							
 							// Get preview color for world importer

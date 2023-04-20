@@ -4,8 +4,8 @@
 		"language": "English",
 		"locale": "en-US",
 		"translator": "David, Nimi, mbanders",
-		"forversion": "2.0.0",
-		"lastchange": "2023.03.30"
+		"forversion": "2.0.0 Continuation Build 1.0.1",
+		"lastchange": "2023.04.20"
 	},
 	"particle/": {
 		"default": "Default spawner",
@@ -440,6 +440,7 @@
 	"newproject/": {
 		"caption": "New project",
 		"name": "Project name",
+		"author": "Project author",
 		"description": "Project description",
 		"location": "Project location",
 		"namedefault": "New project",
@@ -639,6 +640,10 @@
 			},
 			"bitrate": "Bit rate",
 			"framerate": "Framerate",
+			"framerate/": {
+				"custom": "Custom"
+			},
+			"framespersecond": "Frames per second",
 			"includeaudio": "Include audio",
 			"removebackground": "Remove background",
 			"blendmodewarning": "Custom blend modes on objects may not render correctly.",
@@ -1184,10 +1189,10 @@
 			"open": "Open",
 			"targeting": "Targeting",
 			"character": "Character",
-			"shard_front": "Front shard",
-			"shard_left": "Left shard",
-			"shard_back": "Back shard",
-			"shard_right": "Right shard",
+			"sherd_front": "Front sherd",
+			"sherd_left": "Left sherd",
+			"sherd_back": "Back sherd",
+			"sherd_right": "Right sherd",
 			"value/": {
 				"wide": "Wide",
 				"slim": "Slim",

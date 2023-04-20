@@ -747,6 +747,7 @@
     {"id":{"name":"action_toolbar_exportmovie_include_audio","path":"scripts/action_toolbar_exportmovie_include_audio/action_toolbar_exportmovie_include_audio.yy",},"order":11,},
     {"id":{"name":"action_toolbar_exportmovie_include_hidden","path":"scripts/action_toolbar_exportmovie_include_hidden/action_toolbar_exportmovie_include_hidden.yy",},"order":13,},
     {"id":{"name":"action_toolbar_exportmovie_remove_background","path":"scripts/action_toolbar_exportmovie_remove_background/action_toolbar_exportmovie_remove_background.yy",},"order":15,},
+    {"id":{"name":"action_toolbar_exportmovie_framespersecond","path":"scripts/action_toolbar_exportmovie_framespersecond/action_toolbar_exportmovie_framespersecond.yy",},"order":23,},
     {"id":{"name":"action_toolbar_exportmovie_save","path":"scripts/action_toolbar_exportmovie_save/action_toolbar_exportmovie_save.yy",},"order":17,},
     {"id":{"name":"export_update","path":"scripts/export_update/export_update.yy",},"order":0,},
     {"id":{"name":"action_toolbar_exportmovie_video_quality","path":"scripts/action_toolbar_exportmovie_video_quality/action_toolbar_exportmovie_video_quality.yy",},"order":21,},

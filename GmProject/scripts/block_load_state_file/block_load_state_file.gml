@@ -92,7 +92,7 @@ function block_load_state_file(fname, block, state)
 					// Find state ID of variant if not "" or "normal" (pre-1.13)
 					if (variant != "" && variant != "normal")
 					{
-						var vars  = string_get_state_vars(variant);
+						var vars = string_get_state_vars(variant);
 						if (vars = null) // Ignore "all"
 						{
 							instance_destroy()

@@ -18,7 +18,7 @@ function action_toolbar_exportmovie_save()
 	export_filename = fn
 	exportmovie_marker_previous = timeline_marker
 	exportmovie_format = popup_exportmovie.format
-	exportmovie_frame_rate = popup_exportmovie.frame_rate
+	exportmovie_framespersecond = popup_exportmovie.framespersecond
 	exportmovie_high_quality = popup_exportmovie.high_quality
 	exportmovie_current_sound = null
 	
@@ -42,12 +42,12 @@ function action_toolbar_exportmovie_save()
 		log("Export movie", fn)
 		log("Format", exportmovie_format)
 		log("Bitrate", popup_exportmovie.bit_rate)
-		log("Framerate", exportmovie_frame_rate)
+		log("Framerate", exportmovie_framespersecond)
 		log("Audio", yesno(popup_exportmovie.include_audio))
 		log("High Quality", yesno(exportmovie_high_quality))
 		log("Size", project_video_width, project_video_height)
 		
-		movie_set(project_video_width, project_video_height, popup_exportmovie.bit_rate, exportmovie_frame_rate, popup_exportmovie.include_audio)
+		movie_set(project_video_width, project_video_height, popup_exportmovie.bit_rate, exportmovie_framespersecond, popup_exportmovie.include_audio)
 		var err = movie_start(fn, fmt);
 		if (err < 0)
 		{

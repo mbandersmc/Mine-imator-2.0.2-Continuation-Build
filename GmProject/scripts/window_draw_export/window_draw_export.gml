@@ -14,7 +14,7 @@ function window_draw_export()
 	if (window_state = "export_movie")
 	{
 		usesamples = popup_exportmovie.high_quality
-		totalframes = ceil(((exportmovie_marker_end - exportmovie_marker_start) / project_tempo) * popup_exportmovie.frame_rate)
+		totalframes = ceil(((exportmovie_marker_end - exportmovie_marker_start) / project_tempo) * popup_exportmovie.framespersecond)
 		if (usesamples)
 			totalsamples = totalframes * project_render_samples
 		else

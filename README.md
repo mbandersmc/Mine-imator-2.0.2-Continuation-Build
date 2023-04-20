@@ -15,19 +15,38 @@ The software is written using GameMaker Language and converted to a separate C++
 
 <hr/>
 
-Continuation Build Changelog since Mine-imator 2.0.0:
-<i>(not tested outside of windows-x64)</i>
+# Mine-imator Continuation Build
+<i>(not currently tested outside of windows-x64)</i>
 
-Additions:
+Forums post: https://www.mineimatorforums.com/index.php?/topic/91003-mine-imator-200-continuation-build-100/
+
+<h2>Continuation Build 1.0.1 (April 20, 2023), changes since 1.0.0:</h2>
+Features:
+<ul>
+  <li>Added 'backfaces' tag for .mimodel parts, allowing them to have "Show backfaces" enabled by default.</li>
+  <li>Added custom frame rate export option.</li>
+  <li>Readded Author field to New project and Save as popups.</li>
+</ul>
+Changes:
+<ul>
+  <li>Blocky bending is now supported for Y-axis only limbs.</li>
+</ul>
+Bugfixes:
+<ul>
+  <li>Fixed crash when using custom JSON models as particles.</li>
+  <li>Fixed clouds being affected by fog even when fog is disabled (when ground is disabled).</li>
+  <li>Fixed inverse kinematics option appearing for some incompatible parts.</li>
+</ul>
+
+<h2>Continuation Build 1.0.0 (April 1, 2023), changes since Mine-imator 2.0.0:</h2>
+Features:
 <ul>
   <li>Added Speed / Pitch setting for sounds in audio timelines.</li>
   <li>Added support for more unicode characters in Minecraft font.</li>
   <li>Shape texture offset, repeat, and mirror options are now visible when a material or normal map is applied.</li>
   <li>Signs in imported worlds now have a 'text_scale' field (defined in .midata file).</li>
   <li>Splash screen now shows which Minecraft assets version is being loaded.</li>
-  <li>Added a ? somewhere.</li>
 </ul>
-
 Changes:
 <ul>
   <li>Rotation wheels now snap to 0.000001 instead of 0.1 (when snapping is disabled).</li>
@@ -35,9 +54,9 @@ Changes:
   <li>Individual blocks for Iron Bars, Glass Panes, Fences, Walls, Chorus Plants, Fire, and Tripwire can now be fully customized in the workbench.</li>
   <li>Custom item slot interpolation is now floored instead of rounded.</li>
   <li>Updated 'unknown_pack' image.</li>
+  <li>Changed missing project thumbnail.</li>
   <li>Updated credits.</li>
 </ul>
-
 Bugfixes:
 <ul>
   <li>Fixed lens dirt glow not working.</li>

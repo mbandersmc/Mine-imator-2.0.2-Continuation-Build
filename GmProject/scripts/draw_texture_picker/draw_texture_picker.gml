@@ -16,7 +16,7 @@
 /// @arg anislotsy
 /// @arg resource]
 /// @desc Draws a box for selecting between several images from a static and (optional) animated texture sheet.
-///		  The script is called when a slot is selected from any of the sheets.
+/// The script is called when a slot is selected from any of the sheets.
 
 function draw_texture_picker(select, tex, xx, yy, wid, hei, slots, slotsx, slotsy, scroll, script, anitex = null, anislots = null, anislotsx = null, anislotsy = null, res = null)
 {
@@ -29,7 +29,7 @@ function draw_texture_picker(select, tex, xx, yy, wid, hei, slots, slotsx, slots
 	ty = yy
 	off = 1
 	
-	// Get number of  active slots in the sheets
+	// Get number of active slots in the sheets
 	if (anitex = null)
 		items = slots 
 	else

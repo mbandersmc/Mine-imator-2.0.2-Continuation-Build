@@ -1,8 +1,8 @@
 /// project_load([filename])
 /// @arg [filename]
 /// @desc Opens a .miproject, .mproj, .mani project or zipped archive.
-///		  A file browser appears if no filename is given.
-///		  Formats:
+/// A file browser appears if no filename is given.
+///		Formats:
 ///			0.1
 ///			0.2
 ///			0.5
