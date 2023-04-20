@@ -5,7 +5,7 @@
 		"locale": "en-US",
 		"translator": "David, Nimi, mbanders",
 		"forversion": "2.0.0 Continuation Build 1.0.1",
-		"lastchange": "2023.04.17"
+		"lastchange": "2023.04.20"
 	},
 	"particle/": {
 		"default": "Default spawner",
@@ -1189,10 +1189,10 @@
 			"open": "Open",
 			"targeting": "Targeting",
 			"character": "Character",
-			"shard_front": "Front shard",
-			"shard_left": "Left shard",
-			"shard_back": "Back shard",
-			"shard_right": "Right shard",
+			"sherd_front": "Front sherd",
+			"sherd_left": "Left sherd",
+			"sherd_back": "Back sherd",
+			"sherd_right": "Right sherd",
 			"value/": {
 				"wide": "Wide",
 				"slim": "Slim",

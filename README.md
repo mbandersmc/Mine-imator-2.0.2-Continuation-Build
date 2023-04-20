@@ -20,10 +20,10 @@ The software is written using GameMaker Language and converted to a separate C++
 
 Forums post: https://www.mineimatorforums.com/index.php?/topic/91003-mine-imator-200-continuation-build-100/
 
-<h2>Continuation Build 1.0.1 (indeterminate), changes since 1.0.0:</h2>
+<h2>Continuation Build 1.0.1 (April 20, 2023), changes since 1.0.0:</h2>
 Features:
 <ul>
-  <li>Added "backfaces" tag for .mimodel parts, allowing them to have "Show backfaces" enabled by default.</li>
+  <li>Added 'backfaces' tag for .mimodel parts, allowing them to have "Show backfaces" enabled by default.</li>
   <li>Added custom frame rate export option.</li>
   <li>Readded Author field to New project and Save as popups.</li>
 </ul>
