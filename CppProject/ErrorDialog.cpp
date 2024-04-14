@@ -21,7 +21,7 @@ namespace CppProject
 		QTextEdit* textArea = new QTextEdit;
 		textArea->setReadOnly(true);
 		textArea->setStyleSheet("font-family: Consolas;");
-		textArea->setPlainText(error + "\nVersion: " + mineimator_version + (mineimator_version_extra.IsEmpty() ? "" : " " + mineimator_version_extra) + " (" + os_get() + ")");
+		textArea->setPlainText(error + "\nVersion: " + mineimator_version_full + " (" + os_get() + ")");
 
 		// Error
 		mainLayout->addWidget(new QLabel("A fatal error has occurred!"));

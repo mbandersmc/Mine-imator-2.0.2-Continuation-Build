@@ -80,6 +80,7 @@ function project_load_background(map)
 	
 	background_ground_show = value_get_real(map[?"ground_show"], background_ground_show)
 	background_ground_name = value_get_string(map[?"ground_name"], background_ground_name)
+	background_ground_direction = value_get_real(map[?"ground_direction"], background_ground_direction)
 	
 	if (load_format < e_project.FORMAT_120_PRE_1)
 	{

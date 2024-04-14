@@ -161,6 +161,7 @@ function app_startup_lists()
 		"BG_SKY_CLOUDS_OFFSET",
 		"BG_GROUND_SHOW",
 		"BG_GROUND_SLOT",
+		"BG_GROUND_DIRECTION",
 		"BG_BIOME",
 		"BG_SKY_COLOR",
 		"BG_SKY_CLOUDS_COLOR",

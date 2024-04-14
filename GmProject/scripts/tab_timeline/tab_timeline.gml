@@ -144,9 +144,8 @@ function tab_timeline()
 	buttonsx += 24 + 6
 	
 	// Previous frame
-	if (draw_button_icon("timelinepreviousframe", buttonsx, buttonsy, 24, 24, false, icons.FRAME_PREVIOUS, null, timeline_playing, "tooltiptlpreviousframe"))
-		timeline_marker = max(((floor(timeline_marker) != timeline_marker) ? floor(timeline_marker) : timeline_marker - 1), 0)
-	
+	tip_set_keybind(e_keybind.FRAME_PREVIOUS)
+	draw_button_icon("timelinepreviousframe", buttonsx, buttonsy, 24, 24, false, icons.FRAME_PREVIOUS, action_tl_frame_previous, timeline_playing, "tooltiptlpreviousframe")
 	buttonsx += 24 + 6
 	
 	draw_divide_vertical(buttonsx, buttonsy + 2, 20)
@@ -178,8 +177,8 @@ function tab_timeline()
 	buttonsx += 6
 	
 	// Next frame
-	if (draw_button_icon("timelinenextframe", buttonsx, buttonsy, 24, 24, false, icons.FRAME_NEXT, null, timeline_playing, "tooltiptlnextframe"))
-		timeline_marker = ((ceil(timeline_marker) != timeline_marker) ? ceil(timeline_marker) : timeline_marker + 1)
+	tip_set_keybind(e_keybind.FRAME_NEXT)
+	draw_button_icon("timelinenextframe", buttonsx, buttonsy, 24, 24, false, icons.FRAME_NEXT, action_tl_frame_next, timeline_playing, "tooltiptlnextframe")
 	buttonsx += 24 + 6
 	
 	// Next keyframe

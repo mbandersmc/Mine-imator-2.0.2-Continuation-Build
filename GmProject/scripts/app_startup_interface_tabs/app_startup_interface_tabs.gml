@@ -128,6 +128,8 @@ function app_startup_interface_tabs()
 			tbx_sky_clouds_speed = new_textbox_ndecimals()
 			tbx_sky_clouds_speed.suffix = "%"
 			tbx_sky_clouds_offset = new_textbox_ndecimals()
+			tbx_ground_direction = new_textbox_integer()
+			tbx_ground_direction.suffix = "°"
 			tbx_fog_distance = new_textbox_integer()
 			tbx_fog_size = new_textbox_integer()
 			tbx_fog_height = new_textbox_integer()

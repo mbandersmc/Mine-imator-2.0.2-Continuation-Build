@@ -37,6 +37,7 @@ function project_save_background()
 		
 		json_save_var_bool("ground_show", background_ground_show)
 		json_save_var("ground_name", background_ground_name)
+		json_save_var("ground_direction", background_ground_direction)
 		json_save_var_save_id("ground_tex", background_ground_tex)
 		json_save_var_save_id("ground_tex_material", background_ground_tex_material)
 		json_save_var_save_id("ground_tex_normal", background_ground_tex_normal)

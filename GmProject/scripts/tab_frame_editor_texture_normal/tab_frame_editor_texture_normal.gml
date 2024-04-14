@@ -1,6 +1,6 @@
-/// tab_frame_editor_tex_normal()
+/// tab_frame_editor_texture_normal()
 
-function tab_frame_editor_tex_normal()
+function tab_frame_editor_texture_normal()
 {
 	if (!tl_edit.value_type[e_value_type.MATERIAL_TEXTURE])
 		return 0

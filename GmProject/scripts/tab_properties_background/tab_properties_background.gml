@@ -267,6 +267,11 @@ function tab_properties_background()
 		
 		tab_next()
 		
+		// Ground direction
+		tab_control_meter()
+		draw_meter("backgroundgrounddirection", dx, dy, dw, background_ground_direction, 0, 270, 0, 90, tab.background.tbx_ground_direction, action_background_ground_direction)
+		tab_next()
+		
 		// Ground texture
 		tab_control_menu(ui_large_height)
 		draw_button_menu("backgroundgroundtex", e_menu.LIST, dx, dy, dw, ui_large_height, background_ground_tex, background_ground_tex.display_name, action_background_ground_tex, false, background_ground_tex.block_preview_texture)
@@ -507,7 +512,7 @@ function tab_properties_background()
 	if (setting_advanced_mode)
 	{
 		tab_control_dragger()
-		draw_dragger("backgroundtextureanimationspeed", dx, dy, dragger_width, background_texture_animation_speed, 1 / 100, 0, no_limit, 0.25, 0, tab.background.tbx_texture_animation_speed, action_background_texture_animation_speed)
+		draw_dragger("backgroundtextureanimationspeed", dx, dy, dragger_width, background_texture_animation_speed, 0.01, -no_limit, no_limit, 0.25, 0, tab.background.tbx_texture_animation_speed, action_background_texture_animation_speed)
 		tab_next()
 	}
 }

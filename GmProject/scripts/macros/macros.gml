@@ -10,7 +10,7 @@ function macros()
 	#macro dev_mode_debug_names			dev_mode && true
 	#macro dev_mode_debug_saveid		dev_mode && true
 	#macro dev_mode_debug_unused		dev_mode && true
-	#macro dev_mode_project				file_directory + "//dev_project//dev_project.miproject"
+	#macro dev_mode_project				file_directory + "dev_project/dev_project.miproject"
 	#macro dev_mode_full				dev_mode && false
 	#macro dev_mode_advanced			dev_mode && true
 	#macro dev_mode_show_bones			dev_mode && true
@@ -19,12 +19,12 @@ function macros()
 	#macro dev_mode_name_translation_message " is not defined in the translation, the key will be formatted"
 	
 	// Versions
-	#macro mineimator_version			"2.0.2"		// Base Mine-imator version
-	#macro mineimator_version_sub		""			// Mod name and version (e.g. "Community Build 1.0.0")
-	#macro mineimator_version_extra		""			// Additional suffix (e.g. "Alpha 1" or "Pre-Release 2")
+	#macro mineimator_version			"2.0.2"							// Base Mine-imator version
+	#macro mineimator_version_sub		"Continuation Build 1.0.2"		// Mod name and version (e.g. "Community Build 1.0.0")
+	#macro mineimator_version_extra		"Alpha 1"						// Additional suffix (e.g. "Alpha 1" or "Pre-Release 2")
 	#macro mineimator_version_full		(mineimator_version + ((mineimator_version_sub != "") ? " " + mineimator_version_sub : "") + ((mineimator_version_extra != "") ? " (" + mineimator_version_extra + ")" : ""))
-	#macro mineimator_version_date		"2023.11.12"
-	#macro minecraft_version			"1.20.2"
+	#macro mineimator_version_date		"2024.04.14"
+	#macro minecraft_version			"1.20.5-pre1"
 	#macro gm_runtime					GM_runtime_version
 	
 	// File formats

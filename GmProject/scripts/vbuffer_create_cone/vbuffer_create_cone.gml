@@ -26,7 +26,7 @@ function vbuffer_create_cone(rad, tex1, tex2, thflip, tvflip, detail, closed, in
 		ip = i
 		i += 1 / detail
 		texsize = point2D_sub(tex2, tex1)
-		texmid = point2D_add(tex1, vec2_mul(texsize, 1 / 2))
+		texmid = point2D_add(tex1, vec2_mul(texsize, 0.5))
 		
 		n1x = cos(ip * pi * 2)
 		n1y = -sin(ip * pi * 2)
@@ -55,7 +55,7 @@ function vbuffer_create_cone(rad, tex1, tex2, thflip, tvflip, detail, closed, in
 		if (closed)
 		{
 			if (mapped)
-				texmid[X] = 3 / 4
+				texmid[X] = 0.75
 			
 			// Bottom
 			vbuffer_add_triangle(0, 0, -rad, x1, y1, -rad, x2, y2, -rad, 
@@ -67,7 +67,7 @@ function vbuffer_create_cone(rad, tex1, tex2, thflip, tvflip, detail, closed, in
 		// Sides
 		if (mapped)
 		{
-			texmid[X] = 1 / 4
+			texmid[X] = 0.25
 			tex1 = point2D(0, 0)
 			tex2 = point2D(abs(texsize[X]), abs(texsize[Y]))
 			

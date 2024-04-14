@@ -17,7 +17,7 @@ function tl_value_default(valueid)
 		case e_value.WIND_INFLUENCE: return 1
 		case e_value.GLOW_COLOR:
 		case e_value.RGB_MUL:
-		case e_value.HSB_MUL: 
+		case e_value.HSB_MUL:
 		case e_value.SUBSURFACE_COLOR:
 		case e_value.TEXT_OUTLINE_COLOR: return c_white
 		case e_value.SPAWN: return true
@@ -113,6 +113,7 @@ function tl_value_default(valueid)
 		case e_value.BG_SKY_CLOUDS_OFFSET: return app.background_sky_clouds_offset
 		case e_value.BG_GROUND_SHOW: return app.background_ground_show
 		case e_value.BG_GROUND_SLOT: return app.background_ground_slot
+		case e_value.BG_GROUND_DIRECTION: return app.background_ground_direction
 		case e_value.BG_BIOME: return app.background_biome
 		case e_value.BG_SKY_COLOR: return app.background_sky_color
 		case e_value.BG_SKY_CLOUDS_COLOR: return app.background_sky_clouds_color

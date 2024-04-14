@@ -63,6 +63,12 @@ function app_update_keyboard()
 			
 			if (keybinds[e_keybind.MARKER_LEFT].active)
 				action_tl_left()
+			
+			if (keybinds[e_keybind.FRAME_PREVIOUS].pressed)
+				action_tl_frame_previous()
+			
+			if (keybinds[e_keybind.FRAME_NEXT].pressed)
+				action_tl_frame_next()
 		}
 		
 		if (keybinds[e_keybind.RENDER_MODE].pressed)
@@ -115,7 +121,7 @@ function app_update_keyboard()
 		if (keybinds[e_keybind.PARTICLES_CLEAR].pressed)
 			action_lib_pc_clear()
 		
-		// Only available for seperated tool modes
+		// Only available for separate tool modes
 		if (keybinds[e_keybind.TOOL_SELECT].pressed)
 		{
 			action_tools_disable_all()

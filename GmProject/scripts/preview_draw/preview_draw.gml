@@ -284,7 +284,7 @@ function preview_draw(preview, xx, yy, width, height)
 						lengthdir_y(prevcam_zoom, xyangle) * lengthdir_x(1, zangle),
 						lengthdir_z(prevcam_zoom, zangle)
 					)
-					render_ratio = width/height
+					render_ratio = width / height
 					
 					gpu_set_ztestenable(true)
 					camera_apply(cam_render)

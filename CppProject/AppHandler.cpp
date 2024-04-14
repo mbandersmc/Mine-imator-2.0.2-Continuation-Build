@@ -70,7 +70,7 @@ namespace CppProject
 			gmlGlobal::working_directory = QDir::currentPath() + "/";
 			DEBUG("Debug mode enabled");
 		#endif
-			DEBUG("Mine-imator version " + mineimator_version + (mineimator_version_extra.IsEmpty() ? "" : " " + mineimator_version_extra) + " (" + mineimator_version_date + ")");
+			DEBUG("Mine-imator version " + mineimator_version_full + " (" + mineimator_version_date + ")");
 		#if OS_WINDOWS
 			BOOL is64Bit;
 			IsWow64Process((HANDLE)qApp->applicationPid(), &is64Bit);

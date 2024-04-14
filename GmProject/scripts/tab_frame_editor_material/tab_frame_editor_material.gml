@@ -34,7 +34,7 @@ function tab_frame_editor_material()
 		
 			// Normal texture
 			if (project_render_material_maps)
-				tab_frame_editor_tex_normal()
+				tab_frame_editor_texture_normal()
 		
 			tab_collapse_end()
 		}

@@ -57,7 +57,7 @@ function render_world_ground()
 	var xo, yo;
 	xo = (cam_from[X] div 16) * 16
 	yo = (cam_from[Y] div 16) * 16
-	vbuffer_render(background_ground_vbuffer, point3D(xo, yo, 0))
+	vbuffer_render(background_ground_vbuffer, point3D(xo, yo, 0), point3D(0, 0, -background_ground_direction + 90))
 	
 	// Reset
 	render_set_uniform_int("uIsGround", 0)

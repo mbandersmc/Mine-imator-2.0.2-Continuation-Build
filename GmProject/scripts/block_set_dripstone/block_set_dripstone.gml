@@ -4,6 +4,8 @@ function block_set_dripstone()
 {
 	if (builder_scenery && !builder_scenery_legacy)
 		return 0
+	if (!builder_scenery && build_size_z = 1)
+		return 0
 	
 	var thicknessprev, dir, size, sizeoffset, thickness;
 	thicknessprev = block_get_state_id_value(block_current, block_state_id_current, "thickness")

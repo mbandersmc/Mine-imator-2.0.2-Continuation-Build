@@ -163,8 +163,6 @@
 		<file>Shaders/shader_high_glint.vsh</file>
 		<file>Shaders/shader_high_indirect_blur.fsh</file>
 		<file>Shaders/shader_high_indirect_blur.vsh</file>
-		<file>Shaders/shader_high_light_apply.fsh</file>
-		<file>Shaders/shader_high_light_apply.vsh</file>
 		<file>Shaders/shader_high_light_point.fsh</file>
 		<file>Shaders/shader_high_light_point.vsh</file>
 		<file>Shaders/shader_high_light_point_shadowless.fsh</file>
@@ -179,24 +177,14 @@
 		<file>Shaders/shader_high_material.vsh</file>
 		<file>Shaders/shader_high_raytrace.fsh</file>
 		<file>Shaders/shader_high_raytrace.vsh</file>
-		<file>Shaders/shader_high_raytrace_indirect.fsh</file>
-		<file>Shaders/shader_high_raytrace_indirect.vsh</file>
-		<file>Shaders/shader_high_raytrace_reflections.fsh</file>
-		<file>Shaders/shader_high_raytrace_reflections.vsh</file>
 		<file>Shaders/shader_high_raytrace_resolve.fsh</file>
 		<file>Shaders/shader_high_raytrace_resolve.vsh</file>
-		<file>Shaders/shader_high_raytrace_uv.fsh</file>
-		<file>Shaders/shader_high_raytrace_uv.vsh</file>
-		<file>Shaders/shader_high_reflections_apply.fsh</file>
-		<file>Shaders/shader_high_reflections_apply.vsh</file>
 		<file>Shaders/shader_high_samples_add.fsh</file>
 		<file>Shaders/shader_high_samples_add.vsh</file>
 		<file>Shaders/shader_high_samples_unpack.fsh</file>
 		<file>Shaders/shader_high_samples_unpack.vsh</file>
 		<file>Shaders/shader_high_ssao.fsh</file>
 		<file>Shaders/shader_high_ssao.vsh</file>
-		<file>Shaders/shader_high_ssao_blur.fsh</file>
-		<file>Shaders/shader_high_ssao_blur.vsh</file>
 		<file>Shaders/shader_high_subsurface.fsh</file>
 		<file>Shaders/shader_high_subsurface.vsh</file>
 		<file>Shaders/shader_high_subsurface_scatter.fsh</file>
@@ -880,7 +868,6 @@
 		<file>Sprites/spr_marker_stripe_frame_0.png</file>
 		<file>Sprites/spr_missing_thumbnail_frame_0.png</file>
 		<file>Sprites/spr_modelbench_ad_frame_0.png</file>
-		<file>Sprites/spr_path_example_frame_0.png</file>
 		<file>Sprites/spr_pattern_left_frame_0.png</file>
 		<file>Sprites/spr_pattern_left_frame_1.png</file>
 		<file>Sprites/spr_pattern_right_frame_0.png</file>

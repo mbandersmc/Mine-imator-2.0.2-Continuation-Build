@@ -26,7 +26,7 @@ function vbuffer_create_cylinder(rad, tex1, tex2, thflip, tvflip, detail, closed
 		ip = i
 		i += 1 / detail
 		texsize = point2D_sub(tex2, tex1)
-		texmid = point2D_add(tex1, vec2_mul(texsize, 1 / 2))
+		texmid = point2D_add(tex1, vec2_mul(texsize, 0.5))
 		
 		n1x = cos(ip * pi * 2)
 		n1y = -sin(ip * pi * 2)
@@ -65,7 +65,7 @@ function vbuffer_create_cylinder(rad, tex1, tex2, thflip, tvflip, detail, closed
 			
 			// Top
 			if (mapped)
-				texmid[X] = 1 / 2
+				texmid[X] = 0.5
 			
 			vbuffer_add_triangle(0, 0, rad, x2, y2, rad, x1, y1, rad, 
 									texmid[X], texmid[Y], 

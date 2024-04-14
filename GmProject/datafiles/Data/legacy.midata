@@ -4305,6 +4305,13 @@
 				"alex": { "type": "slim" },
 				"steve": { "type": "wide" }
 			}
+		},
+		"wolf": {
+			"variant": {
+				"normal": "pale",
+				"tame": "pale_tame",
+				"angry": "pale_angry"
+			}
 		}
 	},
 	"legacy_block_names":
@@ -4312,7 +4319,8 @@
 		"cobblestone_wall": "wall",
 		"grass_path": "dirt_path",
 		"target_block": "target",
-		"jigsaw_block": "jigsaw"
+		"jigsaw_block": "jigsaw",
+		"grass": "short_grass"
 	},
 	"legacy_particles":
 	{

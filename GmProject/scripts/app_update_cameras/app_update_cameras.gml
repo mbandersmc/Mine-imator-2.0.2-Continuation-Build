@@ -45,8 +45,6 @@ function app_update_cameras(highquality, movie)
 			continue
 		}
 		
-		render_samples = -1
-		
 		// Render
 		with (app)
 		{

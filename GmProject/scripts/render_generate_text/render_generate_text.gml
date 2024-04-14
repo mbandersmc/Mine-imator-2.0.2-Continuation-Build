@@ -87,11 +87,11 @@ function render_generate_text()
 			text_aa_prev = aa
 	}
 	
-	if (text_texture[0] != null && text_string = str && text_res = res && text_3d = is3d && alignmatch && aamatch)
-		return 0
-	
 	if (string_char_at(str, string_length(str)) = "\n")
 		str += " "
+	
+	if (text_texture[0] != null && text_string = str && text_res = res && text_3d = is3d && alignmatch && aamatch)
+		return 0
 	
 	text_string = str
 	text_res = res

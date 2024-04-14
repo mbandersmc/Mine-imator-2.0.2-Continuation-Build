@@ -31,7 +31,7 @@ function tab_frame_editor_text()
 		tab_collapse_start()
 		
 		tab_control_color()
-		draw_button_color("frameeditortextoutlinecolor", dx, dy, floor(dw/2), tl_edit.value[e_value.TEXT_OUTLINE_COLOR], tl_edit.value_default[e_value.TEXT_OUTLINE_COLOR], false, action_tl_frame_text_outline_color)
+		draw_button_color("frameeditortextoutlinecolor", dx, dy, dw, tl_edit.value[e_value.TEXT_OUTLINE_COLOR], tl_edit.value_default[e_value.TEXT_OUTLINE_COLOR], false, action_tl_frame_text_outline_color)
 		tab_next()
 		
 		tab_collapse_end()

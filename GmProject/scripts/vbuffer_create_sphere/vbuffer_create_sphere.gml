@@ -29,7 +29,7 @@ function vbuffer_create_sphere(rad, tex1, tex2, detail, invert)
 			jp = j
 			j += 1 / (detail - 2)
 			texsize = point2D_sub(tex2, tex1)
-			texmid = point2D_add(tex1, vec2_mul(texsize, 1 / 2))
+			texmid = point2D_add(tex1, vec2_mul(texsize, 0.5))
 			n = negate(invert)
 			
 			n1x = sin(ip * pi * 2) * sin(jp * pi)

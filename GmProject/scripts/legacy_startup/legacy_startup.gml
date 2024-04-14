@@ -3,8 +3,6 @@
 
 function legacy_startup()
 {
-	log("Loading legacy file")
-	
 	globalvar legacy_model_id_05_map, legacy_model_id_06_map, legacy_model_id_100_demo_map;
 	globalvar legacy_model_part_map, legacy_model_name_map;
 	globalvar legacy_block_set, legacy_block_id, legacy_block_obj, legacy_block_state_vars, legacy_block_state_id, legacy_block_mc_id;
@@ -18,6 +16,7 @@ function legacy_startup()
 		log("Error loading legacy.midata")
 		return false
 	}
+	log("Loading legacy file", legacy_file)
 	
 	// Models
 	legacy_model_id_05_map = map[?"legacy_model_id_05"]

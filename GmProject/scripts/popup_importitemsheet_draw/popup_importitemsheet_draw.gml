@@ -57,18 +57,18 @@ function popup_importitemsheet_draw()
 		// Size
 		axis_edit = X
 		tab_control(28)
-		draw_dragger("importitemsheetrows", dx, dy, dragger_width, popup.sheet_size[X], 1 / 10, 1, no_limit, popup.sheet_size_def[X], 1, popup.tbx_sheet_width, action_toolbar_importitemsheet_sheet_size)
+		draw_dragger("importitemsheetrows", dx, dy, dragger_width, popup.sheet_size[X], 0.1, 1, no_limit, popup.sheet_size_def[X], 1, popup.tbx_sheet_width, action_toolbar_importitemsheet_sheet_size)
 		tab_next()
 		
 		axis_edit = Y
 		tab_control(28)
-		draw_dragger("importitemsheetcolumns", dx, dy, dragger_width, popup.sheet_size[Y], 1 / 10, 1, no_limit, popup.sheet_size_def[Y], 1, popup.tbx_sheet_height, action_toolbar_importitemsheet_sheet_size)
+		draw_dragger("importitemsheetcolumns", dx, dy, dragger_width, popup.sheet_size[Y], 0.1, 1, no_limit, popup.sheet_size_def[Y], 1, popup.tbx_sheet_height, action_toolbar_importitemsheet_sheet_size)
 		tab_next()
 	}
 	
 	// Create
 	tab_control_button_label()
-	if (draw_button_label("importimageok", dx + dw, dy, null, null, e_button.PRIMARY, null, e_anchor.RIGHT))
+	if (draw_button_label("importitemsheetok", dx + dw, dy, null, null, e_button.PRIMARY, null, e_anchor.RIGHT))
 	{
 		if (popup.value_script != null)
 			script_execute(popup.value_script, e_option.IMPORT_ITEM_SHEET_DONE)

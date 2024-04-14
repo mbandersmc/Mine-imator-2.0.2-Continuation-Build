@@ -48,6 +48,7 @@ function project_reset_background()
 	background_ground_slot_prev = null
 	background_ground_slot_normal = null
 	background_ground_slot_material = null
+	background_ground_direction = 0
 	background_ground_tex_prev = null
 	background_ground_tex_material_prev = null
 	background_ground_tex_normal_prev = null

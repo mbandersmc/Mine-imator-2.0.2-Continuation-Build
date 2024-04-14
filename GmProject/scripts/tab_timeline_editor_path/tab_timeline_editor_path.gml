@@ -15,7 +15,7 @@ function tab_timeline_editor_path()
 	tab_next()
 	
 	tab_control_dragger()
-	draw_dragger("timelineeditorpathdetail", dx, dy, dragger_width, tl_edit.path_detail, 1 / 4, 1, no_limit, 6, 1, tab.path.tbx_detail, action_tl_path_detail, null, true, false, "timelineeditorpathdetailtip")
+	draw_dragger("timelineeditorpathdetail", dx, dy, dragger_width, tl_edit.path_detail, 0.25, 1, no_limit, 6, 1, tab.path.tbx_detail, action_tl_path_detail, null, true, false, "timelineeditorpathdetailtip")
 	tab_next()
 	
 	tab_control_switch()
@@ -51,7 +51,7 @@ function tab_timeline_editor_path()
 			tab_collapse_start()
 			
 			tab_control_dragger()
-			draw_dragger("timelineeditorpathshapedetail", dx, dy, dragger_width, tl_edit.path_shape_detail, 1 / 4, 3, no_limit, 6, 1, tab.path.tbx_shape_detail, action_tl_path_shape_detail)
+			draw_dragger("timelineeditorpathshapedetail", dx, dy, dragger_width, tl_edit.path_shape_detail, 0.25, 3, no_limit, 6, 1, tab.path.tbx_shape_detail, action_tl_path_shape_detail)
 			tab_next()
 			
 			tab_control_switch()
