@@ -5,7 +5,7 @@
 		"locale": "en-US",
 		"translator": "David, Nimi, mbanders",
 		"forversion": "2.0.2 Continuation Build 1.0.2",
-		"lastchange": "2024.04.11"
+		"lastchange": "2024.04.19"
 	},
 	"particle/": {
 		"default": "Default spawner",
@@ -1004,7 +1004,6 @@
 		"potion": "POTIONS",
 		"potion/": {
 			"water": "Water",
-			"uncraftable": "Uncraftable",
 			"night_vision": "Night Vision",
 			"invisibility": "Invisibility",
 			"leaping": "Leaping",
