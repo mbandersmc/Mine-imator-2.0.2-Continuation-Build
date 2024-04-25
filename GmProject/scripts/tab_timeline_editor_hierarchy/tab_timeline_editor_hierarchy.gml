@@ -36,9 +36,9 @@ function tab_timeline_editor_hierarchy()
 	
 	if (par != app)
 	{
-		dy += 20
-		draw_label(text_get("timelineeditorinherit") + ":", dx, dy, fa_left, fa_bottom, c_text_tertiary, a_text_tertiary, font_label)
-		dy += 8
+		tab_control(16)
+		draw_label(text_get("timelineeditorinherit") + ":", dx, dy + 8, fa_left, fa_middle, c_text_tertiary, a_text_tertiary, font_label)
+		tab_next()
 		
 		tab_control(16)
 		draw_label(text_get("timelineeditorinherittransform"), dx, dy + 8, fa_left, fa_middle, c_text_tertiary, a_text_tertiary, font_subheading)

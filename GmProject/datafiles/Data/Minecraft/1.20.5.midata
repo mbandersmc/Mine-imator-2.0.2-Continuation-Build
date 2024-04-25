@@ -1,5 +1,5 @@
 {
-	"version": "1.20.5-rc2",
+	"version": "1.20.5",
 	"patch": 0,
 	"format": 9,
 	"characters": [
@@ -38,6 +38,7 @@
 		},
 		{
 			"name": "skeleton",
+			"version": 1,
 			"states": {
 				"variant": [
 					{ "value": "skeleton", "file": "skeleton.mimodel" },
@@ -205,6 +206,7 @@
 		{
 			"name": "wolf",
 			"file": "wolf.mimodel",
+			"version": 1,
 			"states": {
 				"variant": [
 					{ "value": "pale", "texture": "entity/wolf/wolf" },

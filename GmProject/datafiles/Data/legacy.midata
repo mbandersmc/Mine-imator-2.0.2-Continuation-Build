@@ -4312,6 +4312,11 @@
 				"tame": "pale_tame",
 				"angry": "pale_angry"
 			}
+		},
+		"skeleton": {
+			"variant": {
+				"stray_skeleton": "stray"
+			}
 		}
 	},
 	"legacy_block_names":
