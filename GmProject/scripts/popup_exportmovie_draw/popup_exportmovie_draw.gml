@@ -14,7 +14,7 @@ function popup_exportmovie_draw()
 	draw_button_menu("exportmovievideosize", e_menu.LIST, dx, dy, dw, 24, project_video_template, text, action_project_video_template)
 	tab_next()
 	
-	var badvideosize = (popup.format = "mp4" || popup.format = "mov") && (project_video_width % 2 = 1 || project_video_height % 2 = 1)
+	var badvideosize = (popup.format = "mp4" || popup.format = "mov") && (project_video_width mod 2 = 1 || project_video_height mod 2 = 1)
 	
 	// Custom
 	if (project_video_template = 0)

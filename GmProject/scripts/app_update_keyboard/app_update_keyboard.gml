@@ -19,7 +19,12 @@ function app_update_keyboard()
 		open_url(log_file)
 	
 	if (keyboard_check_pressed(vk_f12))
-		debug_info = !debug_info
+	{
+		if (keyboard_check(vk_shift))
+			debug_info_corner = (debug_info_corner + 1) mod 4
+		else
+			debug_info = (debug_info + 1) mod 3
+	}
 	
 	if (window_state = "" && (window_busy = "" || settings_menu_name = "colorpicker") && !textbox_isediting)
 	{
