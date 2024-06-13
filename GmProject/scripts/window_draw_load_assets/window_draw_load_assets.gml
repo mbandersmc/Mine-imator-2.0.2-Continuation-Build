@@ -71,7 +71,7 @@ function window_draw_load_assets()
 		if (texwid > splashwid || texhei > screenhei)
 			scale = max(texwid / splashwid, texhei / screenhei)
 		
-		draw_sprite_ext(load_assets_splash, 0, xoff + 190 + (275 - ((texwid / scale) / 2)), yoff + (225 - ((texhei / scale) / 2)), 1 / scale, 1 / scale, 0, c_white, 1)
+		draw_sprite_ext(load_assets_splash, 0, xoff + 190 + ((splashwid / 2) - ((texwid / scale) / 2)), yoff + ((screenhei / 2) - ((texhei / scale) / 2)), 1 / scale, 1 / scale, 0, c_white, 1)
 	}
 	
 	// Splash credits

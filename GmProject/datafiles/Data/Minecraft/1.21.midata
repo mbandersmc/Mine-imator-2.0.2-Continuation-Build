@@ -1,5 +1,5 @@
 {
-	"version": "1.20.5",
+	"version": "1.21-pre2",
 	"patch": 0,
 	"format": 9,
 	"characters": [
@@ -43,7 +43,8 @@
 				"variant": [
 					{ "value": "skeleton", "file": "skeleton.mimodel" },
 					{ "value": "wither_skeleton", "file": "wither_skeleton.mimodel" },
-					{ "value": "stray", "file": "stray.mimodel" }
+					{ "value": "stray", "file": "stray.mimodel" },
+					{ "value": "bogged", "file": "bogged.mimodel" }
 				]
 			},
 			"default_state": "variant=skeleton"
@@ -789,6 +790,10 @@
 			"file": "armadillo.mimodel"
 		},
 		{
+			"name": "breeze",
+			"file": "breeze.mimodel"
+		},
+		{
 			"name": "wither",
 			"file": "wither.mimodel",
 			"states": {
@@ -1023,6 +1028,7 @@
 					{ "value": "migrator", "texture": "entity/mineimator/cape_migrator" },
 					{ "value": "vanilla", "texture": "entity/mineimator/cape_vanilla" },
 					{ "value": "cherryblossom", "texture": "entity/mineimator/cape_cherryblossom" },
+					{ "value": "15thanniversary", "texture": "entity/mineimator/cape_15thanniversary" },
 					{ "value": "minecon_2011", "texture": "entity/mineimator/cape_minecon2011" },
 					{ "value": "minecon_2012", "texture": "entity/mineimator/cape_minecon2012" },
 					{ "value": "minecon_2013", "texture": "entity/mineimator/cape_minecon2013" },
@@ -1059,6 +1065,7 @@
 					{ "value": "migrator", "texture": "entity/mineimator/cape_migrator" },
 					{ "value": "vanilla", "texture": "entity/mineimator/cape_vanilla" },
 					{ "value": "cherryblossom", "texture": "entity/mineimator/cape_cherryblossom" },
+					{ "value": "15thanniversary", "texture": "entity/mineimator/cape15th_anniversary" },
 					{ "value": "minecon_2011", "texture": "entity/mineimator/cape_minecon2011" },
 					{ "value": "minecon_2012", "texture": "entity/mineimator/cape_minecon2012" },
 					{ "value": "minecon_2013", "texture": "entity/mineimator/cape_minecon2013" },
@@ -1128,8 +1135,10 @@
 					{ "value": "painting_bomb", "file": "painting_1x1.mimodel", "shape_texture": { "painting": "painting/bomb" } },
 					{ "value": "painting_plant", "file": "painting_1x1.mimodel", "shape_texture": { "painting": "painting/plant" } },
 					{ "value": "painting_wasteland", "file": "painting_1x1.mimodel", "shape_texture": { "painting": "painting/wasteland" } },
+					{ "value": "painting_meditative", "file": "painting_1x1.mimodel", "shape_texture": { "painting": "painting/meditative" } },
 					{ "value": "painting_wanderer", "file": "painting_1x2.mimodel", "shape_texture": { "painting": "painting/wanderer" } },
 					{ "value": "painting_graham", "file": "painting_1x2.mimodel", "shape_texture": { "painting": "painting/graham" } },
+					{ "value": "painting_prairie_ride", "file": "painting_1x2.mimodel", "shape_texture": { "painting": "painting/prairie_ride" } },
 					{ "value": "painting_pool", "file": "painting_2x1.mimodel", "shape_texture": { "painting": "painting/pool" } },
 					{ "value": "painting_courbet", "file": "painting_2x1.mimodel", "shape_texture": { "painting": "painting/courbet" } },
 					{ "value": "painting_sea", "file": "painting_2x1.mimodel", "shape_texture": { "painting": "painting/sea" } },
@@ -1141,12 +1150,30 @@
 					{ "value": "painting_void", "file": "painting_2x2.mimodel", "shape_texture": { "painting": "painting/void" } },
 					{ "value": "painting_skull_and_roses", "file": "painting_2x2.mimodel", "shape_texture": { "painting": "painting/skull_and_roses" } },
 					{ "value": "painting_wither", "file": "painting_2x2.mimodel", "shape_texture": { "painting": "painting/wither" } },
+					{ "value": "painting_baroque", "file": "painting_2x2.mimodel", "shape_texture": { "painting": "painting/baroque" } },
+					{ "value": "painting_humble", "file": "painting_2x2.mimodel", "shape_texture": { "painting": "painting/humble" } },
 					{ "value": "painting_fighters", "file": "painting_4x2.mimodel", "shape_texture": { "painting": "painting/fighters" } },
+					{ "value": "painting_changing", "file": "painting_4x2.mimodel", "shape_texture": { "painting": "painting/changing" } },
+					{ "value": "painting_finding", "file": "painting_4x2.mimodel", "shape_texture": { "painting": "painting/finding" } },
+					{ "value": "painting_lowmist", "file": "painting_4x2.mimodel", "shape_texture": { "painting": "painting/lowmist" } },
+					{ "value": "painting_passage", "file": "painting_4x2.mimodel", "shape_texture": { "painting": "painting/passage" } },
+					{ "value": "painting_bouquet", "file": "painting_3x3.mimodel", "shape_texture": { "painting": "painting/bouquet" } },
+					{ "value": "painting_cavebird", "file": "painting_3x3.mimodel", "shape_texture": { "painting": "painting/cavebird" } },
+					{ "value": "painting_cotan", "file": "painting_3x3.mimodel", "shape_texture": { "painting": "painting/cotan" } },
+					{ "value": "painting_endboss", "file": "painting_3x3.mimodel", "shape_texture": { "painting": "painting/endboss" } },
+					{ "value": "painting_fern", "file": "painting_3x3.mimodel", "shape_texture": { "painting": "painting/fern" } },
+					{ "value": "painting_owlemons", "file": "painting_3x3.mimodel", "shape_texture": { "painting": "painting/owlemons" } },
+					{ "value": "painting_sunflowers", "file": "painting_3x3.mimodel", "shape_texture": { "painting": "painting/sunflowers" } },
+					{ "value": "painting_tides", "file": "painting_3x3.mimodel", "shape_texture": { "painting": "painting/tides" } },
+					{ "value": "painting_backyard", "file": "painting_3x4.mimodel", "shape_texture": { "painting": "painting/backyard" } },
+					{ "value": "painting_pond", "file": "painting_3x4.mimodel", "shape_texture": { "painting": "painting/pond" } },
 					{ "value": "painting_skeleton", "file": "painting_4x3.mimodel", "shape_texture": { "painting": "painting/skeleton" } },
 					{ "value": "painting_donkey_kong", "file": "painting_4x3.mimodel", "shape_texture": { "painting": "painting/donkey_kong" } },
 					{ "value": "painting_pointer", "file": "painting_4x4.mimodel", "shape_texture": { "painting": "painting/pointer" } },
 					{ "value": "painting_pigscene", "file": "painting_4x4.mimodel", "shape_texture": { "painting": "painting/pigscene" } },
 					{ "value": "painting_burning_skull", "file": "painting_4x4.mimodel", "shape_texture": { "painting": "painting/burning_skull" } },
+					{ "value": "painting_unpacked", "file": "painting_4x4.mimodel", "shape_texture": { "painting": "painting/unpacked" } },
+					{ "value": "painting_orb", "file": "painting_4x4.mimodel", "shape_texture": { "painting": "painting/orb" } },
 					{ "value": "painting_earth", "file": "painting_2x2.mimodel", "shape_texture": { "painting": "painting/earth" } },
 					{ "value": "painting_wind", "file": "painting_2x2.mimodel", "shape_texture": { "painting": "painting/wind" } },
 					{ "value": "painting_water", "file": "painting_2x2.mimodel", "shape_texture": { "painting": "painting/water" } },
@@ -1304,7 +1331,9 @@
 					{ "value": "burn", "shape_texture": { "front": "entity/decorated_pot/burn_pottery_pattern" } },
 					{ "value": "danger", "shape_texture": { "front": "entity/decorated_pot/danger_pottery_pattern" } },
 					{ "value": "explorer", "shape_texture": { "front": "entity/decorated_pot/explorer_pottery_pattern" } },
+					{ "value": "flow", "shape_texture": { "front": "entity/decorated_pot/flow_pottery_pattern" } },
 					{ "value": "friend", "shape_texture": { "front": "entity/decorated_pot/friend_pottery_pattern" } },
+					{ "value": "guster", "shape_texture": { "front": "entity/decorated_pot/guster_pottery_pattern" } },
 					{ "value": "heart", "shape_texture": { "front": "entity/decorated_pot/heart_pottery_pattern" } },
 					{ "value": "heartbreak", "shape_texture": { "front": "entity/decorated_pot/heartbreak_pottery_pattern" } },
 					{ "value": "howl", "shape_texture": { "front": "entity/decorated_pot/howl_pottery_pattern" } },
@@ -1312,6 +1341,7 @@
 					{ "value": "mourner", "shape_texture": { "front": "entity/decorated_pot/mourner_pottery_pattern" } },
 					{ "value": "plenty", "shape_texture": { "front": "entity/decorated_pot/plenty_pottery_pattern" } },
 					{ "value": "prize", "shape_texture": { "front": "entity/decorated_pot/prize_pottery_pattern" } },
+					{ "value": "scrape", "shape_texture": { "front": "entity/decorated_pot/scrape_pottery_pattern" } },
 					{ "value": "sheaf", "shape_texture": { "front": "entity/decorated_pot/sheaf_pottery_pattern" } },
 					{ "value": "shelter", "shape_texture": { "front": "entity/decorated_pot/shelter_pottery_pattern" } },
 					{ "value": "skull", "shape_texture": { "front": "entity/decorated_pot/skull_pottery_pattern" } },
@@ -1327,7 +1357,9 @@
 					{ "value": "burn", "shape_texture": { "left": "entity/decorated_pot/burn_pottery_pattern" } },
 					{ "value": "danger", "shape_texture": { "left": "entity/decorated_pot/danger_pottery_pattern" } },
 					{ "value": "explorer", "shape_texture": { "left": "entity/decorated_pot/explorer_pottery_pattern" } },
+					{ "value": "flow", "shape_texture": { "left": "entity/decorated_pot/flow_pottery_pattern" } },
 					{ "value": "friend", "shape_texture": { "left": "entity/decorated_pot/friend_pottery_pattern" } },
+					{ "value": "guster", "shape_texture": { "left": "entity/decorated_pot/guster_pottery_pattern" } },
 					{ "value": "heart", "shape_texture": { "left": "entity/decorated_pot/heart_pottery_pattern" } },
 					{ "value": "heartbreak", "shape_texture": { "left": "entity/decorated_pot/heartbreak_pottery_pattern" } },
 					{ "value": "howl", "shape_texture": { "left": "entity/decorated_pot/howl_pottery_pattern" } },
@@ -1335,6 +1367,7 @@
 					{ "value": "mourner", "shape_texture": { "left": "entity/decorated_pot/mourner_pottery_pattern" } },
 					{ "value": "plenty", "shape_texture": { "left": "entity/decorated_pot/plenty_pottery_pattern" } },
 					{ "value": "prize", "shape_texture": { "left": "entity/decorated_pot/prize_pottery_pattern" } },
+					{ "value": "scrape", "shape_texture": { "left": "entity/decorated_pot/scrape_pottery_pattern" } },
 					{ "value": "sheaf", "shape_texture": { "left": "entity/decorated_pot/sheaf_pottery_pattern" } },
 					{ "value": "shelter", "shape_texture": { "left": "entity/decorated_pot/shelter_pottery_pattern" } },
 					{ "value": "skull", "shape_texture": { "left": "entity/decorated_pot/skull_pottery_pattern" } },
@@ -1350,7 +1383,9 @@
 					{ "value": "burn", "shape_texture": { "back": "entity/decorated_pot/burn_pottery_pattern" } },
 					{ "value": "danger", "shape_texture": { "back": "entity/decorated_pot/danger_pottery_pattern" } },
 					{ "value": "explorer", "shape_texture": { "back": "entity/decorated_pot/explorer_pottery_pattern" } },
+					{ "value": "flow", "shape_texture": { "back": "entity/decorated_pot/flow_pottery_pattern" } },
 					{ "value": "friend", "shape_texture": { "back": "entity/decorated_pot/friend_pottery_pattern" } },
+					{ "value": "guster", "shape_texture": { "back": "entity/decorated_pot/guster_pottery_pattern" } },
 					{ "value": "heart", "shape_texture": { "back": "entity/decorated_pot/heart_pottery_pattern" } },
 					{ "value": "heartbreak", "shape_texture": { "back": "entity/decorated_pot/heartbreak_pottery_pattern" } },
 					{ "value": "howl", "shape_texture": { "back": "entity/decorated_pot/howl_pottery_pattern" } },
@@ -1358,6 +1393,7 @@
 					{ "value": "mourner", "shape_texture": { "back": "entity/decorated_pot/mourner_pottery_pattern" } },
 					{ "value": "plenty", "shape_texture": { "back": "entity/decorated_pot/plenty_pottery_pattern" } },
 					{ "value": "prize", "shape_texture": { "back": "entity/decorated_pot/prize_pottery_pattern" } },
+					{ "value": "scrape", "shape_texture": { "back": "entity/decorated_pot/scrape_pottery_pattern" } },
 					{ "value": "sheaf", "shape_texture": { "back": "entity/decorated_pot/sheaf_pottery_pattern" } },
 					{ "value": "shelter", "shape_texture": { "back": "entity/decorated_pot/shelter_pottery_pattern" } },
 					{ "value": "skull", "shape_texture": { "back": "entity/decorated_pot/skull_pottery_pattern" } },
@@ -1373,7 +1409,9 @@
 					{ "value": "burn", "shape_texture": { "right": "entity/decorated_pot/burn_pottery_pattern" } },
 					{ "value": "danger", "shape_texture": { "right": "entity/decorated_pot/danger_pottery_pattern" } },
 					{ "value": "explorer", "shape_texture": { "right": "entity/decorated_pot/explorer_pottery_pattern" } },
+					{ "value": "flow", "shape_texture": { "right": "entity/decorated_pot/flow_pottery_pattern" } },
 					{ "value": "friend", "shape_texture": { "right": "entity/decorated_pot/friend_pottery_pattern" } },
+					{ "value": "guster", "shape_texture": { "right": "entity/decorated_pot/guster_pottery_pattern" } },
 					{ "value": "heart", "shape_texture": { "right": "entity/decorated_pot/heart_pottery_pattern" } },
 					{ "value": "heartbreak", "shape_texture": { "right": "entity/decorated_pot/heartbreak_pottery_pattern" } },
 					{ "value": "howl", "shape_texture": { "right": "entity/decorated_pot/howl_pottery_pattern" } },
@@ -1381,6 +1419,7 @@
 					{ "value": "mourner", "shape_texture": { "right": "entity/decorated_pot/mourner_pottery_pattern" } },
 					{ "value": "plenty", "shape_texture": { "right": "entity/decorated_pot/plenty_pottery_pattern" } },
 					{ "value": "prize", "shape_texture": { "right": "entity/decorated_pot/prize_pottery_pattern" } },
+					{ "value": "scrape", "shape_texture": { "right": "entity/decorated_pot/scrape_pottery_pattern" } },
 					{ "value": "sheaf", "shape_texture": { "right": "entity/decorated_pot/sheaf_pottery_pattern" } },
 					{ "value": "shelter", "shape_texture": { "right": "entity/decorated_pot/shelter_pottery_pattern" } },
 					{ "value": "skull", "shape_texture": { "right": "entity/decorated_pot/skull_pottery_pattern" } },
@@ -2171,7 +2210,10 @@
 					{ "value": "cobbled_deepslate", "file": "cobbled_deepslate_slab.json" },
 					{ "value": "polished_deepslate", "file": "polished_deepslate_slab.json" },
 					{ "value": "deepslate_bricks", "file": "deepslate_brick_slab.json" },
-					{ "value": "deepslate_tiles", "file": "deepslate_tile_slab.json" }
+					{ "value": "deepslate_tiles", "file": "deepslate_tile_slab.json" },
+					{ "value": "tuff", "file": "tuff_slab.json" },
+					{ "value": "polished_tuff", "file": "polished_tuff_slab.json" },
+					{ "value": "tuff_bricks", "file": "tuff_brick_slab.json" }
 				],
 				"type": [ "top", "bottom", "double" ]
 			},
@@ -2233,7 +2275,10 @@
 				"minecraft:cobbled_deepslate_slab": "variant=cobbled_deepslate",
 				"minecraft:polished_deepslate_slab": "variant=polished_deepslate",
 				"minecraft:deepslate_brick_slab": "variant=deepslate_bricks",
-				"minecraft:deepslate_tile_slab": "variant=deepslate_tiles"
+				"minecraft:deepslate_tile_slab": "variant=deepslate_tiles",
+				"minecraft:tuff_slab": "variant=tuff",
+				"minecraft:polished_tuff_slab": "variant=polished_tuff",
+				"minecraft:tuff_brick_slab": "variant=tuff_bricks"
 			}
 		},
 		{
@@ -2390,7 +2435,10 @@
 					{ "value": "cobbled_deepslate", "file": "cobbled_deepslate_stairs.json" },
 					{ "value": "polished_deepslate", "file": "polished_deepslate_stairs.json" },
 					{ "value": "deepslate_bricks", "file": "deepslate_brick_stairs.json" },
-					{ "value": "deepslate_tiles", "file": "deepslate_tile_stairs.json" }
+					{ "value": "deepslate_tiles", "file": "deepslate_tile_stairs.json" },
+					{ "value": "tuff", "file": "tuff_stairs.json" },
+					{ "value": "polished_tuff", "file": "polished_tuff_stairs.json" },
+					{ "value": "tuff_bricks", "file": "tuff_brick_stairs.json" }
 				],
 				"facing": [ "north", "south", "east", "west" ],
 				"half": [ "top", "bottom" ],
@@ -2450,7 +2498,10 @@
 				"minecraft:cobbled_deepslate_stairs": "variant=cobbled_deepslate",
 				"minecraft:polished_deepslate_stairs": "variant=polished_deepslate",
 				"minecraft:deepslate_brick_stairs": "variant=deepslate_bricks",
-				"minecraft:deepslate_tile_stairs": "variant=deepslate_tiles"
+				"minecraft:deepslate_tile_stairs": "variant=deepslate_tiles",
+				"minecraft:tuff_stairs": "variant=tuff",
+				"minecraft:polished_tuff_stairs": "variant=polished_tuff",
+				"minecraft:tuff_brick_stairs": "variant=tuff_bricks"
 			}
 		},
 		{
@@ -2638,7 +2689,15 @@
 					{ "value": "bamboo", "file": "bamboo_door.json" },
 					{ "value": "crimson", "file": "crimson_door.json" },
 					{ "value": "warped", "file": "warped_door.json" },
-					{ "value": "iron", "file": "iron_door.json" }
+					{ "value": "iron", "file": "iron_door.json" },
+					{ "value": "copper", "file": "copper_door.json" },
+					{ "value": "exposed_copper", "file": "exposed_copper_door.json" },
+					{ "value": "weathered_copper", "file": "weathered_copper_door.json" },
+					{ "value": "oxidized_copper", "file": "oxidized_copper_door.json" },
+					{ "value": "waxed_copper", "file": "waxed_copper_door.json" },
+					{ "value": "waxed_exposed_copper", "file": "waxed_exposed_copper_door.json" },
+					{ "value": "waxed_weathered_copper", "file": "waxed_weathered_copper_door.json" },
+					{ "value": "waxed_oxidized_copper", "file": "waxed_oxidized_copper_door.json" }
 				],
 				"hinge": [ "right", "left" ],
 				"facing": [ "north", "south", "east", "west" ],
@@ -2675,7 +2734,15 @@
 				"minecraft:bamboo_door": "variant=bamboo",
 				"minecraft:crimson_door": "variant=crimson",
 				"minecraft:warped_door": "variant=warped",
-				"minecraft:iron_door": "variant=iron"
+				"minecraft:iron_door": "variant=iron",
+				"minecraft:copper_door": "variant=copper",
+				"minecraft:exposed_copper_door": "variant=exposed_copper",
+				"minecraft:weathered_copper_door": "variant=weathered_copper",
+				"minecraft:oxidized_copper_door": "variant=oxidized_copper",
+				"minecraft:waxed_copper_door": "variant=waxed_copper",
+				"minecraft:waxed_exposed_copper_door": "variant=waxed_exposed_copper",
+				"minecraft:waxed_weathered_copper_door": "variant=waxed_weathered_copper",
+				"minecraft:waxed_oxidized_copper_door": "variant=waxed_oxidized_copper"
 			}
 		},
 		{
@@ -3336,7 +3403,15 @@
 					{ "value": "bamboo", "file": "bamboo_trapdoor.json" },
 					{ "value": "crimson", "file": "crimson_trapdoor.json" },
 					{ "value": "warped", "file": "warped_trapdoor.json" },
-					{ "value": "iron", "file": "iron_trapdoor.json" }
+					{ "value": "iron", "file": "iron_trapdoor.json" },
+					{ "value": "copper", "file": "copper_trapdoor.json" },
+					{ "value": "exposed_copper", "file": "exposed_copper_trapdoor.json" },
+					{ "value": "weathered_copper", "file": "weathered_copper_trapdoor.json" },
+					{ "value": "oxidized_copper", "file": "oxidized_copper_trapdoor.json" },
+					{ "value": "waxed_copper", "file": "waxed_copper_trapdoor.json" },
+					{ "value": "waxed_exposed_copper", "file": "waxed_exposed_copper_trapdoor.json" },
+					{ "value": "waxed_weathered_copper", "file": "waxed_weathered_copper_trapdoor.json" },
+					{ "value": "waxed_oxidized_copper", "file": "waxed_oxidized_copper_trapdoor.json" }
 				],
 				"facing": [ "north", "south", "east", "west" ],
 				"open": [ "false", "true" ],
@@ -3383,7 +3458,15 @@
 				"minecraft:bamboo_trapdoor": "variant=bamboo",
 				"minecraft:crimson_trapdoor": "variant=crimson",
 				"minecraft:warped_trapdoor": "variant=warped",
-				"minecraft:iron_trapdoor": "variant=iron"
+				"minecraft:iron_trapdoor": "variant=iron",
+				"minecraft:copper_trapdoor": "variant=copper",
+				"minecraft:exposed_copper_trapdoor": "variant=exposed_copper",
+				"minecraft:weathered_copper_trapdoor": "variant=weathered_copper",
+				"minecraft:oxidized_copper_trapdoor": "variant=oxidized_copper",
+				"minecraft:waxed_copper_trapdoor": "variant=waxed_copper",
+				"minecraft:waxed_exposed_copper_trapdoor": "variant=waxed_exposed_copper",
+				"minecraft:waxed_weathered_copper_trapdoor": "variant=waxed_weathered_copper",
+				"minecraft:waxed_oxidized_copper_trapdoor": "variant=waxed_oxidized_copper"
 			}
 		},
 		{
@@ -3885,7 +3968,10 @@
 					{ "value": "cobbled_deepslate", "file": "cobbled_deepslate_wall.json" },
 					{ "value": "polished_deepslate", "file": "polished_deepslate_wall.json" },
 					{ "value": "deepslate_bricks", "file": "deepslate_brick_wall.json" },
-					{ "value": "deepslate_tiles", "file": "deepslate_tile_wall.json" }
+					{ "value": "deepslate_tiles", "file": "deepslate_tile_wall.json" },
+					{ "value": "tuff", "file": "tuff_wall.json" },
+					{ "value": "polished_tuff", "file": "polished_tuff_wall.json" },
+					{ "value": "tuff_bricks", "file": "tuff_brick_wall.json" }
 				],
 				"north": [ "none", "low", "tall" ],
 				"south": [ "none", "low", "tall" ],
@@ -3916,7 +4002,10 @@
 				"minecraft:cobbled_deepslate_wall": "variant=cobbled_deepslate",
 				"minecraft:polished_deepslate_wall": "variant=polished_deepslate",
 				"minecraft:deepslate_brick_wall": "variant=deepslate_bricks",
-				"minecraft:deepslate_tile_wall": "variant=deepslate_tiles"
+				"minecraft:deepslate_tile_wall": "variant=deepslate_tiles",
+				"minecraft:tuff_wall": "variant=tuff",
+				"minecraft:polished_tuff_wall": "variant=polished_tuff",
+				"minecraft:tuff_brick_wall": "variant=tuff_bricks"
 			}
 		},
 		{
@@ -4203,9 +4292,10 @@
 			"name": "daylight_detector",
 			"file": "daylight_detector.json",
 			"states": {
-				"inverted": [ "false", "true" ]
+				"inverted": [ "false", "true" ],
+				"power": [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15" ]
 			},
-			"default_state": "inverted=false",
+			"default_state": "inverted=false,power=0",
 			"id": "minecraft:daylight_detector"
 		},
 		{
@@ -5769,8 +5859,23 @@
 		},
 		{
 			"name": "tuff",
-			"file": "tuff.json",
-			"id": "minecraft:tuff"
+			"states": {
+				"variant": [
+					{ "value": "tuff", "file": "tuff.json" },
+					{ "value": "polished_tuff", "file": "polished_tuff.json" },
+					{ "value": "tuff_bricks", "file": "tuff_bricks.json" },
+					{ "value": "chiseled_tuff", "file": "chiseled_tuff.json" },
+					{ "value": "chiseled_tuff_bricks", "file": "chiseled_tuff_bricks.json" }
+				]
+			},
+			"default_state": "variant=tuff",
+			"id": {
+				"minecraft:tuff": "variant=tuff",
+				"minecraft:polished_tuff": "variant=polished_tuff",
+				"minecraft:tuff_bricks": "variant=tuff_bricks",
+				"minecraft:chiseled_tuff": "variant=chiseled_tuff",
+				"minecraft:chiseled_tuff_bricks": "variant=chiseled_tuff_bricks"
+			}
 		},
 		{
 			"name": "calcite",
@@ -5910,6 +6015,86 @@
 				"minecraft:waxed_exposed_cut_copper": "variant=waxed_exposed_cut_copper",
 				"minecraft:waxed_weathered_cut_copper": "variant=waxed_weathered_cut_copper",
 				"minecraft:waxed_oxidized_cut_copper": "variant=waxed_oxidized_cut_copper"
+			}
+		},
+		{
+			"name": "chiseled_copper",
+			"states": {
+				"variant": [
+					{ "value": "chiseled_copper", "file": "chiseled_copper.json" },
+					{ "value": "exposed_chiseled_copper", "file": "exposed_chiseled_copper.json" },
+					{ "value": "weathered_chiseled_copper", "file": "weathered_chiseled_copper.json" },
+					{ "value": "oxidized_chiseled_copper", "file": "oxidized_chiseled_copper.json" },
+					{ "value": "waxed_chiseled_copper", "file": "waxed_chiseled_copper.json" },
+					{ "value": "waxed_exposed_chiseled_copper", "file": "waxed_exposed_chiseled_copper.json" },
+					{ "value": "waxed_weathered_chiseled_copper", "file": "waxed_weathered_chiseled_copper.json" },
+					{ "value": "waxed_oxidized_chiseled_copper", "file": "waxed_oxidized_chiseled_copper.json" }
+				]
+			},
+			"default_state": "variant=chiseled_copper",
+			"id": {
+				"minecraft:chiseled_copper": "variant=chiseled_copper",
+				"minecraft:exposed_chiseled_copper": "variant=exposed_chiseled_copper",
+				"minecraft:weathered_chiseled_copper": "variant=weathered_chiseled_copper",
+				"minecraft:oxidized_chiseled_copper": "variant=oxidized_chiseled_copper",
+				"minecraft:waxed_chiseled_copper": "variant=waxed_chiseled_copper",
+				"minecraft:waxed_exposed_chiseled_copper": "variant=waxed_exposed_chiseled_copper",
+				"minecraft:waxed_weathered_chiseled_copper": "variant=waxed_weathered_chiseled_copper",
+				"minecraft:waxed_oxidized_chiseled_copper": "variant=waxed_oxidized_chiseled_copper"
+			}
+		},
+		{
+			"name": "copper_grate",
+			"states": {
+				"variant": [
+					{ "value": "copper_grate", "file": "copper_grate.json" },
+					{ "value": "exposed_copper_grate", "file": "exposed_copper_grate.json" },
+					{ "value": "weathered_copper_grate", "file": "weathered_copper_grate.json" },
+					{ "value": "oxidized_copper_grate", "file": "oxidized_copper_grate.json" },
+					{ "value": "waxed_copper_grate", "file": "waxed_copper_grate.json" },
+					{ "value": "waxed_exposed_copper_grate", "file": "waxed_exposed_copper_grate.json" },
+					{ "value": "waxed_weathered_copper_grate", "file": "waxed_weathered_copper_grate.json" },
+					{ "value": "waxed_oxidized_copper_grate", "file": "waxed_oxidized_copper_grate.json" }
+				]
+			},
+			"default_state": "variant=copper_grate",
+			"id": {
+				"minecraft:copper_grate": "variant=copper_grate",
+				"minecraft:exposed_copper_grate": "variant=exposed_copper_grate",
+				"minecraft:weathered_copper_grate": "variant=weathered_copper_grate",
+				"minecraft:oxidized_copper_grate": "variant=oxidized_copper_grate",
+				"minecraft:waxed_copper_grate": "variant=waxed_copper_grate",
+				"minecraft:waxed_exposed_copper_grate": "variant=waxed_exposed_copper_grate",
+				"minecraft:waxed_weathered_copper_grate": "variant=waxed_weathered_copper_grate",
+				"minecraft:waxed_oxidized_copper_grate": "variant=waxed_oxidized_copper_grate"
+			}
+		},
+		{
+			"name": "copper_bulb",
+			"states": {
+				"variant": [
+					{ "value": "copper_bulb", "file": "copper_bulb.json" },
+					{ "value": "exposed_copper_bulb", "file": "exposed_copper_bulb.json" },
+					{ "value": "weathered_copper_bulb", "file": "weathered_copper_bulb.json" },
+					{ "value": "oxidized_copper_bulb", "file": "oxidized_copper_bulb.json" },
+					{ "value": "waxed_copper_bulb", "file": "waxed_copper_bulb.json" },
+					{ "value": "waxed_exposed_copper_bulb", "file": "waxed_exposed_copper_bulb.json" },
+					{ "value": "waxed_weathered_copper_bulb", "file": "waxed_weathered_copper_bulb.json" },
+					{ "value": "waxed_oxidized_copper_bulb", "file": "waxed_oxidized_copper_bulb.json" }
+				],
+				"powered": [ "false", "true" ],
+				"lit": [ "false", "true" ]
+			},
+			"default_state": "variant=copper_bulb,powered=false,lit=false",
+			"id": {
+				"minecraft:copper_bulb": "variant=copper_bulb",
+				"minecraft:exposed_copper_bulb": "variant=exposed_copper_bulb",
+				"minecraft:weathered_copper_bulb": "variant=weathered_copper_bulb",
+				"minecraft:oxidized_copper_bulb": "variant=oxidized_copper_bulb",
+				"minecraft:waxed_copper_bulb": "variant=waxed_copper_bulb",
+				"minecraft:waxed_exposed_copper_bulb": "variant=waxed_exposed_copper_bulb",
+				"minecraft:waxed_weathered_copper_bulb": "variant=waxed_weathered_copper_bulb",
+				"minecraft:waxed_oxidized_copper_bulb": "variant=waxed_oxidized_copper_bulb"
 			}
 		},
 		{
@@ -6220,6 +6405,55 @@
 				}
 			},
 			"id": "minecraft:decorated_pot"
+		},
+		{
+			"name": "crafter",
+			"file": "crafter.json",
+			"states": {
+				"orientation": [ "north_up", "south_up", "east_up", "west_up", "up_north", "up_south", "up_east", "up_west", "down_north", "down_south", "down_east", "down_west" ],
+				"triggered": [ "false", "true" ],
+				"crafting": [ "false", "true" ]
+			},
+			"default_state": "orientation=west_up,triggered=false,crafting=false",
+			"id": "minecraft:crafter"
+		},
+		{
+			"name": "trial_spawner",
+			"file": "trial_spawner.json",
+			"states": {
+				"trial_spawner_state": [
+					{ "value": "inactive" },
+					{ "value": "waiting_for_players", "emissive": 0.25 },
+					{ "value": "active", "emissive": 0.5 },
+					{ "value": "waiting_for_reward_ejection", "emissive": 0.5 },
+					{ "value": "ejecting_reward", "emissive": 0.5 },
+					{ "value": "cooldown" }
+				],
+				"ominous": [ "false", "true" ]
+			},
+			"default_state": "trial_spawner_state=inactive,ominous=false",
+			"id": "minecraft:trial_spawner"
+		},
+		{
+			"name": "vault",
+			"file": "vault.json",
+			"states": {
+				"facing": [ "north", "south", "east", "west" ],
+				"vault_state": [
+					{ "value": "inactive", "emissive": 0.5 },
+					{ "value": "active", "emissive": 0.75 },
+					{ "value": "unlocking", "emissive": 0.75 },
+					{ "value": "ejecting", "emissive": 0.75 }
+				],
+				"ominous": [ "false", "true" ]
+			},
+			"default_state": "facing=west,vault_state=inactive,ominous=false",
+			"id": "minecraft:vault"
+		},
+		{
+			"name": "heavy_core",
+			"file": "heavy_core.json",
+			"id": "minecraft:heavy_core"
 		}
 	],
 	"model_textures": [
@@ -6243,10 +6477,12 @@
 		"entity/banner/diagonal_right",
 		"entity/banner/diagonal_up_left",
 		"entity/banner/diagonal_up_right",
+		"entity/banner/flow",
 		"entity/banner/flower",
 		"entity/banner/globe",
 		"entity/banner/gradient",
 		"entity/banner/gradient_up",
+		"entity/banner/guster",
 		"entity/banner/half_horizontal",
 		"entity/banner/half_horizontal_bottom",
 		"entity/banner/half_vertical",
@@ -6307,6 +6543,9 @@
 		"entity/boat/mangrove",
 		"entity/boat/oak",
 		"entity/boat/spruce",
+		"entity/breeze/breeze",
+		"entity/breeze/breeze_eyes",
+		"entity/breeze/breeze_wind",
 		"entity/camel/camel",
 		"entity/cat/all_black",
 		"entity/cat/black",
@@ -6359,7 +6598,9 @@
 		"entity/decorated_pot/burn_pottery_pattern",
 		"entity/decorated_pot/danger_pottery_pattern",
 		"entity/decorated_pot/explorer_pottery_pattern",
+		"entity/decorated_pot/flow_pottery_pattern",
 		"entity/decorated_pot/friend_pottery_pattern",
+		"entity/decorated_pot/guster_pottery_pattern",
 		"entity/decorated_pot/heart_pottery_pattern",
 		"entity/decorated_pot/heartbreak_pottery_pattern",
 		"entity/decorated_pot/howl_pottery_pattern",
@@ -6367,6 +6608,7 @@
 		"entity/decorated_pot/mourner_pottery_pattern",
 		"entity/decorated_pot/plenty_pottery_pattern",
 		"entity/decorated_pot/prize_pottery_pattern",
+		"entity/decorated_pot/scrape_pottery_pattern",
 		"entity/decorated_pot/sheaf_pottery_pattern",
 		"entity/decorated_pot/shelter_pottery_pattern",
 		"entity/decorated_pot/skull_pottery_pattern",
@@ -6529,10 +6771,12 @@
 		"entity/shield/diagonal_right",
 		"entity/shield/diagonal_up_left",
 		"entity/shield/diagonal_up_right",
+		"entity/shield/flow",
 		"entity/shield/flower",
 		"entity/shield/globe",
 		"entity/shield/gradient",
 		"entity/shield/gradient_up",
+		"entity/shield/guster",
 		"entity/shield/half_horizontal",
 		"entity/shield/half_horizontal_bottom",
 		"entity/shield/half_vertical",
@@ -6600,6 +6844,8 @@
 		"entity/signs/hanging/spruce",
 		"entity/signs/hanging/warped",
 		"entity/silverfish",
+		"entity/skeleton/bogged",
+		"entity/skeleton/bogged_overlay",
 		"entity/skeleton/skeleton",
 		"entity/skeleton/stray",
 		"entity/skeleton/stray_overlay",
@@ -6765,27 +7011,47 @@
 		"painting/aztec",
 		"painting/aztec2",
 		"painting/back",
+		"painting/backyard",
+		"painting/baroque",
 		"painting/bomb",
+		"painting/bouquet",
 		"painting/burning_skull",
 		"painting/bust",
+		"painting/cavebird",
+		"painting/changing",
+		"painting/cotan",
 		"painting/courbet",
 		"painting/creebet",
 		"painting/donkey_kong",
 		"painting/earth",
+		"painting/endboss",
+		"painting/fern",
 		"painting/fighters",
+		"painting/finding",
 		"painting/fire",
 		"painting/graham",
+		"painting/humble",
 		"painting/kebab",
+		"painting/lowmist",
 		"painting/match",
+		"painting/meditative",
+		"painting/orb",
+		"painting/owlemons",
+		"painting/passage",
 		"painting/pigscene",
 		"painting/plant",
 		"painting/pointer",
+		"painting/pond",
 		"painting/pool",
+		"painting/prairie_ride",
 		"painting/sea",
 		"painting/skeleton",
 		"painting/skull_and_roses",
 		"painting/stage",
+		"painting/sunflowers",
 		"painting/sunset",
+		"painting/tides",
+		"painting/unpacked",
 		"painting/void",
 		"painting/wanderer",
 		"painting/wasteland",
@@ -6807,12 +7073,16 @@
 		"trims/color_palettes/quartz",
 		"trims/color_palettes/redstone",
 		"trims/color_palettes/trim_palette",
+		"trims/models/armor/bolt",
+		"trims/models/armor/bolt_leggings",
 		"trims/models/armor/coast",
 		"trims/models/armor/coast_leggings",
 		"trims/models/armor/dune",
 		"trims/models/armor/dune_leggings",
 		"trims/models/armor/eye",
 		"trims/models/armor/eye_leggings",
+		"trims/models/armor/flow",
+		"trims/models/armor/flow_leggings",
 		"trims/models/armor/host",
 		"trims/models/armor/host_leggings",
 		"trims/models/armor/raiser",
@@ -6840,6 +7110,7 @@
 		"trims/models/armor/wild",
 		"trims/models/armor/wild_leggings",
 		"entity/mineimator/camera_tripod",
+		"entity/mineimator/cape_15thanniversary",
 		"entity/mineimator/cape_birthday",
 		"entity/mineimator/cape_cheapsh0t",
 		"entity/mineimator/cape_cherryblossom",
@@ -7721,7 +7992,91 @@
 		"block/suspicious_sand_3",
 		"block/torchflower",
 		"block/torchflower_crop_stage0",
-		"block/torchflower_crop_stage1"
+		"block/torchflower_crop_stage1",
+		"block/crafter_bottom",
+		"block/crafter_east",
+		"block/crafter_east_crafting",
+		"block/crafter_east_triggered",
+		"block/crafter_north",
+		"block/crafter_north_crafting",
+		"block/crafter_south",
+		"block/crafter_south_triggered",
+		"block/crafter_top",
+		"block/crafter_top_crafting",
+		"block/crafter_top_triggered",
+		"block/crafter_west",
+		"block/crafter_west_crafting",
+		"block/crafter_west_triggered",
+		"block/chiseled_copper",
+		"block/exposed_chiseled_copper",
+		"block/weathered_chiseled_copper",
+		"block/oxidized_chiseled_copper",
+		"block/copper_grate",
+		"block/exposed_copper_grate",
+		"block/weathered_copper_grate",
+		"block/oxidized_copper_grate",
+		"block/copper_bulb",
+		"block/copper_bulb_lit",
+		"block/copper_bulb_powered",
+		"block/copper_bulb_lit_powered",
+		"block/exposed_copper_bulb",
+		"block/exposed_copper_bulb_lit",
+		"block/exposed_copper_bulb_powered",
+		"block/exposed_copper_bulb_lit_powered",
+		"block/weathered_copper_bulb",
+		"block/weathered_copper_bulb_lit",
+		"block/weathered_copper_bulb_powered",
+		"block/weathered_copper_bulb_lit_powered",
+		"block/oxidized_copper_bulb",
+		"block/oxidized_copper_bulb_lit",
+		"block/oxidized_copper_bulb_powered",
+		"block/oxidized_copper_bulb_lit_powered",
+		"block/copper_door_bottom",
+		"block/copper_door_top",
+		"block/exposed_copper_door_bottom",
+		"block/exposed_copper_door_top",
+		"block/weathered_copper_door_bottom",
+		"block/weathered_copper_door_top",
+		"block/oxidized_copper_door_bottom",
+		"block/oxidized_copper_door_top",
+		"block/copper_trapdoor",
+		"block/exposed_copper_trapdoor",
+		"block/weathered_copper_trapdoor",
+		"block/oxidized_copper_trapdoor",
+		"block/polished_tuff",
+		"block/tuff_bricks",
+		"block/chiseled_tuff",
+		"block/chiseled_tuff_top",
+		"block/chiseled_tuff_bricks",
+		"block/chiseled_tuff_bricks_top",
+		"block/trial_spawner_bottom",
+		"block/trial_spawner_side_active",
+		"block/trial_spawner_side_active_ominous",
+		"block/trial_spawner_side_inactive",
+		"block/trial_spawner_side_inactive_ominous",
+		"block/trial_spawner_top_active",
+		"block/trial_spawner_top_active_ominous",
+		"block/trial_spawner_top_ejecting_reward",
+		"block/trial_spawner_top_ejecting_reward_ominous",
+		"block/trial_spawner_top_inactive",
+		"block/trial_spawner_top_inactive_ominous",
+		"block/vault_bottom",
+		"block/vault_bottom_ominous",
+		"block/vault_front_ejecting",
+		"block/vault_front_ejecting_ominous",
+		"block/vault_front_off",
+		"block/vault_front_off_ominous",
+		"block/vault_front_on",
+		"block/vault_front_on_ominous",
+		"block/vault_side_off",
+		"block/vault_side_off_ominous",
+		"block/vault_side_on",
+		"block/vault_side_on_ominous",
+		"block/vault_top",
+		"block/vault_top_ominous",
+		"block/vault_top_ejecting",
+		"block/vault_top_ejecting_ominous",
+		"block/heavy_core"
 	],
 	"block_textures_animated": [
 		"block/water_still",
@@ -7885,6 +8240,14 @@
 		"bamboo_trapdoor.json": { "colorZ": "#D9C25E", "alphaZ": 1 },
 		"crimson_trapdoor.json": { "colorZ": "#7E3A56", "alphaZ": 1 },
 		"warped_trapdoor.json": { "colorZ": "#398382", "alphaZ": 1 },
+		"copper_trapdoor.json": { "colorZ": "#B06045", "alphaZ": 1 },
+		"exposed_copper_trapdoor.json": { "colorZ": "#8A795E", "alphaZ": 1 },
+		"weathered_copper_trapdoor.json": { "colorZ": "#749366", "alphaZ": 1 },
+		"oxidized_copper_trapdoor.json": { "colorZ": "#55AC8B", "alphaZ": 1 },
+		"waxed_copper_trapdoor.json": { "colorZ": "#B06045", "alphaZ": 1 },
+		"waxed_exposed_copper_trapdoor.json": { "colorZ": "#8A795E", "alphaZ": 1 },
+		"waxed_weathered_copper_trapdoor.json": { "colorZ": "#749366", "alphaZ": 1 },
+		"waxed_oxidized_copper_trapdoor.json": { "colorZ": "#55AC8B", "alphaZ": 1 },
 		"vine.json": { "colorY": null, "colorZ": null },
 		"cauldron.json": { "colorY": "#3F3E42", "colorZ": "#595858", "alphaY": 1, "alphaZ": 1 },
 		"water_cauldron.json": { "colorY": "#3862B5", "colorZ": "#595858", "alphaY": 1, "alphaZ": 1 },
@@ -8436,6 +8799,26 @@
 		"item/armadillo_scute",
 		"item/wolf_armor",
 		"item/wolf_armor_overlay",
+		"item/copper_door",
+		"item/exposed_copper_door",
+		"item/weathered_copper_door",
+		"item/oxidized_copper_door",
+		"item/breeze_rod",
+		"item/wind_charge",
+		"item/mace",
+		"item/trial_key",
+		"item/ominous_trial_key",
+		"item/ominous_bottle",
+		"item/flow_banner_pattern",
+		"item/guster_banner_pattern",
+		"item/flow_pottery_sherd",
+		"item/guster_pottery_sherd",
+		"item/scrape_pottery_sherd",
+		"item/bolt_armor_trim_smithing_template",
+		"item/flow_armor_trim_smithing_template",
+		"item/music_disc_creator",
+		"item/music_disc_creator_music_box",
+		"item/music_disc_precipice",
 		"item/light",
 		"item/light_00",
 		"item/light_01",
@@ -8664,10 +9047,25 @@
 		"particle/glitter_6",
 		"particle/glitter_7",
 		"particle/glow",
+		"particle/gust_0",
+		"particle/gust_1",
+		"particle/gust_2",
+		"particle/gust_3",
+		"particle/gust_4",
+		"particle/gust_5",
+		"particle/gust_6",
+		"particle/gust_7",
+		"particle/gust_8",
+		"particle/gust_9",
+		"particle/gust_10",
+		"particle/gust_11",
 		"particle/heart",
+		"particle/infested",
 		"particle/lava",
 		"particle/nautilus",
 		"particle/note",
+		"particle/ominous_spawning",
+		"particle/raid_omen",
 		"particle/sculk_charge_0",
 		"particle/sculk_charge_1",
 		"particle/sculk_charge_2",
@@ -8716,6 +9114,13 @@
 		"particle/sga_x",
 		"particle/sga_y",
 		"particle/sga_z",
+		"particle/small_gust_0",
+		"particle/small_gust_1",
+		"particle/small_gust_2",
+		"particle/small_gust_3",
+		"particle/small_gust_4",
+		"particle/small_gust_5",
+		"particle/small_gust_6",
 		"particle/sonic_boom_0",
 		"particle/sonic_boom_1",
 		"particle/sonic_boom_2",
@@ -8771,7 +9176,19 @@
 		"particle/sweep_4",
 		"particle/sweep_5",
 		"particle/sweep_6",
-		"particle/sweep_7"
+		"particle/sweep_7",
+		"particle/trial_omen",
+		"particle/trial_spawner_detection_0",
+		"particle/trial_spawner_detection_1",
+		"particle/trial_spawner_detection_2",
+		"particle/trial_spawner_detection_3",
+		"particle/trial_spawner_detection_4",
+		"particle/trial_spawner_detection_ominous_0",
+		"particle/trial_spawner_detection_ominous_1",
+		"particle/trial_spawner_detection_ominous_2",
+		"particle/trial_spawner_detection_ominous_3",
+		"particle/trial_spawner_detection_ominous_4",
+		"particle/vault_connection"
 	],
 	"particles": [
 		{
@@ -8814,6 +9231,12 @@
 			"frames": 8
 		},
 		{
+			"name": "gust",
+			"texture": "particle/gust",
+			"frames": 12,
+			"size": 32
+		},
+		{
 			"name": "sculk_charge",
 			"texture": "particle/sculk_charge",
 			"frames": 7,
@@ -8836,6 +9259,12 @@
 			"texture": "particle/sga",
 			"frames": 26,
 			"letter_suffix": true
+		},
+		{
+			"name": "small_gust",
+			"texture": "particle/small_gust",
+			"frames": 7,
+			"size": 16
 		},
 		{
 			"name": "sonic_boom",
@@ -8869,6 +9298,16 @@
 			"texture": "particle/sweep",
 			"frames": 8,
 			"size": 32
+		},
+		{
+			"name": "trial_spawner_detection",
+			"texture": "particle/trial_spawner_detection",
+			"frames": 5
+		},
+		{
+			"name": "trial_spawner_detection_ominous",
+			"texture": "particle/trial_spawner_detection_ominous",
+			"frames": 5
 		},
 		{
 			"name": "angry",
@@ -8908,8 +9347,7 @@
 		},
 		{
 			"name": "flash",
-			"texture": "particle/flash",
-			"size": 32
+			"texture": "particle/flash"
 		},
 		{
 			"name": "glint",
@@ -8924,6 +9362,10 @@
 			"texture": "particle/heart"
 		},
 		{
+			"name": "infested",
+			"texture": "particle/infested"
+		},
+		{
 			"name": "lava",
 			"texture": "particle/lava"
 		},
@@ -8936,8 +9378,24 @@
 			"texture": "particle/note"
 		},
 		{
+			"name": "ominous_spawning",
+			"texture": "particle/ominous_spawning"
+		},
+		{
+			"name": "raid_omen",
+			"texture": "particle/raid_omen"
+		},
+		{
 			"name": "soul_fire_flame",
 			"texture": "particle/soul_fire_flame"
+		},
+		{
+			"name": "trial_omen",
+			"texture": "particle/trial_omen"
+		},
+		{
+			"name": "vault_connection",
+			"texture": "particle/vault_connection"
 		}
 	],
 	"biomes": [
@@ -9274,23 +9732,27 @@
 		{
 			"name": "potion",
 			"colors": [
-				{ "name": "water", "value": "#395FCA" },
-				{ "name": "night_vision", "value": "#2020A4" },
-				{ "name": "invisibility", "value": "#818595" },
-				{ "name": "leaping", "value": "#23FC4D" },
-				{ "name": "fire_resistance", "value": "#E89D3B" },
-				{ "name": "swiftness", "value": "#7EB2CA" },
-				{ "name": "slowness", "value": "#5C6E83" },
-				{ "name": "turtle_master", "value": "#775D64" },
-				{ "name": "water_breathing", "value": "#2F549C" },
-				{ "name": "healing", "value": "#FC2524" },
-				{ "name": "harming", "value": "#440A09" },
-				{ "name": "poison", "value": "#4F9632" },
-				{ "name": "regeneration", "value": "#D15EAE" },
-				{ "name": "strength", "value": "#962524" },
-				{ "name": "weakness", "value": "#494E49" },
-				{ "name": "luck", "value": "#349C00" },
-				{ "name": "slow_falling", "value": "#FCF4D5" }
+				{ "name": "water", "value": "#385DC6" },
+				{ "name": "night_vision", "value": "#C2FF66" },
+				{ "name": "invisibility", "value": "#F6F6F6" },
+				{ "name": "leaping", "value": "#FDFF84" },
+				{ "name": "fire_resistance", "value": "#FF9900" },
+				{ "name": "swiftness", "value": "#33EBFF" },
+				{ "name": "slowness", "value": "#8BAFE0" },
+				{ "name": "turtle_master", "value": "#8B80E3" },
+				{ "name": "water_breathing", "value": "#98DAC0" },
+				{ "name": "healing", "value": "#F82423" },
+				{ "name": "harming", "value": "#A9656A" },
+				{ "name": "poison", "value": "#87A363" },
+				{ "name": "regeneration", "value": "#CD5CAB" },
+				{ "name": "strength", "value": "#FFC700" },
+				{ "name": "weakness", "value": "#484D48" },
+				{ "name": "luck", "value": "#59C106" },
+				{ "name": "slow_falling", "value": "#F3CFB9" },
+				{ "name": "infested", "value": "#8C9B8C" },
+				{ "name": "oozing", "value": "#99FFA3" },
+				{ "name": "weaving", "value": "#78695A" },
+				{ "name": "wind_charged", "value": "#BDC9FF" }
 			]
 		},
 		{
@@ -9480,7 +9942,9 @@
 		["flower", "flo"],
 		["mojang", "moj"],
 		["globe", "glb"],
-		["piglin", "pig"]
+		["piglin", "pig"],
+		["flow"],
+		["guster"]
 	],
 	"sherds": {
 		"minecraft:brick": "none",
@@ -9492,7 +9956,9 @@
 		"minecraft:burn_pottery_sherd": "burn",
 		"minecraft:danger_pottery_sherd": "danger",
 		"minecraft:explorer_pottery_sherd": "explorer",
+		"minecraft:flow_pottery_sherd": "flow",
 		"minecraft:friend_pottery_sherd": "friend",
+		"minecraft:guster_pottery_sherd": "guster",
 		"minecraft:heart_pottery_sherd": "heart",
 		"minecraft:heartbreak_pottery_sherd": "heartbreak",
 		"minecraft:howl_pottery_sherd": "howl",
@@ -9500,6 +9966,7 @@
 		"minecraft:mourner_pottery_sherd": "mourner",
 		"minecraft:plenty_pottery_sherd": "plenty",
 		"minecraft:prize_pottery_sherd": "prize",
+		"minecraft:scrape_pottery_sherd": "sheaf",
 		"minecraft:sheaf_pottery_sherd": "sheaf",
 		"minecraft:shelter_pottery_sherd": "shelter",
 		"minecraft:skull_pottery_sherd": "skull",
@@ -9507,9 +9974,11 @@
 	},
 	"armor": {
 		"pattern": [
+			"bolt",
 			"coast",
 			"dune",
 			"eye",
+			"flow",
 			"host",
 			"raiser",
 			"rib",

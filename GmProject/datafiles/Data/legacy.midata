@@ -477,7 +477,7 @@
 		"31": {
 			"data": {
 				"0": "id=minecraft:dead_bush",
-				"1": "id=minecraft:grass",
+				"1": "id=minecraft:short_grass",
 				"2": "id=minecraft:fern"
 			}
 		},
@@ -2970,7 +2970,7 @@
 		"block/lily_pad": "block/waterlily",
 		"block/sugar_cane": "block/reeds",
 		"block/cobweb": "block/web",
-		"block/grass": "block/tallgrass",
+		"block/short_grass": "block/tallgrass",
 		"block/dead_bush": "block/deadbush",
 		"block/brown_mushroom": "block/mushroom_brown",
 		"block/red_mushroom": "block/mushroom_red",
@@ -4324,8 +4324,18 @@
 		"cobblestone_wall": "wall",
 		"grass_path": "dirt_path",
 		"target_block": "target",
-		"jigsaw_block": "jigsaw",
-		"grass": "short_grass"
+		"jigsaw_block": "jigsaw"
+	},
+	"legacy_block_states":
+	{
+	},
+	"legacy_block_state_values":
+	{
+		"grass": {
+			"type": {
+				"grass": "short_grass"
+			}
+		}
 	},
 	"legacy_particles":
 	{

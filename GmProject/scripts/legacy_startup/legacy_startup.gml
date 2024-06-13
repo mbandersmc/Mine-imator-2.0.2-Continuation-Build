@@ -8,7 +8,7 @@ function legacy_startup()
 	globalvar legacy_block_set, legacy_block_id, legacy_block_obj, legacy_block_state_vars, legacy_block_state_id, legacy_block_mc_id;
 	globalvar legacy_block_texture_name_map, legacy_block_05_texture_list, legacy_block_07_demo_texture_list, legacy_block_100_texture_list;
 	globalvar legacy_item_texture_name_map;
-	globalvar legacy_biomes_map, legacy_biomes_ids_map, biomes_ids_map, legacy_model_names_map, legacy_model_states_map, legacy_model_state_values_map, legacy_block_names_map, legacy_particles_map;
+	globalvar legacy_biomes_map, legacy_biomes_ids_map, biomes_ids_map, legacy_model_names_map, legacy_model_states_map, legacy_model_state_values_map, legacy_block_names_map, legacy_block_states_map, legacy_block_state_values_map, legacy_particles_map;
 	
 	var map = json_load(legacy_file);
 	if (!ds_map_valid(map))
@@ -79,6 +79,11 @@ function legacy_startup()
 	
 	// Block names
 	legacy_block_names_map = map[?"legacy_block_names"]
+	
+	// Block states
+	legacy_block_states_map = map[?"legacy_block_states"]
+	
+	legacy_block_state_values_map = map[?"legacy_block_state_values"]
 	
 	// Particles
 	legacy_particles_map = map[?"legacy_particles"]

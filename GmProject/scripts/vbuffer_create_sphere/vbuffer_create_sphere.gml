@@ -1,11 +1,12 @@
-/// vbuffer_create_sphere(radius, tex1, tex2, detail, invert)
+/// vbuffer_create_sphere(radius, tex1, tex2, detail, smooth, invert)
 /// @arg radius
 /// @arg tex1
 /// @arg tex2
 /// @arg detail
+/// @arg smooth
 /// @arg invert
 
-function vbuffer_create_sphere(rad, tex1, tex2, detail, invert)
+function vbuffer_create_sphere(rad, tex1, tex2, detail, smooth, invert)
 {
 	vbuffer_start()
 	
@@ -58,6 +59,27 @@ function vbuffer_create_sphere(rad, tex1, tex2, detail, invert)
 			y4 = n4y * rad
 			z4 = n4z * rad
 			
+			if (!smooth)
+			{
+				var normx, normy, normz;
+				normx = (n1x + n2x + n3x + n4x) / 4
+				normy = (n1y + n2y + n3y + n4y) / 4
+				normz = (n1z + n2z + n3z + n4z) / 4
+			
+				n1x = normx
+				n2x = normx
+				n3x = normx
+				n4x = normx
+				n1y = normy
+				n2y = normy
+				n3y = normy
+				n4y = normy
+				n1z = normz
+				n2z = normz
+				n3z = normz
+				n4z = normz
+			}
+		
 			if (jp > 0) 
 			{
 				if (invert)

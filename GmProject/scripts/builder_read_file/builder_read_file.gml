@@ -434,7 +434,7 @@ function builder_read_schematic_blocks()
 			if (block.timeline)
 				sch_timeline_amount++
 		}
-							
+					
 		buffer_write(block_obj, buffer_u16, blockid)
 		buffer_write(block_state_id, buffer_u16, stateid)
 		buffer_write(block_waterlogged, buffer_u8, waterlogged)

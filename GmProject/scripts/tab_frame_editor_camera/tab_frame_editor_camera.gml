@@ -112,7 +112,7 @@ function tab_frame_editor_camera()
 		tab_collapse_end()
 	}
 	
-	// Rotate point
+	// Rotate around point
 	tab_control_switch()
 	draw_button_collapse("rotatepoint", collapse_map[?"rotatepoint"], action_tl_frame_cam_rotate, tl_edit.value[e_value.CAM_ROTATE], "frameeditorcamerarotate")
 	tab_next()
@@ -472,9 +472,10 @@ function tab_frame_editor_camera()
 		tab_collapse_end()
 	}
 	
-	// Chromatic aberration (Advanced mode only)
+	// Advanced mode only
 	if (setting_advanced_mode)
 	{
+		// Chromatic aberration
 		tab_control_switch()
 		draw_button_collapse("ca", collapse_map[?"ca"], action_tl_frame_cam_ca, tl_edit.value[e_value.CAM_CA], "frameeditorcameraca")
 		tab_next()
@@ -501,11 +502,8 @@ function tab_frame_editor_camera()
 			
 			tab_collapse_end()
 		}
-	}
-	
-	// Distort (Advanced mode only)
-	if (setting_advanced_mode)
-	{
+		
+		// Distort
 		tab_control_switch()
 		draw_button_collapse("distort", collapse_map[?"distort"], action_tl_frame_cam_distort, tl_edit.value[e_value.CAM_DISTORT], "frameeditorcameradistort")
 		tab_next()
