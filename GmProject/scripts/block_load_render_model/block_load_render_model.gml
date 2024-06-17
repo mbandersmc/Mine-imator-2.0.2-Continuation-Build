@@ -9,7 +9,7 @@
 
 function block_load_render_model(model, rot, uvlock, opaque, wei, res = null)
 {
-	var rotmat, modelstate, colY, alphaY, colZ, alphaZ
+	var rotmat, modelstate, colY, alphaY, colZ, alphaZ;
 	
 	// Get 
 	if (res = null)
@@ -119,6 +119,8 @@ function block_load_render_model(model, rot, uvlock, opaque, wei, res = null)
 						matrix = matrix_multiply(elem.matrix, rotmat)
 					else if (rot[X] > 0 || rot[Z] > 0)
 					{
+						var facerot = rot;
+						
 						// Rotate points
 						from = point3D_mul_matrix(elem.from, rotmat)
 						to = point3D_mul_matrix(elem.to, rotmat)
@@ -127,11 +129,11 @@ function block_load_render_model(model, rot, uvlock, opaque, wei, res = null)
 						{
 							var mi = min(from[a], to[a]);
 							var ma = max(from[a], to[a]);
-							from[a] = snap(mi, 0.01)
-							to[a] = snap(ma, 0.01)
+							from[a] = snap(mi, 0.002)
+							to[a] = snap(ma, 0.002)
 						}
 						
-						// Invert fix
+						// Invert fixes
 						var swap;
 						for (var a = X; a <= Z; a++)
 						{
@@ -143,8 +145,12 @@ function block_load_render_model(model, rot, uvlock, opaque, wei, res = null)
 							to[a] = swap
 						}
 						
+						// Invert rotation
+						if (elem.size[X] < 0 || elem.size[Y] < 0)
+							facerot[Z] = mod_fix(-facerot[Z], 360)
+						
 						// Shift face references (clockwise, Z -> X)
-						repeat (rot[Z] / 90)
+						repeat (facerot[Z] / 90)
 						{
 							var eastrotdir = facenewdir[e_dir.EAST];
 							facenewdir[e_dir.EAST] = facenewdir[e_dir.SOUTH]
@@ -153,7 +159,7 @@ function block_load_render_model(model, rot, uvlock, opaque, wei, res = null)
 							facenewdir[e_dir.NORTH] = eastrotdir
 						}
 						
-						repeat (rot[X] / 90)
+						repeat (facerot[X] / 90)
 						{
 							var uprotdir = facenewdir[e_dir.UP];
 							facenewdir[e_dir.UP] = facenewdir[e_dir.NORTH]
@@ -163,12 +169,12 @@ function block_load_render_model(model, rot, uvlock, opaque, wei, res = null)
 						}
 						
 						// Rotate UV by shape rotation
-						switch (rot[X])
+						switch (facerot[X])
 						{
 							case 0:
 							{
-								faceuvrot[e_dir.UP] = rot[Z]
-								faceuvrot[e_dir.DOWN] = -rot[Z]
+								faceuvrot[e_dir.UP] = facerot[Z]
+								faceuvrot[e_dir.DOWN] = -facerot[Z]
 								break
 							}
 							
@@ -177,8 +183,8 @@ function block_load_render_model(model, rot, uvlock, opaque, wei, res = null)
 								faceuvrot[facenewdir[e_dir.EAST]] = 90
 								faceuvrot[facenewdir[e_dir.WEST]] = -90
 								faceuvrot[facenewdir[e_dir.UP]] = 180
-								faceuvrot[e_dir.UP] = rot[Z]
-								faceuvrot[e_dir.DOWN] = 180 - rot[Z]
+								faceuvrot[e_dir.UP] = facerot[Z]
+								faceuvrot[e_dir.DOWN] = 180 - facerot[Z]
 								break
 							}
 							
@@ -188,8 +194,8 @@ function block_load_render_model(model, rot, uvlock, opaque, wei, res = null)
 								faceuvrot[e_dir.WEST] = 180
 								faceuvrot[e_dir.SOUTH] = 180
 								faceuvrot[e_dir.NORTH] = 180
-								faceuvrot[e_dir.UP] = rot[Z]
-								faceuvrot[e_dir.DOWN] = -rot[Z]
+								faceuvrot[e_dir.UP] = facerot[Z]
+								faceuvrot[e_dir.DOWN] = -facerot[Z]
 								break
 							}
 							
@@ -198,8 +204,8 @@ function block_load_render_model(model, rot, uvlock, opaque, wei, res = null)
 								faceuvrot[facenewdir[e_dir.EAST]] = -90
 								faceuvrot[facenewdir[e_dir.WEST]] = 90
 								faceuvrot[facenewdir[e_dir.DOWN]] = 180
-								faceuvrot[e_dir.UP] = 180 + rot[Z]
-								faceuvrot[e_dir.DOWN] = -rot[Z]
+								faceuvrot[e_dir.UP] = 180 + facerot[Z]
+								faceuvrot[e_dir.DOWN] = -facerot[Z]
 								break
 							}
 						}
