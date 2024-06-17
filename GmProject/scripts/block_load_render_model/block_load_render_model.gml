@@ -131,6 +131,18 @@ function block_load_render_model(model, rot, uvlock, opaque, wei, res = null)
 							to[a] = snap(ma, 0.01)
 						}
 						
+						// Invert fix
+						var swap;
+						for (var a = X; a <= Z; a++)
+						{
+							if (elem.size[a] > 0)
+								continue
+							
+							swap = from[a]
+							from[a] = to[a]
+							to[a] = swap
+						}
+						
 						// Shift face references (clockwise, Z -> X)
 						repeat (rot[Z] / 90)
 						{
@@ -323,6 +335,18 @@ function block_load_render_model(model, rot, uvlock, opaque, wei, res = null)
 						while (string_char_at(texname, 1) = "#") // Fetch from map
 						{
 							texname = string_delete(texname, 1, 1)
+							if (is_undefined(texturemap[?texname]))
+							{
+								log("Could not find block texture", texname)
+								texname = ""
+								break
+							}
+							texname = texturemap[?texname]
+						}
+						
+						// All?
+						if (texname = "all")
+						{
 							if (is_undefined(texturemap[?texname]))
 							{
 								log("Could not find block texture", texname)
