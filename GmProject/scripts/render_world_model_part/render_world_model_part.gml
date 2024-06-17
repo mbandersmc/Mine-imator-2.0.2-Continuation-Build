@@ -62,6 +62,10 @@ function render_world_model_part(part, res, texnamemap, shapevbuffermap, colorna
 			
 			render_set_texture(model_part_shape_tex[s])
 			
+			render_set_uniform_vec2("uTextureOffset",
+									(app.background_time / 60) * shape.texture_scroll_speed * sin(degtorad(shape.texture_scroll_direction)),
+									(app.background_time / 60) * shape.texture_scroll_speed * cos(degtorad(shape.texture_scroll_direction)))
+			
 			render_set_uniform_int("uMaterialFormat", model_part_shape_material_res[s])
 			
 			if (model_part_shape_tex_material[s] = null)

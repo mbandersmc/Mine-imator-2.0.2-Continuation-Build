@@ -85,6 +85,9 @@ function shader_use()
 	// Texture drawing
 	render_set_uniform("uMask", bool_to_float(shader_mask))
 	
+	if (!is_undefined(uniform_map[?"uTextureOffset"]) && uniform_map[?"uTextureOffset"] > -1)
+		render_set_uniform_vec2("uTextureOffset", 0, 0)
+	
 	// Init script
 	if (script > -1)
 		script_execute(script)
