@@ -395,7 +395,15 @@ function res_load_pack_block_sheet(type, suffix)
 				ds_list_add(block_sheet_depth_list, e_block_depth.DEPTH1)
 				continue
 			}
-		
+			
+			// 'nocull' tag to prevent culling of blocks in case alpha sampling fails for transparent textures
+			var nocull = string_contains(mc_assets.block_texture_list[|t], "nocull");
+			if (nocull)
+			{
+				ds_list_add(block_sheet_depth_list, e_block_depth.DEPTH1)
+				continue
+			}
+			
 			var bx, by, dep;
 			bx = (t mod block_sheet_width) * blocksize
 			by = (t div block_sheet_width) * blocksize
