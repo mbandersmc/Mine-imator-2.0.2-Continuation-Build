@@ -26,6 +26,7 @@ function res_load_pack_block_sheet(type, suffix)
 	{
 		var name, fname;
 		name = string_replace(mc_assets.block_texture_list[|t], " opaque", "")
+		name = string_replace(name, " nocull", "")
 		name = string_replace(name, " noalpha", "")
 		fname = load_assets_dir + mc_textures_directory + name + suffix + ".png"
 		
@@ -397,7 +398,7 @@ function res_load_pack_block_sheet(type, suffix)
 			}
 			
 			// 'nocull' tag to prevent culling of blocks in case alpha sampling fails for transparent textures
-			var nocull = string_contains(mc_assets.block_texture_list[|t], "nocull");
+			var nocull = string_contains(mc_assets.block_texture_list[|t], " nocull");
 			if (nocull)
 			{
 				ds_list_add(block_sheet_depth_list, e_block_depth.DEPTH1)

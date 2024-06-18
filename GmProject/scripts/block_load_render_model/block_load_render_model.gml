@@ -400,6 +400,8 @@ function block_load_render_model(model, rot, uvlock, opaque, wei, res = null)
 							if (slot < 0)
 								slot = ds_list_find_index(mc_assets.block_texture_list, texname + " noalpha")
 							if (slot < 0)
+								slot = ds_list_find_index(mc_assets.block_texture_list, texname + " nocull")
+							if (slot < 0)
 								slot = ds_list_find_index(mc_assets.block_texture_list, texname)
 							
 							if (slot < 0) // Not in static sheet, is it animated?
@@ -413,6 +415,9 @@ function block_load_render_model(model, rot, uvlock, opaque, wei, res = null)
 								
 								if (slot < 0)
 									slot = ds_list_find_index(mc_assets.block_texture_ani_list, texname + " opaque")
+								
+								if (slot < 0)
+									slot = ds_list_find_index(mc_assets.block_texture_ani_list, texname + " nocull")
 								
 								if (slot < 0) // Missing texture, skip face
 								{

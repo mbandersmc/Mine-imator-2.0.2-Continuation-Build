@@ -5,7 +5,7 @@
 		"locale": "en-US",
 		"translator": "David, Nimi, mbanders",
 		"forversion": "2.0.2 Continuation Build 1.0.4",
-		"lastchange": "2024.06.13"
+		"lastchange": "2024.06.18"
 	},
 	"particle/": {
 		"default": "Default spawner",
@@ -1413,6 +1413,8 @@
 			"wind_1": "Wind 1",
 			"wind_2": "Wind 2",
 			"wind_3": "Wind 3",
+			"charge": "Charge",
+			"spit": "Spit",
 			"mushroom_1": "Mushroom 1",
 			"mushroom_2": "Mushroom 2",
 			"mushroom_3": "Mushroom 3"

@@ -1280,6 +1280,14 @@
 			"file": "shulker_spark.mimodel"
 		},
 		{
+			"name": "llama_spit",
+			"file": "llama_spit.mimodel"
+		},
+		{
+			"name": "wind_charge",
+			"file": "wind_charge.mimodel"
+		},
+		{
 			"name": "trident",
 			"file": "trident.mimodel"
 		},
@@ -6083,7 +6091,10 @@
 					{ "value": "waxed_oxidized_copper_bulb", "file": "waxed_oxidized_copper_bulb.json" }
 				],
 				"powered": [ "false", "true" ],
-				"lit": [ "false", "true" ]
+				"lit": [
+					{ "value": "false" },
+					{ "value": "true", "emissive": 0.5 }
+				]
 			},
 			"default_state": "variant=copper_bulb,powered=false,lit=false",
 			"id": {
@@ -6748,6 +6759,7 @@
 		"entity/projectiles/arrow",
 		"entity/projectiles/spectral_arrow",
 		"entity/projectiles/tipped_arrow",
+		"entity/projectiles/wind_charge",
 		"entity/rabbit/black",
 		"entity/rabbit/brown",
 		"entity/rabbit/caerbannog",
