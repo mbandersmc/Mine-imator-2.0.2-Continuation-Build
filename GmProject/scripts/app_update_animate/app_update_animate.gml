@@ -134,7 +134,7 @@ function app_update_animate()
 	// Spawn particles
 	for (var i = 0; i < array_length(spawnerarr); i++)
 		with (spawnerarr[i])
-			particle_spawner_update(spawnerarr)
+			particle_spawner_update(spawnerarr[i])
 	
 	// Clear cached IK tl IDs (In case of removal, etc. tl_update_matrix will re-generate)
 	project_ik_part_array = null
