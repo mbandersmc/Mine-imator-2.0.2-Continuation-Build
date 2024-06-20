@@ -4,10 +4,11 @@
 function app_update_animate()
 {
 	// Go through timelines
-	var bgobject, updatevalues, cameraarr;
+	var bgobject, updatevalues, cameraarr, spawnerarr;
 	updatevalues = (timeline_marker_previous != timeline_marker)
 	bgobject = null
-	cameraarr = array()
+	cameraarr = []
+	spawnerarr = []
 	background_light_amount = 1
 	background_light_data[0] = 0
 	background_sun_direction = vec3(0)
@@ -79,7 +80,7 @@ function app_update_animate()
 		
 		// Update spawner
 		if (type = e_temp_type.PARTICLE_SPAWNER)
-			particle_spawner_update(id)
+			array_add(spawnerarr, id)
 		
 		// Find background changer
 		if (type = e_tl_type.BACKGROUND && value_inherit[e_value.VISIBLE] && !hide)
@@ -129,6 +130,11 @@ function app_update_animate()
 		with (app)
 			tl_update_matrix(true)
 	}
+	
+	// Spawn particles
+	for (var i = 0; i < array_length(spawnerarr); i++)
+		with (spawnerarr[i])
+			particle_spawner_update(spawnerarr)
 	
 	// Clear cached IK tl IDs (In case of removal, etc. tl_update_matrix will re-generate)
 	project_ik_part_array = null
