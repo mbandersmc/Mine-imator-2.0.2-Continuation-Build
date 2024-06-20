@@ -134,19 +134,22 @@ function block_load_render_model(model, rot, uvlock, opaque, wei, res = null)
 						}
 						
 						// Invert fixes
-						var swap;
-						for (var a = X; a <= Z; a++)
+						if (abs(elem.volume) > 0)
 						{
-							if (elem.size[a] > 0)
-								continue
+							var swap;
+							for (var a = X; a <= Z; a++)
+							{
+								if (elem.size[a] > 0)
+									continue
 							
-							swap = from[a]
-							from[a] = to[a]
-							to[a] = swap
+								swap = from[a]
+								from[a] = to[a]
+								to[a] = swap
+							}
 						}
 						
 						// Invert rotation
-						if (elem.size[X] < 0 || elem.size[Y] < 0)
+						if ((elem.size[X] < 0 || elem.size[Y] < 0) && elem.size[Z] > 0)
 							facerot[Z] = mod_fix(-facerot[Z], 360)
 						
 						// Shift face references (clockwise, Z -> X)
