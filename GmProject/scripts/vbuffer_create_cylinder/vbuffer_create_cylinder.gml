@@ -56,8 +56,7 @@ function vbuffer_create_cylinder(rad, tex1, tex2, thflip, tvflip, detail, smooth
 		if (closed)
 		{
 			 // Bottom
-			if (mapped)
-				texmid[X] = 5 / 6
+			texmid[X] = mapped ? 5 / 6 : 0.5
 			
 			vbuffer_add_triangle(0, 0, -rad, x1, y1, -rad, x2, y2, -rad, 
 									texmid[X], texmid[Y], 
@@ -65,8 +64,7 @@ function vbuffer_create_cylinder(rad, tex1, tex2, thflip, tvflip, detail, smooth
 									texmid[X] + cos(i * pi * 2) * (texsize[X] / 2), texmid[Y] + sin(i * pi * 2) * (texsize[Y] / 2), invert)
 			
 			// Top
-			if (mapped)
-				texmid[X] = 0.5
+			texmid[X] = 0.5
 			
 			vbuffer_add_triangle(0, 0, rad, x2, y2, rad, x1, y1, rad, 
 									texmid[X], texmid[Y], 

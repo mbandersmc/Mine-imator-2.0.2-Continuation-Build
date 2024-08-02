@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "action_tl_path_shape_tube",
+  "name": "action_tl_path_shape_tex_mapped",
   "isDnD": false,
   "isCompatibility": false,
   "parent": {

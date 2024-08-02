@@ -70,6 +70,6 @@ function tab_frame_editor_text()
 	// Text
 	tab_control_textfield(true, 76)
 	tab.text.tbx_text.text = tl_edit.value[e_value.TEXT]
-	draw_textfield("timelineeditortext", dx, dy, dw, 76, tab.text.tbx_text, action_tl_frame_text, tl_edit.text, "top")
+	draw_textfield("frameeditortexttext", dx, dy, dw, 76, tab.text.tbx_text, action_tl_frame_text, tl_edit.text, "top")
 	tab_next()
 }

@@ -141,7 +141,6 @@ function app_event_http()
 							
 							toast_new(e_toast.INFO, text)
 							toast_add_action(button, popup_open_url, buttonurl)
-							toast_add_action("alertclose", toast_set_close, toast_last)
 							toast_last.dismiss_time = no_limit
 							toast_last.iid = iid
 						}

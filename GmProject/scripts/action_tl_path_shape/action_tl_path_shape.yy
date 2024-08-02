@@ -1,7 +1,7 @@
 {
   "resourceType": "GMScript",
   "resourceVersion": "1.0",
-  "name": "action_tl_path_shape_generate",
+  "name": "action_tl_path_shape",
   "isDnD": false,
   "isCompatibility": false,
   "parent": {

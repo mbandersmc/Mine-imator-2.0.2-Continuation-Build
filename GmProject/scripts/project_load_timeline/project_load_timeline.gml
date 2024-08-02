@@ -228,17 +228,32 @@ function project_load_timeline(map)
 		var pathmap = map[?"path"];
 		if (ds_map_valid(pathmap))
 		{
-			path_smooth = value_get_real(pathmap[?"smooth"], path_smooth)
 			path_closed = value_get_real(pathmap[?"closed"], path_closed)
+			path_smooth = value_get_real(pathmap[?"smooth"], path_smooth)
 			path_detail = value_get_real(pathmap[?"detail"], path_detail)
-			path_shape_generate = value_get_real(pathmap[?"shape_generate"], path_shape_generate)
+			path_shape = value_get_string(pathmap[?"shape"], path_shape)
 			path_shape_radius = value_get_real(pathmap[?"shape_radius"], path_shape_radius)
-			path_shape_tex_length = value_get_real(pathmap[?"shape_tex_length"], path_shape_tex_length)
 			path_shape_invert = value_get_real(pathmap[?"shape_invert"], path_shape_invert)
-			path_shape_tube = value_get_real(pathmap[?"shape_tube"], path_shape_tube)
-			path_shape_detail = value_get_real(pathmap[?"shape_detail"], path_shape_detail)
 			path_shape_smooth_segments = value_get_real(pathmap[?"shape_smooth_segments"], path_shape_smooth_segments)
 			path_shape_smooth_ring = value_get_real(pathmap[?"shape_smooth_ring"], path_shape_smooth_ring)
+			path_shape_detail = value_get_real(pathmap[?"shape_detail"], path_shape_detail)
+			path_shape_tex_mapped = value_get_real(pathmap[?"shape_tex_mapped"], path_shape_tex_mapped)
+			path_shape_tex_length = value_get_real(pathmap[?"shape_tex_length"], path_shape_tex_length)
+			
+			if (load_format < e_project.FORMAT_CTB_106)
+			{
+				path_shape_tex_mapped = true
+				
+				if (!value_get_real(pathmap[?"shape_generate"], false))
+				{
+					path_shape = "none"
+					path_shape_tex_mapped = false
+				}
+				else if (value_get_real(pathmap[?"shape_tube"], false))
+					path_shape = "tube"
+				else
+					path_shape = "flat"
+			}
 		}
 	}
 }

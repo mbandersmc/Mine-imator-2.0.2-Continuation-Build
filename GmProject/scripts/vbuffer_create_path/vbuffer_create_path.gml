@@ -4,14 +4,15 @@
 
 function vbuffer_create_path(path, small = false)
 {
-	var points, radius, detail, closed, rail, texlength, invert;
-	points = path.path_table
-	radius = path.path_shape_radius
-	detail = path.path_shape_detail
+	var points, radius, detail, closed, rail, texlength, invert, mapped;
 	closed = path.path_closed
-	rail = !path.path_shape_tube
-	texlength = path.path_shape_tex_length
+	points = path.path_table
+	rail = path.path_shape = "flat"
+	radius = path.path_shape_radius
 	invert = path.path_shape_invert
+	detail = path.path_shape_detail
+	texlength = path.path_shape_tex_length
+	mapped = path.path_shape_tex_mapped
 	
 	// Create mesh for clicking path(for selection) where a shape isn't set to be used in timeline
 	if (small)
@@ -111,10 +112,13 @@ function vbuffer_create_path(path, small = false)
 				t4 = vec2(j, length / texlength)
 			}
 			
-			t1[X] /= 3
-			t2[X] /= 3
-			t3[X] /= 3
-			t4[X] /= 3
+			if (mapped)
+			{
+				t1[X] /= 3
+				t2[X] /= 3
+				t3[X] /= 3
+				t4[X] /= 3
+			}
 			
 			nn1 = n1
 			nn2 = n2
@@ -179,9 +183,12 @@ function vbuffer_create_path(path, small = false)
 				t2 = [(cos((j + .25) * pi * 2) + 1)/2, (sin((j + .25) * pi * 2) + 1)/2]
 				t3 = [.5, .5]
 				
-				t1[X] = (t1[X] / 3) + (1/3)
-				t2[X] = (t2[X] / 3) + (1/3)
-				t3[X] = (t3[X] / 3) + (1/3)
+				if (mapped)
+				{
+					t1[X] = (t1[X] / 3) + (1/3)
+					t2[X] = (t2[X] / 3) + (1/3)
+					t3[X] = (t3[X] / 3) + (1/3)
+				}
 				
 				// Beginning
 				if (i = 0)
@@ -195,9 +202,12 @@ function vbuffer_create_path(path, small = false)
 				// End
 				if (i = (array_length(points) - 2))
 				{
-					t1[X] += (1/3)
-					t2[X] += (1/3)
-					t3[X] += (1/3)
+					if (mapped)
+					{
+						t1[X] += (1/3)
+						t2[X] += (1/3)
+						t3[X] += (1/3)
+					}
 					
 					if (invert)
 						vbuffer_add_triangle(p3, points[i + 1], p4, t1, t3, t2)
@@ -211,7 +221,7 @@ function vbuffer_create_path(path, small = false)
 			n1 = n2
 			n3 = n4
 		}
-		
+	
 	}
 	
 	return vbuffer_done()

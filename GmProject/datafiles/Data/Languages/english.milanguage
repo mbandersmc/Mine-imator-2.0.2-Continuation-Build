@@ -5,7 +5,7 @@
 		"locale": "en-US",
 		"translator": "David, Nimi, mbanders",
 		"forversion": "2.0.2 Continuation Build 1.0.4",
-		"lastchange": "2024.06.18"
+		"lastchange": "2024.08.01"
 	},
 	"particle/": {
 		"default": "Default spawner",
@@ -314,8 +314,10 @@
 		"projectsaved": "Project saved successfully!",
 		"exportmovie": "Movie exporting finished!",
 		"exportmovieview": "View",
+		"exportmoviefolder": "Open folder",
 		"exportimage": "Render saved successfully!",
 		"exportimageview": "View",
+		"exportimagefolder": "Open folder",
 		"upgraded": "Level up! You are now using the Full version.",
 		"reloadobjects": "Reload affected objects to see setting changes.",
 		"restartprogram": "Restart Mine-imator to apply setting changes.",
@@ -375,7 +377,7 @@
 		"save": "Save",
  		"dontsave": "Don't save",
 		"cancel": "Cancel",
-		"replace": "A resource with this filename has already been added into the project. Do you want to replace it with the selected file?",
+		"replace": "A resource with the name '%1' has already been added into the project. Do you want to replace it with the selected file?",
 		"buffersizewarning": "WARNING: This setting may or may not crash the program when rendering. Only proceed if you think your graphics card and RAM can handle it.\nContinue?",
 		"qualitywarning": "WARNING: This setting may or may not slow down Mine-imator to an unusable state. Only proceed if you think your graphics card can handle it.\nContinue?",
 		"stoprender": "Are you sure you want to stop rendering?",
@@ -3064,7 +3066,8 @@
 			"directionalspeed": "Directional speed",
 			"directionalstrength": "Directional strength"
 		},
-		"textureanimationspeed": "Texture animation speed"
+		"textureanimationspeed": "Texture animation speed",
+		"textureanimationspeedfps": " fps"
 	},
 	"biome/": {
 		"custom": "Custom",
@@ -3343,18 +3346,21 @@
 			"smooth": "Smooth path",
 			"detail": "Detail",
 			"detailtip": "Higher values will result in better path accuracy, but are more performance intense.",
-			"shape": "Generate shape",
+			"shape": "Shape",
 			"shape/": {
+				"none": "None",
+				"flat": "Flat",
+				"tube": "Tube",
 				"radius": "Radius",
-				"texlength": "Texture length",
-				"texlengthtip": "The length the path texture should stretch for before repeating.",
 				"invert": "Invert",
-				"tube": "Tube shape",
-				"detail": "Shape detail",
 				"smoothsegments": "Smooth segments",
 				"smoothsegmentstip": "Enable smooth lighting along the direction of the path.",
 				"smoothring": "Smooth ring",
 				"smoothringtip": "Enable smooth lighting on the ring shape around the path.",
+				"detail": "Shape detail",
+				"texmapped": "Mapped texture",
+				"texlength": "Texture length",
+				"texlengthtip": "The length the path texture should stretch for before repeating.",
 				"savemap": "Export map"
 			}
 		}

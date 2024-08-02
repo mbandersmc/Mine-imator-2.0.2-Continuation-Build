@@ -55,10 +55,9 @@ function vbuffer_create_cone(rad, tex1, tex2, thflip, tvflip, detail, smooth, cl
 		
 		if (closed)
 		{
-			if (mapped)
-				texmid[X] = 0.75
-			
 			// Bottom
+			texmid[X] = mapped ? 0.75 : 0.5
+			
 			vbuffer_add_triangle(0, 0, -rad, x1, y1, -rad, x2, y2, -rad, 
 								texmid[X], texmid[Y], 
 								texmid[X] + cos(ip * pi * 2) * (texsize[X] / 2), texmid[Y] + sin(ip * pi * 2) * (texsize[Y] / 2), 

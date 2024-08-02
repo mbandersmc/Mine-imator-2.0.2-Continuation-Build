@@ -13,7 +13,7 @@ function export_update()
 		if (question(text_get("questionstoprender")))
 		{
 			if (window_state = "export_movie")
-				export_done_movie(true)
+				export_done_movie()
 			else if (window_state = "export_image")
 			{
 				surface_save_lib(export_surface, export_filename)

@@ -77,6 +77,14 @@ namespace CppProject
 		return str.Inserted(index, substr);
 	}
 
+	IntType string_last_pos(StringType substr, StringType str)
+	{
+		if (substr.IsEmpty())
+			return 0;
+
+		return str.LastIndexOf(substr) + 1LL;
+	}
+
 	IntType string_length(StringType str)
 	{
 		return str.GetLength();

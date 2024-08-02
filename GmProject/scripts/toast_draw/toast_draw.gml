@@ -84,20 +84,28 @@ function toast_draw(toast)
 			actiony += 32
 		}
 		
-		// Left border
+		// Left and right borders
 		if (multiaction)
+		{
 			draw_divide_vertical(dx, content_y + 1, content_height - 2)
-		
-		wid += capwid + (4 * !multiaction)
+			draw_divide_vertical(dx + capwid + 1, content_y + 1, content_height - 2)
+		}
+
+		// Close button
+		if (draw_button_icon(string(toast) + "close", dx + capwid + 8, content_y + (content_height/2) - 12, 24, 24, false, icons.CLOSE, null, false))
+			toast.remove = true
+
+		wid += capwid + 40
 		hei = multiaction ? ((ds_list_size(toast.actions)/3) * 32) : 40
 	}
-	else // Close button
+	else
 	{
-		if (draw_button_icon(string(toast) + "close", dx, dy, 24, 24, false, icons.CLOSE, null, false))
+		// Close button
+		if (draw_button_icon(string(toast) + "close", dx, content_y + (content_height/2) - 12, 24, 24, false, icons.CLOSE, null, false))
 			toast.remove = true
-		
-		hei = 40
+
 		wid += 32
+		hei = 40
 	}
 	
 	toast.toast_height = hei
