@@ -250,6 +250,8 @@ function render_world_tl()
 			render_set_texture(spr_default_normal, "Normal")
 		}
 		
+		render_set_uniform_vec2("uTextureOffset", 0, 0)
+		
 		switch (type)
 		{
 			case e_tl_type.BODYPART:
