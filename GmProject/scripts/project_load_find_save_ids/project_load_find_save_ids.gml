@@ -1,7 +1,7 @@
 /// project_load_find_save_ids()
 /// @desc Updates the references to objects within the project.
 
-function project_load_find_save_ids()
+function project_load_find_save_ids(isproject = true)
 {
 	// Look for legacy (numeric) or duplicate save IDs and create new if necessary
 	var key = ds_map_find_first(save_id_map);
@@ -274,7 +274,7 @@ function project_load_find_save_ids()
 	// Set marker IDs
 	with (obj_marker)
 	{
-		if (!loaded)
+		if (!loaded || !isproject)
 			continue
 		
 		if (!is_undefined(save_id_map[?load_id]))

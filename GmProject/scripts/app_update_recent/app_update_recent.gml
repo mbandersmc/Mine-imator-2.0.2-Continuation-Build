@@ -2,6 +2,6 @@
 
 function app_update_recent()
 {
-	if (recent_add_wait && window_busy = "")
+	if (recent_add_wait > 0 && window_busy = "")
 		recent_add()
 }

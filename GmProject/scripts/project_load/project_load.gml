@@ -105,6 +105,8 @@ function project_load()
 		buffer_delete(buffer_current)
 	}
 	
+	project_thumbnail_image = texture_create(project_folder + "/thumbnail.png")
+	
 	// Update project
 	project_load_find_save_ids()
 	project_load_update()
@@ -119,6 +121,6 @@ function project_load()
 		project_save()
 	}
 	
-	recent_add_wait = true
+	recent_add_wait = 1
 	return true
 }

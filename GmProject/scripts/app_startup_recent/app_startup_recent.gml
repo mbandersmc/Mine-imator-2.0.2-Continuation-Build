@@ -23,7 +23,7 @@ function app_startup_recent()
 	recent_scrollbar = new_obj(obj_scrollbar)
 	recent_scrollbar.snap_value = 44
 	
-	recent_add_wait = false
+	recent_add_wait = 0
 	
 	recent_load()
 }

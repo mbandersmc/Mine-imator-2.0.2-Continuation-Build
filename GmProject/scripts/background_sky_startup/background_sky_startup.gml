@@ -6,10 +6,10 @@ function background_sky_startup()
 	background_image_cube_vbuffer = null
 	background_image_cube_mapped_vbuffer = null
 	
-	var fogsurfw, fogsurfh;
-	fogsurfw = 1;
-	fogsurfh = 2048;
-	var fogsurf = surface_create(fogsurfw, fogsurfh)
+	var fogsurf, fogsurfw, fogsurfh;
+	fogsurfw = 1
+	fogsurfh = 2048
+	fogsurf = surface_create(fogsurfw, fogsurfh)
 	surface_set_target(fogsurf)
 	{
 		var fogy, fogh;

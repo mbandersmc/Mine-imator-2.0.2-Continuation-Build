@@ -24,6 +24,8 @@ function project_reset()
 	project_name = ""
 	project_author = ""
 	project_description = ""
+	project_custom_thumbnail = false
+	
 	project_video_width = 1280
 	project_video_height = 720
 	project_video_template = find_videotemplate(project_video_width, project_video_height)

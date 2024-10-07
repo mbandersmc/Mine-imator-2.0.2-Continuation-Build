@@ -28,7 +28,7 @@ function project_save()
 	if (!string_contains(filename_ext(fn), "backup"))
 	{
 		project_changed = false
-		recent_add_wait = true
+		recent_add_wait = 2
 	}
 	if (app.window_state = "startup")
 		project_reset()

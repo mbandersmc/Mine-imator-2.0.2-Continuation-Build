@@ -168,7 +168,7 @@ function action_tl_keyframes_load_file(fn, tl, insertpos, maxlen)
 	}
 	
 	// Update
-	project_load_find_save_ids()
+	project_load_find_save_ids(false)
 	
 	log("Loaded " + string(num) + " keyframes")
 	

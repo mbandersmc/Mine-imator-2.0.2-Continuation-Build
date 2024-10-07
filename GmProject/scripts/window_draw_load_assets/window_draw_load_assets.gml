@@ -62,16 +62,12 @@ function window_draw_load_assets()
 	// Splash
 	if (load_assets_splash != null)
 	{
-		var texwid, texhei;
+		// Scale down to fit
+		var texwid, texhei, texsca;
 		texwid = sprite_get_width(load_assets_splash)
 		texhei = sprite_get_height(load_assets_splash)
-		
-		// Too big for screen, scale down
-		var scale = 1
-		if (texwid > splashwid || texhei > screenhei)
-			scale = max(texwid / splashwid, texhei / screenhei)
-		
-		draw_sprite_ext(load_assets_splash, 0, xoff + 190 + ((splashwid / 2) - ((texwid / scale) / 2)), yoff + ((screenhei / 2) - ((texhei / scale) / 2)), 1 / scale, 1 / scale, 0, c_white, 1)
+		texsca = max(1, texwid / splashwid, texhei / screenhei)
+		draw_sprite_ext(load_assets_splash, 0, xoff + 190 + ((splashwid / 2) - ((texwid / texsca) / 2)), yoff + ((screenhei / 2) - ((texhei / texsca) / 2)), 1 / texsca, 1 / texsca, 0, c_white, 1)
 	}
 	
 	// Splash credits

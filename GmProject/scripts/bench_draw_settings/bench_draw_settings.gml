@@ -47,32 +47,28 @@ function bench_draw_settings(bx, by, bw, bh)
 			else
 				draw_tooltip_label("benchspotlighttip", icons.LIGHT_SPOT, e_toast.INFO)
 		}
-		
-		if (bench_settings.type = e_tl_type.CAMERA)
+		else if (bench_settings.type = e_tl_type.CAMERA)
 		{
 			draw_sprite(spr_bench_example, 5, dx, dy)
 			dy += 144 + 8
 			
 			draw_tooltip_label("benchcameratip", icons.INFO, e_toast.INFO)
 		}
-		
-		if (bench_settings.type = e_tl_type.BACKGROUND)
+		else if (bench_settings.type = e_tl_type.BACKGROUND)
 		{
 			draw_sprite(spr_bench_example, 4, dx, dy)
 			dy += 144 + 8
 			
 			draw_tooltip_label("benchbackgroundtip", icons.INFO, e_toast.INFO)
 		}
-		
-		if (bench_settings.type = e_tl_type.AUDIO)
+		else if (bench_settings.type = e_tl_type.AUDIO)
 		{
 			draw_sprite(spr_bench_example, 2, dx, dy)
 			dy += 144 + 8
 			
 			draw_tooltip_label("benchaudiotip", icons.INFO, e_toast.INFO)
 		}
-		
-		if (bench_settings.type = e_tl_type.PATH)
+		else if (bench_settings.type = e_tl_type.PATH)
 		{
 			draw_sprite(spr_bench_example, 3, dx, dy)
 			dy += 144 + 8
@@ -80,8 +76,8 @@ function bench_draw_settings(bx, by, bw, bh)
 			draw_tooltip_label("benchpathtip", icons.INFO, e_toast.INFO)
 		}
 		
-		if (bench_settings.type = e_tl_type.PATH_POINT)
-			draw_tooltip_label("benchpathpointtip", icons.INFO, e_toast.INFO)
+		//if (bench_settings.type = e_tl_type.PATH_POINT)
+		//	draw_tooltip_label("benchpathpointtip", icons.INFO, e_toast.INFO)
 	}
 	else
 	{

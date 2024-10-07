@@ -54,6 +54,19 @@ function debug_info_draw()
 	
 		if (dev_mode)
 		{
+			if (!is_cpp() && ds_list_size(window_list) > 0) // Debug windows in GM
+			{
+				str += "[F1]: Main window" + " \n"
+				for (var i = 0; i < ds_list_size(window_list); i++)
+				{
+					var winindex = "undefined view"
+					if (window_list[|i] = 1)
+						winindex = "Secondary view"
+					else if (window_list[|i] = 2)
+						winindex = "Timeline view"
+					str += "[F" + string(i + 2) + "]: " + winindex + " \n"
+				}
+			}
 			str += "[F7]: Reload Minecraft assets" + " \n"
 			str += "[F9]: Open file directory" + " \n"
 			str += "[F10]: Open working directory" + " \n"

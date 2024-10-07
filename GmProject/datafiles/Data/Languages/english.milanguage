@@ -4,8 +4,8 @@
 		"language": "English",
 		"locale": "en-US",
 		"translator": "David, Nimi, mbanders",
-		"forversion": "2.0.2 Continuation Build 1.0.4",
-		"lastchange": "2024.08.01"
+		"forversion": "2.0.2 Continuation Build 1.0.7",
+		"lastchange": "2024.10.07"
 	},
 	"particle/": {
 		"default": "Default spawner",
@@ -127,7 +127,9 @@
 		},
 		"linkeaseinout": "Link ease in/out",
 		"importwatermarkimage": "Import watermark image",
-		"resetwatermarkimage": "Reset watermark image"
+		"resetwatermarkimage": "Reset watermark image",
+		"importthumbnailimage": "Import custom thumbnail",
+		"resetthumbnailimage": "Remove custom thumbnail"
 	},
 	"contextmenu/": {
 		"textbox/": {
@@ -1658,6 +1660,9 @@
 				"vanilla": "Vanilla",
 				"cherryblossom": "Cherry Blossom",
 				"15thanniversary": "15th Anniversary",
+				"purpleheart": "Purple Heart",
+				"followers": "Follower's",
+				"mcc15thyear": "MCC 15th Year",
 				"minecon_2011": "MineCon 2011",
 				"minecon_2012": "MineCon 2012",
 				"minecon_2013": "MineCon 2013",
@@ -1709,6 +1714,7 @@
 				"iron": "Iron",
 				"diamond": "Diamond",
 				"netherite": "Netherite",
+				"turtle_scute": "Turtle",
 				"painting_kebab": "Kebab med tre pepperoni",
 				"painting_aztec": "de_aztec",
 				"painting_alban": "Albanian",
@@ -2515,6 +2521,7 @@
 		"name": "Name",
 		"author": "Author",
 		"description": "Description",
+		"thumbnail": "Thumbnail",
 		"videosize": "Render size",
 		"videosizetemplate/": {
 			"avatar": "Avatar",

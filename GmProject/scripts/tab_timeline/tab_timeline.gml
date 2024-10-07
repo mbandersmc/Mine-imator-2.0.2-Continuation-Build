@@ -1663,22 +1663,6 @@ function tab_timeline()
 		}
 	}
 	
-	// Zoom
-	if (window_scroll_focus_prev = "timelinezoom" && window_busy = "" && mouse_wheel <> 0)
-	{
-		var m = (mouse_wheel = 1 ? .5 : 2);
-		timeline_zoom_goal = clamp(timeline_zoom_goal * m, 0.25, 32)
-		if (timeline_zoom_goal > 1)
-			timeline_zoom_goal = round(timeline_zoom_goal)
-		
-		timeline.hor_scroll.value_goal = min(
-			// Prevent zooming into timeline past end of animation or playback marker, whichever is furthest
-			max((timeline_length * timeline_zoom_goal), (timeline_marker * timeline_zoom_goal)),
-			// Convert current and new mouse position to frames, then get difference and add it
-			round(timeline.hor_scroll.value + ((mouse_x - barx + timeline.hor_scroll.value) / timeline_zoom - (mouse_x - barx + timeline.hor_scroll.value) / timeline_zoom_goal) * timeline_zoom_goal)
-		)
-	}
-	
 	// Move view
 	if (window_busy = "timelinedrag")
 	{
@@ -1693,8 +1677,8 @@ function tab_timeline()
 			window_busy = ""
 		}
 		
-		timeline.ver_scroll.value_goal = timeline.ver_scroll.value
 		timeline.hor_scroll.value_goal = timeline.hor_scroll.value
+		timeline.ver_scroll.value_goal = timeline.ver_scroll.value
 	}
 	
 	content_mouseon = app_mouse_box(content_x, content_y, content_width, content_height, "place") && !popup_mouseon && !toast_mouseon && !context_menu_mouseon
@@ -1742,6 +1726,32 @@ function tab_timeline()
 		
 		timeline.ver_scroll.value_goal = timeline.ver_scroll.value
 		timeline.hor_scroll.value_goal = timeline.hor_scroll.value
+	}
+	
+	// Zoom
+	if (window_scroll_focus_prev = "timelinezoom" && window_busy = "" && mouse_wheel <> 0)
+	{
+		var m = (mouse_wheel = 1 ? .5 : 2);
+		timeline_zoom_goal = clamp(timeline_zoom_goal * m, 0.25, 32)
+		if (timeline_zoom_goal > 1)
+			timeline_zoom_goal = round(timeline_zoom_goal)
+		timeline_zoom_target = mouse_x
+	}
+	var zoompoint = (timeline_zoom_target - barx + timeline.hor_scroll.value);
+	if (timeline_zoom != timeline_zoom_goal)
+	{
+		if (setting_timeline_autoscroll && timeline_playing)
+			zoompoint = (timeline_marker * timeline_zoom)
+		
+		timeline.hor_scroll.value_goal = min(
+			max( // Prevent zooming into timeline past the furthest of these points
+				(timeline_length * timeline_zoom_goal), // End of animation
+				(timeline_marker * timeline_zoom_goal), // Playback marker
+				(ds_list_size(timeline_marker_list) > 0 ? (timeline_marker_list[|ds_list_size(timeline_marker_list) - 1].pos * timeline_zoom_goal) : null) // Last timeline marker if any exist
+			),
+			// Convert current and new mouse position to frames, then get difference and add it
+			round(timeline.hor_scroll.value + ((zoompoint / timeline_zoom) - (zoompoint / timeline_zoom_goal)) * timeline_zoom_goal)
+		)
 	}
 	
 	// Vertical scrollbar

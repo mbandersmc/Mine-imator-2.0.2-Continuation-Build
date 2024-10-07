@@ -3,6 +3,9 @@
 
 function view_draw(view)
 {
+	if (!view.show)
+		return 0
+	
 	var cam, camname;
 	var captionx, captiony, captionw, captionh;
 	var boxx, boxy, boxw, boxh;
@@ -12,9 +15,6 @@ function view_draw(view)
 	mouseonresizesplit = false
 	mouseonresizehor = false
 	mouseonresizever = false
-	
-	if (!view.show)
-		return 0
 	
 	if (view = view_main && view_second.show && view_main.quality = e_view_mode.RENDER && view_second.quality = e_view_mode.RENDER)
 		view_main.quality = e_view_mode.SHADED

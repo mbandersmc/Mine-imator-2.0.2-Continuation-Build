@@ -12,7 +12,7 @@ function minecraft_update_armor_generate(data, res = null)
 	for (var i = 0; i < 4; i++)
 	{
 		var piece = i * 4;
-		var basemat, dye, trimpat, trimmat, layernum, basetex, basesprite;
+		var basemat, dye, trimpat, trimmat, layername, basetex, basesprite;
 		basemat = data[piece]
 		
 		if (basemat = "none")
@@ -21,9 +21,10 @@ function minecraft_update_armor_generate(data, res = null)
 		dye = data[piece + 1]
 		trimpat = data[piece + 2]
 		trimmat = data[piece + 3]
-		layernum = ((i = 2) ? "2" : "1")
+		//layernum = ((i = 2) ? "2" : "1")
+		layername = ((i = 2) ? "humanoid_leggings" : "humanoid")
 		
-		basetex = "models/armor/" + basemat + "_layer_" + layernum
+		basetex = "entity/equipment/" + layername + "/" + basemat
 		basesprite = res.model_texture_map[?basetex]
 		
 		var armorsurf = surface_create(sprite_get_width(basesprite), sprite_get_height(basesprite)); 
@@ -59,10 +60,7 @@ function minecraft_update_armor_generate(data, res = null)
 					shader_palette_set(palette, res.model_texture_map[?"trims/color_palettes/trim_palette"])
 				}
 				
-				if (i = 2)
-					draw_sprite(res.model_texture_map[?"trims/models/armor/" + trimpat + "_leggings"], 0, 0, 0)
-				else
-					draw_sprite(res.model_texture_map[?"trims/models/armor/" + trimpat], 0, 0, 0)
+				draw_sprite(res.model_texture_map[?"trims/entity/" + layername + "/" + trimpat], 0, 0, 0)
 				
 				with (render_shader_obj)
 					shader_reset()

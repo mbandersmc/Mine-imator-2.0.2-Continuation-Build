@@ -9,10 +9,10 @@ function app_event_step()
 		
 		if (keyboard_check_pressed(vk_f2) && ds_list_size(window_list) > 0)
 			window_debug_current = window_list[|0]
-				
+		
 		if (keyboard_check_pressed(vk_f3) && ds_list_size(window_list) > 1)
 			window_debug_current = window_list[|1]
-				
+		
 		if (keyboard_check_pressed(vk_f4) && ds_list_size(window_list) > 2)
 			window_debug_current = window_list[|2]
 	}
