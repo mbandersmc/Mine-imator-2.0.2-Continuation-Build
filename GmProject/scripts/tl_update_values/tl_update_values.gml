@@ -47,9 +47,19 @@ function tl_update_values()
 	// Position
 	if (value_type[e_value_type.TRANSFORM_POS])
 	{
-		tl_update_values_ease(e_value.POS_X)
-		tl_update_values_ease(e_value.POS_Y)
-		tl_update_values_ease(e_value.POS_Z)
+		// Parented objects with no keyframes get position reset
+		if (ds_list_size(keyframe_list) = 0 && parent != app)
+		{
+			value[e_value.POS_X] = 0
+			value[e_value.POS_Y] = 0
+			value[e_value.POS_Z] = 0
+		}
+		else
+		{
+			tl_update_values_ease(e_value.POS_X)
+			tl_update_values_ease(e_value.POS_Y)
+			tl_update_values_ease(e_value.POS_Z)
+		}
 		
 		if (type != e_tl_type.PATH && type != e_tl_type.PATH_POINT)
 		{

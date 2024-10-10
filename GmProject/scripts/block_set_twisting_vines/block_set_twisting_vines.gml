@@ -1,5 +1,5 @@
 /// block_set_twisting_vines()
-/// @desc Turns off wind if there is no twisting vines above.
+/// @desc Turns off wind if there is no twisting vines below.
 
 function block_set_twisting_vines()
 {

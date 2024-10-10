@@ -5,7 +5,7 @@
 		"locale": "en-US",
 		"translator": "David, Nimi, mbanders",
 		"forversion": "2.0.2 Continuation Build 1.0.7",
-		"lastchange": "2024.10.07"
+		"lastchange": "2024.10.09"
 	},
 	"particle/": {
 		"default": "Default spawner",
@@ -1201,6 +1201,7 @@
 		"llama_spit": "Llama Spit",
 		"wither_skull": "Wither Skull",
 		"wind_charge": "Wind Charge",
+		"creaking": "Creaking",
 		"part/": {
 			"body": "Body",
 			"right_arm": "Right arm",
@@ -1647,6 +1648,7 @@
 				"mangrove": "Mangrove",
 				"cherry": "Cherry",
 				"bamboo": "Bamboo",
+				"pale_oak": "Pale Oak",
 				"crimson": "Crimson",
 				"warped": "Warped",
 				"hanging": "Hanging",
@@ -2100,6 +2102,10 @@
 		"trial_spawner": "Trial Spawner",
 		"vault": "Vault",
 		"heavy_core": "Heavy Core",
+		"pale_moss_carpet": "Pale Moss Carpet",
+		"pale_moss_block": "Pale Moss Block",
+		"pale_hanging_moss": "Pale Hanging Moss",
+		"creaking_heart": "Creaking Heart",
 		"state/": {
 			"variant": "Variant",
 			"snowy": "Snowy",
@@ -2182,6 +2188,8 @@
 			"trial_spawner_state": "State",
 			"vault_state": "State",
 			"ominous": "Ominous",
+			"tip": "Tip",
+			"creaking": "Creaking",
 			"value/": {
 				"stone": "Stone",
 				"smooth_stone": "Smooth Stone",
@@ -2379,6 +2387,7 @@
 				"dark_oak_sapling": "Dark Oak Sapling",
 				"cherry_sapling": "Cherry Sapling",
 				"mangrove_propagule": "Mangrove Propagule",
+				"pale_oak_sapling": "Pale Oak Sapling",
 				"red_mushroom": "Red Mushroom",
 				"brown_mushroom": "Brown Mushroom",
 				"cactus": "Cactus",
@@ -3126,6 +3135,7 @@
 		"birch_forest": "Birch Forest",
 		"old_growth_birch_forest": "Old Growth Birch Forest",
 		"dark_forest": "Dark Forest",
+		"pale_garden": "Pale Garden",
 		"savanna": "Savanna",
 		"savanna_plateau": "Savanna Plateau",
 		"windswept_savanna": "Windswept Savanna",
@@ -3785,7 +3795,8 @@
 			"secondaryview": "Secondary view",
 			"particlesspawn": "Spawn particles",
 			"particlesclear": "Clear particles",
-			"play": "Play animation",
+			"play": "Play / Pause animation",
+			"playstop": "Play / Stop animation",
 			"playbeginning": "Restart animation",
 			"markerleft": "Left",
 			"markerright": "Right",

@@ -238,10 +238,11 @@ function app_update_animate()
 	background_sky_color_final = merge_color(background_sky_color, hex_to_color("020204"), background_sky_night_alpha())
 	
 	// Cameras
+	var isrendermode = (view_second.quality = e_view_mode.RENDER || view_main.quality = e_view_mode.RENDER);
 	if (window_state = "export_movie")
 		app_update_cameras(exportmovie_high_quality, true)
-	else
-		app_update_cameras(view_render, false)
+	else if (!isrendermode || (isrendermode && render_samples = -1))
+		app_update_cameras(isrendermode, false)
 	
 	// Update current marker
 	timeline_marker_current = null

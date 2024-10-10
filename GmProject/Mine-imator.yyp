@@ -1812,6 +1812,7 @@
     {"id":{"name":"array","path":"scripts/array/array.yy",},"order":1,},
     {"id":{"name":"array_contains","path":"scripts/array_contains/array_contains.yy",},"order":3,},
     {"id":{"name":"array_copy_1d","path":"scripts/array_copy_1d/array_copy_1d.yy",},"order":5,},
+    {"id":{"name":"block_set_pale_hanging_moss","path":"scripts/block_set_pale_hanging_moss/block_set_pale_hanging_moss.yy",},"order":49,},
     {"id":{"name":"popup_advanced_draw","path":"scripts/popup_advanced_draw/popup_advanced_draw.yy",},"order":0,},
     {"id":{"name":"array_copy_2d","path":"scripts/array_copy_2d/array_copy_2d.yy",},"order":7,},
     {"id":{"name":"array_add","path":"scripts/array_add/array_add.yy",},"order":9,},

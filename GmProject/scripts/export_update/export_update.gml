@@ -42,7 +42,7 @@ function export_update()
 		}
 	}
 	
-	if (window_state = "export_image")
+	if (window_state = "export_image" && render_samples = -1)
 		app_update_cameras(popup_exportimage.high_quality, false)
 	
 	// Render

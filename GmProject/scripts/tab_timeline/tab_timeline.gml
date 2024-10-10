@@ -157,7 +157,8 @@ function tab_timeline()
 	
 	// Play
 	tip_set_keybind(e_keybind.PLAY)
-	draw_button_icon("timelineplay", buttonsx, buttonsy, 24, 24, false, timeline_playing ? icons.PAUSE : icons.PLAY, action_tl_play, false, timeline_playing ? "tooltiptlpause" : "tooltiptlplay")
+	if (draw_button_icon("timelineplay", buttonsx, buttonsy, 24, 24, false, timeline_playing ? icons.PAUSE : icons.PLAY, null, false, timeline_playing ? "tooltiptlpause" : "tooltiptlplay"))
+		action_tl_play()
 	buttonsx += 24 + 6
 	
 	// Skip to region start and play
@@ -187,7 +188,7 @@ function tab_timeline()
 	
 	timeline_settings_w = (buttonsx - buttonsxstart)
 	
-	buttonsxstart = (timeline_settings_right_w = null ? 0 : real(headerx + headerw - timeline_settings_right_w - 8))
+	buttonsxstart = (timeline_settings_right_w = null ? 0 : real(headerx + headerw - timeline_settings_right_w - 4))
 	buttonsx = max(buttonsx, buttonsxstart)
 	buttonsxstart = buttonsx
 	
@@ -203,9 +204,7 @@ function tab_timeline()
 			action_tl_load_loop(timeline_settings_run_fn)
 		
 		buttonsx += 24 + 4
-		
 		draw_divide_vertical(buttonsx, buttonsy, 24)
-		
 		buttonsx += 4
 	}
 	

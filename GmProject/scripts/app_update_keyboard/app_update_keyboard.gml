@@ -52,6 +52,9 @@ function app_update_keyboard()
 		if (keybinds[e_keybind.PLAY].pressed)
 			action_tl_play()
 		
+		if (keybinds[e_keybind.PLAY_STOP].pressed)
+			action_tl_play(true)
+		
 		if (keybinds[e_keybind.PLAY_BEGINNING].pressed)
 			action_tl_play_beginning()
 		

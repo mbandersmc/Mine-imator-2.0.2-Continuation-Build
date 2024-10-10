@@ -40,6 +40,7 @@ function app_startup_keybinds()
 		
 		// Timeline
 		PLAY,
+		PLAY_STOP,
 		PLAY_BEGINNING,
 		MARKER_RIGHT,
 		MARKER_LEFT,
@@ -103,6 +104,7 @@ function app_startup_keybinds()
 	
 	// Timeline
 	keybind_register("play", e_keybind.PLAY, keybind_new(vk_space))
+	keybind_register("playstop", e_keybind.PLAY_STOP, keybind_new(vk_space, false, true))
 	keybind_register("playbeginning", e_keybind.PLAY_BEGINNING, keybind_new(vk_enter))
 	keybind_register("markerleft", e_keybind.MARKER_LEFT, keybind_new(vk_left))
 	keybind_register("markerright", e_keybind.MARKER_RIGHT, keybind_new(vk_right))

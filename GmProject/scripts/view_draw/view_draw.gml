@@ -220,7 +220,7 @@ function view_draw(view)
 			action_setting_secondary_view()
 	}
 	
-	dx -= (padding + 1)
+	dx -= padding
 	draw_divide_vertical(dx, dy, dh)
 	
 	// Quality settings
@@ -280,7 +280,7 @@ function view_draw(view)
 	}
 	
 	// Divide
-	dx -= (padding + 1)
+	dx -= padding
 	draw_divide_vertical(dx, dy, dh)
 	dx -= 16 + padding
 	
@@ -312,7 +312,7 @@ function view_draw(view)
 	// Snap settings
 	if (view = view_main)
 	{
-		dx -= (padding + 1)
+		dx -= padding
 		draw_divide_vertical(dx, dy, dh)
 		dx -= 16 + padding
 		
