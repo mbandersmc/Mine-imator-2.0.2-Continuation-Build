@@ -114,6 +114,7 @@ function block_load_render_model(model, rot, uvlock, opaque, wei, res = null)
 						faceuvrot[f] = 0
 					}
 					
+					light_emission = elem.light_emission
 					rotated = elem.rotated
 					if (rotated)
 						matrix = matrix_multiply(elem.matrix, rotmat)

@@ -10,10 +10,11 @@ function block_render_model_generate(model)
 	offx = model.offset_x + block_pos_x
 	offy = model.offset_y + block_pos_y
 	offz = model.offset_z + block_pos_z
-		
+	
 	// Set emissive
 	if (block_vertex_emissive = null)
 		block_vertex_emissive = model.emissive
+	var min_emissive = block_vertex_emissive;
 		
 	// Generate elements
 	for (var e = 0; e < model.element_amount; e++)
@@ -24,11 +25,11 @@ function block_render_model_generate(model)
 		var x1, x2, y1, y2, z1, z2, mat;
 		x1 = el.from_x; y1 = el.from_y; z1 = el.from_z
 		x2 = el.to_x;   y2 = el.to_y;   z2 = el.to_z
-				
+		
 		// Apply offset to transformation matrix if rotated
 		if (el.rotated)
 			mat = matrix_multiply(el.matrix, matrix_build(offx, offy, offz, 0, 0, 0, 1, 1, 1))
-				
+		
 		// Otherwise simply add offset to shape
 		else
 		{
@@ -36,7 +37,10 @@ function block_render_model_generate(model)
 			x1 += offx; y1 += offy; z1 += offz
 			x2 += offx; y2 += offy; z2 += offz
 		}
-				
+		
+		// Light emission for individual elements
+		block_vertex_emissive = max(min_emissive, el.light_emission / 15)
+		
 		// X+
 		if (el.face_render_xp && !block_render_model_generate_face_cull(model, el, e_dir.EAST))
 		{
@@ -52,7 +56,7 @@ function block_render_model_generate(model)
 					
 			builder_add_face(x2, y2, z2, x2, y1, z2, x2, y1, z1, x2, y2, z1, el.face_uv_xp_0_x, el.face_uv_xp_0_y, el.face_uv_xp_1_x, el.face_uv_xp_1_y, el.face_uv_xp_2_x, el.face_uv_xp_2_y, el.face_uv_xp_3_x, el.face_uv_xp_3_y, mat)
 		}
-				
+		
 		// X-
 		if (el.face_render_xn && !block_render_model_generate_face_cull(model, el, e_dir.WEST))
 		{
@@ -68,7 +72,7 @@ function block_render_model_generate(model)
 				
 			builder_add_face(x1, y1, z2, x1, y2, z2, x1, y2, z1, x1, y1, z1, el.face_uv_xn_0_x, el.face_uv_xn_0_y, el.face_uv_xn_1_x, el.face_uv_xn_1_y, el.face_uv_xn_2_x, el.face_uv_xn_2_y, el.face_uv_xn_3_x, el.face_uv_xn_3_y, mat)
 		}
-				
+		
 		// Y+
 		if (el.face_render_yp && !block_render_model_generate_face_cull(model, el, e_dir.SOUTH))
 		{
@@ -84,7 +88,7 @@ function block_render_model_generate(model)
 						
 			builder_add_face(x1, y2, z2, x2, y2, z2, x2, y2, z1, x1, y2, z1, el.face_uv_yp_0_x, el.face_uv_yp_0_y, el.face_uv_yp_1_x, el.face_uv_yp_1_y, el.face_uv_yp_2_x, el.face_uv_yp_2_y, el.face_uv_yp_3_x, el.face_uv_yp_3_y, mat)
 		}
-				
+		
 		// Y-
 		if (el.face_render_yn && !block_render_model_generate_face_cull(model, el, e_dir.NORTH))
 		{
@@ -100,7 +104,7 @@ function block_render_model_generate(model)
 						
 			builder_add_face(x2, y1, z2, x1, y1, z2, x1, y1, z1, x2, y1, z1, el.face_uv_yn_0_x, el.face_uv_yn_0_y, el.face_uv_yn_1_x, el.face_uv_yn_1_y, el.face_uv_yn_2_x, el.face_uv_yn_2_y, el.face_uv_yn_3_x, el.face_uv_yn_3_y, mat)
 		}
-				
+		
 		// Z+
 		if (el.face_render_zp && !block_render_model_generate_face_cull(model, el, e_dir.UP))
 		{
@@ -116,7 +120,7 @@ function block_render_model_generate(model)
 					
 			builder_add_face(x1, y1, z2, x2, y1, z2, x2, y2, z2, x1, y2, z2, el.face_uv_zp_0_x, el.face_uv_zp_0_y, el.face_uv_zp_1_x, el.face_uv_zp_1_y, el.face_uv_zp_2_x, el.face_uv_zp_2_y, el.face_uv_zp_3_x, el.face_uv_zp_3_y, mat)
 		}
-				
+		
 		// Z-
 		if (el.face_render_zn && !block_render_model_generate_face_cull(model, el, e_dir.DOWN))
 		{
@@ -132,9 +136,10 @@ function block_render_model_generate(model)
 						
 			builder_add_face(x1, y2, z1, x2, y2, z1, x2, y1, z1, x1, y1, z1, el.face_uv_zn_0_x, el.face_uv_zn_0_y, el.face_uv_zn_1_x, el.face_uv_zn_1_y, el.face_uv_zn_2_x, el.face_uv_zn_2_y, el.face_uv_zn_3_x, el.face_uv_zn_3_y, mat)
 		}
-				
+		
 		block_vertex_rgb = c_white
-
+		block_vertex_emissive = min_emissive
+		
 		instance_deactivate_object(model.element[e])
 	}
 	

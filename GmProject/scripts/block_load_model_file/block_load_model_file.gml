@@ -94,6 +94,7 @@ function block_load_model_file(fname, res = null)
 					to = value_get_point3D(elementmap[?"to"])
 					size = point3D_sub(to, from)
 					volume = size[X] * size[Y] * size[Z]
+					light_emission = value_get_real(elementmap[?"light_emission"], 0)
 					
 					// Rotation
 					var rotationmap = elementmap[?"rotation"];

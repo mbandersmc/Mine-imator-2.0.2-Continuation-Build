@@ -5,7 +5,7 @@
 		"locale": "en-US",
 		"translator": "David, Nimi, mbanders",
 		"forversion": "2.0.2 Continuation Build 1.0.7",
-		"lastchange": "2024.10.09"
+		"lastchange": "2024.10.23"
 	},
 	"particle/": {
 		"default": "Default spawner",
@@ -894,7 +894,9 @@
 		"particles": "Particle editor for %1",
 		"ground": "Ground",
 		"timelineeditor": "%1 properties",
-		"frameeditor": "%1 (Frame %2)",
+		"frameeditor": "%1 (%2)",
+		"frameeditorsingle": "Frame %1",
+		"frameeditormulti": "%1 Frames",
 		"settings": "Preferences"
 	},
 	"key/": {

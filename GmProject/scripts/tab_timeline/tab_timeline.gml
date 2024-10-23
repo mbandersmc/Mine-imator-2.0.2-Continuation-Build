@@ -1745,7 +1745,7 @@ function tab_timeline()
 		timeline.hor_scroll.value_goal = min(
 			max( // Prevent zooming into timeline past the furthest of these points
 				(timeline_length * timeline_zoom_goal), // End of animation
-				(timeline_marker * timeline_zoom_goal), // Playback marker
+				(timeline_marker * timeline_zoom_goal), // Playhead
 				(ds_list_size(timeline_marker_list) > 0 ? (timeline_marker_list[|ds_list_size(timeline_marker_list) - 1].pos * timeline_zoom_goal) : null) // Last timeline marker if any exist
 			),
 			// Convert current and new mouse position to frames, then get difference and add it
