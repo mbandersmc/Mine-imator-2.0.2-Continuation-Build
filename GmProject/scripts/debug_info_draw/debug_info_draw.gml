@@ -59,7 +59,7 @@ function debug_info_draw()
 				str += "[F1]: Main window" + " \n"
 				for (var i = 0; i < ds_list_size(window_list); i++)
 				{
-					var winindex = "undefined view"
+					var winindex = "undefined view";
 					if (window_list[|i] = 1)
 						winindex = "Secondary view"
 					else if (window_list[|i] = 2)
@@ -79,8 +79,8 @@ function debug_info_draw()
 	var h = string_height_font(str, font_label) + 16;
 	var xx = debug_info_corner mod 2 == 0 ? 8 : window_width - w - 8;
 	var yy = debug_info_corner < 2 ? 8 : window_height - h - 8;
-	var tx = xx + 8
-	var ty = yy + h - 8
+	var tx = xx + 8;
+	var ty = yy + h - 8;
 	var mouseon = app_mouse_box(xx, yy, w, h);
 	
 	draw_box(xx, yy, w, h, false, c_black, mouseon ? .5675 : .75) //window_width - w - 8

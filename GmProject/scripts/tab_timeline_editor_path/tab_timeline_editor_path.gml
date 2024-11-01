@@ -59,20 +59,23 @@ function tab_timeline_editor_path()
 		draw_switch("timelineeditorpathshapetexmapped", dx, dy, tl_edit.path_shape_tex_mapped, action_tl_path_shape_tex_mapped)
 		tab_next()
 		
-		tab_control_dragger()
-		draw_dragger("timelineeditorpathshapetexlength", dx, dy, dragger_width, tl_edit.path_shape_tex_length, 0.1, 0.01, no_limit, 16, 0.01, tab.path.tbx_tex_length, action_tl_path_shape_tex_length, null, true, false, "timelineeditorpathshapetexlengthtip")
-		tab_next()
-		
-		// Export map (Identical to cylinder UV)
-		tab_control_button_label()
-		
-		if (draw_button_label("timelineeditorpathshapesavemap", dx, dy, dw, icons.TEXTURE_EXPORT, e_button.SECONDARY))
+		if (tl_edit.path_shape_tex_mapped)
 		{
-			var fn = file_dialog_save_image("path");
-			if (fn != "")
-				sprite_save_lib(spr_map_cylinder, 0, fn)
+			// Export map (Identical to cylinder UV)
+			tab_control_button_label()
+		
+			if (draw_button_label("timelineeditorpathshapesavemap", dx, dy, dw, icons.TEXTURE_EXPORT, e_button.SECONDARY))
+			{
+				var fn = file_dialog_save_image("path");
+				if (fn != "")
+					sprite_save_lib(spr_map_cylinder, 0, fn)
+			}
+		
+			tab_next()
 		}
 		
+		tab_control_dragger()
+		draw_dragger("timelineeditorpathshapetexlength", dx, dy, dragger_width, tl_edit.path_shape_tex_length, 0.1, 0.01, no_limit, 16, 0.01, tab.path.tbx_tex_length, action_tl_path_shape_tex_length, null, true, false, "timelineeditorpathshapetexlengthtip")
 		tab_next()
 		
 		tab_collapse_end()

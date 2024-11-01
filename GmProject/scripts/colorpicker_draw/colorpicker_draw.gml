@@ -31,9 +31,9 @@ function colorpicker_draw()
 		colorpicker_update(null, make_color_hsv(colorpicker.hue, colorpicker.saturation, colorpicker.brightness), false)
 	}
 	
-	draw_sprite_general(spr_colorpicker, 0, 0, 0, 192, 192, bx, by, 1, 1, 0, c_white, make_color_hsv(colorpicker.hue, 255, 255), make_color_hsv(colorpicker.hue, 255, 255), c_white, draw_get_alpha())
+	draw_sprite_general(spr_colorpicker, 0, 0, 0, bw, bh, bx, by, 1, 1, 0, c_white, make_color_hsv(colorpicker.hue, 255, 255), make_color_hsv(colorpicker.hue, 255, 255), c_white, draw_get_alpha())
 	draw_image(spr_colorpicker_cursor, 0, bx + (bw * (colorpicker.saturation/255)), by + (bh * (1 - (colorpicker.brightness/255))), 1, 1, c_white, 1)
-	dy = by + 192 + 8
+	dy = by + bh + 8
 	dx -= 4
 	dw = 176
 	

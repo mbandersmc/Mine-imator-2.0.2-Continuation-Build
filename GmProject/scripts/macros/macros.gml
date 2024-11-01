@@ -20,11 +20,11 @@ function macros()
 	
 	// Versions
 	#macro mineimator_version			"2.0.2"							// Base Mine-imator version
-	#macro mineimator_version_sub		"Continuation Build 1.0.7"		// Mod name and version (e.g. "Community Build 1.0.0")
-	#macro mineimator_version_extra		""								// Additional suffix (e.g. "Alpha 1" or "Pre-Release 2")
+	#macro mineimator_version_sub		"Continuation Build 1.0.8"		// Mod name and version (e.g. "Community Build 1.0.0")
+	#macro mineimator_version_extra		"Alpha 1"						// Additional suffix (e.g. "Alpha 1" or "Pre-Release 2")
 	#macro mineimator_version_full		(mineimator_version + ((mineimator_version_sub != "") ? " " + mineimator_version_sub : "") + ((mineimator_version_extra != "") ? " (" + mineimator_version_extra + ")" : ""))
-	#macro mineimator_version_date		"2024.10.23"
-	#macro minecraft_version			"1.21.3"
+	#macro mineimator_version_date		"2024.11.01"
+	#macro minecraft_version			"24w44a"
 	#macro gm_runtime					GM_runtime_version
 	
 	// File formats
@@ -101,7 +101,7 @@ function macros()
 	#macro link_discord					"https://www.mineimator.com/discord"
 	#macro link_donate					"https://www.mineimator.com/donate"
 	#macro link_article_drivers			"https://www.thewindowsclub.com/how-to-update-graphics-drivers-windows"
-	#macro show_modelbench_popup		true
+	#macro show_modelbench_popup		!dev_mode && true
 	#macro http_ok						200
 	#macro http_bad_request				400
 	

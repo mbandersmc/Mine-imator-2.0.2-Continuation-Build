@@ -113,7 +113,7 @@ namespace CppProject
 
 		// Water/Lava
 		Preview::mcBlockIdStyleIndexMap["water"] =
-		Preview::mcBlockIdStyleIndexMap["flowing_water"] = BlockStyle::Create(make_color_rgb(50, 60, 255), 0.4, -1, 1.0, BlockStyle::WATER);
+		Preview::mcBlockIdStyleIndexMap["flowing_water"] = BlockStyle::Create(make_color_rgb(165, 165, 165), 0.7, -1, 1.0, BlockStyle::WATER);
 		Preview::mcBlockIdStyleIndexMap["lava"] =
 		Preview::mcBlockIdStyleIndexMap["flowing_lava"] = BlockStyle::Create(make_color_rgb(255, 100, 0), 1.0, -1, 1.0, BlockStyle::NONE, 26);
 

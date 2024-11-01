@@ -4,8 +4,8 @@
 		"language": "English",
 		"locale": "en-US",
 		"translator": "David, Nimi, mbanders",
-		"forversion": "2.0.2 Continuation Build 1.0.7",
-		"lastchange": "2024.10.23"
+		"forversion": "2.0.2 Continuation Build 1.0.8",
+		"lastchange": "2024.10.31"
 	},
 	"particle/": {
 		"default": "Default spawner",
@@ -806,7 +806,8 @@
 			"lapis": "Lapis",
 			"netherite": "Netherite",
 			"quartz": "Quartz",
-			"redstone": "Redstone"
+			"redstone": "Redstone",
+			"resin": "Resin"
 		}
 	},
 	"loading/": {
@@ -2108,6 +2109,8 @@
 		"pale_moss_block": "Pale Moss Block",
 		"pale_hanging_moss": "Pale Hanging Moss",
 		"creaking_heart": "Creaking Heart",
+		"resin_clump": "Resin Clump",
+		"resin_block": "Block of Resin",
 		"state/": {
 			"variant": "Variant",
 			"snowy": "Snowy",
@@ -2191,7 +2194,7 @@
 			"vault_state": "State",
 			"ominous": "Ominous",
 			"tip": "Tip",
-			"creaking": "Creaking",
+			"active": "Active",
 			"value/": {
 				"stone": "Stone",
 				"smooth_stone": "Smooth Stone",
@@ -2215,6 +2218,7 @@
 				"dark_oak": "Dark Oak",
 				"mangrove": "Mangrove",
 				"cherry": "Cherry",
+				"pale_oak": "Pale Oak",
 				"bamboo": "Bamboo",
 				"bamboo_mosaic": "Bamboo Mosaic",
 				"crimson": "Crimson",
@@ -2295,6 +2299,8 @@
 				"lily_of_the_valley": "Lily Of The Valley",
 				"torchflower": "Torchflower",
 				"wither_rose": "Wither Rose",
+				"closed_eyeblossom": "Closed Eyeblossom",
+				"open_eyeblossom": "Open Eyeblossom",
 				"normal": "Normal",
 				"soul_torch": "Soul Torch",
 				"soul_fire": "Soul Fire",
@@ -2523,7 +2529,10 @@
 				"waiting_for_reward_ejection": "Waiting for reward ejection",
 				"ejecting_reward": "Ejecting reward",
 				"unlocking": "Unlocking",
-				"ejecting": "Ejecting"
+				"ejecting": "Ejecting",
+				"resin_block": "Block of Resin",
+				"resin_bricks": "Resin Bricks",
+				"chiseled_resin_bricks": "Chiseled Resin Bricks"
 			}
 		}
 	},
@@ -2817,7 +2826,7 @@
 					"big_smoke": "Big Smoke",
 					"bubble": "Bubble",
 					"bubble_pop": "Bubble Pop",
-					"cherry_leaves": "Cherry Leaves",
+					"cherry": "Cherry Leaves",
 					"critical_hit": "Critical Hit",
 					"damage": "Damage",
 					"drip_fall": "Drip (Falling)",
@@ -2839,6 +2848,7 @@
 					"nautilus": "Nautilus",
 					"note": "Note",
 					"ominous_spawning": "Ominous Spawning",
+					"pale_oak": "Pale Oak Leaves",
 					"raid_omen": "Raid Omen",
 					"sculk_charge": "Sculk Charge",
 					"sculk_charge_pop": "Sculk Charge Pop",

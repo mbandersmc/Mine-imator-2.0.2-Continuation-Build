@@ -337,28 +337,25 @@ function tab_timeline()
 	framestep = 1
 	framehighlight = 5
 	
-	if (timeline_zoom < 5)
-	{
-		framestep = 5
-		framehighlight = 10
-	}
-	
-	if (timeline_zoom < 3)
-	{
-		framestep = 10
-		framehighlight = 50
-	}
-	
-	if (timeline_zoom < 1)
-	{
-		framestep = 20
-		framehighlight = 100
-	}
-	
 	if (timeline_zoom < 0.5)
 	{
 		framestep = 50
 		framehighlight = 200
+	}
+	else if (timeline_zoom < 1)
+	{
+		framestep = 20
+		framehighlight = 100
+	}
+	else if (timeline_zoom < 3)
+	{
+		framestep = 10
+		framehighlight = 50
+	}
+	else if (timeline_zoom < 5)
+	{
+		framestep = 5
+		framehighlight = 10
 	}
 	
 	f = floor(timeline.hor_scroll.value / (timeline_zoom * framestep)) * framestep
@@ -589,6 +586,19 @@ function tab_timeline()
 	if (window_busy = "timelineselectkeyframes")
 	{
 		mouse_cursor = cr_handpoint
+		
+		if (mouse_right) // Move selection box
+		{
+			mouse_click_x += mouse_dx
+			mouse_click_y += mouse_dy
+		}
+		/*
+		else if (mouse_right_released)
+		{
+			mouse_click_x = clamp(mouse_click_x + (timeline_select_starth - timeline.hor_scroll.value), tlx, tlx + tlw)
+			mouse_click_y = clamp(mouse_click_y + (timeline_select_startv - timeline.ver_scroll.value), tly, tly + tlh)
+		}
+		*/
 		
 		var x1, y1, x2, y2;
 		x1 = clamp(mouse_click_x + (timeline_select_starth - timeline.hor_scroll.value), tlx, tlx + tlw)
@@ -888,7 +898,7 @@ function tab_timeline()
 			place_tl.value[e_value.POS_Y] = 0
 			place_tl.value[e_value.POS_Z] = 0
 			
-			with(place_tl)
+			with (place_tl)
 				tl_set_parent(tl)
 				
 			tl_update_list()
@@ -1417,10 +1427,22 @@ function tab_timeline()
 	// Select timelines
 	if (window_busy = "timelineselect")
 	{
-		var x1, y1, x2, y2;
-		
 		mouse_cursor = cr_handpoint
 		
+		if (mouse_right) // Move selection box
+		{
+			mouse_click_x += mouse_dx
+			mouse_click_y += mouse_dy
+		}
+		/*
+		else if (mouse_right_released)
+		{
+			mouse_click_x = clamp(mouse_click_x, content_x, tlx)
+			mouse_click_y = clamp(mouse_click_y + (timeline_select_startv - timeline.ver_scroll.value), listy, listy + tlh)
+		}
+		*/
+		
+		var x1, y1, x2, y2;
 		x1 = clamp(mouse_click_x, content_x, tlx)
 		y1 = clamp(mouse_click_y + (timeline_select_startv - timeline.ver_scroll.value), listy, listy + tlh)
 		x2 = clamp(mouse_x, content_x, tlx)
@@ -1577,7 +1599,7 @@ function tab_timeline()
 			window_busy = "timelinemarker"
 		}
 		
-		// Create tegion
+		// Create region
 		if (mouse_right_pressed)
 		{
 			window_focus = "timeline"
@@ -1682,18 +1704,29 @@ function tab_timeline()
 	
 	content_mouseon = app_mouse_box(content_x, content_y, content_width, content_height, "place") && !popup_mouseon && !toast_mouseon && !context_menu_mouseon
 	
+	var ver_scroll_speed = 8;
+	
 	// Move view when selecting
 	if (window_busy = "timelinemove" || window_busy = "timelineselect" || (window_busy = "place" && mouseinnames))
 	{
 		if (mouse_y < tly + 6)
-			timeline.ver_scroll.value -= 8
-		
+			timeline.ver_scroll.value -= ver_scroll_speed
 		if (mouse_y > tly + tlh - 6)
-			timeline.ver_scroll.value += 8
+			timeline.ver_scroll.value += ver_scroll_speed
 		
 		timeline.ver_scroll.value = max(0, timeline.ver_scroll.value)
 		timeline.ver_scroll.value_goal = timeline.ver_scroll.value
+		
+		if (mouse_right && timeline.ver_scroll.needed) // Move selection box
+		{
+			if (mouse_y < tly + 6 && timeline.ver_scroll.value > 0)
+				mouse_click_y -= ver_scroll_speed
+			if (mouse_y > tly + tlh - 6 && !timeline.ver_scroll.atend)
+				mouse_click_y += ver_scroll_speed
+		}
 	}
+	
+	var hor_scroll_speed = 15;
 	
 	// Move view when selecting/moving keyframes
 	if (window_busy = "timelineselectkeyframes" || 
@@ -1703,21 +1736,24 @@ function tab_timeline()
 		window_busy = "timelinesetregionend" || 
 		window_busy = "timelineresizesounds" || 
 		window_busy = "timelinesetsoundend" ||
-		window_busy = "timelinemovemarker")
+		window_busy = "timelinemovemarker"
+	)
 	{
-		if (mouse_x < tlx)
-			timeline.hor_scroll.value -= 15
+		if (mouse_x < tlx) // no padding needed here
+			timeline.hor_scroll.value -= hor_scroll_speed
+		if (mouse_x > tlx + tlw - 6)
+			timeline.hor_scroll.value += hor_scroll_speed
 		
-		if (mouse_x > tlx + tlw)
-			timeline.hor_scroll.value += 15
-		
-		if (window_busy != "timelinemovemarker")
+		if (window_busy != "timelinemovemarker" &&
+			window_busy != "timelinecreateregion" && 
+			window_busy != "timelinesetregionstart" &&
+			window_busy != "timelinesetregionend"
+		)
 		{
 			if (mouse_y < tly + 6)
-				timeline.ver_scroll.value -= 8
-			
+				timeline.ver_scroll.value -= ver_scroll_speed
 			if (mouse_y > tly + tlh - 6)
-				timeline.ver_scroll.value += 8
+				timeline.ver_scroll.value += ver_scroll_speed
 		}
 		
 		timeline.ver_scroll.value = max(0, timeline.ver_scroll.value)
@@ -1725,6 +1761,19 @@ function tab_timeline()
 		
 		timeline.ver_scroll.value_goal = timeline.ver_scroll.value
 		timeline.hor_scroll.value_goal = timeline.hor_scroll.value
+		
+		if (mouse_right && timeline.ver_scroll.needed) // Move selection box
+		{
+			if (mouse_x < tlx && timeline.hor_scroll.value > 0)
+				mouse_click_x -= hor_scroll_speed
+			if (mouse_x > tlx + tlw - 6 && (timeline.hor_scroll.needed && !timeline.hor_scroll.atend))
+				mouse_click_x += hor_scroll_speed
+			
+			if (mouse_y < tly + 6 && timeline.ver_scroll.value > 0)
+				mouse_click_y -= ver_scroll_speed
+			if (mouse_y > tly + tlh - 6 && !timeline.ver_scroll.atend)
+				mouse_click_y += ver_scroll_speed
+		}
 	}
 	
 	// Zoom

@@ -25,7 +25,7 @@ function tab_template_editor_particles_value(name, val, israndom, randommin, ran
 	wid = 64
 	
 	if (capwid = null)
-		capwid = (caption != "" ? string_width(caption) + 8 : 0) * showcaption
+		capwid = (caption != "" ? string_width(caption) + 12 : 0) * showcaption
 	
 	tab_control_dragger()
 	
@@ -57,8 +57,8 @@ function tab_template_editor_particles_value(name, val, israndom, randommin, ran
 	}
 	else
 	{
-		draw_dragger(name, dx, dy, dragger_width, val, mul, minval, maxval, def[0], snapval, tbx[1], scripts[0], (dw - (dragger_width + 24 + 8)), showcaption)
-		capwid += wid + 8
+		draw_dragger(name, dx, dy, dragger_width, val, mul, minval, maxval, def[0], snapval, tbx[1], scripts[0], (dw - (dragger_width + 24 + 12)), showcaption)
+		capwid += wid + 12
 	}
 	
 	tbx[0].suffix = suf1

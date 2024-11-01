@@ -108,7 +108,7 @@ function project_load()
 	project_thumbnail_image = texture_create(project_folder + "/thumbnail.png")
 	
 	// Update project
-	project_load_find_save_ids()
+	project_load_find_save_ids(true)
 	project_load_update()
 	project_reset_loaded()
 	log("Project loaded")
