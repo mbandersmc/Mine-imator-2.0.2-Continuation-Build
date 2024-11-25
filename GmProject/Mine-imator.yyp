@@ -2594,8 +2594,8 @@
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"splashes.json","CopyToMask":-1,"filePath":"datafiles/Data/Splashes",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"oasis.png","CopyToMask":-1,"filePath":"datafiles/Data/Splashes",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"tricky_trials.png","CopyToMask":-1,"filePath":"datafiles/Data/Splashes",},
-    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"24w44a.zip","CopyToMask":-1,"filePath":"datafiles/Data/Minecraft",},
-    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"24w44a.midata","CopyToMask":-1,"filePath":"datafiles/Data/Minecraft",},
+    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"1.21.4-pre1.midata","CopyToMask":-1,"filePath":"datafiles/Data/Minecraft",},
+    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"1.21.4-pre1.zip","CopyToMask":-1,"filePath":"datafiles/Data/Minecraft",},
   ],
   "MetaData": {
     "IDEVersion": "2022.0.2.51",

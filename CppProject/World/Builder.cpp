@@ -366,7 +366,7 @@ namespace CppProject
 		}
 		else if (models.Size() > 0 || randBlocks) // Pick first
 			model = ObjType(obj_block_render_model, models.Value(0));
-
+		
 		if (model)
 		{
 			model->emissive = emissive;

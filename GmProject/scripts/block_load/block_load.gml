@@ -47,6 +47,26 @@ function block_load(map, typemap)
 		else
 			emissive = 0
 		
+		/*
+		// Random offset (Overridden by states)
+		if (ds_map_valid(map[?"random_offset"]))
+		{
+			var offsetmap = map[?"random_offset"];
+			
+			if (ds_list_valid(offsetmap[?"min"]) && ds_list_valid(offsetmap[?"max"]))
+			{
+				for (var i = 0; i < ds_list_size(offsetmap[?"min"]); i++)
+					random_offset[0][i] = ds_list_find_value(offsetmap[?"min"], i)
+				for (var i = 0; i < ds_list_size(offsetmap[?"max"]); i++)
+					random_offset[1][i] = ds_list_find_value(offsetmap[?"max"], i)
+			}
+			else
+				random_offset = [[0, 0, 0], [0, 0, 0]]
+		}
+		else
+			random_offset = [[0, 0, 0], [0, 0, 0]]
+		*/
+		
 		// Random offset (Overridden by states)
 		if (is_bool(map[?"random_offset"]))
 			random_offset = map[?"random_offset"]
@@ -109,6 +129,24 @@ function block_load(map, typemap)
 							if (is_real(curvalue[?"emissive"]))
 								value_emissive[v] = curvalue[?"emissive"]
 							
+							/*
+							// Random offset
+							if (ds_map_valid(curvalue[?"random_offset"]))
+							{
+								var curoffsetmap = curvalue[?"random_offset"];
+								
+								if (ds_list_valid(curoffsetmap[?"min"]) && ds_list_valid(curoffsetmap[?"max"]))
+								{
+									for (var i = 0; i < ds_list_size(curoffsetmap[?"min"]); i++)
+										value_random_offset[v][0][i] = ds_list_find_value(curoffsetmap[?"min"], i)
+									for (var i = 0; i < ds_list_size(curoffsetmap[?"max"]); i++)
+										value_random_offset[v][1][i] = ds_list_find_value(curoffsetmap[?"max"], i)
+								}
+								else
+									value_random_offset[v] = [[0, 0, 0], [0, 0, 0]]
+							}
+							*/
+							
 							// Random offset
 							if (is_bool(curvalue[?"random_offset"]))
 								value_random_offset[v] = curvalue[?"random_offset"]
@@ -142,7 +180,7 @@ function block_load(map, typemap)
 		else
 			default_state = array()
 		
-		default_state_id = block_get_state_id(id, default_state)
+		//default_state_id = block_get_state_id(id, default_state)
 		
 		// Subsurface
 		if (is_real(map[?"subsurface"]))
@@ -220,7 +258,7 @@ function block_load(map, typemap)
 		state_id_emissive = null
 		state_id_random_offset = null
 		state_id_random_offset_xy = null
-		state_id_subsurface = null
+		//state_id_subsurface = null
 		
 		for (var sid = 0; sid < state_id_amount; sid++)
 		{

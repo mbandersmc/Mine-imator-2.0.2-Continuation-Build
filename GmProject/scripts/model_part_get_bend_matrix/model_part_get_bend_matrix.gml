@@ -5,20 +5,13 @@
 /// @arg scale
 /// @desc Returns the transformation matrix for bending. The scale factor is used to combat Z-fighting.
 
-function model_part_get_bend_matrix()
+function model_part_get_bend_matrix(part, bend, pos, sca = null)
 {
-	var part, bend, pos, rot, sca;
-	part = argument[0]
-	bend = argument[1]
-	pos = argument[2]
-	
-	if (argument_count > 3)
-		sca = argument[3]
-	else
-		sca = vec3(1)
-	
 	if (part.bend_part = null)
 		return MAT_IDENTITY
+	
+	if (sca = null)
+		sca = vec3(1)
 	
 	// Limit angle
 	for (var i = X; i <= Z; i++)

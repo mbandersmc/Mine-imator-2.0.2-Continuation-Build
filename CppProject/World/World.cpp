@@ -54,7 +54,7 @@ namespace CppProject
 			}
 
 			Preview::mcBiomeIdIndexMap[name] = Preview::biomeTints.size();
-			Preview::biomeTints.append({ grassColor, foliageColor, biome->color_water });
+			Preview::biomeTints.append({ grassColor, foliageColor }); //, biome->color_water }); //fix water tint
 		}
 
 		// Iterate Minecraft IDs and make id->texture position map
@@ -94,8 +94,8 @@ namespace CppProject
 						tint = BlockStyle::GRASS;
 					else if (model->preview_tint == "foliage")
 						tint = BlockStyle::FOLIAGE;
-					else if (model->preview_tint == "water")
-						tint = BlockStyle::WATER;
+					//else if (model->preview_tint == "water")
+					//	tint = BlockStyle::WATER; //fix water tint
 
 					styleIndex = BlockStyle::Create(
 						model->preview_color_zp, model->preview_alpha_zp,
@@ -113,7 +113,7 @@ namespace CppProject
 
 		// Water/Lava
 		Preview::mcBlockIdStyleIndexMap["water"] =
-		Preview::mcBlockIdStyleIndexMap["flowing_water"] = BlockStyle::Create(make_color_rgb(165, 165, 165), 0.7, -1, 1.0, BlockStyle::WATER);
+		Preview::mcBlockIdStyleIndexMap["flowing_water"] = BlockStyle::Create(make_color_rgb(41, 76, 148), 0.7, -1, 1.0, BlockStyle::NONE); //BlockStyle::Create(make_color_rgb(165, 165, 165), 0.7, -1, 1.0, BlockStyle::WATER); //fix water tint
 		Preview::mcBlockIdStyleIndexMap["lava"] =
 		Preview::mcBlockIdStyleIndexMap["flowing_lava"] = BlockStyle::Create(make_color_rgb(255, 100, 0), 1.0, -1, 1.0, BlockStyle::NONE, 26);
 

@@ -67,6 +67,7 @@ function block_load_render_model(model, rot, uvlock, opaque, wei, res = null)
 		// Reset random offset
 		random_offset = 0
 		random_offset_xy = 0
+		//random_offset = [[0, 0, 0], [0, 0, 0]]
 		
 		// Reset offset
 		offset_x = 0

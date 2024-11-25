@@ -67,7 +67,7 @@ namespace CppProject
 				{
 					case GRASS: tintColor = biome.grass; break;
 					case FOLIAGE: tintColor = biome.foliage; break;
-					case WATER: tintColor = biome.water; break;
+					//case WATER: tintColor = biome.water; break; //fix water tint
 				}
 				uint16_t biomePos = addBlockColor(color_multiply(colorTop, tintColor), alphaTop, false);
 				if (b == 0) // Select biome 0 as style

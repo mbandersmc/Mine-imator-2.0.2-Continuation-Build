@@ -1,5 +1,5 @@
 {
-	"version": "24w44a",
+	"version": "1.21.4-pre1",
 	"patch": 0,
 	"format": 9,
 	"characters": [
@@ -2170,8 +2170,8 @@
 		{
 			"name": "brown_mushroom",
 			"file": "brown_mushroom.json",
-			"subsurface": 1,
 			"emissive": 0.05,
+			"subsurface": 1,
 			"id": "minecraft:brown_mushroom"
 		},
 		{
@@ -3332,7 +3332,7 @@
 			"states": {
 				"lit": [
 					{ "value": "false", "file": "carved_pumpkin.json" },
-					{ "value": "true", "emissive": 0.75, "file": "jack_o_lantern.json" }
+					{ "value": "true", "file": "jack_o_lantern.json", "emissive": 0.75 }
 				],
 				"facing": [ "north", "south", "east", "west" ]
 			},
@@ -4769,8 +4769,8 @@
 				"half": [ "lower", "upper" ]
 			},
 			"default_state": "variant=sunflower",
-			"random_offset_xz": true,
 			"subsurface": 1,
+			"random_offset_xz": true,
 			"wind": {
 				"axis": "all",
 				"ymin": 0
@@ -5609,11 +5609,11 @@
 				"age": [ "0", "1", "2", "3" ]
 			},
 			"default_state": "age=0",
+			"subsurface": 1,
 			"wind": {
 				"axis": "all",
 				"ymin": 0
 			},
-			"subsurface": 1,
 			"id": "minecraft:sweet_berry_bush"
 		},
 		{
@@ -5703,8 +5703,8 @@
 		{
 			"name": "crimson_roots",
 			"file": "crimson_roots.json",
-			"random_offset_xz": true,
 			"subsurface": 1,
+			"random_offset_xz": true,
 			"wind": {
 				"axis": "all",
 				"ymin": 8
@@ -5720,8 +5720,8 @@
 		{
 			"name": "warped_roots",
 			"file": "warped_roots.json",
-			"random_offset_xz": true,
 			"subsurface": 1,
+			"random_offset_xz": true,
 			"wind": {
 				"axis": "all",
 				"ymin": 8
@@ -5731,8 +5731,8 @@
 		{
 			"name": "nether_sprouts",
 			"file": "nether_sprouts.json",
-			"random_offset_xz": true,
 			"subsurface": 1,
+			"random_offset_xz": true,
 			"wind": {
 				"axis": "all",
 				"ymin": 8
@@ -6316,8 +6316,8 @@
 				"facing": [ "north", "south", "east", "west" ]
 			},
 			"default_state": "facing=west",
-			"random_offset": true,
 			"subsurface": 1,
+			"random_offset": true,
 			"wind": {
 				"axis": "all",
 				"ymin": 0
@@ -6327,6 +6327,7 @@
 		{
 			"name": "hanging_roots",
 			"file": "hanging_roots.json",
+			"subsurface": 1,
 			"random_offset_xz": true,
 			"id": "minecraft:hanging_roots"
 		},
@@ -8370,12 +8371,12 @@
 		"dark_oak_sapling.json": { "colorY": "#265216" },
 		"cherry_sapling.json": { "colorY": "#E986BB" },
 		"pale_oak_sapling.json": { "colorY": "#81726D" },
-		"gold_ore.json": { "colorY": "#B79048" },
-		"deepslate_gold_ore.json": { "colorY": "#B79048" },
+		"gold_ore.json": { "colorY": "#BDB664" },
+		"deepslate_gold_ore.json": { "colorY": "#A69F4D" },
 		"iron_ore.json": { "colorY": "#99897D" },
-		"deepslate_iron_ore.json": { "colorY": "#99897D" },
+		"deepslate_iron_ore.json": { "colorY": "#806F64" },
 		"coal_ore.json": { "colorY": "#5C5C5C" },
-		"deepslate_coal_ore.json": { "colorY": "#5C5C5C" },
+		"deepslate_coal_ore.json": { "colorY": "#3D3D3D" },
 		"oak_leaves.json": { "colorY": "#989998" },
 		"spruce_leaves.json": { "colorY": "#8A8A8A" },
 		"birch_leaves.json": { "colorY": "#888787" },
@@ -8384,7 +8385,7 @@
 		"dark_oak_leaves.json": { "colorY": "#9E9E9E" },
 		"mangrove_leaves.json": { "colorY": "#9E9E9E" },
 		"lapis_ore.json": { "colorY": "#4D6CA0" },
-		"deepslate_lapis_ore.json": { "colorY": "#4D6CA0" },
+		"deepslate_lapis_ore.json": { "colorY": "#345387" },
 		"powered_rail.json": { "colorY": null },
 		"detector_rail.json": { "colorY": null },
 		"cobweb.json": { "colorY": "#F1F4F4", "alphaY": 0.75 },
@@ -8410,13 +8411,33 @@
 		"brown_mushroom.json": { "colorY": "#CC9978" },
 		"red_mushroom.json": { "colorY": "#FE2A2A" },
 		"tnt.json": { "colorY": "#912D11", "colorZ": "#DB2F1A" },
+		"torch.json": { "colorY": null },
+		"soul_torch.json": { "colorY": null },
+		"wall_torch.json": { "colorY": null },
+		"soul_wall_torch.json": { "colorY": null },
 		"diamond_ore.json": { "colorY": "#50AAAD" },
-		"deepslate_diamond_ore.json": { "colorY": "#50AAAD" },
+		"deepslate_diamond_ore.json": { "colorY": "#379093" },
 		"wheat.json": { "colorY": "#CDB159" },
 		"acacia_door.json": { "colorY": "#BA683B" },
 		"rail.json": { "colorY": null },
-		"redstone_ore.json": { "colorY": "#A74545" },
-		"deepslate_redstone_ore.json": { "colorY": "#A74545" },
+		"redstone_ore.json": { "colorY": "#BF3F3F" },
+		"deepslate_redstone_ore.json": { "colorY": "#A82828" },
+		"redstone_torch.json": { "colorY": null },
+		"redstone_wall_torch.json": { "colorY": null },
+		"stone_button.json": { "colorY": null },
+		"oak_button.json": { "colorY": null },
+		"spruce_button.json": { "colorY": null },
+		"birch_button.json": { "colorY": null },
+		"jungle_button.json": { "colorY": null },
+		"acacia_button.json": { "colorY": null },
+		"dark_oak_button.json": { "colorY": null },
+		"mangrove_button.json": { "colorY": null },
+		"cherry_button.json": { "colorY": null },
+		"pale_oak_button.json": { "colorY": null },
+		"bamboo_button.json": { "colorY": null },
+		"crimson_button.json": { "colorY": null },
+		"warped_button.json": { "colorY": null },
+		"polished_blackstone_button.json": { "colorY": null },
 		"cake.json": { "colorY": "#FDF4D8", "colorZ": "#BB581D" },
 		"candle_cake.json": { "colorY": "#FCEDCA", "colorZ": "#BB581D" },
 		"white_candle_cake.json": { "colorY": "#F5F0DB", "colorZ": "#BB581D" },
@@ -8459,7 +8480,7 @@
 		"enchanting_table.json": { "colorY": "#86142C", "colorZ": "#171226" },
 		"end_portal_frame.json": { "colorY": "#427367", "colorZ": "#DFE2A4" },
 		"emerald_ore.json": { "colorY": "#4DA463", "colorZ": "#4DA463" },
-		"deepslate_emerald_ore.json": { "colorY": "#4DA463", "colorZ": "#4DA463" },
+		"deepslate_emerald_ore.json": { "colorY": "#4DA463", "colorZ": "#338B4A" },
 		"flower_pot.json": { "colorY": "#78553A", "colorZ": "#834939" },
 		"potted_poppy.json": { "colorY": "#C32A21", "colorZ": "#834939" },
 		"potted_dandelion.json": { "colorY": "#FBD33F", "colorZ": "#834939" },
@@ -8500,6 +8521,7 @@
 		"potted_flowering_azalea_bush.json": { "colorY": "#6C8031", "colorZ": "#834939" },
 		"carrots.json": { "colorY": "#C46F14" },
 		"potatoes.json": { "colorY": "#C8A24B" },
+		"nether_quartz_ore.json": { "colorY": "#9C7971" },
 		"activator_rail.json": { "colorY": null },
 		"sunflower.json": { "colorY": "#FED639" },
 		"lilac.json": { "colorY": "#D380D3" },
@@ -8511,6 +8533,7 @@
 		"torchflower_crop.json": { "colorY": "#65876E" },
 		"pitcher_crop.json": { "colorY": "#7BD4C7" },
 		"beetroots.json": { "colorY": "#9B221A" },
+		"observer.json": { "colorY": "#7A7A7A", "colorZ": "#464242" },
 		"seagrass.json": { "colorY": null },
 		"tall_seagrass.json": { "colorY": null },
 		"kelp.json": { "colorY": "#59AB30" },
@@ -8518,12 +8541,22 @@
 		"bamboo.json": { "colorY": "#538209" },
 		"grindstone.json": { "colorY": "#8F8F8F", "colorZ": "#686868" },
 		"bell.json": { "colorY": "#4F3218", "colorZ": "#FFEC4F" },
+		"lantern.json": { "colorY": "#495065", "colorZ": "#F9C966" },
+		"soul_lantern.json": { "colorY": "#495065", "colorZ": "#6DEDF1" },
+		"campfire.json": { "colorY": "#DFA21B", "colorZ": "#917142" },
+		"soul_campfire.json": { "colorY": "#5BE3E8", "colorZ": "#917142" },
 		"crimson_fungus.json": { "colorY": "#941818" },
+		"weeping_vines_plant.json": { "colorY": "#7B0000" },
+		"weeping_vines.json": { "colorY": "#7B0000" },
 		"crimson_roots.json": { "colorY": "#920636" },
 		"warped_fungus.json": { "colorY": "#119B85" },
 		"warped_roots.json": { "colorY": "#167E86" },
-		"copper_ore.json": { "colorY": "#A27564" },
-		"deepslate_copper_ore.json": { "colorY": "#A27564" },
+		"twisting_vines_plant.json": { "colorY": "#119B85" },
+		"twisting_vines.json": { "colorY": "#119B85" },
+		"nether_gold_ore.json": { "colorY": "#B08B39" },
+		"gilded_blackstone.json": { "colorY": "#968D40" },
+		"copper_ore.json": { "colorY": "#AF7865" },
+		"deepslate_copper_ore.json": { "colorY": "#98624E" },
 		"candle.json": { "colorY": "#FADAA3" },
 		"white_candle.json": { "colorY": "#E0E5E5" },
 		"orange_candle.json": { "colorY": "#FF8118" },
@@ -8554,7 +8587,9 @@
 		"mangrove_roots.json": { "colorY": "#463823" },
 		"ochre_froglight.json": { "colorY": "#F5E7AD" },
 		"pearlescent_froglight.json": { "colorY": "#DECDD6" },
-		"verdant_froglight.json": { "colorY": "#BADEB5" }
+		"verdant_froglight.json": { "colorY": "#BADEB5" },
+		"crafter.json": { "colorY": "#8F8F8F", "colorZ": "#9F844D" },
+		"pale_hanging_moss.json": { "colorY": null }
 	},
 	"item_textures": [
 		"item/leather_helmet",
@@ -8789,7 +8824,7 @@
 		"",
 		"item/lingering_potion",
 		"item/elytra",
-		"item/broken_elytra",
+		"item/elytra_broken",
 		"item/end_crystal",
 		"item/charcoal",
 		"item/diamond_horse_armor",
@@ -9674,6 +9709,205 @@
 	],
 	"biomes": [
 		{
+			"name": "plains",
+			"foliage": [ 50, 173 ],
+			"water": "#3F76E4",
+			"variant": [
+				{
+					"name": "sunflower_plains"
+				},
+				{
+					"name": "snowy_plains",
+					"foliage": [ 255, 255 ]
+				},
+				{
+					"name": "ice_spikes",
+					"foliage": [ 255, 255 ]
+				}
+			]
+		},
+		{
+			"name": "desert",
+			"foliage": [ 0, 255 ],
+			"water": "#3F76E4"
+		},
+		{
+			"name": "swamp",
+			"foliage": "#6A7039",
+			"water": "#617B64",
+			"variant": [
+				{
+					"name": "mangrove_swamp",
+					"foliage": "#8DB127",
+					"water": "#3A7A6A"
+				}
+			]
+		},
+		{
+			"name": "forest",
+			"foliage": [ 76, 112 ],
+			"water": "#3F76E4",
+			"variant": [
+				{
+					"name": "flower_forest"
+				},
+				{
+					"name": "birch_forest",
+					"foliage": [ 101, 163 ]
+				},
+				{
+					"name": "old_growth_birch_forest",
+					"foliage": [ 101, 163 ]
+				},
+				{
+					"name": "dark_forest",
+					"grass": "#507A32"
+				},
+				{
+					"name": "pale_garden",
+					"foliage": "#878D76",
+					"grass": "#778272",
+					"water": "#76889D"
+				}
+			]
+		},
+		{
+			"name": "taiga",
+			"foliage": [ 191, 203 ],
+			"water": "#3F76E4",
+			"variant": [
+				{
+					"name": "snowy_taiga",
+					"foliage": [ 255, 255 ],
+					"water": "#3D57D6"
+				},
+				{
+					"name": "old_growth_pine_taiga",
+					"foliage": [ 178, 193 ]
+				},
+				{
+					"name": "old_growth_spruce_taiga"
+				}
+			]
+		},
+		{
+			"name": "savanna",
+			"foliage": [ 0, 255 ],
+			"water": "#3F76E4",
+			"variant": [
+				{
+					"name": "savanna_plateau"
+				},
+				{
+					"name": "windswept_savanna"
+				}
+			]
+		},
+		{
+			"name": "windswept_hills",
+			"foliage": [ 203, 239 ],
+			"water": "#3F76E4",
+			"variant": [
+				{
+					"name": "windswept_gravelly_hills"
+				},
+				{
+					"name": "windswept_forest"
+				}
+			]
+		},
+		{
+			"name": "jungle",
+			"foliage": [ 12, 36 ],
+			"water": "#3F76E4",
+			"variant": [
+				{
+					"name": "sparse_jungle",
+					"foliage": [ 12, 61 ]
+				},
+				{
+					"name": "bamboo_jungle"
+				}
+			]
+		},
+		{
+			"name": "badlands",
+			"foliage": "#9E814D",
+			"grass": "#90814D",
+			"water": "#3F76E4",
+			"variant": [
+				{
+					"name": "wooded_badlands"
+				},
+				{
+					"name": "eroded_badlands"
+				}
+			]
+		},
+		{
+			"name": "mountains",
+			"group": true,
+			"foliage": [ 255, 255 ],
+			"water": "#3F76E4",
+			"variant": [
+				{
+					"name": "meadow",
+					"foliage": [ 127, 152 ],
+					"water": "#0E4ECF"
+				},
+				{
+					"name": "cherry_grove",
+					"foliage": "#B6DB61",
+					"grass": "#B6DB61",
+					"water": "#5DB7EF"
+				},
+				{
+					"name": "grove"
+				},
+				{
+					"name": "snowy_slopes"
+				},
+				{
+					"name": "frozen_peaks"
+				},
+				{
+					"name": "jagged_peaks"
+				},
+				{
+					"name": "stony_peaks",
+					"foliage": [ 0, 178 ]
+				}
+			]
+		},
+		{
+			"name": "river",
+			"foliage": [ 127, 191 ],
+			"water": "#3F76E4",
+			"variant": [
+				{
+					"name": "frozen_river",
+					"foliage": [ 255, 255 ],
+					"water": "#3938C9"
+				}
+			]
+		},
+		{
+			"name": "beach",
+			"foliage": [ 50, 173 ],
+			"water": "#3F76E4",
+			"variant": [
+				{
+					"name": "snowy_beach",
+					"foliage": [ 242, 251 ],
+					"water": "#3D57D6"
+				},
+				{
+					"name": "stony_shore",
+					"foliage": [ 203, 239 ]
+				}
+			]
+		},
+		{
 			"name": "ocean",
 			"foliage": [ 127, 191 ],
 			"water": "#3F76E4",
@@ -9713,91 +9947,25 @@
 			]
 		},
 		{
-			"name": "plains",
+			"name": "mushroom_fields",
+			"foliage": [ 25, 25 ],
+			"water": "#3F76E4"
+		},
+		{
+			"name": "caves",
+			"group": true,
 			"foliage": [ 50, 173 ],
 			"water": "#3F76E4",
 			"variant": [
 				{
-					"name": "sunflower_plains"
+					"name": "dripstone_caves"
 				},
 				{
-					"name": "snowy_plains",
-					"foliage": [ 255, 255 ]
+					"name": "lush_caves",
+					"foliage": [ 127, 191 ]
 				},
 				{
-					"name": "ice_spikes",
-					"foliage": [ 255, 255 ]
-				}
-			]
-		},
-		{
-			"name": "desert",
-			"foliage": [ 0, 255 ],
-			"water": "#3F76E4"
-		},
-		{
-			"name": "windswept_hills",
-			"foliage": [ 203, 239 ],
-			"water": "#3F76E4",
-			"variant": [
-				{
-					"name": "windswept_forest"
-				},
-				{
-					"name": "windswept_gravelly_hills"
-				}
-			]
-		},
-		{
-			"name": "forest",
-			"foliage": [ 76, 112 ],
-			"water": "#3F76E4",
-			"variant": [
-				{
-					"name": "flower_forest"
-				}
-			]
-		},
-		{
-			"name": "taiga",
-			"foliage": [ 191, 203 ],
-			"water": "#3F76E4",
-			"variant": [
-				{
-					"name": "snowy_taiga",
-					"foliage": [ 255, 255 ],
-					"water": "#3D57D6"
-				},
-				{
-					"name": "old_growth_pine_taiga",
-					"foliage": [ 178, 193 ]
-				},
-				{
-					"name": "old_growth_spruce_taiga"
-				}
-			]
-		},
-		{
-			"name": "swamp",
-			"foliage": "#6A7039",
-			"water": "#617B64",
-			"variant": [
-				{
-					"name": "mangrove_swamp",
-					"foliage": "#8DB127",
-					"water": "#3A7A6A"
-				}
-			]
-		},
-		{
-			"name": "river",
-			"foliage": [ 127, 191 ],
-			"water": "#3F76E4",
-			"variant": [
-				{
-					"name": "frozen_river",
-					"foliage": [ 255, 255 ],
-					"water": "#3938C9"
+					"name": "deep_dark"
 				}
 			]
 		},
@@ -9840,145 +10008,6 @@
 				},
 				{
 					"name": "end_barrens"
-				}
-			]
-		},
-		{
-			"name": "mushroom_fields",
-			"foliage": [ 25, 25 ],
-			"water": "#3F76E4"
-		},
-		{
-			"name": "beach",
-			"foliage": [ 50, 173 ],
-			"water": "#3F76E4",
-			"variant": [
-				{
-					"name": "stony_shore",
-					"foliage": [ 203, 239 ]
-				},
-				{
-					"name": "snowy_beach",
-					"foliage": [ 242, 251 ],
-					"water": "#3D57D6"
-				}
-			]
-		},
-		{
-			"name": "jungle",
-			"foliage": [ 12, 36 ],
-			"water": "#3F76E4",
-			"variant": [
-				{
-					"name": "sparse_jungle",
-					"foliage": [ 12, 61 ]
-				},
-				{
-					"name": "bamboo_jungle"
-				}
-			]
-		},
-		{
-			"name": "birch_forest",
-			"foliage": [ 101, 163 ],
-			"water": "#3F76E4",
-			"variant": [
-				{
-					"name": "old_growth_birch_forest"
-				}
-			]
-		},
-		{
-			"name": "dark_forest",
-			"foliage": [ 76, 112 ],
-			"grass": "#507A32",
-			"water": "#3F76E4",
-			"variant": [
-				{
-					"name": "pale_garden",
-					"foliage": "#878D76",
-					"grass": "#778272",
-					"water": "#76889D"
-				}
-			]
-		},
-		{
-			"name": "savanna",
-			"foliage": [ 0, 255 ],
-			"water": "#3F76E4",
-			"variant": [
-				{
-					"name": "savanna_plateau"
-				},
-				{
-					"name": "windswept_savanna"
-				}
-			]
-		},
-		{
-			"name": "badlands",
-			"foliage": "#9E814D",
-			"grass": "#90814D",
-			"water": "#3F76E4",
-			"variant": [
-				{
-					"name": "wooded_badlands"
-				},
-				{
-					"name": "eroded_badlands"
-				}
-			]
-		},
-		{
-			"name": "caves",
-			"group": true,
-			"foliage": [ 50, 173 ],
-			"water": "#3F76E4",
-			"variant": [
-				{
-					"name": "dripstone_caves"
-				},
-				{
-					"name": "lush_caves",
-					"foliage": [ 127, 191 ]
-				},
-				{
-					"name": "deep_dark"
-				}
-			]
-		},
-		{
-			"name": "mountains",
-			"group": true,
-			"foliage": [ 255, 255 ],
-			"water": "#3F76E4",
-			"variant": [
-				{
-					"name": "meadow",
-					"foliage": [ 127, 152 ],
-					"water": "#0E4ECF"
-				},
-				{
-					"name": "grove"
-				},
-				{
-					"name": "cherry_grove",
-					"foliage": "#B6DB61",
-					"grass": "#B6DB61",
-					"water": "#5DB7EF"
-				},
-				{
-					"name": "snowy_slopes"
-				},
-				{
-					"name": "jagged_peaks"
-				},
-				{
-					"name": "frozen_peaks"
-				},
-				{
-					"name": "stony_peaks",
-					"foliage": [ 0, 178 ]
 				}
 			]
 		},

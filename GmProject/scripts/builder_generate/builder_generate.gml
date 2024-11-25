@@ -215,6 +215,16 @@ function builder_generate()
 				block_pos_y += irandom_range(-4, 4)
 			}
 		}
+		/*
+		if (singlemodel != null && build_size_xy > 1)
+		{
+			//random_set_seed(build_pos_x * build_size_y * build_size_z + build_pos_y * build_size_z + build_pos_z)
+			random_set_seed(build_pos_x + build_size_x * build_pos_y)
+			block_pos_x += irandom_range(singlemodel.random_offset[0][0], singlemodel.random_offset[1][0])
+			block_pos_z += irandom_range(singlemodel.random_offset[0][1], singlemodel.random_offset[1][1])
+			block_pos_y += irandom_range(singlemodel.random_offset[0][2], singlemodel.random_offset[1][2])
+		}
+		*/
 		
 		// Set wind and brightness
 		block_vertex_emissive = null

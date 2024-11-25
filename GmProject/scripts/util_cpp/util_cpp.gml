@@ -63,7 +63,7 @@ function skins_directory_get()
 /// Returns an URL to an article showing how to update graphics drivers.
 function drivers_url_get()
 {
-	return link_article_drivers
+	return "https://www.thewindowsclub.com/how-to-update-graphics-drivers-windows"
 }
 
 /// Returns whether an array of filenames are accepted to be dropped on the window.

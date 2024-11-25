@@ -5,7 +5,7 @@ function macros()
 {
 	// Debug
 	#macro dev_mode						true
-	#macro dev_mode_skip_blocks			dev_mode && false
+	#macro dev_mode_skip_blocks			dev_mode && true
 	#macro dev_mode_debug_schematics	dev_mode && true
 	#macro dev_mode_debug_names			dev_mode && true
 	#macro dev_mode_debug_saveid		dev_mode && true
@@ -21,10 +21,10 @@ function macros()
 	// Versions
 	#macro mineimator_version			"2.0.2"							// Base Mine-imator version
 	#macro mineimator_version_sub		"Continuation Build 1.0.8"		// Mod name and version (e.g. "Community Build 1.0.0")
-	#macro mineimator_version_extra		"Alpha 1"						// Additional suffix (e.g. "Alpha 1" or "Pre-Release 2")
+	#macro mineimator_version_extra		"Alpha 2"						// Additional suffix (e.g. "Alpha 1" or "Pre-Release 2")
 	#macro mineimator_version_full		(mineimator_version + ((mineimator_version_sub != "") ? " " + mineimator_version_sub : "") + ((mineimator_version_extra != "") ? " (" + mineimator_version_extra + ")" : ""))
-	#macro mineimator_version_date		"2024.11.01"
-	#macro minecraft_version			"24w44a"
+	#macro mineimator_version_date		"2024.11.25"
+	#macro minecraft_version			"1.21.4-pre1"
 	#macro gm_runtime					GM_runtime_version
 	
 	// File formats
@@ -100,7 +100,6 @@ function macros()
 	#macro link_twitter					"https://www.mineimator.com/tweets"
 	#macro link_discord					"https://www.mineimator.com/discord"
 	#macro link_donate					"https://www.mineimator.com/donate"
-	#macro link_article_drivers			"https://www.thewindowsclub.com/how-to-update-graphics-drivers-windows"
 	#macro show_modelbench_popup		!dev_mode && true
 	#macro http_ok						200
 	#macro http_bad_request				400
@@ -128,7 +127,7 @@ function macros()
 	#macro c_plains_biome_foliage		make_color_rgb(119, 171, 47)
 	#macro c_plains_biome_foliage_2		make_color_rgb(98, 168, 87)
 	#macro c_plains_biome_grass			make_color_rgb(145, 189, 89)
-	#macro c_plains_biome_water			make_color_rgb(62, 117, 225)
+	#macro c_plains_biome_water			make_color_rgb(63, 118, 228)
 	#macro c_sunset_start				hex_to_color("B2353B")
 	#macro c_sunset_end					hex_to_color("C04E37")
 	#macro c_normal						make_color_rgb(127, 127, 255)
@@ -161,6 +160,7 @@ function macros()
 	#macro default_block				"grass_block"
 	#macro default_item					"item/diamond_sword"
 	#macro default_ground				"block/grass_block_top"
+	#macro default_biome				"plains"
 	#macro particle_sheet				-5
 	#macro particle_template			-6
 	#macro normal_buffer_scale			8

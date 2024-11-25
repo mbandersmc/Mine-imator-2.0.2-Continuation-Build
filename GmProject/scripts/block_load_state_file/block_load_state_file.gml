@@ -72,20 +72,28 @@ function block_load_state_file(fname, block, state)
 				model_preview_color_zp = model_preview_color_yp
 			else if (model_preview_color_yp < 0 && model_preview_color_zp != -1)
 				model_preview_color_yp = model_preview_color_zp
+			/*
+			else if (model_preview_color_zp = null && model_preview_color_yp = null)
+			{
+				model_preview_color_zp = hex_to_color("000000")
+				model_preview_color_yp = hex_to_color("000000")
+				model_preview_alpha_zp = 0
+				model_preview_alpha_yp = 0
+			}*/
 			
 			if (blockmap[?"alphaY"] != undefined && is_real(blockmap[?"alphaY"]))
 				model_preview_alpha_zp = blockmap[?"alphaY"]
 			if (blockmap[?"alphaZ"] != undefined && is_real(blockmap[?"alphaZ"]))
 				model_preview_alpha_yp = blockmap[?"alphaZ"]
 			
-			if (model_preview_color_zp >= 0 && model_preview_color_yp >= 0 && model_preview_alpha_zp = -1 && model_preview_alpha_yp = -1)
+			if (model_preview_color_zp >= 0 && model_preview_color_yp >= 0 && model_preview_alpha_zp < 0 && model_preview_alpha_yp < 0)
 			{
 				model_preview_alpha_zp = 1
 				model_preview_alpha_yp = 1
 			}
-			else if (model_preview_alpha_zp = -1 && model_preview_alpha_yp != -1)
+			else if (model_preview_alpha_zp < 0 && model_preview_alpha_yp >= 0)
 				model_preview_alpha_zp = model_preview_alpha_yp
-			else if (model_preview_alpha_yp = -1 && model_preview_alpha_zp != -1)
+			else if (model_preview_alpha_yp < 0 && model_preview_alpha_zp >= 0)
 				model_preview_alpha_yp = model_preview_alpha_zp
 		}
 		

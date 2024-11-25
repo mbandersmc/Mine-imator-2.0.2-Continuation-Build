@@ -106,8 +106,13 @@ function project_load_background(map)
 	background_biome = value_get_string(map[?"biome"], background_biome)
 	
 	// Empty biome name bugfix (revert to plains)
-	if (background_biome = "")
-		background_biome = biome_list[|2].name
+	if (background_biome = "" || !find_biome(background_biome))
+	{
+		if (find_biome(default_biome))
+			background_biome = default_biome
+		else
+			background_biome = biome_list[|1].name
+	}
 	
 	background_sky_color = value_get_color(map[?"sky_color"], background_sky_color)
 	background_sky_clouds_color = value_get_color(map[?"sky_clouds_color"], background_sky_clouds_color)
