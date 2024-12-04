@@ -5,7 +5,7 @@
 		"locale": "en-US",
 		"translator": "David, Nimi, mbanders",
 		"forversion": "2.0.2 Continuation Build 1.0.8",
-		"lastchange": "2024.10.31"
+		"lastchange": "2024.11.25"
 	},
 	"particle/": {
 		"default": "Default spawner",
@@ -1668,6 +1668,7 @@
 				"purpleheart": "Purple Heart",
 				"followers": "Follower's",
 				"mcc15thyear": "MCC 15th Year",
+				"minecraftexperience": "Minecraft Experience",
 				"minecon_2011": "MineCon 2011",
 				"minecon_2012": "MineCon 2012",
 				"minecon_2013": "MineCon 2013",
