@@ -13,6 +13,9 @@ function res_load_pack_misc()
 	if (colormap_foliage_texture != null)
 		texture_free(colormap_foliage_texture)
 	
+	if (colormap_dry_foliage_texture != null)
+		texture_free(colormap_dry_foliage_texture)
+	
 	if (sun_texture != null)
 		texture_free(sun_texture)
 	
@@ -49,6 +52,12 @@ function res_load_pack_misc()
 		colormap_foliage_texture = texture_duplicate(mc_res.colormap_foliage_texture)
 	else
 		colormap_foliage_texture = texture_create(load_assets_dir + mc_foliage_image_file)
+	
+	// Dry foliage
+	if (!file_exists_lib(load_assets_dir + mc_dry_foliage_image_file) && id != mc_res)
+		colormap_dry_foliage_texture = texture_duplicate(mc_res.colormap_dry_foliage_texture)
+	else
+		colormap_dry_foliage_texture = texture_create(load_assets_dir + mc_dry_foliage_image_file)
 	
 	// Sun
 	if (!file_exists_lib(load_assets_dir + mc_sun_image_file) && id != mc_res)

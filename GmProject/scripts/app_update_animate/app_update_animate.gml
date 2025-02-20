@@ -183,6 +183,7 @@ function app_update_animate()
 		background_night_color					= bgobject.value[e_value.BG_NIGHT_COLOR]
 		background_grass_color					= bgobject.value[e_value.BG_GRASS_COLOR]
 		background_foliage_color				= bgobject.value[e_value.BG_FOLIAGE_COLOR]
+		background_dry_foliage_color			= bgobject.value[e_value.BG_DRY_FOLIAGE_COLOR]
 		background_water_color					= bgobject.value[e_value.BG_WATER_COLOR]
 		background_leaves_oak_color				= bgobject.value[e_value.BG_LEAVES_OAK_COLOR]
 		background_leaves_spruce_color			= bgobject.value[e_value.BG_LEAVES_SPRUCE_COLOR]

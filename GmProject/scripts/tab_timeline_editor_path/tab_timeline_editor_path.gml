@@ -63,19 +63,56 @@ function tab_timeline_editor_path()
 		{
 			// Export map (Identical to cylinder UV)
 			tab_control_button_label()
-		
+			
 			if (draw_button_label("timelineeditorpathshapesavemap", dx, dy, dw, icons.TEXTURE_EXPORT, e_button.SECONDARY))
 			{
 				var fn = file_dialog_save_image("path");
 				if (fn != "")
 					sprite_save_lib(spr_map_cylinder, 0, fn)
 			}
-		
+			
 			tab_next()
 		}
 		
-		tab_control_dragger()
-		draw_dragger("timelineeditorpathshapetexlength", dx, dy, dragger_width, tl_edit.path_shape_tex_length, 0.1, 0.01, no_limit, 16, 0.01, tab.path.tbx_tex_length, action_tl_path_shape_tex_length, null, true, false, "timelineeditorpathshapetexlengthtip")
+		tab_control_switch()
+		draw_switch("timelineeditorpathshapetexfixed", dx, dy, tl_edit.path_shape_tex_fixed, action_tl_path_shape_tex_fixed, "timelineeditorpathshapetexfixedtip")
+		tab_next()
+		
+		if (!tl_edit.path_shape_tex_mapped)
+		{
+			// Offset
+			textfield_group_add("timelineeditorpathshapetexhoffset", tl_edit.path_shape_tex_hoffset, 0, action_tl_path_shape_tex_hoffset, axis_edit, tab.path.tbx_shape_tex_hoffset)
+			textfield_group_add("timelineeditorpathshapetexvoffset", tl_edit.path_shape_tex_voffset, 0, action_tl_path_shape_tex_voffset, axis_edit, tab.path.tbx_shape_tex_voffset)
+			
+			tab_control_textfield_group()
+			draw_textfield_group("timelineeditorpathshapetexoffset", dx, dy, dw, 0.01, -no_limit, no_limit, 0, true, false, 3)
+			tab_next()
+			
+			// Repeat
+			textfield_group_add("timelineeditorpathshapetexhrepeat", tl_edit.path_shape_tex_hrepeat, 1, action_tl_path_shape_tex_hrepeat, axis_edit, tab.path.tbx_shape_tex_hrepeat)
+			if (tl_edit.path_shape = "tube" || !tl_edit.path_shape_tex_fixed)
+				textfield_group_add("timelineeditorpathshapetexvrepeat", tl_edit.path_shape_tex_vrepeat, 1, action_tl_path_shape_tex_vrepeat, axis_edit, tab.path.tbx_shape_tex_vrepeat)
+			if (tl_edit.path_shape_tex_fixed)
+				textfield_group_add("timelineeditorpathshapetexvlength", tl_edit.path_shape_tex_length, 16, action_tl_path_shape_tex_length, axis_edit, tab.path.tbx_shape_tex_length)
+			
+			tab_control_textfield_group()
+			draw_textfield_group("timelineeditorpathshapetexrepeat", dx, dy, dw, 0.01, 0, no_limit, 0, true, false, 3)
+			tab_next()
+		}
+		else if (tl_edit.path_shape_tex_fixed)
+		{
+			tab_control_dragger()
+			draw_dragger("timelineeditorpathshapetexlength", dx, dy, dragger_width, tl_edit.path_shape_tex_length, 0.1, 0.01, no_limit, 16, 0.01, tab.path.tbx_shape_tex_length, action_tl_path_shape_tex_length, null, true, false)
+			tab_next()
+		}
+		
+		// Mirror
+		tab_control_switch()
+		draw_switch("timelineeditorpathshapetexhmirror", dx, dy, tl_edit.path_shape_tex_hmirror, action_tl_path_shape_tex_hmirror)
+		tab_next()
+			
+		tab_control_switch()
+		draw_switch("timelineeditorpathshapetexvmirror", dx, dy, tl_edit.path_shape_tex_vmirror, action_tl_path_shape_tex_vmirror)
 		tab_next()
 		
 		tab_collapse_end()

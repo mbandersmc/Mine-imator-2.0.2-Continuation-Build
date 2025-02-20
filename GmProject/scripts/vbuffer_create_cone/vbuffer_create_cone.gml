@@ -14,21 +14,22 @@ function vbuffer_create_cone(rad, tex1, tex2, thflip, tvflip, detail, smooth, cl
 {
 	vbuffer_start()
 	
-	tex1[X] += 0.25
-	tex2[X] += 0.25
+	//tex1[X] += 0.25
+	//tex2[X] += 0.25
+	var rot = -(pi/2);
 	
 	var i = 0;
 	repeat (detail)
 	{
-		var ip;
-		var n1x, n1y, n2x, n2y;
-		var x1, y1, x2, y2;
-		var texsize, texmid;
-		ip = i
+		var ip = i;
 		i += 1 / detail
+		
+		var texsize, texmid;
 		texsize = point2D_sub(tex2, tex1)
 		texmid = point2D_add(tex1, vec2_mul(texsize, 0.5))
 		
+		var n1x, n1y, n2x, n2y;
+		var x1, y1, x2, y2;
 		n1x = cos(ip * pi * 2)
 		n1y = -sin(ip * pi * 2)
 		n2x = cos(i * pi * 2)
@@ -56,12 +57,29 @@ function vbuffer_create_cone(rad, tex1, tex2, thflip, tvflip, detail, smooth, cl
 		if (closed)
 		{
 			// Bottom
-			texmid[X] = mapped ? 0.75 : 0.5
+			if (mapped)
+				texmid[X] = 0.75
 			
 			vbuffer_add_triangle(0, 0, -rad, x1, y1, -rad, x2, y2, -rad, 
 								texmid[X], texmid[Y], 
 								texmid[X] + cos(ip * pi * 2) * (texsize[X] / 2), texmid[Y] + sin(ip * pi * 2) * (texsize[Y] / 2), 
 								texmid[X] + cos(i * pi * 2) * (texsize[X] / 2), texmid[Y] + sin(i * pi * 2) * (texsize[Y] / 2), invert)
+		}
+		
+		n1x = cos((ip * pi * 2) + rot)
+		n1y = -sin((ip * pi * 2) + rot)
+		n2x = cos((i * pi * 2) + rot)
+		n2y = -sin((i * pi * 2) + rot)
+		x1 = n1x * rad
+		y1 = n1y * rad
+		x2 = n2x * rad
+		y2 = n2y * rad
+		if (invert)
+		{
+			n1x *= -1
+			n1y *= -1
+			n2x *= -1
+			n2y *= -1
 		}
 		
 		// Sides

@@ -53,6 +53,7 @@ function minecraft_assets_load()
 					app.background_biome = biome_list[|1].name
 				
 				app.background_foliage_color = c_plains_biome_foliage
+				app.background_dry_foliage_color = c_plains_biome_dry_foliage
 				app.background_grass_color = c_plains_biome_grass
 				app.background_water_color = c_plains_biome_water
 				
@@ -83,6 +84,19 @@ function minecraft_assets_load()
 				ds_list_copy(model_texture_list, modeltextureslist)
 				
 				// Block textures
+				var blocksheetsize = load_assets_map[?"block_sheet_size"];
+				if (is_undefined(blocksheetsize) || ds_list_size(blocksheetsize) < 2)
+				{
+					log("No block sheet size found, defaulting to [32,32]")
+					array_add(minecraft_block_sheet_size, 32)
+					array_add(minecraft_block_sheet_size, 32)
+				}
+				else
+				{
+					array_add(minecraft_block_sheet_size, blocksheetsize[|0])
+					array_add(minecraft_block_sheet_size, blocksheetsize[|1])
+				}
+				
 				var blocktextureslist = load_assets_map[?"block_textures"];
 				if (is_undefined(blocktextureslist))
 				{
@@ -93,6 +107,21 @@ function minecraft_assets_load()
 				ds_list_copy(block_texture_list, blocktextureslist)
 				
 				// Animated block textures
+				var blockanimatedsheetsize = load_assets_map[?"block_animated_sheet_size"];
+				if (is_undefined(blockanimatedsheetsize) || ds_list_size(blockanimatedsheetsize) < 3)
+				{
+					log("No animated block sheet size found, defaulting to [32,2,64]")
+					array_add(minecraft_block_animated_sheet_size, 32)
+					array_add(minecraft_block_animated_sheet_size, 2)
+					array_add(minecraft_block_animated_sheet_size, 64)
+				}
+				else
+				{
+					array_add(minecraft_block_animated_sheet_size, blockanimatedsheetsize[|0])
+					array_add(minecraft_block_animated_sheet_size, blockanimatedsheetsize[|1])
+					array_add(minecraft_block_animated_sheet_size, blockanimatedsheetsize[|2])
+				}
+				
 				var blocktexturesanimatedlist = load_assets_map[?"block_textures_animated"];
 				if (is_undefined(blocktexturesanimatedlist))
 				{
@@ -127,6 +156,21 @@ function minecraft_assets_load()
 					ds_map_copy(block_texture_preview_map, blocktexturepreview)
 				
 				// Item textures
+				var itemsheetsize = load_assets_map[?"item_sheet_size"];
+				if (is_undefined(itemsheetsize) || ds_list_size(itemsheetsize) < 2)
+				{
+					log("No item sheet size found, defaulting to [32,32]")
+					array_add(minecraft_item_sheet_size, 32)
+					array_add(minecraft_item_sheet_size, 32)
+				}
+				else
+				{
+					array_add(minecraft_item_sheet_size, blocksheetsize[|0])
+					array_add(minecraft_item_sheet_size, blocksheetsize[|1])
+				}
+				with (mc_res)
+					item_sheet_size = vec2(minecraft_item_sheet_size[0], minecraft_item_sheet_size[1])
+				
 				var itemtextureslist = load_assets_map[?"item_textures"];
 				if (is_undefined(itemtextureslist))
 				{

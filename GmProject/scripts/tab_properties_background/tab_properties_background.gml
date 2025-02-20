@@ -258,9 +258,9 @@ function tab_properties_background()
 		draw_box(dx + wid + 16, dy + 4, 20, 20, false, c_level_bottom, 1)
 		
 		if (background_ground_ani)
-			draw_texture_slot(res.block_sheet_ani_texture[block_texture_get_frame(true)], background_ground_slot - ds_list_size(mc_assets.block_texture_list), dx + wid + 18, dy + 6, 16, 16, block_sheet_ani_width, block_sheet_ani_height, block_texture_get_blend(background_ground_name, res))
+			draw_texture_slot(res.block_sheet_ani_texture[block_texture_get_frame(true)], background_ground_slot - ds_list_size(mc_assets.block_texture_list), dx + wid + 18, dy + 6, 16, 16, minecraft_block_animated_sheet_size[0], minecraft_block_animated_sheet_size[1], block_texture_get_blend(background_ground_name, res))
 		else
-			draw_texture_slot(res.block_sheet_texture, background_ground_slot, dx + wid + 18, dy + 6, 16, 16, block_sheet_width, block_sheet_height, block_texture_get_blend(background_ground_name, res))
+			draw_texture_slot(res.block_sheet_texture, background_ground_slot, dx + wid + 18, dy + 6, 16, 16, minecraft_block_sheet_size[0], minecraft_block_sheet_size[1], block_texture_get_blend(background_ground_name, res))
 		
 		if (draw_button_icon("backgroundgroundchange", dx + dw - 24, dy, 24, 24, ground_editor.show, icons.PENCIL, null, false, "tooltipchangeground"))
 			tab_toggle(ground_editor)
@@ -315,6 +315,11 @@ function tab_properties_background()
 		// Foliage
 		tab_control_color()
 		draw_button_color("backgroundfoliagecolor", dx, dy, dw, background_foliage_color, c_plains_biome_foliage, false, action_background_foliage_color)
+		tab_next()
+		
+		// Dry foliage
+		tab_control_color()
+		draw_button_color("backgrounddryfoliagecolor", dx, dy, dw, background_dry_foliage_color, c_plains_biome_dry_foliage, false, action_background_dry_foliage_color)
 		tab_next()
 		
 		// Water

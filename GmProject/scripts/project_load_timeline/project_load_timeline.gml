@@ -238,6 +238,7 @@ function project_load_timeline(map)
 			path_shape_smooth_ring = value_get_real(pathmap[?"shape_smooth_ring"], path_shape_smooth_ring)
 			path_shape_detail = value_get_real(pathmap[?"shape_detail"], path_shape_detail)
 			path_shape_tex_mapped = value_get_real(pathmap[?"shape_tex_mapped"], path_shape_tex_mapped)
+			path_shape_tex_fixed = value_get_real(pathmap[?"shape_tex_fixed"], path_shape_tex_fixed)
 			path_shape_tex_length = value_get_real(pathmap[?"shape_tex_length"], path_shape_tex_length)
 			
 			if (load_format < e_project.FORMAT_CTB_106)

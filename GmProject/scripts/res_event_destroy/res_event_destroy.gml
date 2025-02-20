@@ -69,15 +69,15 @@ function res_event_destroy()
 		texture_free(block_sheet_tex_normal)
 	
 	if (block_sheet_ani_texture != null)
-		for (var f = 0; f < block_sheet_ani_frames; f++)
+		for (var f = 0; f < minecraft_block_animated_sheet_size[2]; f++)
 			texture_free(block_sheet_ani_texture[f])
 	
 	if (block_sheet_ani_texture_material != null)
-		for (var f = 0; f < block_sheet_ani_frames; f++)
+		for (var f = 0; f < minecraft_block_animated_sheet_size[2]; f++)
 			texture_free(block_sheet_ani_texture_material[f])
 	
 	if (block_sheet_ani_tex_normal != null)
-		for (var f = 0; f < block_sheet_ani_frames; f++)
+		for (var f = 0; f < minecraft_block_animated_sheet_size[2]; f++)
 			texture_free(block_sheet_ani_tex_normal[f])
 	
 	if (block_sheet_depth_list != null)
@@ -107,6 +107,9 @@ function res_event_destroy()
 	
 	if (colormap_foliage_texture != null)
 		texture_free(colormap_foliage_texture)
+	
+	if (colormap_dry_foliage_texture != null)
+		texture_free(colormap_dry_foliage_texture)
 	
 	if (particles_texture[0] != null)
 		texture_free(particles_texture[0])

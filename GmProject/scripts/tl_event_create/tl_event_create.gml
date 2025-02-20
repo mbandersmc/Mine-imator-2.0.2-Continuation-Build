@@ -194,6 +194,13 @@ function tl_event_create()
 	path_shape_smooth_ring = false
 	path_shape_detail = 6
 	path_shape_tex_mapped = false
+	path_shape_tex_fixed = true
+	path_shape_tex_hoffset = 0
+	path_shape_tex_voffset = 0
+	path_shape_tex_hrepeat = 1
+	path_shape_tex_vrepeat = 1
+	path_shape_tex_hmirror = false
+	path_shape_tex_vmirror = false
 	path_shape_tex_length = 16
 	
 	path_vbuffer = null

@@ -4235,6 +4235,11 @@
 	},
 	"legacy_model_state_values":
 	{
+		"cow": {
+			"variant": {
+				"cow": "temperate"
+			}
+		},
 		"villager": {
 			"variant": {
 				"villager": "nitwit",

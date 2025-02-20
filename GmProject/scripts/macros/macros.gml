@@ -5,7 +5,7 @@ function macros()
 {
 	// Debug
 	#macro dev_mode						true
-	#macro dev_mode_skip_blocks			dev_mode && true
+	#macro dev_mode_skip_blocks			dev_mode && false
 	#macro dev_mode_debug_schematics	dev_mode && true
 	#macro dev_mode_debug_names			dev_mode && true
 	#macro dev_mode_debug_saveid		dev_mode && true
@@ -14,17 +14,17 @@ function macros()
 	#macro dev_mode_full				dev_mode && false
 	#macro dev_mode_advanced			dev_mode && true
 	#macro dev_mode_show_bones			dev_mode && true
-	#macro dev_mode_skip_tangents		dev_mode && true
+	#macro dev_mode_skip_tangents		dev_mode && false
 	#macro dev_mode_check_assets		dev_mode && true
 	#macro dev_mode_name_translation_message " is not defined in the translation, the key will be formatted"
 	
 	// Versions
 	#macro mineimator_version			"2.0.2"							// Base Mine-imator version
-	#macro mineimator_version_sub		"Continuation Build 1.0.8"		// Mod name and version (e.g. "Community Build 1.0.0")
-	#macro mineimator_version_extra		""								// Additional suffix (e.g. "Alpha 1" or "Pre-Release 2")
+	#macro mineimator_version_sub		"Continuation Build 1.0.9"		// Mod name and version (e.g. "Community Build 1.0.0")
+	#macro mineimator_version_extra		"Alpha 1"						// Additional suffix (e.g. "Alpha 1" or "Pre-Release 2")
 	#macro mineimator_version_full		(mineimator_version + ((mineimator_version_sub != "") ? " " + mineimator_version_sub : "") + ((mineimator_version_extra != "") ? " (" + mineimator_version_extra + ")" : ""))
-	#macro mineimator_version_date		"2024.12.04"
-	#macro minecraft_version			"1.21.4"
+	#macro mineimator_version_date		"2025.02.20"
+	#macro minecraft_version			"25w08a"
 	#macro gm_runtime					GM_runtime_version
 	
 	// File formats
@@ -74,6 +74,7 @@ function macros()
 	#macro mc_pack_image_file			"pack.png"
 	#macro mc_grass_image_file			mc_textures_directory + "colormap/grass.png"
 	#macro mc_foliage_image_file		mc_textures_directory + "colormap/foliage.png"
+	#macro mc_dry_foliage_image_file	mc_textures_directory + "colormap/dry_foliage.png"
 	#macro mc_particles_image_file		mc_textures_directory + "particle/particles.png"
 	#macro mc_explosion_image_file		mc_textures_directory + "entity/explosion.png"
 	#macro mc_sun_image_file			mc_textures_directory + "environment/sun.png"
@@ -104,15 +105,6 @@ function macros()
 	#macro http_ok						200
 	#macro http_bad_request				400
 	
-	// Textures
-	#macro block_sheet_width			32
-	#macro block_sheet_height			32
-	#macro block_sheet_ani_width		32
-	#macro block_sheet_ani_height		2
-	#macro block_sheet_ani_frames		64
-	#macro item_sheet_width				32
-	#macro item_sheet_height			32
-	
 	// Colors
 	#macro c_controls					make_color_rgb(40, 40, 40)
 	#macro c_sky						make_color_rgb(120, 167, 255)
@@ -124,9 +116,10 @@ function macros()
 	#macro c_clouds_sideslight			make_color_rgb(229, 229, 229) //(215, 222, 234)
 	#macro c_clouds_sidesdark			make_color_rgb(204, 204, 204) //(194, 201, 215)
 	#macro c_clouds_bottom				make_color_rgb(178, 178, 178) //(174, 181, 193)
+	#macro c_plains_biome_grass			make_color_rgb(145, 189, 89)
 	#macro c_plains_biome_foliage		make_color_rgb(119, 171, 47)
 	#macro c_plains_biome_foliage_2		make_color_rgb(98, 168, 87)
-	#macro c_plains_biome_grass			make_color_rgb(145, 189, 89)
+	#macro c_plains_biome_dry_foliage	make_color_rgb(163, 117, 70)
 	#macro c_plains_biome_water			make_color_rgb(63, 118, 228)
 	#macro c_sunset_start				hex_to_color("B2353B")
 	#macro c_sunset_end					hex_to_color("C04E37")

@@ -576,8 +576,16 @@ function preview_draw(preview, xx, yy, width, height)
 								}
 								
 								case "colormap":
-									tex = (pack_colormap ? select.colormap_foliage_texture : select.colormap_grass_texture)
+								{
+									if (pack_colormap = 0)
+										tex = select.colormap_grass_texture
+									else if (pack_colormap = 1)
+										tex = select.colormap_foliage_texture
+									else if (pack_colormap = 2)
+										tex = select.colormap_dry_foliage_texture
+									
 									break
+								}
 								
 								case "itemsheet":
 								{

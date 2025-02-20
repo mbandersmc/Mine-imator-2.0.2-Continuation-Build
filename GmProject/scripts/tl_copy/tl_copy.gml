@@ -77,6 +77,13 @@ function tl_copy(to)
 	to.path_shape_smooth_ring = path_shape_smooth_ring
 	to.path_shape_detail = path_shape_detail
 	to.path_shape_tex_mapped = path_shape_tex_mapped
+	to.path_shape_tex_fixed = path_shape_tex_fixed
+	to.path_shape_tex_hoffset = path_shape_tex_hoffset
+	to.path_shape_tex_voffset = path_shape_tex_voffset
+	to.path_shape_tex_hrepeat = path_shape_tex_hrepeat
+	to.path_shape_tex_vrepeat = path_shape_tex_vrepeat
+	to.path_shape_tex_hmirror = path_shape_tex_hmirror
+	to.path_shape_tex_vmirror = path_shape_tex_vmirror
 	to.path_shape_tex_length = path_shape_tex_length
 	
 	if (part_of != null && part_of != "")

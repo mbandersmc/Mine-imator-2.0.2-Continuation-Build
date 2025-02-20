@@ -12,7 +12,7 @@ function block_texture_get_frame(realtime = false)
 			snap(
 				mod_fix(
 					(realtime ? current_step : app.background_time) * (app.background_texture_animation_speed / 60),
-					block_sheet_ani_frames
+					minecraft_block_animated_sheet_size[2]
 				), 0.001 * abs(app.background_texture_animation_speed) // correct precision errors
 			)
 		)

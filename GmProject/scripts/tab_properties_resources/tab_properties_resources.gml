@@ -93,6 +93,7 @@ function tab_properties_resources()
 				tab_control_togglebutton()
 				togglebutton_add("resourcespackimagecolormapgrass", null, 0, res_preview.pack_colormap = 0, action_res_preview_pack_colormap)
 				togglebutton_add("resourcespackimagecolormapfoliage", null, 1, res_preview.pack_colormap = 1, action_res_preview_pack_colormap)
+				togglebutton_add("resourcespackimagecolormapdryfoliage", null, 2, res_preview.pack_colormap = 2, action_res_preview_pack_colormap)
 				draw_togglebutton("resourcespackimagecolormap", dx, dy)
 				tab_next()
 				break
@@ -114,12 +115,12 @@ function tab_properties_resources()
 		// Size
 		axis_edit = X
 		tab_control_dragger()
-		draw_dragger("resourcesitemsheetsizerows", dx, dy, dragger_width, res_edit.item_sheet_size[X], 0.1, 1, no_limit, item_sheet_width, 1, tab.resources.tbx_item_sheet_width, action_res_item_sheet_size)
+		draw_dragger("resourcesitemsheetsizerows", dx, dy, dragger_width, res_edit.item_sheet_size[X], 0.1, 1, no_limit, minecraft_item_sheet_size[0], 1, tab.resources.tbx_item_sheet_width, action_res_item_sheet_size)
 		tab_next()
 		
 		axis_edit = Y
 		tab_control_dragger()
-		draw_dragger("resourcesitemsheetsizecolumns", dx, dy, dragger_width, res_edit.item_sheet_size[Y], 0.1, 1, no_limit, item_sheet_height, 1, tab.resources.tbx_item_sheet_height, action_res_item_sheet_size)
+		draw_dragger("resourcesitemsheetsizecolumns", dx, dy, dragger_width, res_edit.item_sheet_size[Y], 0.1, 1, no_limit, minecraft_item_sheet_size[1], 1, tab.resources.tbx_item_sheet_height, action_res_item_sheet_size)
 		tab_next()
 	}
 	else if (res_edit.scenery_structure)
@@ -180,7 +181,7 @@ function tab_properties_resources()
 		draw_label(string_limit(string_remove_newline(res_edit.filename), dw - wid - 32), dx + wid + 8, dy + 14, fa_left, fa_middle, c_text_main, a_text_main, font_value)
 		
 		// Open in external program
-		if (draw_button_icon("resourcesfilenameopen", dx + dw - 24, dy, 24, 24, false, icons.FOLDER, null, res_edit.type = e_res_type.SCENERY, "tooltipresourceopen"))
+		if (draw_button_icon("resourcesfilenameopen", dx + dw - 24, dy, 24, 24, false, icons.FOLDER, null, res_edit.type = e_res_type.SCENERY || res_edit.type = e_res_type.FROM_WORLD, "tooltipresourceopen"))
 			open_url(project_folder + "/" + res_edit.filename)
 		
 		tab_next()

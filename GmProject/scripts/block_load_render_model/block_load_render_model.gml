@@ -438,15 +438,15 @@ function block_load_render_model(model, rot, uvlock, opaque, wei, res = null)
 								if (!is_undefined(col) && col = "water")
 									face_block_vbuffer[nd] = e_block_vbuffer.WATER
 								
-								sheetwidth = block_sheet_ani_width
-								sheetheight = block_sheet_ani_height
+								sheetwidth = minecraft_block_animated_sheet_size[0]
+								sheetheight = minecraft_block_animated_sheet_size[1]
 							}
 							else
 							{
 								face_depth[nd] = mc_res.block_sheet_depth_list[|slot]
 								face_block_vbuffer[nd] = e_block_vbuffer.NORMAL
-								sheetwidth = block_sheet_width
-								sheetheight = block_sheet_height
+								sheetwidth = minecraft_block_sheet_size[0]
+								sheetheight = minecraft_block_sheet_size[1]
 								
 								// Check color
 								var col = mc_assets.block_texture_color_map[?texname];
@@ -460,6 +460,7 @@ function block_load_render_model(model, rot, uvlock, opaque, wei, res = null)
 										{
 											case "grass":			face_block_vbuffer[nd] = e_block_vbuffer.GRASS;				break;
 											case "foliage":			face_block_vbuffer[nd] = e_block_vbuffer.FOLIAGE;			break;
+											case "dry_foliage":		face_block_vbuffer[nd] = e_block_vbuffer.DRY_FOLIAGE;		break;
 											
 											case "oak_leaves":		face_block_vbuffer[nd] = e_block_vbuffer.LEAVES_OAK;		break;
 											case "spruce_leaves":	face_block_vbuffer[nd] = e_block_vbuffer.LEAVES_SPRUCE;		break;
@@ -491,7 +492,7 @@ function block_load_render_model(model, rot, uvlock, opaque, wei, res = null)
 									px = slot mod sheetwidth
 									py = slot div sheetwidth
 									
-									if ((nd = e_dir.UP && alphaZ = -1) || (nd = e_dir.SOUTH && alphaY = -1))
+									if (py < sheetheight && ((nd = e_dir.UP && alphaZ = -1) || (nd = e_dir.SOUTH && alphaY = -1)))
 										alpha = buffer_read_alpha(px, py, sheetwidth)
 									else
 										alpha = (nd = e_dir.UP ? alphaZ : alphaY)
@@ -515,6 +516,7 @@ function block_load_render_model(model, rot, uvlock, opaque, wei, res = null)
 											{
 												case e_block_vbuffer.GRASS:				colstr = "grass";						break;
 												case e_block_vbuffer.FOLIAGE:			colstr = "foliage";						break;
+												case e_block_vbuffer.DRY_FOLIAGE:		colstr = "dry_foliage";					break;
 												case e_block_vbuffer.WATER:				colstr = "water";						break;
 												case e_block_vbuffer.LEAVES_OAK:		colstr = "foliage";						break;
 												case e_block_vbuffer.LEAVES_SPRUCE:		rescol = mc_res.color_leaves_spruce;	break;
