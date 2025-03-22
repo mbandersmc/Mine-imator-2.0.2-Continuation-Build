@@ -60,11 +60,13 @@ function vbuffer_create_path(path, small = false)
 		{
 			jp = 0
 			j = 1/detail
+			ringp = [sin(jp * pi * 2), 0, cos(jp * pi * 2)]
 		}
 		else
+		{
 			jp = .5 // Left side of rail
-		
-		ringp = [cos(jp * pi * 2), 0, -sin(jp * pi * 2)]
+			ringp = [cos(jp * pi * 2), 0, -sin(jp * pi * 2)]
+		}
 		
 		prevlength = length
 		length += point3D_distance(points[i], points[i + 1])
@@ -89,11 +91,14 @@ function vbuffer_create_path(path, small = false)
 			{
 				jp = j
 				j += 1 / detail
+				ringp = [sin(j * pi * 2), 0, cos(j * pi * 2)]
 			}
 			else
+			{
 				j = 0 // Right side of rail
+				ringp = [cos(j * pi * 2), 0, -sin(j * pi * 2)]
+			}
 			
-			ringp = [cos(j * pi * 2), 0, -sin(j * pi * 2)]
 			
 			// Next segment
 			n2 = vec3_normalize(vec3_mul_matrix(ringp, frames[i]))
@@ -132,13 +137,6 @@ function vbuffer_create_path(path, small = false)
 			}
 			
 			// Texture mirror
-			if (texmirror[X])
-			{
-				t1[X] = 1.0 - t1[X]
-				t2[X] = 1.0 - t2[X]
-				t3[X] = 1.0 - t3[X]
-				t4[X] = 1.0 - t4[X]
-			}
 			if (texmirror[Y])
 			{
 				t1[Y] = 1.0 - t1[Y]
@@ -146,9 +144,17 @@ function vbuffer_create_path(path, small = false)
 				t3[Y] = 1.0 - t3[Y]
 				t4[Y] = 1.0 - t4[Y]
 			}
+			if (texmirror[X])
+			{
+				t1[X] = 1.0 - t1[X]
+				t2[X] = 1.0 - t2[X]
+				t3[X] = 1.0 - t3[X]
+				t4[X] = 1.0 - t4[X]
+			}
 			
 			if (!mapped)
 			{
+			
 				// Texture offset
 				t1[X] += texoffset[X]
 				t1[Y] += texoffset[Y]
@@ -171,6 +177,14 @@ function vbuffer_create_path(path, small = false)
 					t3[Y] *= texrepeat[Y]
 					t4[Y] *= texrepeat[Y]
 				}
+			}
+			else if (texmirror[X])
+			{
+				
+				t1[X] -= 2/3
+				t2[X] -= 2/3
+				t3[X] -= 2/3
+				t4[X] -= 2/3
 			}
 			
 			nn1 = n1

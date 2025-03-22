@@ -12,7 +12,7 @@ function vbuffer_create_sphere(rad, tex1, tex2, detail, smooth, invert)
 	
 	//tex1[X] += 0.25
 	//tex2[X] += 0.25
-	var rot = (pi/2);
+	var rot = (pi);
 	
 	var i = 0;
 	repeat (detail)

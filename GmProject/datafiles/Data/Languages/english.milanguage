@@ -5,7 +5,7 @@
 		"locale": "en-US",
 		"translator": "David, Nimi, mbanders",
 		"forversion": "2.0.2 Continuation Build 1.0.9",
-		"lastchange": "2025.02.19"
+		"lastchange": "2025.03.22"
 	},
 	"particle/": {
 		"default": "Default spawner",
@@ -1667,6 +1667,9 @@
 				"followers": "Follower's",
 				"mcc15thyear": "MCC 15th Year",
 				"minecraftexperience": "Minecraft Experience",
+				"mojangoffice": "Mojang Office",
+				"menace": "Menace",
+				"home": "Home",
 				"minecon_2011": "MineCon 2011",
 				"minecon_2012": "MineCon 2012",
 				"minecon_2013": "MineCon 2013",
@@ -3380,7 +3383,7 @@
 			"mode/": {
 				"none": "None",
 				"item": "Item",
-				"entity": "Entity"
+				"armor": "Armor"
 			},
 			"scale": "Scale",
 			"speed": "Speed",

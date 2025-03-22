@@ -1100,7 +1100,7 @@ function enums()
 	{
 		NONE,
 		ITEM,
-		ENTITY
+		ARMOR
 	}
 	
 	// Alpha mode

@@ -16,7 +16,6 @@ function vbuffer_create_cylinder(rad, tex1, tex2, thflip, tvflip, detail, smooth
 	
 	//tex1[X] += 0.25
 	//tex2[X] += 0.25
-	var rot = -(pi/2);
 	
 	var i = 0;
 	repeat (detail)
@@ -30,10 +29,10 @@ function vbuffer_create_cylinder(rad, tex1, tex2, thflip, tvflip, detail, smooth
 		
 		var n1x, n1y, n2x, n2y;
 		var x1, y1, x2, y2;
-		n1x = cos(ip * pi * 2)
-		n1y = -sin(ip * pi * 2)
-		n2x = cos(i * pi * 2)
-		n2y = -sin(i * pi * 2)
+		n1x = sin(ip * pi * 2)
+		n1y = cos(ip * pi * 2)
+		n2x = sin(i * pi * 2)
+		n2y = cos(i * pi * 2)
 		x1 = n1x * rad
 		y1 = n1y * rad
 		x2 = n2x * rad
@@ -62,8 +61,8 @@ function vbuffer_create_cylinder(rad, tex1, tex2, thflip, tvflip, detail, smooth
 			
 			vbuffer_add_triangle(0, 0, -rad, x1, y1, -rad, x2, y2, -rad, 
 									texmid[X], texmid[Y], 
-									texmid[X] + cos(ip * pi * 2) * (texsize[X] / 2), texmid[Y] + sin(ip * pi * 2) * (texsize[Y] / 2), 
-									texmid[X] + cos(i * pi * 2) * (texsize[X] / 2), texmid[Y] + sin(i * pi * 2) * (texsize[Y] / 2), invert)
+									texmid[X] + sin(ip * pi * 2) * (texsize[X] / 2), texmid[Y] - cos(ip * pi * 2) * (texsize[Y] / 2), 
+									texmid[X] + sin(i * pi * 2) * (texsize[X] / 2), texmid[Y] - cos(i * pi * 2) * (texsize[Y] / 2), invert)
 			
 			// Top
 			if (mapped)
@@ -71,24 +70,8 @@ function vbuffer_create_cylinder(rad, tex1, tex2, thflip, tvflip, detail, smooth
 			
 			vbuffer_add_triangle(0, 0, rad, x2, y2, rad, x1, y1, rad, 
 									texmid[X], texmid[Y], 
-									texmid[X] + cos(i * pi * 2) * (texsize[X] / 2), texmid[Y] - sin(i * pi * 2) * (texsize[Y] / 2), 
-									texmid[X] + cos(ip * pi * 2) * (texsize[X] / 2), texmid[Y] - sin(ip * pi * 2) * (texsize[Y] / 2), invert)
-		}
-		
-		n1x = cos((ip * pi * 2) + rot)
-		n1y = -sin((ip * pi * 2) + rot)
-		n2x = cos((i * pi * 2) + rot)
-		n2y = -sin((i * pi * 2) + rot)
-		x1 = n1x * rad
-		y1 = n1y * rad
-		x2 = n2x * rad
-		y2 = n2y * rad
-		if (invert)
-		{
-			n1x *= -1
-			n1y *= -1
-			n2x *= -1
-			n2y *= -1
+									texmid[X] + sin(i * pi * 2) * (texsize[X] / 2), texmid[Y] + cos(i * pi * 2) * (texsize[Y] / 2), 
+									texmid[X] + sin(ip * pi * 2) * (texsize[X] / 2), texmid[Y] + cos(ip * pi * 2) * (texsize[Y] / 2), invert)
 		}
 		
 		// Sides

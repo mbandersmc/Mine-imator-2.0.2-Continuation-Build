@@ -130,8 +130,8 @@ function res_event_destroy()
 	if (clouds_texture != null)
 		texture_free(clouds_texture)
 	
-	if (glint_entity_texture != null)
-		texture_free(glint_entity_texture)
+	if (glint_armor_texture != null)
+		texture_free(glint_armor_texture)
 	
 	if (glint_item_texture != null)
 		texture_free(glint_item_texture)

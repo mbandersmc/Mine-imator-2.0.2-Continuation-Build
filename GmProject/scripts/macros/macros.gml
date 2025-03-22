@@ -5,7 +5,7 @@ function macros()
 {
 	// Debug
 	#macro dev_mode						true
-	#macro dev_mode_skip_blocks			dev_mode && false
+	#macro dev_mode_skip_blocks			dev_mode && true
 	#macro dev_mode_debug_schematics	dev_mode && true
 	#macro dev_mode_debug_names			dev_mode && true
 	#macro dev_mode_debug_saveid		dev_mode && true
@@ -21,10 +21,10 @@ function macros()
 	// Versions
 	#macro mineimator_version			"2.0.2"							// Base Mine-imator version
 	#macro mineimator_version_sub		"Continuation Build 1.0.9"		// Mod name and version (e.g. "Community Build 1.0.0")
-	#macro mineimator_version_extra		"Alpha 1"						// Additional suffix (e.g. "Alpha 1" or "Pre-Release 2")
+	#macro mineimator_version_extra		"Alpha 2"						// Additional suffix (e.g. "Alpha 1" or "Pre-Release 2")
 	#macro mineimator_version_full		(mineimator_version + ((mineimator_version_sub != "") ? " " + mineimator_version_sub : "") + ((mineimator_version_extra != "") ? " (" + mineimator_version_extra + ")" : ""))
-	#macro mineimator_version_date		"2025.02.20"
-	#macro minecraft_version			"25w08a"
+	#macro mineimator_version_date		"2025.03.22"
+	#macro minecraft_version			"1.21.5-rc1"
 	#macro gm_runtime					GM_runtime_version
 	
 	// File formats
@@ -80,7 +80,7 @@ function macros()
 	#macro mc_sun_image_file			mc_textures_directory + "environment/sun.png"
 	#macro mc_moon_phases_image_file	mc_textures_directory + "environment/moon_phases.png"
 	#macro mc_clouds_image_file			mc_textures_directory + "environment/clouds.png"
-	#macro mc_glint_entity_file			mc_textures_directory + "misc/enchanted_glint_entity.png"
+	#macro mc_glint_armor_file			mc_textures_directory + "misc/enchanted_glint_armor.png"
 	#macro mc_glint_item_file			mc_textures_directory + "misc/enchanted_glint_item.png"
 	
 	// Links

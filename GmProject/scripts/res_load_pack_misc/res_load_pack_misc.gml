@@ -29,8 +29,8 @@ function res_load_pack_misc()
 	if (clouds_texture != null)
 		texture_free(clouds_texture)
 	
-	if (glint_entity_texture != null)
-		texture_free(glint_entity_texture)
+	if (glint_armor_texture != null)
+		texture_free(glint_armor_texture)
 	
 	if (glint_item_texture != null)
 		texture_free(glint_item_texture)
@@ -80,10 +80,10 @@ function res_load_pack_misc()
 		clouds_texture = texture_create(load_assets_dir + mc_clouds_image_file)
 	
 	// Enchantment glint
-	if (!file_exists_lib(load_assets_dir + mc_glint_entity_file) && id != mc_res)
-		glint_entity_texture = texture_duplicate(mc_res.glint_entity_texture)
+	if (!file_exists_lib(load_assets_dir + mc_glint_armor_file) && id != mc_res)
+		glint_armor_texture = texture_duplicate(mc_res.glint_armor_texture)
 	else
-		glint_entity_texture = texture_create(load_assets_dir + mc_glint_entity_file)
+		glint_armor_texture = texture_create(load_assets_dir + mc_glint_armor_file)
 	
 	if (!file_exists_lib(load_assets_dir + mc_glint_item_file) && id != mc_res)
 		glint_item_texture = texture_duplicate(mc_res.glint_item_texture)

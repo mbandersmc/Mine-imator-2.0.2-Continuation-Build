@@ -1441,7 +1441,7 @@ function list_init(name)
 			var itemglint = (tl_edit.glint_mode = e_glint.ITEM);
 			
 			// Default
-			menu_add_item(mc_res, mc_res.display_name, itemglint ? mc_res.glint_item_texture : mc_res.glint_entity_texture)
+			menu_add_item(mc_res, mc_res.display_name, itemglint ? mc_res.glint_item_texture : mc_res.glint_armor_texture)
 			
 			// Add existing resources
 			for (var i = 0; i < ds_list_size(res_list.display_list); i++)
@@ -1450,8 +1450,8 @@ function list_init(name)
 				if (res = mc_res)
 					continue
 				
-				if (res.glint_entity_texture || res.glint_item_texture)
-					menu_add_item(res, res.display_name, itemglint ? res.glint_item_texture : res.glint_entity_texture)
+				if (res.glint_armor_texture || res.glint_item_texture)
+					menu_add_item(res, res.display_name, itemglint ? res.glint_item_texture : res.glint_armor_texture)
 				else if (res.texture)
 					menu_add_item(res, res.display_name, res.texture)
 			}

@@ -17,8 +17,8 @@ function tab_timeline_editor_appearance()
 		
 			if (tl_edit.glint_tex.type = e_res_type.PACK)
 			{
-				if (tl_edit.glint_mode = e_glint.ENTITY)
-					tex = tl_edit.glint_tex.glint_entity_texture
+				if (tl_edit.glint_mode = e_glint.ARMOR)
+					tex = tl_edit.glint_tex.glint_armor_texture
 				else
 					tex = tl_edit.glint_tex.glint_item_texture
 			}
@@ -32,7 +32,7 @@ function tab_timeline_editor_appearance()
 			tab_control_togglebutton()
 			togglebutton_add("timelineeditorglintmodenone", null, e_glint.NONE, tl_edit.glint_mode = e_glint.NONE, action_tl_glint_mode)
 			togglebutton_add("timelineeditorglintmodeitem", null, e_glint.ITEM, tl_edit.glint_mode = e_glint.ITEM, action_tl_glint_mode)
-			togglebutton_add("timelineeditorglintmodeentity", null, e_glint.ENTITY, tl_edit.glint_mode = e_glint.ENTITY, action_tl_glint_mode)
+			togglebutton_add("timelineeditorglintmodearmor", null, e_glint.ARMOR, tl_edit.glint_mode = e_glint.ARMOR, action_tl_glint_mode)
 			draw_togglebutton("timelineeditorglintmode", dx, dy)
 			tab_next()
 			
