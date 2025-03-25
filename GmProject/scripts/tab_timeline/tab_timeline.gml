@@ -582,6 +582,87 @@ function tab_timeline()
 		dy += itemh
 	}
 	
+	// Drag select keyframes
+	if (window_busy = "timelineselectkeyframes")
+	{
+		mouse_cursor = cr_handpoint
+		
+		if (mouse_right) // Move selection box
+		{
+			mouse_click_x += mouse_dx
+			mouse_click_y += mouse_dy
+		}
+		/*
+		else if (mouse_right_released)
+		{
+			mouse_click_x = clamp(mouse_click_x + (timeline_select_starth - timeline.hor_scroll.value), tlx, tlx + tlw)
+			mouse_click_y = clamp(mouse_click_y + (timeline_select_startv - timeline.ver_scroll.value), tly, tly + tlh)
+		}
+		*/
+		
+		var x1, y1, x2, y2;
+		x1 = clamp(mouse_click_x + (timeline_select_starth - timeline.hor_scroll.value), tlx, tlx + tlw)
+		y1 = clamp(mouse_click_y + (timeline_select_startv - timeline.ver_scroll.value), tly, tly + tlh)
+		x2 = clamp(mouse_x, tlx, tlx + tlw)
+		y2 = clamp(mouse_y, tly, tly + tlh)
+		
+		if (x2 < x1)
+		{
+			var swap = x1;
+			x1 = x2
+			x2 = swap
+		}
+		x2 -= x1
+		
+		if (y2 < y1)
+		{
+			var swap = y1;
+			y1 = y2
+			y2 = swap
+		}
+		y2 -= y1
+		
+		draw_box_selection(x1, y1, x2, y2)
+		
+		if (!mouse_left)
+		{
+			if (ds_list_size(tree_visible_list) > 0)
+			{
+				var stl, etl, spos, epos, tmp;
+				
+				stl = (mouse_click_y - tly + timeline_select_startv) / itemh
+				etl = (mouse_y - tly + timeline.ver_scroll.value) / itemh
+				spos = (mouse_click_x - tlx + timeline_select_starth) / timeline_zoom
+				epos = (mouse_x - tlx + timeline.hor_scroll.value) / timeline_zoom
+				
+				if (stl > etl)
+				{
+					tmp = stl
+					stl = etl
+					etl = tmp
+				}
+				
+				if (spos > epos)
+				{
+					tmp = spos
+					spos = epos
+					epos = tmp
+				}
+				
+				if (stl < ds_list_size(tree_visible_list))
+				{
+					stl = clamp(floor(stl), 0, ds_list_size(tree_visible_list) - 1)
+					etl = clamp(floor(etl), 0, ds_list_size(tree_visible_list) - 1)
+					spos = max(0, round(spos))
+					epos = max(0, round(epos))
+					action_tl_keyframes_select_area(stl, etl, spos, epos)
+				}
+			}
+			window_busy = ""
+			app_mouse_clear()
+		}
+	}
+	
 	// Marker
 	markerx = floor(timeline_marker * timeline_zoom - timeline.hor_scroll.value)
 	markery = 0
@@ -1292,7 +1373,6 @@ function tab_timeline()
 				else
 					timeline_select = mousetl
 				timeline_select_starth = timeline.hor_scroll.value
-				timeline_select_startz = timeline_zoom
 				timeline_select_startv = timeline.ver_scroll.value
 			}
 		}
@@ -1342,87 +1422,6 @@ function tab_timeline()
 		timeline_move_highlight_pos = movehlpos
 		if (!mouse_left)
 			action_tl_move_done(mousemovetl, mousemoveindex)
-	}
-	
-	// Drag select keyframes
-	if (window_busy = "timelineselectkeyframes" || window_busy = "timelineclickkeyframes")
-	{
-		mouse_cursor = cr_handpoint
-		
-		if (mouse_right) // Move selection box
-		{
-			mouse_click_x += mouse_dx
-			mouse_click_y += mouse_dy
-		}
-		/*
-		else if (mouse_right_released)
-		{
-			mouse_click_x = clamp(mouse_click_x + (timeline_select_starth - timeline.hor_scroll.value), tlx, tlx + tlw)
-			mouse_click_y = clamp(mouse_click_y + (timeline_select_startv - timeline.ver_scroll.value), tly, tly + tlh)
-		}
-		*/
-		
-		var x1, y1, x2, y2;
-		x1 = clamp(mouse_click_x + ((timeline_select_starth * (timeline_zoom_goal / timeline_select_startz)) - timeline.hor_scroll.value_goal), tlx, tlx + tlw)
-		y1 = clamp(mouse_click_y + (timeline_select_startv - timeline.ver_scroll.value), tly, tly + tlh)
-		x2 = clamp(mouse_x, tlx, tlx + tlw)
-		y2 = clamp(mouse_y, tly, tly + tlh)
-		
-		if (x2 < x1)
-		{
-			var swap = x1;
-			x1 = x2
-			x2 = swap
-		}
-		x2 -= x1
-		
-		if (y2 < y1)
-		{
-			var swap = y1;
-			y1 = y2
-			y2 = swap
-		}
-		y2 -= y1
-		
-		draw_box_selection(x1, y1, x2, y2)
-		
-		if (!mouse_left)
-		{
-			if (ds_list_size(tree_visible_list) > 0)
-			{
-				var stl, etl, spos, epos, tmp;
-				
-				stl = (mouse_click_y - tly + timeline_select_startv) / itemh
-				etl = (mouse_y - tly + timeline.ver_scroll.value) / itemh
-				spos = (mouse_click_x - tlx + timeline_select_starth) / timeline_zoom
-				epos = (mouse_x - tlx + timeline.hor_scroll.value) / timeline_zoom
-				
-				if (stl > etl)
-				{
-					tmp = stl
-					stl = etl
-					etl = tmp
-				}
-				
-				if (spos > epos)
-				{
-					tmp = spos
-					spos = epos
-					epos = tmp
-				}
-				
-				if (stl < ds_list_size(tree_visible_list))
-				{
-					stl = clamp(floor(stl), 0, ds_list_size(tree_visible_list) - 1)
-					etl = clamp(floor(etl), 0, ds_list_size(tree_visible_list) - 1)
-					spos = max(0, round(spos))
-					epos = max(0, round(epos))
-					action_tl_keyframes_select_area(stl, etl, spos, epos)
-				}
-			}
-			window_busy = ""
-			app_mouse_clear()
-		}
 	}
 	
 	// Drag select timelines
