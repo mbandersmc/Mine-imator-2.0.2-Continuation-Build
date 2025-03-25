@@ -2603,8 +2603,8 @@
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"oasis.png","CopyToMask":-1,"filePath":"datafiles/Data/Splashes",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"tricky_trials.png","CopyToMask":-1,"filePath":"datafiles/Data/Splashes",},
     {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"the_garden_awakens.png","CopyToMask":-1,"filePath":"datafiles/Data/Splashes",},
-    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"1.21.5-rc1.midata","CopyToMask":-1,"filePath":"datafiles/Data/Minecraft",},
-    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"1.21.5-rc1.zip","CopyToMask":-1,"filePath":"datafiles/Data/Minecraft",},
+    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"1.21.5.midata","CopyToMask":-1,"filePath":"datafiles/Data/Minecraft",},
+    {"resourceType":"GMIncludedFile","resourceVersion":"1.0","name":"1.21.5.zip","CopyToMask":-1,"filePath":"datafiles/Data/Minecraft",},
   ],
   "MetaData": {
     "IDEVersion": "2022.0.2.51",
