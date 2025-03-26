@@ -415,10 +415,6 @@ function res_load_pack_block_sheet(type, suffix)
 			{
 				var spos, alpha;
 				spos = samplepos[s]
-				
-				if (by + spos[@ Y] > minecraft_block_sheet_size[1])
-					break
-				
 				alpha = buffer_read_alpha(bx + spos[@ X], by + spos[@ Y], wid)
 			
 				if (alpha < 1) // Transparent
