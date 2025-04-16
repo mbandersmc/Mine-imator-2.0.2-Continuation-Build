@@ -5,7 +5,7 @@
 		"locale": "zh-CN",
 		"translator": "飒爽师叔",
 		"forversion": "2.0.2 Continuation Build 1.0.9",
-		"lastchange": "2025.02.24"
+		"lastchange": "2025.03.31"
 	},
 	"particle/": {
 		"default": "默认粒子",
@@ -1667,6 +1667,9 @@
 				"followers": "追随者披风",
 				"mcc15thyear": "MCC 15周年披风",
 				"minecraftexperience": "Minecraft Experience披风",
+				"mojangoffice": "Mojang Office披风",
+				"menace": "入侵披风",
+				"home": "家园披风",
 				"minecon_2011": "MineCon 2011参与者披风",
 				"minecon_2012": "MineCon 2012参与者披风",
 				"minecon_2013": "MineCon 2013参与者披风",
@@ -3380,7 +3383,7 @@
 			"mode/": {
 				"none": "无",
 				"item": "物品",
-				"entity": "实体"
+				"armor": "盔甲"
 			},
 			"scale": "比例尺",
 			"speed": "速度",
