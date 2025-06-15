@@ -1,5 +1,5 @@
 {
-	"version": "1.21.5",
+	"version": "1.21.6-rc1",
 	"patch": 0,
 	"format": 9,
 	"characters": [
@@ -70,17 +70,6 @@
 		{
 			"name": "slime",
 			"file": "slime.mimodel"
-		},
-		{
-			"name": "ghast",
-			"file": "ghast.mimodel",
-			"states": {
-				"variant": [
-					{ "value": "normal", "texture": "entity/ghast/ghast" },
-					{ "value": "shooting", "texture": "entity/ghast/ghast_shooting" }
-				]
-			},
-			"default_state": "variant=normal"
 		},
 		{
 			"name": "chicken",
@@ -520,6 +509,50 @@
 		{
 			"name": "magma_cube",
 			"file": "magma_cube.mimodel"
+		},
+		{
+			"name": "ghast",
+			"file": "ghast.mimodel",
+			"states": {
+				"variant": [
+					{ "value": "normal", "texture": "entity/ghast/ghast" },
+					{ "value": "shooting", "texture": "entity/ghast/ghast_shooting" }
+				]
+			},
+			"default_state": "variant=normal"
+		},
+		{
+			"name": "happy_ghast",
+			"states": {
+				"variant": [
+					{ "value": "normal", "file": "happy_ghast.mimodel" },
+					{ "value": "happy_ghast_baby", "file": "happy_ghast_baby.mimodel" }
+				],
+				"harness": [
+					{ "value": "none", "shape_hide": [ "harness" ], "hide": [ "goggles" ] },
+					{ "value": "white", "shape_texture": { "harness": "entity/equipment/happy_ghast_body/white_harness" } },
+					{ "value": "orange", "shape_texture": { "harness": "entity/equipment/happy_ghast_body/orange_harness" } },
+					{ "value": "magenta", "shape_texture": { "harness": "entity/equipment/happy_ghast_body/magenta_harness" } },
+					{ "value": "light_blue", "shape_texture": { "harness": "entity/equipment/happy_ghast_body/light_blue_harness" } },
+					{ "value": "yellow", "shape_texture": { "harness": "entity/equipment/happy_ghast_body/yellow_harness" } },
+					{ "value": "lime", "shape_texture": { "harness": "entity/equipment/happy_ghast_body/lime_harness" } },
+					{ "value": "pink", "shape_texture": { "harness": "entity/equipment/happy_ghast_body/pink_harness" } },
+					{ "value": "gray", "shape_texture": { "harness": "entity/equipment/happy_ghast_body/gray_harness" } },
+					{ "value": "light_gray", "shape_texture": { "harness": "entity/equipment/happy_ghast_body/light_gray_harness" } },
+					{ "value": "cyan", "shape_texture": { "harness": "entity/equipment/happy_ghast_body/cyan_harness" } },
+					{ "value": "purple", "shape_texture": { "harness": "entity/equipment/happy_ghast_body/purple_harness" } },
+					{ "value": "blue", "shape_texture": { "harness": "entity/equipment/happy_ghast_body/blue_harness" } },
+					{ "value": "brown", "shape_texture": { "harness": "entity/equipment/happy_ghast_body/brown_harness" } },
+					{ "value": "green", "shape_texture": { "harness": "entity/equipment/happy_ghast_body/green_harness" } },
+					{ "value": "red", "shape_texture": { "harness": "entity/equipment/happy_ghast_body/red_harness" } },
+					{ "value": "black", "shape_texture": { "harness": "entity/equipment/happy_ghast_body/black_harness" } }
+				],
+				"ropes": [
+					{ "value": "false", "shape_hide": [ "ropes" ] },
+					{ "value": "true" }
+				]
+			},
+			"default_state": "variant=normal,harness=none,ropes=false"
 		},
 		{
 			"name": "endermite",
@@ -1047,6 +1080,9 @@
 					{ "value": "mojang_old", "texture": "entity/mineimator/cape_mojang_old" },
 					{ "value": "migrator", "texture": "entity/mineimator/cape_migrator" },
 					{ "value": "vanilla", "texture": "entity/mineimator/cape_vanilla" },
+					{ "value": "common", "texture": "entity/mineimator/cape_common" },
+					{ "value": "founders", "texture": "entity/mineimator/cape_founders" },
+					{ "value": "pan", "texture": "entity/mineimator/cape_pan" },
 					{ "value": "cherryblossom", "texture": "entity/mineimator/cape_cherryblossom" },
 					{ "value": "15thanniversary", "texture": "entity/mineimator/cape_15thanniversary" },
 					{ "value": "purpleheart", "texture": "entity/mineimator/cape_purple_heart" },
@@ -1056,6 +1092,7 @@
 					{ "value": "mojangoffice", "texture": "entity/mineimator/cape_mojang_office" },
 					{ "value": "menace", "texture": "entity/mineimator/cape_menace" },
 					{ "value": "home", "texture": "entity/mineimator/cape_home" },
+					{ "value": "yearn", "texture": "entity/mineimator/cape_yearn" },
 					{ "value": "minecon_2011", "texture": "entity/mineimator/cape_minecon2011" },
 					{ "value": "minecon_2012", "texture": "entity/mineimator/cape_minecon2012" },
 					{ "value": "minecon_2013", "texture": "entity/mineimator/cape_minecon2013" },
@@ -1091,6 +1128,9 @@
 					{ "value": "mojang_old", "texture": "entity/mineimator/cape_mojang_old" },
 					{ "value": "migrator", "texture": "entity/mineimator/cape_migrator" },
 					{ "value": "vanilla", "texture": "entity/mineimator/cape_vanilla" },
+					{ "value": "common", "texture": "entity/mineimator/cape_common" },
+					{ "value": "founders", "texture": "entity/mineimator/cape_founders" },
+					{ "value": "pan", "texture": "entity/mineimator/cape_pan" },
 					{ "value": "cherryblossom", "texture": "entity/mineimator/cape_cherryblossom" },
 					{ "value": "15thanniversary", "texture": "entity/mineimator/cape_15thanniversary" },
 					{ "value": "purpleheart", "texture": "entity/mineimator/cape_purple_heart" },
@@ -1100,6 +1140,7 @@
 					{ "value": "mojangoffice", "texture": "entity/mineimator/cape_mojang_office" },
 					{ "value": "menace", "texture": "entity/mineimator/cape_menace" },
 					{ "value": "home", "texture": "entity/mineimator/cape_home" },
+					{ "value": "yearn", "texture": "entity/mineimator/cape_yearn" },
 					{ "value": "minecon_2011", "texture": "entity/mineimator/cape_minecon2011" },
 					{ "value": "minecon_2012", "texture": "entity/mineimator/cape_minecon2012" },
 					{ "value": "minecon_2013", "texture": "entity/mineimator/cape_minecon2013" },
@@ -6693,6 +6734,16 @@
 				"ymin": 0
 			},
 			"id": "minecraft:firefly_bush"
+		},
+		{
+			"name": "dried_ghast",
+			"file": "dried_ghast.json",
+			"states": {
+				"facing": [ "north", "south", "east", "west" ],
+				"hydration": [ "0", "1", "2", "3" ]
+			},
+			"default_state": "facing=west,hydration=0",
+			"id": "minecraft:dried_ghast"
 		}
 	],
 	"model_textures": [
@@ -6870,6 +6921,22 @@
 		"entity/endermite",
 		"entity/equipment/camel_saddle/saddle",
 		"entity/equipment/donkey_saddle/saddle",
+		"entity/equipment/happy_ghast_body/black_harness",
+		"entity/equipment/happy_ghast_body/blue_harness",
+		"entity/equipment/happy_ghast_body/brown_harness",
+		"entity/equipment/happy_ghast_body/cyan_harness",
+		"entity/equipment/happy_ghast_body/gray_harness",
+		"entity/equipment/happy_ghast_body/green_harness",
+		"entity/equipment/happy_ghast_body/light_blue_harness",
+		"entity/equipment/happy_ghast_body/light_gray_harness",
+		"entity/equipment/happy_ghast_body/lime_harness",
+		"entity/equipment/happy_ghast_body/magenta_harness",
+		"entity/equipment/happy_ghast_body/orange_harness",
+		"entity/equipment/happy_ghast_body/pink_harness",
+		"entity/equipment/happy_ghast_body/purple_harness",
+		"entity/equipment/happy_ghast_body/red_harness",
+		"entity/equipment/happy_ghast_body/white_harness",
+		"entity/equipment/happy_ghast_body/yellow_harness",
 		"entity/equipment/horse_body/diamond",
 		"entity/equipment/horse_body/gold",
 		"entity/equipment/horse_body/iron",
@@ -6941,6 +7008,9 @@
 		"entity/frog/warm_frog",
 		"entity/ghast/ghast",
 		"entity/ghast/ghast_shooting",
+		"entity/ghast/happy_ghast",
+		"entity/ghast/happy_ghast_baby",
+		"entity/ghast/happy_ghast_ropes",
 		"entity/goat/goat",
 		"entity/guardian",
 		"entity/guardian_elder",
@@ -7376,8 +7446,10 @@
 		"entity/mineimator/cape_cheapsh0t",
 		"entity/mineimator/cape_cherryblossom",
 		"entity/mineimator/cape_cobalt",
+		"entity/mineimator/cape_common",
 		"entity/mineimator/cape_dannybstyle",
 		"entity/mineimator/cape_followers",
+		"entity/mineimator/cape_founders",
 		"entity/mineimator/cape_home",
 		"entity/mineimator/cape_julianclark",
 		"entity/mineimator/cape_mapmaker",
@@ -7397,6 +7469,7 @@
 		"entity/mineimator/cape_mojang_office",
 		"entity/mineimator/cape_mojang_old",
 		"entity/mineimator/cape_mrmessiah",
+		"entity/mineimator/cape_pan",
 		"entity/mineimator/cape_prismarine",
 		"entity/mineimator/cape_purple_heart",
 		"entity/mineimator/cape_scrollschamp",
@@ -7404,7 +7477,8 @@
 		"entity/mineimator/cape_translator_chinese",
 		"entity/mineimator/cape_turtle",
 		"entity/mineimator/cape_valentine",
-		"entity/mineimator/cape_vanilla"
+		"entity/mineimator/cape_vanilla",
+		"entity/mineimator/cape_yearn"
 	],
 	"block_sheet_size": [ 32, 32 ],
 	"block_textures": [
@@ -8388,7 +8462,35 @@
 		"block/firefly_bush",
 		"block/cactus_flower",
 		"block/short_dry_grass",
-		"block/tall_dry_grass"
+		"block/tall_dry_grass",
+		"block/dried_ghast_hydration_0_north",
+		"block/dried_ghast_hydration_0_south",
+		"block/dried_ghast_hydration_0_east",
+		"block/dried_ghast_hydration_0_west",
+		"block/dried_ghast_hydration_0_top",
+		"block/dried_ghast_hydration_0_bottom",
+		"block/dried_ghast_hydration_0_tentacles",
+		"block/dried_ghast_hydration_1_north",
+		"block/dried_ghast_hydration_1_south",
+		"block/dried_ghast_hydration_1_east",
+		"block/dried_ghast_hydration_1_west",
+		"block/dried_ghast_hydration_1_top",
+		"block/dried_ghast_hydration_1_bottom",
+		"block/dried_ghast_hydration_1_tentacles",
+		"block/dried_ghast_hydration_2_north",
+		"block/dried_ghast_hydration_2_south",
+		"block/dried_ghast_hydration_2_east",
+		"block/dried_ghast_hydration_2_west",
+		"block/dried_ghast_hydration_2_top",
+		"block/dried_ghast_hydration_2_bottom",
+		"block/dried_ghast_hydration_2_tentacles",
+		"block/dried_ghast_hydration_3_north",
+		"block/dried_ghast_hydration_3_south",
+		"block/dried_ghast_hydration_3_east",
+		"block/dried_ghast_hydration_3_west",
+		"block/dried_ghast_hydration_3_top",
+		"block/dried_ghast_hydration_3_bottom",
+		"block/dried_ghast_hydration_3_tentacles"
 	],
 	"block_animated_sheet_size": [ 32, 2, 64 ],
 	"block_textures_animated": [
@@ -9238,6 +9340,23 @@
 		"item/firefly_bush",
 		"item/blue_egg",
 		"item/brown_egg",
+		"item/white_harness",
+		"item/orange_harness",
+		"item/magenta_harness",
+		"item/light_blue_harness",
+		"item/yellow_harness",
+		"item/lime_harness",
+		"item/pink_harness",
+		"item/gray_harness",
+		"item/light_gray_harness",
+		"item/cyan_harness",
+		"item/purple_harness",
+		"item/blue_harness",
+		"item/brown_harness",
+		"item/green_harness",
+		"item/red_harness",
+		"item/black_harness",
+		"item/music_disc_tears",
 		"item/allay_spawn_egg",
 		"item/armadillo_spawn_egg",
 		"item/axolotl_spawn_egg",
@@ -9267,6 +9386,7 @@
 		"item/glow_squid_spawn_egg",
 		"item/goat_spawn_egg",
 		"item/guardian_spawn_egg",
+		"item/happy_ghast_spawn_egg",
 		"item/hoglin_spawn_egg",
 		"item/horse_spawn_egg",
 		"item/husk_spawn_egg",

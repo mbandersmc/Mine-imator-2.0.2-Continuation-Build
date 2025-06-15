@@ -107,7 +107,7 @@ function block_load_model_file(fname, res = null)
 						scale = vec3(1)
 						
 						if (is_real(rotationmap[?"angle"]))
-							angle = snap(clamp(rotationmap[?"angle"], -45, 45), 22.5)
+							angle = clamp(rotationmap[?"angle"], -45, 45) //snap(_, 22.5)
 						
 						if (is_bool(rotationmap[?"rescale"]) && rotationmap[?"rescale"])
 							scale = vec3(1 / dcos(abs(angle)))

@@ -273,7 +273,6 @@ function surface_create_ext2(width, height, depth = true, hdr = false)
 /// Sets whether a specific sprite will use texture pages, default is enabled.
 function sprite_set_texture_page(sprite, enabled)
 {
-	
 }
 
 /// CppSeparate void move_all_to_texture_page()

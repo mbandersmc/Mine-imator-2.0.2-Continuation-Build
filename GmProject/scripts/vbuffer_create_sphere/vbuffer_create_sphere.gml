@@ -12,7 +12,6 @@ function vbuffer_create_sphere(rad, tex1, tex2, detail, smooth, invert)
 	
 	//tex1[X] += 0.25
 	//tex2[X] += 0.25
-	var rot = (pi);
 	
 	var i = 0;
 	repeat (detail)
@@ -35,18 +34,18 @@ function vbuffer_create_sphere(rad, tex1, tex2, detail, smooth, invert)
 			
 			var n1x, n1y, n1z, n2x, n2y, n2z, n3x, n3y, n3z, n4x, n4y, n4z;
 			var x1, y1, z1, x2, y2, z2, x3, y3, z3, x4, y4, z4;
-			n1x = sin((ip * pi * 2) + rot) * sin((jp * pi))
-			n1y = -cos((ip * pi * 2) + rot) * sin((jp * pi))
-			n1z = -cos((jp * pi))
-			n2x = sin((ip * pi * 2) + rot) * sin((j * pi))
-			n2y = -cos((ip * pi * 2) + rot) * sin((j * pi))
-			n2z = -cos((j * pi))
-			n3x = sin((i * pi * 2) + rot) * sin((jp * pi))
-			n3y = -cos((i * pi * 2) + rot) * sin((jp * pi))
-			n3z = -cos((jp * pi))
-			n4x = sin((i * pi * 2) + rot) * sin((j * pi))
-			n4y = -cos((i * pi * 2) + rot) * sin((j * pi))
-			n4z = -cos((j * pi))
+			n1x = -sin(ip * pi * 2) * sin(jp * pi)
+			n1y = cos(ip * pi * 2) * sin(jp * pi)
+			n1z = -cos(jp * pi)
+			n2x = -sin(ip * pi * 2) * sin(j * pi)
+			n2y = cos(ip * pi * 2) * sin(j * pi)
+			n2z = -cos(j * pi)
+			n3x = -sin(i * pi * 2) * sin(jp * pi)
+			n3y = cos(i * pi * 2) * sin(jp * pi)
+			n3z = -cos(jp * pi)
+			n4x = -sin(i * pi * 2) * sin(j * pi)
+			n4y = cos(i * pi * 2) * sin(j * pi)
+			n4z = -cos(j * pi)
 			
 			x1 = n1x * rad
 			y1 = n1y * rad

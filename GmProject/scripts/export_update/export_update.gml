@@ -10,6 +10,7 @@ function export_update()
 	if (export_escape_time > 0 && current_time - export_escape_time > 1000)
 	{
 		export_escape_time = 0
+		
 		if (question(text_get("questionstoprender")))
 		{
 			if (window_state = "export_movie")

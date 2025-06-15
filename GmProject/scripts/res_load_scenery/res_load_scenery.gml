@@ -133,7 +133,7 @@ function res_load_scenery()
 			// A null value will peform a check if block timelines should be added
 			if (scenery_tl_add = null)
 			{
-				if (mc_builder.sch_timeline_amount > 500) // More than 500 timelines, always skip
+				if (mc_builder.sch_timeline_amount > 512) // More than 512 timelines, always skip
 					scenery_tl_add = false
 				else if (mc_builder.sch_timeline_amount > 20) // More than 20 possible timelines, ask the user
 					scenery_tl_add = question(text_get("loadsceneryaddtimelines", mc_builder.sch_timeline_amount))

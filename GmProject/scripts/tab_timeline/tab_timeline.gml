@@ -583,13 +583,15 @@ function tab_timeline()
 	}
 	
 	// Drag select keyframes
+	if (window_busy != "timelineclickkeyframes" && window_busy != "timelineselectkeyframes")
+		timeline_zoom_current = timeline_zoom
 	if (window_busy = "timelineselectkeyframes")
 	{
 		mouse_cursor = cr_handpoint
 		
 		if (mouse_right) // Move selection box
 		{
-			mouse_click_x += mouse_dx
+			mouse_click_x += mouse_dx * (timeline_zoom_current / timeline_zoom)
 			mouse_click_y += mouse_dy
 		}
 		/*
@@ -601,8 +603,8 @@ function tab_timeline()
 		*/
 		
 		var x1, y1, x2, y2;
-		x1 = clamp(mouse_click_x + (timeline_select_starth - timeline.hor_scroll.value), tlx, tlx + tlw)
-		y1 = clamp(mouse_click_y + (timeline_select_startv - timeline.ver_scroll.value), tly, tly + tlh)
+		x1 = clamp(((((((mouse_click_x - tlx) + timeline_select_starth) / timeline_zoom_current) - (timeline.hor_scroll.value / timeline_zoom)) * timeline_zoom) + tlx), tlx, tlx + tlw) // makes selection box not go wonky during zooming animation
+		y1 = clamp(mouse_click_y - (timeline.ver_scroll.value - timeline_select_startv), tly, tly + tlh)
 		x2 = clamp(mouse_x, tlx, tlx + tlw)
 		y2 = clamp(mouse_y, tly, tly + tlh)
 		
@@ -632,7 +634,7 @@ function tab_timeline()
 				
 				stl = (mouse_click_y - tly + timeline_select_startv) / itemh
 				etl = (mouse_y - tly + timeline.ver_scroll.value) / itemh
-				spos = (mouse_click_x - tlx + timeline_select_starth) / timeline_zoom
+				spos = ((mouse_click_x - tlx) + timeline_select_starth) / timeline_zoom_current
 				epos = (mouse_x - tlx + timeline.hor_scroll.value) / timeline_zoom
 				
 				if (stl > etl)
@@ -661,6 +663,10 @@ function tab_timeline()
 			window_busy = ""
 			app_mouse_clear()
 		}
+	}
+	else
+	{
+		startdragselectzoom = 0
 	}
 	
 	// Marker
