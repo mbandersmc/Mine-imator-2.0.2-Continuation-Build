@@ -21,10 +21,10 @@ function macros()
 	// Versions
 	#macro mineimator_version			"2.0.2"							// Base Mine-imator version
 	#macro mineimator_version_sub		"Continuation Build 1.0.10"		// Mod name and version (e.g. "Community Build 1.0.0")
-	#macro mineimator_version_extra		"Alpha 1"						// Additional suffix (e.g. "Alpha 1" or "Pre-Release 2")
+	#macro mineimator_version_extra		""								// Additional suffix (e.g. "Alpha 1" or "Pre-Release 2")
 	#macro mineimator_version_full		(mineimator_version + ((mineimator_version_sub != "") ? " " + mineimator_version_sub : "") + ((mineimator_version_extra != "") ? " (" + mineimator_version_extra + ")" : ""))
-	#macro mineimator_version_date		"2025.06.15"
-	#macro minecraft_version			"1.21.6-rc1"
+	#macro mineimator_version_date		"2025.06.19"
+	#macro minecraft_version			"1.21.6"
 	#macro gm_runtime					GM_runtime_version
 	
 	// File formats
