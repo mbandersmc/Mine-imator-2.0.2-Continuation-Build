@@ -1,5 +1,5 @@
 {
-	"version": "1.21.9-unfinished",
+	"version": "1.21.9-snapshot1",
 	"patch": 0,
 	"format": 9,
 	"characters": [
@@ -10765,3 +10765,4 @@
 	}
 
 }
+
