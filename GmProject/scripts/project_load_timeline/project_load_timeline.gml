@@ -209,7 +209,7 @@ function project_load_timeline(map)
 		
 		fog = value_get_real(map[?"fog"], fog)
 		
-		if (type = e_temp_type.SCENERY || type = e_temp_type.BLOCK || type = e_temp_type.PARTICLE_SPAWNER || type = e_temp_type.TEXT || type_is_shape(type))
+		if (type = e_temp_type.SCENERY || type = e_temp_type.BLOCK || type = e_temp_type.PARTICLE_SPAWNER || type = e_temp_type.TEXT || type = e_tl_type.PATH || type_is_shape(type))
 		{
 			wind = value_get_real(map[?"wind"], wind)
 			wind_terrain = value_get_real(map[?"wind_terrain"], wind_terrain)

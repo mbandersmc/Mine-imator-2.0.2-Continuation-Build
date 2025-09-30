@@ -4235,11 +4235,6 @@
 	},
 	"legacy_model_state_values":
 	{
-		"cow": {
-			"variant": {
-				"cow": "temperate"
-			}
-		},
 		"villager": {
 			"variant": {
 				"villager": "nitwit",
@@ -4329,7 +4324,8 @@
 		"cobblestone_wall": "wall",
 		"grass_path": "dirt_path",
 		"target_block": "target",
-		"jigsaw_block": "jigsaw"
+		"jigsaw_block": "jigsaw",
+		"iron_bars": "bars"
 	},
 	"legacy_block_states":
 	{

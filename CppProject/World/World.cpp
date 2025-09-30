@@ -284,8 +284,9 @@ namespace CppProject
 				{ TAG_INT, { "version", "Id", "SpawnX", "SpawnY", "SpawnZ", "Dimension" }},
 				{ TAG_STRING, { "LevelName", "Dimension" }},
 				{ TAG_LIST, { "Pos", "Rotation" }},
-				{ TAG_COMPOUND, { "Data", "Player" }}
-			}));
+				{ TAG_COMPOUND, { "Data", "Player", "spawn" }},
+				{ TAG_INT_ARRAY, { "pos" } }
+				}));
 			NbtCompound saveData(stream);
 			if (!saveData.HasKey("Data"))
 				return false;
@@ -308,8 +309,20 @@ namespace CppProject
 				}
 				info.name = newName;
 			}
-			
-			info.spawnPos = { (RealType)data->Int("SpawnX"), (RealType)data->Int("SpawnY"), (RealType)data->Int("SpawnZ") };
+
+			if (data->HasKey("spawn"))
+			{
+				// new spawnpoint stuff is saved in an int array and idk how to read it lmao
+				info.spawnPos = { 0, 80, 0 };
+				//NbtCompound* spawn = data->Compound("spawn");
+				//QVector<NbtIntArray*> spawnPos = spawn->IntArray("pos");
+				//info.spawnPos = { (RealType)spawnPos[0]->value, (RealType)spawnPos[1]->value, (RealType)spawnPos[2]->value };
+			}
+			else if (((RealType)data->Int("SpawnX") != NULL))
+				info.spawnPos = { (RealType)data->Int("SpawnX"), (RealType)data->Int("SpawnY"), (RealType)data->Int("SpawnZ") };
+			else
+				info.spawnPos = { 0, 80, 0 };
+
 			info.playerDim = "overworld";
 
 			// Parse single player
