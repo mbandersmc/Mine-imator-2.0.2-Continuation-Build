@@ -48,8 +48,8 @@ function tab_frame_editor_camera()
 	}
 	
 	// FOV
-	tab_control_meter()
-	draw_meter("frameeditorcamerafov", dx, dy, dw, tl_edit.value[e_value.CAM_FOV], 1, 170, 45, 1, tab.camera.tbx_fov, action_tl_frame_cam_fov)
+	tab_control_dragger()
+	draw_dragger("frameeditorcamerafov", dx, dy, dragger_width, tl_edit.value[e_value.CAM_FOV], 1, 1, 170, 45, 0, tab.camera.tbx_fov, action_tl_frame_cam_fov)
 	tab_next()
 	
 	// Advanced mode only
@@ -71,7 +71,7 @@ function tab_frame_editor_camera()
 			
 			// Blade angle
 			tab_control_dragger()
-			draw_dragger("frameeditorcamerabladeangle", dx, dy, dragger_width, tl_edit.value[e_value.CAM_BLADE_ANGLE], 0.1, -no_limit, no_limit, 0, 1, tab.camera.tbx_blade_angle, action_tl_frame_cam_blade_angle)
+			draw_dragger("frameeditorcamerabladeangle", dx, dy, dragger_width, tl_edit.value[e_value.CAM_BLADE_ANGLE], 1, -no_limit, no_limit, 0, 0.1, tab.camera.tbx_blade_angle, action_tl_frame_cam_blade_angle)
 			tab_next()
 			
 			tab_collapse_end()

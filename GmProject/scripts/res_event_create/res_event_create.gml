@@ -73,8 +73,9 @@ function res_event_create()
 	color_leaves_mangrove = null
 	
 	sun_texture = null
-	moonphases_texture = null
-	moon_texture[0] = null
+	moon_textures = [null, null, null, null, null, null, null, null]
+	//moonphases_texture = null
+	//moon_texture[0] = null
 	clouds_texture = null
 	glint_armor_texture = null
 	glint_item_texture = null

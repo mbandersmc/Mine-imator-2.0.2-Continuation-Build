@@ -146,7 +146,7 @@ function tab_properties_background()
 			
 			// Moon
 			if (background_sky_moon_tex.type = e_res_type.PACK && background_sky_moon_tex.ready)
-				tex = background_sky_moon_tex.moon_texture[background_sky_moon_phase]
+				tex = background_sky_moon_tex.moon_textures[background_sky_moon_phase]
 			else
 				tex = background_sky_moon_tex.texture
 			
@@ -158,7 +158,7 @@ function tab_properties_background()
 			if (background_sky_moon_tex.type = e_res_type.PACK && background_sky_moon_tex.ready)
 			{
 				tab_control_menu(ui_large_height)
-				draw_button_menu("backgroundskymoonphase", e_menu.LIST, dx, dy, dw, ui_large_height, background_sky_moon_phase, text_get("backgroundskymoonphase" + string(background_sky_moon_phase + 1)), action_background_sky_moon_phase, false, background_sky_moon_tex.moon_texture[background_sky_moon_phase])
+				draw_button_menu("backgroundskymoonphase", e_menu.LIST, dx, dy, dw, ui_large_height, background_sky_moon_phase, text_get("backgroundskymoonphase" + string(background_sky_moon_phase + 1)), action_background_sky_moon_phase, false, background_sky_moon_tex.moon_textures[background_sky_moon_phase])
 				tab_next()
 			}
 			
@@ -373,8 +373,9 @@ function tab_properties_background()
 		tab_set_collumns(false)
 	}
 	
+	// Day colors
 	dy += 20
-	draw_label(text_get("backgroundscenecolors") + ":", dx, dy, fa_left, fa_bottom, c_text_tertiary, a_text_tertiary, font_label) 
+	draw_label(text_get("backgrounddayscenecolors") + ":", dx, dy, fa_left, fa_bottom, c_text_tertiary, a_text_tertiary, font_label) 
 	dy += 8
 	
 	tab_set_collumns(true, floor(content_width/150))
@@ -399,7 +400,31 @@ function tab_properties_background()
 	draw_button_color("backgroundambientcolor", dx, dy, dw, background_ambient_color, c_ambient, false, action_background_ambient_color)
 	tab_next()
 	
-	// Night
+	tab_set_collumns(false)
+	
+	// Night colors
+	dy += 20
+	draw_label(text_get("backgroundnightscenecolors") + ":", dx, dy, fa_left, fa_bottom, c_text_tertiary, a_text_tertiary, font_label) 
+	dy += 8
+	
+	tab_set_collumns(true, floor(content_width/150))
+	
+	// Sky
+	tab_control_color()
+	draw_button_color("backgroundnightskycolor", dx, dy, dw, background_night_sky_color, c_night_sky, false, action_background_night_sky_color)
+	tab_next()
+
+	// Clouds
+	tab_control_color()
+	draw_button_color("backgroundnightskycloudscolor", dx, dy, dw, background_night_sky_clouds_color, c_night_clouds, false, action_background_night_sky_clouds_color)
+	tab_next()
+	
+	// Stars
+	tab_control_color()
+	draw_button_color("backgroundnightskystarscolor", dx, dy, dw, background_night_sky_stars_color, c_stars, false, action_background_night_sky_stars_color)
+	tab_next()
+	
+	// Ambient
 	tab_control_color()
 	draw_button_color("backgroundnightcolor", dx, dy, dw, background_night_color, c_night, false, action_background_night_color)
 	tab_next()

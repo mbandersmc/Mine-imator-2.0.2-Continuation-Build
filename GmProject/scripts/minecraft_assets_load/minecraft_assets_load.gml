@@ -165,8 +165,8 @@ function minecraft_assets_load()
 				}
 				else
 				{
-					array_add(minecraft_item_sheet_size, blocksheetsize[|0])
-					array_add(minecraft_item_sheet_size, blocksheetsize[|1])
+					array_add(minecraft_item_sheet_size, itemsheetsize[|0])
+					array_add(minecraft_item_sheet_size, itemsheetsize[|1])
 				}
 				with (mc_res)
 					item_sheet_size = vec2(minecraft_item_sheet_size[0], minecraft_item_sheet_size[1])

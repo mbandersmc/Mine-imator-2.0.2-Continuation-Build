@@ -20,11 +20,11 @@ function macros()
 	
 	// Versions
 	#macro mineimator_version			"2.0.2"							// Base Mine-imator version
-	#macro mineimator_version_sub		"Continuation Build 1.0.11"		// Mod name and version (e.g. "Community Build 1.0.0")
+	#macro mineimator_version_sub		"Continuation Build 1.0.12"		// Mod name and version (e.g. "Community Build 1.0.0")
 	#macro mineimator_version_extra		""								// Additional suffix (e.g. "Alpha 1" or "Pre-Release 2")
 	#macro mineimator_version_full		(mineimator_version + ((mineimator_version_sub != "") ? " " + mineimator_version_sub : "") + ((mineimator_version_extra != "") ? " (" + mineimator_version_extra + ")" : ""))
-	#macro mineimator_version_date		"2025.09.30"
-	#macro minecraft_version			"1.21.5" //"1.21.9"
+	#macro mineimator_version_date		"2025.12.09"
+	#macro minecraft_version			"1.21.5" //"1.21.11"
 	#macro gm_runtime					GM_runtime_version
 	
 	// File formats
@@ -77,8 +77,16 @@ function macros()
 	#macro mc_dry_foliage_image_file	mc_textures_directory + "colormap/dry_foliage.png"
 	#macro mc_particles_image_file		mc_textures_directory + "particle/particles.png"
 	#macro mc_explosion_image_file		mc_textures_directory + "entity/explosion.png"
-	#macro mc_sun_image_file			mc_textures_directory + "environment/sun.png"
-	#macro mc_moon_phases_image_file	mc_textures_directory + "environment/moon_phases.png"
+	#macro mc_sun_image_file			mc_textures_directory + "environment/celestial/sun.png"
+	#macro mc_moon_phases_directory		mc_textures_directory + "environment/celestial/moon/"
+	#macro mc_moon_phase_0_image_file	mc_moon_phases_directory + "full_moon.png"
+	#macro mc_moon_phase_1_image_file	mc_moon_phases_directory + "waning_gibbous.png"
+	#macro mc_moon_phase_2_image_file	mc_moon_phases_directory + "third_quarter.png"
+	#macro mc_moon_phase_3_image_file	mc_moon_phases_directory + "waning_crescent.png"
+	#macro mc_moon_phase_4_image_file	mc_moon_phases_directory + "new_moon.png"
+	#macro mc_moon_phase_5_image_file	mc_moon_phases_directory + "waxing_crescent.png"
+	#macro mc_moon_phase_6_image_file	mc_moon_phases_directory + "first_quarter.png"
+	#macro mc_moon_phase_7_image_file	mc_moon_phases_directory + "waxing_gibbous.png"
 	#macro mc_clouds_image_file			mc_textures_directory + "environment/clouds.png"
 	#macro mc_glint_armor_file			mc_textures_directory + "misc/enchanted_glint_armor.png"
 	#macro mc_glint_item_file			mc_textures_directory + "misc/enchanted_glint_item.png"
@@ -111,6 +119,9 @@ function macros()
 	#macro c_clouds						make_color_rgb(255, 255, 255)
 	#macro c_sunlight					make_color_rgb(255, 247, 228)
 	#macro c_ambient					make_color_rgb(102, 112, 140)
+	#macro c_night_sky					make_color_rgb(2, 2, 4)
+	#macro c_night_clouds				make_color_rgb(25, 25, 38)
+	#macro c_stars						make_color_rgb(63, 63, 63)
 	#macro c_night						make_color_rgb(14, 14, 24)
 	#macro c_clouds_top					make_color_rgb(255, 255, 255)
 	#macro c_clouds_sideslight			make_color_rgb(229, 229, 229) //(215, 222, 234)

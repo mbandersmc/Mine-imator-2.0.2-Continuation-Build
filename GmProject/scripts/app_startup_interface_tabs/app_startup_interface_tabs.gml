@@ -583,7 +583,7 @@ function app_startup_interface_tabs()
 			tbx_fov.suffix = "°"
 			
 			tbx_blade_amount = new_textbox_integer()
-			tbx_blade_angle = new_textbox_integer()
+			tbx_blade_angle = new_textbox_ndecimals()
 			tbx_blade_angle.suffix = "°"
 			
 			tbx_exposure = new_textbox_decimals()

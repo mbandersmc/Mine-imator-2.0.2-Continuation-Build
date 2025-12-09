@@ -57,11 +57,11 @@ function tab_properties_resources()
 			case "modeltextures":
 			{
 				tab_control_menu()
-				draw_button_menu("resourcespackmaterial", e_menu.LIST, dx, dy, dw, 24, res_preview.pack_image_material, text_get("resourcespackmaterial" + res_preview.pack_image_material), action_res_preview_pack_image_material, false)
+				draw_button_menu("resourcespackmaterial", e_menu.LIST, dx, dy, dw, 24, res_preview.pack_image_material, text_get("resourcespackmaterial" + res_preview.pack_image_material), action_res_preview_pack_image_material)
 				tab_next()
 				
 				tab_control_menu()
-				draw_button_menu("resourcespackimagemodeltexture", e_menu.LIST, dx, dy, dw, 24, res_preview.pack_model_texture, res_preview.pack_model_texture, action_res_preview_pack_model_texture, false)
+				draw_button_menu("resourcespackimagemodeltexture", e_menu.LIST, dx, dy, dw, 24, res_preview.pack_model_texture, res_preview.pack_model_texture, action_res_preview_pack_model_texture)
 				tab_next()
 				break
 			}
@@ -69,7 +69,7 @@ function tab_properties_resources()
 			case "itemsheet":
 			{
 				tab_control_menu()
-				draw_button_menu("resourcespackmaterial", e_menu.LIST, dx, dy, dw, 24, res_preview.pack_image_material, text_get("resourcespackmaterial" + res_preview.pack_image_material), action_res_preview_pack_image_material, false)
+				draw_button_menu("resourcespackmaterial", e_menu.LIST, dx, dy, dw, 24, res_preview.pack_image_material, text_get("resourcespackmaterial" + res_preview.pack_image_material), action_res_preview_pack_image_material)
 				tab_next()
 				break
 			}
@@ -77,7 +77,7 @@ function tab_properties_resources()
 			case "blocksheet":
 			{
 				tab_control_menu()
-				draw_button_menu("resourcespackmaterial", e_menu.LIST, dx, dy, dw, 24, res_preview.pack_image_material, text_get("resourcespackmaterial" + res_preview.pack_image_material), action_res_preview_pack_image_material, false)
+				draw_button_menu("resourcespackmaterial", e_menu.LIST, dx, dy, dw, 24, res_preview.pack_image_material, text_get("resourcespackmaterial" + res_preview.pack_image_material), action_res_preview_pack_image_material)
 				tab_next()
 				
 				tab_control_togglebutton()
@@ -105,6 +105,14 @@ function tab_properties_resources()
 				togglebutton_add("resourcespackimageparticlesimage1", null, 0, res_preview.pack_particles = 0, action_res_preview_pack_particles)
 				togglebutton_add("resourcespackimageparticlesimage2", null, 1, res_preview.pack_particles = 1, action_res_preview_pack_particles)
 				draw_togglebutton("resourcespackimageparticles", dx, dy)
+				tab_next()
+				break
+			}
+			
+			case "moontexture":
+			{
+				tab_control_menu()
+				draw_button_menu("resourcespackmoonphase", e_menu.LIST, dx, dy, dw, 24, res_preview.pack_moon_phase, text_get("resourcespackmoonphase" + string(res_preview.pack_moon_phase + 1)), action_res_preview_pack_moon_phase)
 				tab_next()
 				break
 			}

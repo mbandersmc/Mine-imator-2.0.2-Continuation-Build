@@ -100,20 +100,19 @@ function block_load_model_file(fname, res = null)
 					var rotationmap = elementmap[?"rotation"];
 					if (ds_map_valid(rotationmap))
 					{
-						var origin, angle, rot, scale;
+						var origin, rot, scale;
 						origin = value_get_point3D(rotationmap[?"origin"], point3D(8, 8, 8))
-						angle = 0
 						rot = vec3(0)
 						scale = vec3(1)
 						
-						if (is_real(rotationmap[?"angle"]))
-							angle = clamp(rotationmap[?"angle"], -45, 45) //snap(_, 22.5)
-						
-						if (is_bool(rotationmap[?"rescale"]) && rotationmap[?"rescale"])
-							scale = vec3(1 / dcos(abs(angle)))
-						
-						if (is_string(rotationmap[?"axis"]))
+						if (is_string(rotationmap[?"axis"]) && is_real(rotationmap[?"angle"])) // Legacy single axis rotation
 						{
+							var angle = 0;
+							angle = rotationmap[?"angle"] //snap(clamp(rotationmap[?"angle"], -45, 45), 22.5)
+							
+							if (is_bool(rotationmap[?"rescale"]) && rotationmap[?"rescale"])
+								scale = vec3(1 / dcos(abs(angle)))
+							
 							switch (rotationmap[?"axis"])
 							{
 								case "x": rot[X] = angle; scale[X] = 1; break
@@ -121,10 +120,34 @@ function block_load_model_file(fname, res = null)
 								case "y": rot[Z] = angle; scale[Z] = 1; break
 							}
 						}
+						else if (is_real(rotationmap[?"x"]) || is_real(rotationmap[?"y"]) || is_real(rotationmap[?"z"])) // New free rotation
+						{
+							var angles = [0, 0, 0];
+							
+							if (is_real(rotationmap[?"x"]))
+								angles[X] = rotationmap[?"x"]
+							if (is_real(rotationmap[?"y"]))
+								angles[Z] = rotationmap[?"y"]
+							if (is_real(rotationmap[?"z"]))
+								angles[Y] = rotationmap[?"z"]
+							
+							if (is_bool(rotationmap[?"rescale"]) && rotationmap[?"rescale"])
+							{
+								// TODO fix me
+								scale[X] = (1 / dcos(abs(angles[Y]))) * (1 / dcos(abs(angles[Z])))
+								scale[Y] = (1 / dcos(abs(angles[X]))) * (1 / dcos(abs(angles[Z])))
+								scale[Z] = (1 / dcos(abs(angles[X]))) * (1 / dcos(abs(angles[Y])))
+							}
+							
+							rot = angles
+						}
 						
 						matrix = matrix_create(point3D_mul(origin, -1), vec3(0), vec3(1))
 						matrix = matrix_multiply(matrix, matrix_create(point3D(0, 0, 0), vec3(0), scale))
-						matrix = matrix_multiply(matrix, matrix_create(origin, rot, vec3(1)))
+						matrix = matrix_multiply(matrix, matrix_create(point3D(0, 0, 0), [rot[X], 0, 0], vec3(1)))
+						matrix = matrix_multiply(matrix, matrix_create(point3D(0, 0, 0), [0, 0, rot[Z]], vec3(1)))
+						matrix = matrix_multiply(matrix, matrix_create(point3D(0, 0, 0), [0, rot[Y], 0], vec3(1)))
+						matrix = matrix_multiply(matrix, matrix_create(origin, vec3(0), vec3(1)))
 						rotated = true
 					}
 					else

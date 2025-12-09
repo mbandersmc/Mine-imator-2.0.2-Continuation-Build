@@ -613,7 +613,8 @@ function preview_draw(preview, xx, yy, width, height)
 									break
 								
 								case "moontexture":
-									tex = select.moonphases_texture
+									//tex = select.moonphases_texture
+									tex = select.moon_textures[pack_moon_phase]
 									break
 								
 								case "cloudtexture":

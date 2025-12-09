@@ -40,7 +40,7 @@ function background_sky_update()
 		alphay = 1
 	
 	background_clouds_alpha = background_sky_clouds_mode = "faded" ? (1 - min(background_night_alpha, 0.95)) * alphay : 0.8 //(.8 - min(background_night_alpha, 0.75) * alphay)
-	background_sky_clouds_final = merge_color(background_sky_clouds_color, make_color_rgb(25, 25, 38), background_night_alpha) //(120, 120, 255)
+	background_sky_clouds_final = merge_color(background_sky_clouds_color, background_night_sky_clouds_color, background_night_alpha) //(120, 120, 255)
 	background_sky_clouds_vbuffer_pos = []
 	
 	var size, offset, xo, yo, num, xx, i;

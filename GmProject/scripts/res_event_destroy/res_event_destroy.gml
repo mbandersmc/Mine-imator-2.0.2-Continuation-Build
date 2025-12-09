@@ -120,12 +120,16 @@ function res_event_destroy()
 	if (sun_texture != null)
 		texture_free(sun_texture)
 	
-	if (moonphases_texture != null)
-	{
-		texture_free(moonphases_texture)
-		for (var t = 0; t < 8; t++)
-			texture_free(moon_texture[t])
-	}
+	for (var i = 0; i < 8; i++)
+		if (moon_textures[i] != null)
+			texture_free(moon_textures[i])
+	
+	//if (moonphases_texture != null)
+	//{
+	//	texture_free(moonphases_texture)
+	//	for (var t = 0; t < 8; t++)
+	//		texture_free(moon_texture[t])
+	//}
 	
 	if (clouds_texture != null)
 		texture_free(clouds_texture)

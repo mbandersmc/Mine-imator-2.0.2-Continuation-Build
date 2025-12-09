@@ -85,7 +85,7 @@ function render_world_sky()
 			if (background_sky_stars_vbuffer = null)
 				background_sky_stars_vbuffer = vbuffer_create_cube(0.75, point2D(0, 0), point2D(2, 2), false, false, true, false)
 			
-			render_set_uniform_color("uBlendColor", hex_to_color("3F3F3F"), background_night_alpha)
+			render_set_uniform_color("uBlendColor", background_night_sky_stars_color, background_night_alpha)
 			render_set_texture(background_sky_stars_texture)
 			vbuffer_render_matrix(background_sky_stars_vbuffer, matrix_multiply(matrix_build(0, 0, 0, 0, 0, 0, dis, dis, dis), skymat))
 		}
@@ -112,7 +112,7 @@ function render_world_sky()
 		if (background_sky_moon_tex.type = e_res_type.PACK && background_sky_moon_tex.ready)
 		{
 			var phase = background_sky_moon_phase;
-			render_set_texture(background_sky_moon_tex.moon_texture[phase])
+			render_set_texture(background_sky_moon_tex.moon_textures[phase])
 		}
 		else
 			render_set_texture(background_sky_moon_tex.texture)
