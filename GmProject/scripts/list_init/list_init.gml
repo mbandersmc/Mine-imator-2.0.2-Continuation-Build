@@ -1071,7 +1071,7 @@ function list_init(name)
 				texobj = tl_edit.temp.item_tex
 			
 			if (texobj.type = e_res_type.TEXTURE)
-				menu_add_item(texobj,text_get("listdefault", texobj.display_name), texobj.texture)
+				menu_add_item(texobj, text_get("listdefault", texobj.display_name), texobj.texture)
 			else if (texobj.item_sheet_texture != null)
 				menu_add_item(texobj, text_get("listdefault", texobj.display_name), texobj.block_preview_texture)
 			

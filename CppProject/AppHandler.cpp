@@ -460,10 +460,8 @@ namespace CppProject
 			{
 				if (keyMap.contains(event->key())) // Mapped key
 					keys = { keyMap.value(event->key()) };
-				else if (event->key() > 255 || event->modifiers() & Qt::ShiftModifier) // Unicode key pressed or shift
-					keys = { event->nativeVirtualKey() };
 				else
-					keys = { event->key() };
+					keys = { event->nativeVirtualKey() };
 				break;
 			}
 		}

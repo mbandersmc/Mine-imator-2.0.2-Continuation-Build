@@ -143,6 +143,8 @@ function project_save_template()
 				json_save_var_bool("invert", shape_invert)
 				json_save_var_bool("smooth", shape_smooth)
 				json_save_var("detail", shape_detail)
+				json_save_var("ring_detail", shape_ring_detail)
+				json_save_var("interior_radius", shape_interior_radius)
 				json_save_var_bool("face_camera", shape_face_camera)
 			json_save_object_done()
 		}

@@ -25,7 +25,7 @@ function debug_info_draw()
 		str += "FPS real: " + string(fps_real) + " \n"
 		str += "delta: " + string(delta) + " \n"
 		str += "\n"
-	
+		
 		str += "Window: \n"
 		str += "======================================= \n"
 		str += "DPI: " + string(display_get_dpi_x()) + "," + string(display_get_dpi_y()) + " \n"
@@ -34,7 +34,7 @@ function debug_info_draw()
 		str += "window_focus: " + string(window_focus) + " \n"
 		str += "current_step: " + string(current_step) + " \n"
 		str += "\n"
-	
+		
 		str += "Project: \n"
 		str += "======================================= \n"
 		str += "project_file: " + string_replace_all(project_file, "/", "\\") + " \n"
@@ -42,7 +42,7 @@ function debug_info_draw()
 		str += "working_directory: " + string_replace_all(working_directory, "/", "\\") + " \n"
 		str += "file_directory: " + string_replace_all(file_directory, "/", "\\") + " \n"
 		str += "\n"
-	
+		
 		str += "instance_count: " + string(instance_count) + " \n"
 		str += "render_world() calls: " + string(render_world_count) + " \n"
 		str += "Vertex buffer triangles: " + string(get_vertex_buffer_triangles()) + " \n"
@@ -51,12 +51,12 @@ function debug_info_draw()
 		str += "Primitive triangles: " + string(get_primitive_triangles()) + " \n"
 		str += "Primitive render calls: " + string(get_primitive_render_calls()) + " \n"
 		str += "\n"
-	
+		
 		if (dev_mode)
 		{
 			if (!is_cpp() && ds_list_size(window_list) > 0) // Debug windows in GM
 			{
-				str += "[F1]: Main window" + " \n"
+				str += "[F1]: Main view" + " \n"
 				for (var i = 0; i < ds_list_size(window_list); i++)
 				{
 					var winindex = "undefined view";
@@ -66,6 +66,7 @@ function debug_info_draw()
 						winindex = "Timeline view"
 					str += "[F" + string(i + 2) + "]: " + winindex + " \n"
 				}
+				str += "\n"
 			}
 			str += "[F7]: Reload Minecraft assets" + " \n"
 			str += "[F9]: Open file directory" + " \n"

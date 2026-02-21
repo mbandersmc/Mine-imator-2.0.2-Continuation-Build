@@ -149,10 +149,10 @@ function world_import_world_menu_init()
 function world_import_dimension_menu_init()
 {
 	menu_add_item("overworld", text_get("worldimportoverworld"))
-	if (world_import_has_dimension("nether"))
-		menu_add_item("nether", text_get("worldimportnether"))
-	if (world_import_has_dimension("end"))
-		menu_add_item("end", text_get("worldimportend"))
+	if (world_import_has_dimension("the_nether"))
+		menu_add_item("the_nether", text_get("worldimportthenether"))
+	if (world_import_has_dimension("the_end"))
+		menu_add_item("the_end", text_get("worldimporttheend"))
 }
 
 /// Draw the world import interface.
@@ -227,7 +227,7 @@ function window_draw_world_import()
 	dx += dw + spacing
 	dw = 208
 	capwid = 80
-	draw_button_menu("worldimportdimension", e_menu.LIST, dx, dy, dw, 24, world_import_dimension, text_get("worldimport" + world_import_dimension), world_import_select_dimension, false, null, null, "", null, null, capwid)
+	draw_button_menu("worldimportdimension", e_menu.LIST, dx, dy, dw, 24, world_import_dimension, text_get("worldimport" + string_replace_all(world_import_dimension, "_", "")), world_import_select_dimension, false, null, null, "", null, null, capwid)
 	
 	dx += dw + 12
 	

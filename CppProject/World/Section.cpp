@@ -58,7 +58,7 @@ namespace CppProject
 			preview.regionPos = { chunk->regionPos.x, chunk->regionPos.y + chunkIndex * SECTION_SIZE, chunk->regionPos.z };
 
 			// Hide naturally occuring bedrock
-			preview.hideBedrock = (y <= 0 || (region->dimName == "nether" && y == 7));
+			preview.hideBedrock = (y <= 0 || (region->dimName == "the_nether" && y == 7));
 
 			// Enable section in GetPreviewState
 			IntType regionIndex = (chunkIndex << 10) + (chunk->z << 5) + chunk->x;

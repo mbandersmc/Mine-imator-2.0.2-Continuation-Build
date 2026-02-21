@@ -84,7 +84,7 @@ function tab_timeline_editor_path()
 			textfield_group_add("timelineeditorpathshapetexhoffset", tl_edit.path_shape_tex_hoffset, 0, action_tl_path_shape_tex_hoffset, axis_edit, tab.path.tbx_shape_tex_hoffset)
 			textfield_group_add("timelineeditorpathshapetexvoffset", tl_edit.path_shape_tex_voffset, 0, action_tl_path_shape_tex_voffset, axis_edit, tab.path.tbx_shape_tex_voffset)
 			
-			tab_control_textfield_group()
+			tab_control_textfield_group(true, false)
 			draw_textfield_group("timelineeditorpathshapetexoffset", dx, dy, dw, 0.01, -no_limit, no_limit, 0, true, false, 3)
 			tab_next()
 			
@@ -95,7 +95,7 @@ function tab_timeline_editor_path()
 			if (tl_edit.path_shape_tex_fixed)
 				textfield_group_add("timelineeditorpathshapetexvlength", tl_edit.path_shape_tex_length, 16, action_tl_path_shape_tex_length, axis_edit, tab.path.tbx_shape_tex_length)
 			
-			tab_control_textfield_group()
+			tab_control_textfield_group(true, false)
 			draw_textfield_group("timelineeditorpathshapetexrepeat", dx, dy, dw, 0.01, 0, no_limit, 0, true, false, 3)
 			tab_next()
 		}

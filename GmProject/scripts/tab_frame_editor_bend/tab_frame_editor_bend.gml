@@ -78,7 +78,7 @@ function tab_frame_editor_bend()
 				textfield_group_add("frameeditorbend" + axisname[i], tl_edit.value[e_value.BEND_ANGLE_X + axis_edit], def[X + axis_edit], action_tl_frame_bend_angle, axis_edit, tab.transform.tbx_bend[axis_edit], null, 0.1, tl_edit.model_part.bend_direction_min[axis_edit], tl_edit.model_part.bend_direction_max[axis_edit])
 			}
 			
-			tab_control_textfield_group(false)
+			tab_control_textfield_group()
 			draw_textfield_group("frameeditorbend", (axislen = 1) ? floor(dx + dw/2 - dragger_width/2) : dx, dy, (axislen = 1) ? dragger_width : dw, 0.1, 0, 0, snapval, false, true, 2)
 			tab_next()
 		}

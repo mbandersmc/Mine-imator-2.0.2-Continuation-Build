@@ -10,20 +10,20 @@ varying vec4 vColor2;
 
 void main()
 {
-	if (uDim == 0) // Overworld
+	switch (uDim)
 	{
-		vColor1 = vec4(0.7, 0.7, 1.0, 1.0);
-		vColor2 = vec4(0.725, 0.725, 1.0, 1.0);
-	}
-	else if (uDim == 1) // Nether
-	{
-		vColor1 = vec4(0.5, 0.2, 0.1, 1.0);
-		vColor2 = vec4(0.525, 0.225, 0.1, 1.0);
-	}
-	else if (uDim == -1) // End
-	{
-		vColor1 = vec4(0.2, 0.1, 0.2, 1.0);
-		vColor2 = vec4(0.225, 0.1, 0.225, 1.0);
+		case -1: // Nether
+			vColor1 = vec4(0.5, 0.2, 0.1, 1.0);
+			vColor2 = vec4(0.525, 0.225, 0.1, 1.0);
+			break;
+		case 1: // End
+			vColor1 = vec4(0.2, 0.1, 0.2, 1.0);
+			vColor2 = vec4(0.225, 0.1, 0.225, 1.0);
+			break;
+		default:
+			vColor1 = vec4(0.7, 0.7, 1.0, 1.0);
+			vColor2 = vec4(0.725, 0.725, 1.0, 1.0);
+			break;
 	}
 
 	vTexCoord = in_TextureCoord;

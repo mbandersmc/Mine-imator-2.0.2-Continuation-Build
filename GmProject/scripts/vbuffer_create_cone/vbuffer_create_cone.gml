@@ -14,18 +14,38 @@ function vbuffer_create_cone(rad, tex1, tex2, thflip, tvflip, detail, smooth, cl
 {
 	vbuffer_start()
 	
-	//tex1[X] += 0.25
-	//tex2[X] += 0.25
+	var texsize, texmid;
+	texsize = point2D_sub(tex2, tex1)
+	texmid = point2D_add(tex1, vec2_mul(texsize, 0.5))
+	if (mapped)
+	{
+		texsize = vec2(0.5 * thflip, tvflip)
+		texmid[Y] = texsize[Y] / 2
+		
+		// Sides
+		tex1 = point2D(0, 0)
+		tex2 = point2D(abs(texsize[X]), abs(texsize[Y]))
+			
+		if (thflip < 0)
+		{
+			var tmp = tex1[X];
+			tex1[X] = tex2[X]
+			tex2[X] = tmp
+		}
+			
+		if (tvflip < 0)
+		{
+			var tmp = tex1[Y];
+			tex1[Y] = tex2[Y]
+			tex2[Y] = tmp
+		}
+	}
 	
 	var i = 0;
 	repeat (detail)
 	{
 		var ip = i;
 		i += 1 / detail
-		
-		var texsize, texmid;
-		texsize = point2D_sub(tex2, tex1)
-		texmid = point2D_add(tex1, vec2_mul(texsize, 0.5))
 		
 		var n1x, n1y, n2x, n2y;
 		var x1, y1, x2, y2;
@@ -47,12 +67,6 @@ function vbuffer_create_cone(rad, tex1, tex2, thflip, tvflip, detail, smooth, cl
 			n2y *= -1
 		}
 		
-		if (mapped)
-		{
-			texsize = vec2(0.5 * thflip, tvflip)
-			texmid[Y] = texsize[Y] / 2
-		}
-		
 		if (closed)
 		{
 			// Bottom
@@ -63,28 +77,6 @@ function vbuffer_create_cone(rad, tex1, tex2, thflip, tvflip, detail, smooth, cl
 								texmid[X], texmid[Y], 
 								texmid[X] + sin(ip * pi * 2) * (texsize[X] / 2), texmid[Y] - cos(ip * pi * 2) * (texsize[Y] / 2), 
 								texmid[X] + sin(i * pi * 2) * (texsize[X] / 2), texmid[Y] - cos(i * pi * 2) * (texsize[Y] / 2), invert)
-		}
-		
-		// Sides
-		if (mapped)
-		{
-			texmid[X] = 0.25
-			tex1 = point2D(0, 0)
-			tex2 = point2D(abs(texsize[X]), abs(texsize[Y]))
-			
-			if (thflip < 0)
-			{
-				var tmp = tex1[X];
-				tex1[X] = tex2[X]
-				tex2[X] = tmp
-			}
-			
-			if (tvflip < 0)
-			{
-				var tmp = tex1[Y];
-				tex1[Y] = tex2[Y]
-				tex2[Y] = tmp
-			}
 		}
 		
 		var normx, normy;

@@ -98,6 +98,8 @@ function temp_event_create()
 	shape_invert = false
 	shape_smooth = true
 	shape_detail = 32
+	shape_ring_detail = 32
+	shape_interior_radius = 0.5
 	shape_face_camera = false
 	
 	text_font = null

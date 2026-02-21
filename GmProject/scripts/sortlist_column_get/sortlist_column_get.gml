@@ -60,9 +60,7 @@ function sortlist_column_get(slist, value, col)
 			return value.count
 		
 		case "particlepresetname":
-		{
 			var fn = filename_new_ext(filename_name(value), "");
 			return text_exists("particle" + fn) ? text_get("particle" + fn) : fn;
-		}
 	}
 }

@@ -22,8 +22,8 @@ function popup_exportmovie_draw()
 		textfield_group_add("exportmovievideosizecustomwidth", project_video_width, 1280, action_project_video_width, X, popup.tbx_video_size_custom_width, null, 1, (popup.format = "mp4" || popup.format = "mov") ? 2 : 1, surface_get_max_size())
 		textfield_group_add("exportmovievideosizecustomheight", project_video_height, 720, action_project_video_height, X, popup.tbx_video_size_custom_height, null, 1, (popup.format = "mp4" || popup.format = "mov") ? 2 : 1, surface_get_max_size())
 		
-		tab_control_textfield_group(false)
-		draw_textfield_group("exportmovievideosizecustom", dx, dy, dw, 1, (popup.format = "mp4" || popup.format = "mov") ? 2 : 1, no_limit, (popup.format = "mp4" || popup.format = "mov") ? 2 : 1, false)
+		tab_control_textfield_group()
+		draw_textfield_group("exportmovievideosizecustom", dx, dy, dw, 1, (popup.format = "mp4" || popup.format = "mov") ? 2 : 1, no_limit, (popup.format = "mp4" || popup.format = "mov") ? 2 : 1)
 		tab_next()
 	
 		if (badvideosize)

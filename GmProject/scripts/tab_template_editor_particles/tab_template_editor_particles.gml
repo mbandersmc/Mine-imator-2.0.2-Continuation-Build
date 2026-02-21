@@ -125,7 +125,7 @@ function tab_template_editor_particles()
 				axis_edit = ud
 				textfield_group_add("particleeditorspawnregionboxzsize", temp_edit.pc_spawn_region_box_size[axis_edit], 200, action_lib_pc_spawn_region_box_size, axis_edit, tab.tbx_spawn_region_box_zsize, null, temp_edit.pc_spawn_region_box_size[axis_edit] / 100)
 				
-				tab_control_textfield_group()
+				tab_control_textfield_group(true)
 				draw_textfield_group("particleeditorspawnregionboxsize", dx, dy, dw, null, 0, no_limit, 0, true, true, 1)
 				tab_next()
 				
@@ -178,7 +178,7 @@ function tab_template_editor_particles()
 		axis_edit = ud
 		textfield_group_add("particleeditorboundingboxfromz", temp_edit.pc_bounding_box_custom_start[axis_edit], -100, action_lib_pc_bounding_box_custom_start, axis_edit, tab.tbx_bounding_box_custom_zstart, null, 1, -no_limit, temp_edit.pc_bounding_box_custom_end[axis_edit])
 		
-		tab_control_textfield_group()
+		tab_control_textfield_group(true)
 		draw_textfield_group("particleeditorboundingboxcustomfrom", dx, dy, dw, 1, 0, no_limit, 0, true, true, 1)
 		tab_next()
 		
@@ -190,7 +190,7 @@ function tab_template_editor_particles()
 		axis_edit = ud
 		textfield_group_add("particleeditorboundingboxtoz", temp_edit.pc_bounding_box_custom_end[axis_edit], 100, action_lib_pc_bounding_box_custom_end, axis_edit, tab.tbx_bounding_box_custom_zend, null, 1, temp_edit.pc_bounding_box_custom_start[axis_edit], no_limit)
 		
-		tab_control_textfield_group()
+		tab_control_textfield_group(true)
 		draw_textfield_group("particleeditorboundingboxcustomto", dx, dy, dw, 1, 0, no_limit, 0, true, true, 1)
 		tab_next()
 		
@@ -348,20 +348,17 @@ function tab_template_editor_particles()
 			tab_template_editor_particles_framebox()
 			
 			// Frame width / height
-			tab.tbx_type_sprite_frame_width.suffix = text_get("particleeditorpixels")
-			tab.tbx_type_sprite_frame_height.suffix = text_get("particleeditorpixels")
-			
-			tab_control_textfield_group()
+			tab_control_textfield_group(true, false)
 			textfield_group_add("particleeditortypespriteframewidth", ptype_edit.sprite_frame_width, 8, action_lib_pc_type_sprite_frame_width, axis_edit, tab.tbx_type_sprite_frame_width)
 			textfield_group_add("particleeditortypespriteframeheight", ptype_edit.sprite_frame_height, 8, action_lib_pc_type_sprite_frame_height, axis_edit, tab.tbx_type_sprite_frame_height)
-			draw_textfield_group("particleeditortypespriteframesize", dx, dy, dw, 0.1, 1, no_limit, 1, true, true, 1)
+			draw_textfield_group("particleeditortypespriteframesize", dx, dy, dw, 0.1, 1, no_limit, 1, true, false)
 			tab_next()
 			
 			// Frames
-			tab_control_textfield_group()
+			tab_control_textfield_group(true, false)
 			textfield_group_add("particleeditortypespriteframestart", ptype_edit.sprite_frame_start, 7, action_lib_pc_type_sprite_frame_start, axis_edit, tab.tbx_type_sprite_frame_start, null, 0.1, 0, no_limit, "particleeditorfrom")
 			textfield_group_add("particleeditortypespriteframeend", ptype_edit.sprite_frame_end, 0, action_lib_pc_type_sprite_frame_end, axis_edit, tab.tbx_type_sprite_frame_end, null, 0.1, 0, no_limit, "particleeditorto")
-			draw_textfield_group("particleeditortypespriteframeframes", dx, dy, dw, null, null, null, 1, true, 1)
+			draw_textfield_group("particleeditortypespriteframeframes", dx, dy, dw, null, null, null, 1, true, false)
 			tab_next()
 		}
 		else // Particle template

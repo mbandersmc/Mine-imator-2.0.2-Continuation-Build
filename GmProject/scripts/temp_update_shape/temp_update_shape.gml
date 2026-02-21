@@ -48,7 +48,7 @@ function temp_update_shape()
 			break
 		
 		case e_shape_type.SPHERE:
-			shape_vbuffer = vbuffer_create_sphere(rad, tex1, tex2, shape_detail, shape_smooth, shape_invert)
+			shape_vbuffer = vbuffer_create_sphere(rad, tex1, tex2, shape_detail, shape_ring_detail, shape_smooth, shape_invert)
 			break
 	}
 }

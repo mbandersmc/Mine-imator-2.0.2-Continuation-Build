@@ -44,13 +44,12 @@ function popup_importitemsheet_draw()
 		
 		// Size
 		axis_edit = X
-		tab_control(28)
-		draw_dragger("importitemsheetrows", dx, dy, dragger_width, popup.sheet_size[X], 0.1, 1, no_limit, popup.sheet_size_def[X], 1, popup.tbx_sheet_width, action_toolbar_importitemsheet_sheet_size)
-		tab_next()
-		
+		textfield_group_add("importitemsheetcolumns", popup.sheet_size[X], popup.sheet_size_def[X], action_toolbar_importitemsheet_sheet_size, axis_edit, popup.tbx_sheet_width, null, 1, 1, no_limit)
 		axis_edit = Y
-		tab_control(28)
-		draw_dragger("importitemsheetcolumns", dx, dy, dragger_width, popup.sheet_size[Y], 0.1, 1, no_limit, popup.sheet_size_def[Y], 1, popup.tbx_sheet_height, action_toolbar_importitemsheet_sheet_size)
+		textfield_group_add("importitemsheetrows", popup.sheet_size[Y], popup.sheet_size_def[Y], action_toolbar_importitemsheet_sheet_size, axis_edit, popup.tbx_sheet_height, null, 1, 1, no_limit)
+		
+		tab_control_textfield_group(true)
+		draw_textfield_group("importitemsheetgrid", dx, dy, dw, 0.1, 1, no_limit, 1, true)
 		tab_next()
 	}
 	

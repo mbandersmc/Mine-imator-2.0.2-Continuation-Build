@@ -51,9 +51,9 @@ function tab_template_editor_particles_value(name, val, israndom, randommin, ran
 		textfield_group_add(name + "min", randommin, def[1], scripts[2], axis_edit, tbx[0], null, mul, minval, randommax, "particleeditormin")
 		textfield_group_add(name + "max", randommax, def[2], scripts[3], axis_edit, tbx[1], null, mul, randommin, maxval, "particleeditormax")
 		
-		tab_control_textfield_group(false)
+		tab_control_textfield_group()
 		
-		draw_textfield_group(name, dx, dy, dw - (32 * !showcaption), null, null, null, snapval, false)
+		draw_textfield_group(name, dx, dy, dw - (32 * !showcaption), null, null, null, snapval)
 	}
 	else
 	{

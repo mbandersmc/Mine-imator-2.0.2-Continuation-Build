@@ -510,7 +510,7 @@ function tab_properties_library()
 					textfield_group_add("libraryshapetexhoffset", temp_edit.shape_tex_hoffset, 0, action_lib_shape_tex_hoffset, axis_edit, tab.library.tbx_shape_tex_hoffset)
 					textfield_group_add("libraryshapetexvoffset", temp_edit.shape_tex_voffset, 0, action_lib_shape_tex_voffset, axis_edit, tab.library.tbx_shape_tex_voffset)
 					
-					tab_control_textfield_group()
+					tab_control_textfield_group(true, false)
 					draw_textfield_group("libraryshapetexoffset", dx, dy, dw, 0.01, -no_limit, no_limit, 0, true, false, 3)
 					tab_next()
 					
@@ -518,7 +518,7 @@ function tab_properties_library()
 					textfield_group_add("libraryshapetexhrepeat", temp_edit.shape_tex_hrepeat, 1, action_lib_shape_tex_hrepeat, axis_edit, tab.library.tbx_shape_tex_hrepeat)
 					textfield_group_add("libraryshapetexvrepeat", temp_edit.shape_tex_vrepeat, 1, action_lib_shape_tex_vrepeat, axis_edit, tab.library.tbx_shape_tex_vrepeat)
 					
-					tab_control_textfield_group()
+					tab_control_textfield_group(true, false)
 					draw_textfield_group("libraryshapetexrepeat", dx, dy, dw, 0.01, 0, no_limit, 0, true, false, 3)
 					tab_next()
 				}
@@ -546,7 +546,7 @@ function tab_properties_library()
 			draw_checkbox("libraryshapeinvert", dx, dy, temp_edit.shape_invert, action_lib_shape_invert)
 			tab_next()
 			
-			if (temp_edit.type = e_temp_type.SPHERE || temp_edit.type = e_temp_type.CONE || temp_edit.type = e_temp_type.CYLINDER)
+			if (temp_edit.type = e_temp_type.CONE || temp_edit.type = e_temp_type.CYLINDER || temp_edit.type = e_temp_type.SPHERE)
 			{
 				// Smooth
 				tab_control_checkbox()
@@ -554,9 +554,21 @@ function tab_properties_library()
 				tab_next()
 				
 				// Detail
-				tab_control_dragger()
-				draw_dragger("libraryshapedetail", dx, dy, dragger_width, temp_edit.shape_detail, 0.25, temp_edit.type = e_temp_type.SPHERE ? 4 : 3, 256, 32, 1, tab.library.tbx_shape_detail, action_lib_shape_detail)
-				tab_next()
+				if (temp_edit.type = e_temp_type.SPHERE)
+				{
+					textfield_group_add("libraryshapedetailsegments", temp_edit.shape_detail, 32, action_lib_shape_detail, axis_edit, tab.library.tbx_shape_detail, null, 0.25, 3, 256)
+					textfield_group_add("libraryshapedetailrings", temp_edit.shape_ring_detail, 32, action_lib_shape_ring_detail, axis_edit, tab.library.tbx_shape_ring_detail, null, 0.25, 2, 256)
+					
+					tab_control_textfield_group(true)
+					draw_textfield_group("libraryshapedetail", dx, dy, dw, 0.25, 2, 256, 1, true)
+					tab_next()
+				}
+				else
+				{
+					tab_control_dragger()
+					draw_dragger("libraryshapedetail", dx, dy, dragger_width, temp_edit.shape_detail, 0.25, temp_edit.type = e_temp_type.SPHERE ? 4 : 3, 256, 32, 1, tab.library.tbx_shape_detail, action_lib_shape_detail)
+					tab_next()
+				}
 			}
 			else if (temp_edit.type = e_temp_type.SURFACE)
 			{
@@ -675,7 +687,7 @@ function tab_properties_library()
 			axis_edit = (setting_z_is_up ? Z : Y)
 			textfield_group_add("libraryrepeatz", temp_edit.block_repeat[axis_edit], 1, action_lib_block_repeat, axis_edit, tab.library.tbx_repeat_z)
 			
-			tab_control_textfield_group(false)
+			tab_control_textfield_group()
 			draw_textfield_group("libraryrepeat", dx, dy, dw, 0.1, 1, 1000, 1, false, true, 1)
 			tab_next()
 		}

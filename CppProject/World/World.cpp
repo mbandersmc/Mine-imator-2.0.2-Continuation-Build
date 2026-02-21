@@ -54,7 +54,7 @@ namespace CppProject
 			}
 
 			Preview::mcBiomeIdIndexMap[name] = Preview::biomeTints.size();
-			Preview::biomeTints.append({ grassColor, foliageColor }); //, biome->color_water }); //fix water tint
+			Preview::biomeTints.append({ grassColor, foliageColor }); //, biome->color_water }); // TODO: fix water tint
 		}
 
 		// Iterate Minecraft IDs and make id->texture position map
@@ -95,7 +95,7 @@ namespace CppProject
 					else if (model->preview_tint == "foliage")
 						tint = BlockStyle::FOLIAGE;
 					//else if (model->preview_tint == "water")
-					//	tint = BlockStyle::WATER; //fix water tint
+					//	tint = BlockStyle::WATER; // TODO: fix water tint
 
 					styleIndex = BlockStyle::Create(
 						model->preview_color_zp, model->preview_alpha_zp,
@@ -113,7 +113,7 @@ namespace CppProject
 
 		// Water/Lava
 		Preview::mcBlockIdStyleIndexMap["water"] =
-		Preview::mcBlockIdStyleIndexMap["flowing_water"] = BlockStyle::Create(make_color_rgb(41, 76, 148), 0.7, -1, 1.0, BlockStyle::NONE); //BlockStyle::Create(make_color_rgb(165, 165, 165), 0.7, -1, 1.0, BlockStyle::WATER); //fix water tint
+		Preview::mcBlockIdStyleIndexMap["flowing_water"] = BlockStyle::Create(make_color_rgb(41, 76, 148), 0.7, -1, 1.0, BlockStyle::NONE); //BlockStyle::Create(make_color_rgb(165, 165, 165), 0.7, -1, 1.0, BlockStyle::WATER); // TODO: fix water tint
 		Preview::mcBlockIdStyleIndexMap["lava"] =
 		Preview::mcBlockIdStyleIndexMap["flowing_lava"] = BlockStyle::Create(make_color_rgb(255, 100, 0), 1.0, -1, 1.0, BlockStyle::NONE, 26);
 
@@ -312,13 +312,13 @@ namespace CppProject
 
 			if (data->HasKey("spawn"))
 			{
-				// new spawnpoint stuff is saved in an int array and idk how to read it lmao
-				info.spawnPos = { 0, 80, 0 };
+				// TODO: figure out how to read an nbt int array
 				//NbtCompound* spawn = data->Compound("spawn");
-				//QVector<NbtIntArray*> spawnPos = spawn->IntArray("pos");
-				//info.spawnPos = { (RealType)spawnPos[0]->value, (RealType)spawnPos[1]->value, (RealType)spawnPos[2]->value };
+				//log({ spawn->IntArray("pos") });
+
+				info.spawnPos = { 0, 80, 0 };
 			}
-			else if (((RealType)data->Int("SpawnX") != NULL))
+			else if ((data->GetType("SpawnX") == TAG_INT))
 				info.spawnPos = { (RealType)data->Int("SpawnX"), (RealType)data->Int("SpawnY"), (RealType)data->Int("SpawnZ") };
 			else
 				info.spawnPos = { 0, 80, 0 };
@@ -326,6 +326,7 @@ namespace CppProject
 			info.playerDim = "overworld";
 
 			// Parse single player
+			// TODO: update for 26.1 format (how to get player pos from singleplayer_uuid ?)
 			if (info.hasPlayer = data->HasKey("Player"))
 			{
 				NbtCompound* player = data->Compound("Player");
@@ -338,14 +339,14 @@ namespace CppProject
 					info.playerPos.y += 24.0 / 16.0;
 
 				if (player->GetType("Dimension") == TAG_STRING) // String dimension
-					info.playerDim = player->String("Dimension").Replaced("minecraft:", "").Replaced("the_", "");
+					info.playerDim = player->String("Dimension").Replaced("minecraft:", "");
 
 				else // Integer dimension
 					switch (player->Int("Dimension"))
 					{
 						case 0: info.playerDim = "overworld"; break;
+						case -1: info.playerDim = "the_nether"; break;
 						case 1: info.playerDim = "the_end"; break;
-						case -1: info.playerDim = "nether"; break;
 					}
 			}
 		}
@@ -356,21 +357,36 @@ namespace CppProject
 		}
 
 		// Find dimensions
+		StringType overworldPath, netherPath, endPath;
+		QDir dimensionsDir(dir + "/dimensions/minecraft");
+		if (dimensionsDir.exists())
+		{
+			overworldPath = (dir + "/dimensions/minecraft/overworld/region");
+			netherPath = (dir + "/dimensions/minecraft/the_nether/region");
+			endPath = (dir + "/dimensions/minecraft/the_end/region");
+		}
+		else // Pre-26.1
+		{
+			overworldPath = (dir + "/region");
+			netherPath = (dir + "/DIM-1/region");
+			endPath = (dir + "/DIM1/region");
+		}
+
 		StringType filter = "*.mca";
-		QDir overworldDir(dir + "/region", filter, QDir::Name | QDir::IgnoreCase, QDir::Files | QDir::NoDotAndDotDot);
-		if (overworldDir.isEmpty()) // Pre-anvil
+		QDir overworldDir(overworldPath, filter, QDir::Name | QDir::IgnoreCase, QDir::Files | QDir::NoDotAndDotDot);
+		if (overworldDir.isEmpty()) // Pre-Anvil
 		{
 			filter = "*.mcr";
 			overworldDir.setNameFilters({ filter });
 		}
-		QDir netherDir(dir + "/DIM-1/region", filter);
-		QDir endDir(dir + "/DIM1/region", filter);
+		QDir netherDir(netherPath, filter);
+		QDir endDir(endPath, filter);
 
 		info.dimDir["overworld"] = overworldDir;
 		if (netherDir.exists() && !netherDir.isEmpty())
-			info.dimDir["nether"] = netherDir;
+			info.dimDir["the_nether"] = netherDir;
 		if (endDir.exists() && !endDir.isEmpty())
-			info.dimDir["end"] = endDir;
+			info.dimDir["the_end"] = endDir;
 
 		World::saves[dir] = info;
 		return true;

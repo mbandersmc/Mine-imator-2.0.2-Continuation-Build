@@ -46,11 +46,7 @@ function res_update_colors()
 		color_water = biome.color_water
 		
 		/*
-		if (biome.biome_variants = null)
-		{
-			
-		}
-		else
+		if (biome.biome_variants != null)
 		{
 			var variant = biome.biome_variants[|biome.selected_variant];
 			

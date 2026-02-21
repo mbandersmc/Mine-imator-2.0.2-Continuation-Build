@@ -111,7 +111,8 @@ function asset_load()
 		case ".dat":
 			log("Opening image", fn)
 			popup_importimage.filename = fn
-			popup_show(popup_importimage)
+			popup_importimage_show(fn)
+			//popup_show(popup_importimage)
 			return true
 	}
 	

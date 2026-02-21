@@ -99,7 +99,6 @@ function vbuffer_create_path(path, small = false)
 				ringp = [cos(j * pi * 2), 0, -sin(j * pi * 2)]
 			}
 			
-			
 			// Next segment
 			n2 = vec3_normalize(vec3_mul_matrix(ringp, frames[i]))
 			p2 = point3D_add(vec3_mul(n2, radius * points[i][4]), points[i])

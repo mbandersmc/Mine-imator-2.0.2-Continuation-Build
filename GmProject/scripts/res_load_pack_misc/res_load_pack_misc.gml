@@ -78,14 +78,14 @@ function res_load_pack_misc()
 		for (var i = 0; i < 8; i++)
 		{
 			var moon_phase_image_files = [
-			    mc_moon_phase_0_image_file,
-			    mc_moon_phase_1_image_file,
-			    mc_moon_phase_2_image_file,
-			    mc_moon_phase_3_image_file,
-			    mc_moon_phase_4_image_file,
-			    mc_moon_phase_5_image_file,
-			    mc_moon_phase_6_image_file,
-			    mc_moon_phase_7_image_file
+				mc_moon_phase_0_image_file,
+				mc_moon_phase_1_image_file,
+				mc_moon_phase_2_image_file,
+				mc_moon_phase_3_image_file,
+				mc_moon_phase_4_image_file,
+				mc_moon_phase_5_image_file,
+				mc_moon_phase_6_image_file,
+				mc_moon_phase_7_image_file
 			];
 			moon_textures[i] = texture_create(load_assets_dir + moon_phase_image_files[i]);
 		}

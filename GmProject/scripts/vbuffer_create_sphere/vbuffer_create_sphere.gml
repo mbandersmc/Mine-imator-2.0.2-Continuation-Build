@@ -1,70 +1,68 @@
-/// vbuffer_create_sphere(radius, tex1, tex2, detail, smooth, invert)
+/// vbuffer_create_sphere(radius, tex1, tex2, detail, ringdetail, smooth, invert)
 /// @arg radius
 /// @arg tex1
 /// @arg tex2
 /// @arg detail
+/// @arg ringdetail
 /// @arg smooth
 /// @arg invert
 
-function vbuffer_create_sphere(rad, tex1, tex2, detail, smooth, invert)
+function vbuffer_create_sphere(rad, tex1, tex2, detail, ringdetail, smooth, invert)
 {
-	vbuffer_start()
+	vbuffer_start();
 	
-	//tex1[X] += 0.25
-	//tex2[X] += 0.25
+	var texsize, n;
+	texsize = point2D_sub(tex2, tex1)
+	n = negate(invert)
 	
 	var i = 0;
 	repeat (detail)
 	{
-		var ip, j;
+		var j, ip, ipi2, ippi2;
 		ip = i
 		i += 1 / detail
-		j = 0
+		ippi2 = ip * pi * 2
+		ipi2 = i * pi * 2
 		
-		repeat (detail - 2)
+		j = 0
+		repeat (ringdetail)
 		{
-			var jp;
+			var jp, jpi, jppi;
 			jp = j
-			j += 1 / (detail - 2)
+			j += 1 / ringdetail
+			jppi = jp * pi
+			jpi = j * pi
 			
-			var texsize, texmid, n;
-			texsize = point2D_sub(tex2, tex1)
-			texmid = point2D_add(tex1, vec2_mul(texsize, 0.5))
-			n = negate(invert)
-			
-			var n1x, n1y, n1z, n2x, n2y, n2z, n3x, n3y, n3z, n4x, n4y, n4z;
+			// Vertices
 			var x1, y1, z1, x2, y2, z2, x3, y3, z3, x4, y4, z4;
-			n1x = -sin(ip * pi * 2) * sin(jp * pi)
-			n1y = cos(ip * pi * 2) * sin(jp * pi)
-			n1z = -cos(jp * pi)
-			n2x = -sin(ip * pi * 2) * sin(j * pi)
-			n2y = cos(ip * pi * 2) * sin(j * pi)
-			n2z = -cos(j * pi)
-			n3x = -sin(i * pi * 2) * sin(jp * pi)
-			n3y = cos(i * pi * 2) * sin(jp * pi)
-			n3z = -cos(jp * pi)
-			n4x = -sin(i * pi * 2) * sin(j * pi)
-			n4y = cos(i * pi * 2) * sin(j * pi)
-			n4z = -cos(j * pi)
+			x1 = (rad * sin(jpi)) * sin(ipi2)
+			y1 = (rad * sin(jpi)) * cos(ipi2)
+			z1 = rad * cos(jpi)
+			x2 = (rad * sin(jppi)) * sin(ipi2)
+			y2 = (rad * sin(jppi)) * cos(ipi2)
+			z2 = rad * cos(jppi)
+			x3 = (rad * sin(jpi)) * sin(ippi2)
+			y3 = (rad * sin(jpi)) * cos(ippi2)
+			z3 = rad * cos(jpi)
+			x4 = (rad * sin(jppi)) * sin(ippi2)
+			y4 = (rad * sin(jppi)) * cos(ippi2)
+			z4 = rad * cos(jppi)
 			
-			x1 = n1x * rad
-			y1 = n1y * rad
-			z1 = n1z * rad
-			x2 = n2x * rad
-			y2 = n2y * rad
-			z2 = n2z * rad
-			x3 = n3x * rad
-			y3 = n3y * rad
-			z3 = n3z * rad
-			x4 = n4x * rad
-			y4 = n4y * rad
-			z4 = n4z * rad
-			
-			var t1z, t2z, t3z, t4z;
-			t1z = n1z
-			t2z = n2z
-			t3z = n3z
-			t4z = n4z
+			// Normals
+			var n1x, n1y, n1z, n2x, n2y, n2z, n3x, n3y, n3z, n4x, n4y, n4z;
+			n1x = sin(jpi) * sin(ipi2)
+			n1y = sin(jpi) * cos(ipi2)
+			n1z = cos(jpi)
+			n2x = sin(jppi) * sin(ipi2)
+			n2y = sin(jppi) * cos(ipi2)
+			n2z = cos(jppi)
+			n3x = sin(jpi) * sin(ippi2)
+			n3y = sin(jpi) * cos(ippi2)
+			n3z = cos(jpi)
+			n4x = sin(jppi) * sin(ippi2)
+			n4y = sin(jppi) * cos(ippi2)
+			n4z = cos(jppi)
+
 			if (!smooth)
 			{
 				var normx, normy, normz;
@@ -85,36 +83,32 @@ function vbuffer_create_sphere(rad, tex1, tex2, detail, smooth, invert)
 				n3z = normz
 				n4z = normz
 			}
-		
-			if (jp > 0) 
+			
+			var u1, u2, v1, v2;
+			u1 = tex1[X] + ip * texsize[X]
+			u2 = tex1[X] + i * texsize[X]
+			v1 = tex1[Y] + jp * texsize[Y]
+			v2 = tex1[Y] + j * texsize[Y]
+			
+			if (invert)
 			{
-				if (invert)
-				{
-					vertex_add(x3, y3, z3, n3x * n, n3y * n, n3z * n, tex2[X] - i * texsize[X], texmid[Y] - t3z * (texsize[Y] / 2))
-					vertex_add(x1, y1, z1, n1x * n, n1y * n, n1z * n, tex2[X] - ip * texsize[X], texmid[Y] - t1z * (texsize[Y] / 2))
-					vertex_add(x4, y4, z4, n4x * n, n4y * n, n4z * n, tex2[X] - i * texsize[X], texmid[Y] - t4z * (texsize[Y] / 2))
-				}
-				else
-				{
-					vertex_add(x1, y1, z1, n1x * n, n1y * n, n1z * n, tex2[X] - ip * texsize[X], texmid[Y] - t1z * (texsize[Y] / 2))
-					vertex_add(x3, y3, z3, n3x * n, n3y * n, n3z * n, tex2[X] - i * texsize[X], texmid[Y] - t3z * (texsize[Y] / 2))
-					vertex_add(x4, y4, z4, n4x * n, n4y * n, n4z * n, tex2[X] - i * texsize[X], texmid[Y] - t4z * (texsize[Y] / 2))
-				}
+				vertex_add(x3, y3, z3, n3x * n, n3y * n, n3z * n, u1, v2)
+				vertex_add(x1, y1, z1, n1x * n, n1y * n, n1z * n, u2, v2)
+				vertex_add(x2, y2, z2, n2x * n, n2y * n, n2z * n, u2, v1)
+				
+				vertex_add(x3, y3, z3, n3x * n, n3y * n, n3z * n, u1, v2)
+				vertex_add(x2, y2, z2, n2x * n, n2y * n, n2z * n, u2, v1)
+				vertex_add(x4, y4, z4, n4x * n, n4y * n, n4z * n, u1, v1)
 			}
-			if (j < 1)
+			else
 			{
-				if (invert)
-				{
-					vertex_add(x4, y4, z4, n4x * n, n4y * n, n4z * n, tex2[X] - i * texsize[X], texmid[Y] - t4z * (texsize[Y] / 2))
-					vertex_add(x1, y1, z1, n1x * n, n1y * n, n1z * n, tex2[X] - ip * texsize[X], texmid[Y] - t1z * (texsize[Y] / 2))
-					vertex_add(x2, y2, z2, n2x * n, n2y * n, n2z * n, tex2[X] - ip * texsize[X], texmid[Y] - t2z * (texsize[Y] / 2))
-				}
-				else
-				{
-					vertex_add(x1, y1, z1, n1x * n, n1y * n, n1z * n, tex2[X] - ip * texsize[X], texmid[Y] - t1z * (texsize[Y] / 2))
-					vertex_add(x4, y4, z4, n4x * n, n4y * n, n4z * n, tex2[X] - i * texsize[X], texmid[Y] - t4z * (texsize[Y] / 2))
-					vertex_add(x2, y2, z2, n2x * n, n2y * n, n2z * n, tex2[X] - ip * texsize[X], texmid[Y] - t2z * (texsize[Y] / 2))
-				}
+				vertex_add(x1, y1, z1, n1x * n, n1y * n, n1z * n, u2, v2)
+				vertex_add(x3, y3, z3, n3x * n, n3y * n, n3z * n, u1, v2)
+				vertex_add(x2, y2, z2, n2x * n, n2y * n, n2z * n, u2, v1)
+				
+				vertex_add(x2, y2, z2, n2x * n, n2y * n, n2z * n, u2, v1)
+				vertex_add(x3, y3, z3, n3x * n, n3y * n, n3z * n, u1, v2)
+				vertex_add(x4, y4, z4, n4x * n, n4y * n, n4z * n, u1, v1)
 			}
 		}
 	}
