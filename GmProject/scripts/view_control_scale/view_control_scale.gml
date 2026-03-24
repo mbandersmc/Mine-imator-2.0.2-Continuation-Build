@@ -48,7 +48,7 @@ function view_control_scale(view)
 			view_control_scale_plane(view, e_view_control.SCA_XY, point3D(1, 1, 0), (setting_z_is_up ? c_control_blue : c_control_green), mat, vec3(0, 0, 1), point3D(ps, ps, 0), point3D(pe, ps, 0), point3D(pe, pe, 0), point3D(ps, pe, 0)) // XY
 			view_control_scale_plane(view, e_view_control.SCA_XZ, point3D(1, 0, 1), (setting_z_is_up ? c_control_green : c_control_blue), mat, vec3(0, 1, 0), point3D(ps, 0, ps), point3D(pe, 0, ps), point3D(pe, 0, pe), point3D(ps, 0, pe)) // XZ
 			view_control_scale_plane(view, e_view_control.SCA_YZ, point3D(0, 1, 1), c_control_red, mat, vec3(1, 0, 0), point3D(0, ps, ps), point3D(0, pe, ps), point3D(0, pe, pe), point3D(0, ps, pe)) // YZ
-	}
+		}
 	}
 	
 	// Dragging plane
@@ -191,16 +191,16 @@ function view_control_scale(view)
 		// Release
 		if (!mouse_left)
 		{
+			// End dragging
+			axis_edit = X
+			action_tl_frame_scale_all_axis(0, false)
+			
 			window_busy = ""
 			view_control_edit = null
 			view_control_scale_amount = 1
 			view_control_matrix = null
 			view_control_length = null
 			view_control_value = 0
-			
-			// End dragging
-			axis_edit = X
-			action_tl_frame_scale_all_axis(0, false)
 		}
 	}
 }

@@ -102,7 +102,6 @@ function project_load_legacy_template()
 		shape_invert = buffer_read_byte()
 		shape_detail = buffer_read_int()
 		shape_ring_detail = buffer_read_int()
-		shape_interior_radius = buffer_read_double()
 		if (load_format >= e_project.FORMAT_100_DEBUG)
 			shape_face_camera = buffer_read_byte()
 		

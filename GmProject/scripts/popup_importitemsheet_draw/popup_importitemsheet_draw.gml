@@ -4,18 +4,19 @@ function popup_importitemsheet_draw()
 {
 	// Preview
 	var previewsize, previewx, previewy, previewwid, previewhei;
-	var texwid, texhei, scale;
+	var boxx, texwid, texhei, scale;
 	previewsize = 256
+	boxx = floor((content_x - (dx - content_x)) + content_width - previewsize)
 	texwid = texture_width(popup.texture)
 	texhei = texture_height(popup.texture)
 	scale = max(texwid / previewsize, texhei / previewsize)
 	previewwid = texwid / scale
 	previewhei = texhei / scale
-	previewx = (floor((content_x - (dx - content_x)) + content_width - previewsize)) + ((previewsize / 2) - (previewwid / 2))
-	previewy = floor(dy + previewsize / 2 - previewsize / 2)
+	previewx = boxx + ((previewsize / 2) - (previewwid / 2))
+	previewy = dy
 	
 	tab_control(previewhei)
-	draw_box(previewx, previewy, previewwid, previewhei, false, c_level_bottom, 1)
+	draw_box(boxx, previewy, previewsize, previewhei, false, c_level_bottom, 1)
 	draw_texture(popup.texture, previewx, previewy, 1 / scale, 1 / scale)
 	
 	if (popup.is_sheet)
@@ -49,7 +50,7 @@ function popup_importitemsheet_draw()
 		textfield_group_add("importitemsheetrows", popup.sheet_size[Y], popup.sheet_size_def[Y], action_toolbar_importitemsheet_sheet_size, axis_edit, popup.tbx_sheet_height, null, 1, 1, no_limit)
 		
 		tab_control_textfield_group(true)
-		draw_textfield_group("importitemsheetgrid", dx, dy, dw, 0.1, 1, no_limit, 1, true)
+		draw_textfield_group("importitemsheetgrid", dx, dy, dw, .1, 1, no_limit, 1, true)
 		tab_next()
 	}
 	

@@ -88,12 +88,18 @@ function tab_frame_editor_camera()
 		tab_collapse_start()
 		
 		// Tonemapper
-		if (tl_edit.value[e_value.CAM_TONEMAPPER] = e_tonemapper.REINHARD)
-			text = text_get("frameeditorcameratonemapperreinhard")
-		else if (tl_edit.value[e_value.CAM_TONEMAPPER] = e_tonemapper.ACES)
-			text = text_get("frameeditorcameratonemapperaces")
-		else
-			text = text_get("frameeditorcameratonemappernone")
+		switch (tl_edit.value[e_value.CAM_TONEMAPPER])
+		{
+			case e_tonemapper.REINHARD:
+				text = text_get("frameeditorcameratonemapperreinhard")
+				break;
+			case e_tonemapper.ACES:
+				text = text_get("frameeditorcameratonemapperaces")
+				break;
+			default:
+				text = text_get("frameeditorcameratonemappernone")
+				break;
+		}
 		
 		tab_control_menu()
 		draw_button_menu("frameeditorcameratonemapper", e_menu.LIST, dx, dy, dw, 24, tl_edit.value[e_value.CAM_TONEMAPPER], text, action_tl_frame_cam_tonemapper)

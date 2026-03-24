@@ -114,20 +114,20 @@ function tab_timeline()
 	
 	// Current time
 	draw_set_font(font_heading)
-	timelabel = timeline_show_frames ? text_get("timelineframe", floor(timeline_marker)) : string_time_seconds(timeline_marker / project_tempo)
+	timelabel = timeline_show_frames ? text_get("timelineframe", floor(timeline_marker)) : string_time((timeline_marker / project_tempo) * 1000)
 	draw_label(timelabel, timex, headery + headerh - 6, fa_left, fa_bottom, c_text_secondary, a_text_secondary)
 	timex += string_width(timelabel)
 	
 	// Time length
 	draw_set_font(font_subheading)
-	timelabel = timeline_show_frames ? " / " + string(timeline_length) : " / " + string_time_seconds(timeline_length / project_tempo)
+	timelabel = timeline_show_frames ? " / " + string(timeline_length) : " / " + string_time((timeline_length / project_tempo) * 1000)
 	draw_label(timelabel, timex, headery + headerh - 7, fa_left, fa_bottom, c_text_secondary, a_text_secondary)
 	timex += string_width(timelabel)
 	
 	// Time selected
 	if (timeline_region_start != null && (timeline_region_start != timeline_region_end))
 	{
-		timelabel = " (" + (timeline_show_frames ? string(timeline_region_end - timeline_region_start) : string_time_seconds((timeline_region_end - timeline_region_start) / project_tempo)) + ")"
+		timelabel = " (" + (timeline_show_frames ? string(timeline_region_end - timeline_region_start) : string_time(((timeline_region_end - timeline_region_start) / project_tempo) * 1000)) + ")"
 		draw_label(timelabel, timex, headery + headerh - 7, fa_left, fa_bottom, c_accent, a_accent)
 		timex += string_width(timelabel)
 	}
@@ -306,26 +306,26 @@ function tab_timeline()
 		var x1, x2;
 		x1 = clamp(regionx1, 0, barw)
 		x2 = clamp(regionx2, 0, barw)
-			
+		
 		// Highlight bar area
 		draw_box(barx + x1, bary, x2 - x1, barh, false, c_accent_overlay, a_accent_overlay)
-			
+		
 		// Darken left
 		draw_box(barx, bary, x1, markerh + barh, false, c_black, a_dark_overlay)
-			
+		
 		// Darken right
 		draw_box(barx + x2, bary, (barx + barw) - (barx + x2), markerh + barh, false, c_black, a_dark_overlay)
-			
+		
 		x1 = regionx1
 		x2 = regionx2
-			
+		
 		// Start/end markers
 		if (x1 >= -32 && x1 <= (barw + 32))
 		{
-			draw_image(spr_marker_region, 0, barx + x1, bary, 1, 1, c_accent, 1)
+			draw_image(spr_marker_region, timeline_region_start <= 0 ? 1 : 0, barx + x1 + (timeline_region_start <= 0 ? 10 : 0), bary, 1, 1, c_accent, 1)
 			draw_box(barx + x1, bary, 1, markerh + barh, false, c_accent, 1)
 		}
-			
+		
 		if (x2 >= -32 && x2 <= (barw + 32))
 		{
 			draw_image(spr_marker_region, 1, barx + x2 + 10, bary, 1, 1, c_accent, 1)
@@ -1576,7 +1576,7 @@ function tab_timeline()
 		// Change region
 		if (timeline_region_start != null)
 		{
-			if (app_mouse_box(barx + regionx1 - 8, bary, 8, barh, "place"))
+			if (app_mouse_box(barx + regionx1 + (timeline_region_start <= 0 ? 0 : -8), bary, 8, barh, "place"))
 			{
 				mouse_cursor = cr_size_we
 				if (mouse_left_pressed)

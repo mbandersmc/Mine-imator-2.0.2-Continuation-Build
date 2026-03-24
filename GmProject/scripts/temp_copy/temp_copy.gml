@@ -76,7 +76,6 @@ function temp_copy(to)
 	to.shape_smooth = shape_smooth
 	to.shape_detail = shape_detail
 	to.shape_ring_detail = shape_ring_detail
-	to.shape_interior_radius = shape_interior_radius
 	to.shape_face_camera = shape_face_camera
 	
 	to.text_font = text_font

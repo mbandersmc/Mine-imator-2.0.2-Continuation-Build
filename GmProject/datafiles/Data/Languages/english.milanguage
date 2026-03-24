@@ -5,7 +5,7 @@
 		"locale": "en-US",
 		"translator": "David, Nimi, mbanders",
 		"forversion": "2.0.2 Continuation Build 1.0.13",
-		"lastchange": "2026.02.21"
+		"lastchange": "2026.03.17"
 	},
 	"particle/": {
 		"default": "Default spawner",
@@ -853,8 +853,8 @@
 			"selected": "Selected camera (%1)"
 		},
 		"grid/": {
-			"rows": "Rows",
-			"columns": "Columns"
+			"columns": "Columns",
+			"rows": "Rows"
 		},
 		"snap/": {
 			"move": "Move",
@@ -943,7 +943,7 @@
 		"previous": "Previous",
 		"stop": "Stop",
 		"play": "Play",
-		"numpad": "Num"
+		"numpadkey": "Num %1"
 	},
 	"column/": {
 		"libname": "Name",
@@ -2638,6 +2638,8 @@
 				"outer_right": "Outer right",
 				"legacy": "Legacy",
 				"single": "Single",
+				"right": "Right",
+				"left": "Left",
 				"none": "None",
 				"side": "Side",
 				"diamond_ore": "Diamond Ore",
@@ -3356,14 +3358,16 @@
 			"sunscale": "Sun size",
 			"moontex": "Moon texture",
 			"moonphase": "Moon phase",
-			"moonphase1": "Full moon",
-			"moonphase2": "Waning gibbous",
-			"moonphase3": "Third quarter",
-			"moonphase4": "Waning crescent",
-			"moonphase5": "New moon",
-			"moonphase6": "Waxing crescent",
-			"moonphase7": "First quarter",
-			"moonphase8": "Waxing gibbous",
+			"moonphase/": {
+				"1": "Full moon",
+				"2": "Waning gibbous",
+				"3": "Third quarter",
+				"4": "Waning crescent",
+				"5": "New moon",
+				"6": "Waxing crescent",
+				"7": "First quarter",
+				"8": "Waxing gibbous"
+			},
 			"moonangle": "Moon angle",
 			"moonscale": "Moon size",
 			"cloudsshow": "Clouds",
@@ -3544,20 +3548,23 @@
 			"itemsheet": "Item sheet",
 			"particlesheet": "Particle sheet",
 			"suntexture": "Sun texture",
-			"moontexture": "Moon texture",
+			"moontexture": "Moon textures",
 			"moonphase": "Moon phase",
-			"moonphase1": "Full moon",
-			"moonphase2": "Waning gibbous",
-			"moonphase3": "Third quarter",
-			"moonphase4": "Waning crescent",
-			"moonphase5": "New moon",
-			"moonphase6": "Waxing crescent",
-			"moonphase7": "First quarter",
-			"moonphase8": "Waxing gibbous",
+			"moonphase/": {
+				"1": "Full moon",
+				"2": "Waning gibbous",
+				"3": "Third quarter",
+				"4": "Waning crescent",
+				"5": "New moon",
+				"6": "Waxing crescent",
+				"7": "First quarter",
+				"8": "Waxing gibbous"
+			},
 			"cloudtexture": "Cloud texture"
 		},
-		"itemsheetsizerows": "Rows",
+		"itemsheetsizegrid": "Grid",
 		"itemsheetsizecolumns": "Columns",
+		"itemsheetsizerows": "Rows",
 		"sceneryrandomize": "Randomize blocks",
 		"sceneryrandomizehelp": "Use random models and rotations for the scenery blocks.",
 		"scenerystructurepalette": "Palette",
@@ -3597,13 +3604,19 @@
 		"blocksheet": "Block sheet",
 		"particlesheet": "Particle sheet",
 		"texture": "Texture",
-		"ok": "OK"
+		"issheet": "Item sheet",
+		"grid": "Grid",
+		"columns": "Columns",
+		"rows": "Rows",
+		"ok": "OK",
+		"doall": "Do this for all images"
 	},
 	"importitemsheet/": {
 		"caption": "Import item sheet",
 		"issheet": "Item sheet",
-		"rows": "Rows",
+		"grid": "Grid",
 		"columns": "Columns",
+		"rows": "Rows",
 		"ok": "OK"
 	},
 	"timeline/": {

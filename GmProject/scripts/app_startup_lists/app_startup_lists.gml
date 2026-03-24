@@ -472,7 +472,6 @@ function app_startup_lists()
 		CONE,
 		CYLINDER,
 		SPHERE,
-		SPHERE,
 		SURFACE,
 		MODEL,
 		CAMERA,

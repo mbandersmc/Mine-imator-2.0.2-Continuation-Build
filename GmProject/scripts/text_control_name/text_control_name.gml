@@ -46,23 +46,23 @@ function text_control_name(keybind)
 		case vk_f10:			char = "F10"; break;
 		case vk_f11:			char = "F11"; break;
 		case vk_f12:			char = "F12"; break;
-		case vk_numpad0:		char = text_get("keynumpad") + " 0"; break;
-		case vk_numpad1:		char = text_get("keynumpad") + " 1"; break;
-		case vk_numpad2:		char = text_get("keynumpad") + " 2"; break;
-		case vk_numpad3:		char = text_get("keynumpad") + " 3"; break;
-		case vk_numpad4:		char = text_get("keynumpad") + " 4"; break;
-		case vk_numpad5:		char = text_get("keynumpad") + " 5"; break;
-		case vk_numpad6:		char = text_get("keynumpad") + " 6"; break;
-		case vk_numpad7:		char = text_get("keynumpad") + " 7"; break;
-		case vk_numpad8:		char = text_get("keynumpad") + " 8"; break;
-		case vk_numpad9:		char = text_get("keynumpad") + " 9"; break;
-		case vk_multiply:		char = text_get("keynumpad") + " *"; break;
-		case vk_divide:			char = text_get("keynumpad") + " /"; break;
-		case vk_add:			char = text_get("keynumpad") + " +"; break;
-		case vk_subtract:		char = text_get("keynumpad") + " -"; break;
-		case vk_decimal:		char = text_get("keynumpad") + " ."; break;
+		case vk_numpad0:		char = text_get("keynumpadkey", "0"); break;
+		case vk_numpad1:		char = text_get("keynumpadkey", "1"); break;
+		case vk_numpad2:		char = text_get("keynumpadkey", "2"); break;
+		case vk_numpad3:		char = text_get("keynumpadkey", "3"); break;
+		case vk_numpad4:		char = text_get("keynumpadkey", "4"); break;
+		case vk_numpad5:		char = text_get("keynumpadkey", "5"); break;
+		case vk_numpad6:		char = text_get("keynumpadkey", "6"); break;
+		case vk_numpad7:		char = text_get("keynumpadkey", "7"); break;
+		case vk_numpad8:		char = text_get("keynumpadkey", "8"); break;
+		case vk_numpad9:		char = text_get("keynumpadkey", "9"); break;
+		case vk_multiply:		char = text_get("keynumpadkey", "*"); break;
+		case vk_divide:			char = text_get("keynumpadkey", "/"); break;
+		case vk_add:			char = text_get("keynumpadkey", "+"); break;
+		case vk_subtract:		char = text_get("keynumpadkey", "-"); break;
+		case vk_decimal:		char = text_get("keynumpadkey", "."); break;
 		
-		case 12:				char = text_get("keynumpad") + " 5"; break; // numpad 5 without numpad lock enabled
+		case 12:				char = text_get("keynumpadkey", "5"); break; // numpad 5 without numpad lock enabled
 		case 20:				char = text_get("keycapslock"); break;
 		case 91:				char = ((platform_get() = e_platform.WINDOWS) ? text_get("keyleftwindows") : ((platform_get() = e_platform.MAC_OS) ? text_get("keyleftcommand") : text_get("keyleftsuper"))); break;
 		case 92:				char = ((platform_get() = e_platform.WINDOWS) ? text_get("keyrightwindows") : ((platform_get() = e_platform.MAC_OS) ? text_get("keyrightcommand") : text_get("keyrightsuper"))); break;

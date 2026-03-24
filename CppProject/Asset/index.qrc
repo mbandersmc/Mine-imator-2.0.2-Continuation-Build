@@ -293,7 +293,6 @@
 		<file>Sprites/spr_circle_96_frame_0.png</file>
 		<file>Sprites/spr_colorpicker_cursor_frame_0.png</file>
 		<file>Sprites/spr_colorpicker_cursor_frame_1.png</file>
-		<file>Sprites/spr_colorpicker_frame_0.png</file>
 		<file>Sprites/spr_colorpicker_hue_frame_0.png</file>
 		<file>Sprites/spr_connect_compact_frame_0.png</file>
 		<file>Sprites/spr_connect_compact_frame_1.png</file>
@@ -788,7 +787,15 @@
 		<file>Sprites/spr_icons_frame_381.png</file>
 		<file>Sprites/spr_icons_frame_382.png</file>
 		<file>Sprites/spr_icons_frame_383.png</file>
+		<file>Sprites/spr_icons_frame_384.png</file>
+		<file>Sprites/spr_icons_frame_385.png</file>
+		<file>Sprites/spr_icons_frame_386.png</file>
+		<file>Sprites/spr_icons_frame_387.png</file>
+		<file>Sprites/spr_icons_frame_388.png</file>
+		<file>Sprites/spr_icons_frame_389.png</file>
 		<file>Sprites/spr_icons_frame_39.png</file>
+		<file>Sprites/spr_icons_frame_390.png</file>
+		<file>Sprites/spr_icons_frame_391.png</file>
 		<file>Sprites/spr_icons_frame_4.png</file>
 		<file>Sprites/spr_icons_frame_40.png</file>
 		<file>Sprites/spr_icons_frame_41.png</file>

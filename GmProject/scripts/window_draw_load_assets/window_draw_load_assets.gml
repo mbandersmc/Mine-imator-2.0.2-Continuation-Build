@@ -19,6 +19,9 @@ function window_draw_load_assets()
 	}
 	else if (load_assets_stage = "exit")
 	{
+		window_taskbar_progress_state_set()
+		window_flash()
+		
 		window_state = "startup"
 		app_startup_interface()
 		
@@ -27,6 +30,8 @@ function window_draw_load_assets()
 		
 		return 0
 	}
+	else
+		window_taskbar_progress_state_set(e_window_taskbar_state.NORMAL)
 	
 	var screenwid, screenhei, splashwid;
 	screenwid = 740

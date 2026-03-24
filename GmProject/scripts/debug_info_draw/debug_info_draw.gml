@@ -84,6 +84,6 @@ function debug_info_draw()
 	var ty = yy + h - 8;
 	var mouseon = app_mouse_box(xx, yy, w, h);
 	
-	draw_box(xx, yy, w, h, false, c_black, mouseon ? .5675 : .75) //window_width - w - 8
-	draw_label(str, tx, ty, fa_left, fa_bottom, c_white, mouseon ? .75 : 1, font_label)
+	draw_box(xx, yy, w, h, false, c_black, mouseon ? .375 : .75) //window_width - w - 8
+	draw_label(str, tx, ty, fa_left, fa_bottom, c_white, mouseon ? .5 : 1, font_label)
 }

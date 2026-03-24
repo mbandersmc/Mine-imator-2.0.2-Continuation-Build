@@ -52,7 +52,7 @@ namespace CppProject
 		}
 
 		// Add space in front to match at least tot characters
-		while (text.length() < tot + (text.contains(".") ? 1 : 0))
+		while (text.length() < tot + (dec == 0 ? 0 : dec + 1))
 			text = " " + text;
 		return text;
 	}

@@ -36,14 +36,19 @@ function block_load_model_file(fname, res = null)
 		texture_map = null
 		if (is_real(map[?"textures"]))
 		{
+			var texmap = map[?"textures"];
 			texture_map = ds_map_create()
 			
 			// Array of models, fill map with the string IDs
-			if (ds_map_find_value(typemap[?map], "textures") = e_json_type.ARRAY && ds_list_valid(map[?"textures"]))
+			if (ds_map_find_value(typemap[?map], "textures") = e_json_type.ARRAY && ds_list_valid(texmap))
 			{
-				for (var i = 0; i < ds_list_size(map[?"textures"]); i++)
+				for (var i = 0; i < ds_list_size(texmap); i++)
 				{
-					var texname = ds_list_find_value(map[?"textures"], i);
+					var texname;
+					if (ds_map_valid(texmap[?i]))
+						texname = ds_map_find_value(texmap[?i], "sprite")
+					else
+						texname = ds_list_find_value(texmap, i)
 					texname = string_replace(texname, "minecraft:", "")
 					
 					texture_map[?string(i)] = block_load_model_file_texture(texname, res)
@@ -51,16 +56,20 @@ function block_load_model_file(fname, res = null)
 			}
 			
 			// Regular map, copy keys and values
-			else if (ds_map_valid(map[?"textures"]))
+			else if (ds_map_valid(texmap))
 			{
-				var key = ds_map_find_first(map[?"textures"]);
+				var key = ds_map_find_first(texmap);
 				while (!is_undefined(key))
 				{
-					var texname = ds_map_find_value(map[?"textures"], key);
+					var texname;
+					if (ds_map_valid(texmap[?key]))
+						texname = ds_map_find_value(texmap[?key], "sprite")
+					else
+						texname = ds_map_find_value(texmap, key)
 					texname = string_replace(texname, "minecraft:", "")
 					
 					texture_map[?key] = block_load_model_file_texture(texname, res)
-					key = ds_map_find_next(map[?"textures"], key)
+					key = ds_map_find_next(texmap, key)
 				}
 			}
 		}

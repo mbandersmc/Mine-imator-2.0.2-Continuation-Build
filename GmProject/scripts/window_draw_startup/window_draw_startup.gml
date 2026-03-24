@@ -95,7 +95,10 @@ function window_draw_startup()
 		var labelwid = string_width(text_get("startuprecentprojects"));
 		
 		if (draw_button_label("startupsortby", dx + labelwid + 16, dy, null, icons.SORT_DOWN, e_button.TERTIARY))
+		{
 			menu_settings_set(dx + labelwid + 16, dy, "startupsortby", 32)
+			settings_menu_script = null
+		}
 		
 		if (settings_menu_name = "startupsortby" && settings_menu_ani_type != "hide")
 			current_microani.active.value = true

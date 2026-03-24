@@ -259,7 +259,7 @@ function view_draw(view)
 	dx -= dw + padding
 	
 	// "Flat" quality
-	if (draw_button_icon("viewmodeflat", dx, dy, dw, dh, view.quality = e_view_mode.FLAT, icons.SPHERE_FLAT, null, false, "viewmodeflat"))
+	if (draw_button_icon("viewmodeflat", dx, dy, dw, dh, view.quality = e_view_mode.FLAT, icons.CIRCLE_OUTLINE, null, false, "viewmodeflat"))
 		view.quality = e_view_mode.FLAT
 	dx -= dw + padding
 	
