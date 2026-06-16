@@ -70,9 +70,9 @@ function tab_timeline_editor_appearance()
 		draw_button_menu("timelineeditoralphamode", e_menu.LIST, dx, dy, dw, 24, tl_edit.alpha_mode, text, action_tl_alpha_mode)
 		tab_next()
 		
-		// Depth
+		// Render depth
 		tab_control_dragger()
-		draw_dragger("timelineeditordepth", dx, dy, dragger_width, tl_edit.depth, 0.1, -no_limit, no_limit, 0, 1, tab.appearance.tbx_depth, action_tl_depth)
+		draw_dragger("timelineeditordepth", dx, dy, dragger_width, tl_edit.depth, 0.1, -no_limit, no_limit, 0, 1, tab.appearance.tbx_depth, action_tl_depth, null, true, false, "timelineeditordepthtip")
 		tab_next()
 		
 		tab_set_collumns(true, floor(content_width/150))

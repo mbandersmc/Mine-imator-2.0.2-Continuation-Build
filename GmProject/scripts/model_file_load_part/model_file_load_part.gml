@@ -196,6 +196,9 @@ function model_file_load_part(map, root, res, model)
 		// Show backfaces
 		backfaces = value_get_real(map[?"backfaces"], false)
 		
+		// Cast shadows
+		shadows = value_get_real(map[?"shadows"], true)
+		
 		// Bend (optional)
 		if (!is_undefined(map[?"bend"]))
 		{

@@ -4211,14 +4211,8 @@
 	},
 	"legacy_model_states":
 	{
-		"villager": {
-			"variant": "profession"
-		},
 		"vex": {
 			"charging": "variant"
-		},
-		"zombie_villager": {
-			"variant": "profession"
 		},
 		"snow_golem": {
 			"variant": "pumpkin"
@@ -4363,9 +4357,12 @@
 		},
 		"villager": {
 			"variant": {
-				"villager": "nitwit",
-				"smith": "toolsmith",
-				"priest": "cleric"
+				"butcher": { "variant": "villager", "profession": "butcher" },
+				"farmer": { "variant": "villager", "profession": "farmer" },
+				"librarian": { "variant": "villager", "profession": "librarian" },
+				"priest": { "variant": "villager", "profession": "cleric" },
+				"smith": { "variant": "villager", "profession": "toolsmith" },
+				"villager": { "variant": "villager", "profession": "nitwit" }
 			}
 		},
 		"vex": {
@@ -4376,9 +4373,12 @@
 		},
 		"zombie_villager": {
 			"variant": {
-				"villager": "nitwit",
-				"smith": "toolsmith",
-				"priest": "cleric"
+				"butcher": { "variant": "villager", "profession": "butcher" },
+				"farmer": { "variant": "villager", "profession": "farmer" },
+				"librarian": { "variant": "villager", "profession": "librarian" },
+				"priest": { "variant": "villager", "profession": "cleric" },
+				"smith": { "variant": "villager", "profession": "toolsmith" },
+				"villager": { "variant": "villager", "profession": "nitwit" }
 			}
 		},
 		"snow_golem": {

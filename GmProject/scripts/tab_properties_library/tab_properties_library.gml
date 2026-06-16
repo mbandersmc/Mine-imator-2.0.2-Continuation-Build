@@ -657,7 +657,15 @@ function tab_properties_library()
 				tab_next()
 			}
 			
-			break	
+			// Model blend color
+			if (temp_edit.model_use_blend_color)
+			{
+				tab_control_color()
+				draw_button_color("librarymodelcolor", dx, dy, dw, temp_edit.model_blend_color, temp_edit.model_blend_color_default, false, action_lib_model_blend_color)
+				tab_next()
+			}
+			
+			break
 		}
 	}
 	

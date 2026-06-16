@@ -127,7 +127,7 @@ function tab_template_editor()
 				
 				var state = temp_edit.model_state[i];
 				menu_model_current = model
-				menu_model_state_current = model.states_map[?state]
+				menu_model_state_current = model ? model.states_map[?state] : null
 				draw_button_menu(state, e_menu.LIST, dx, dyy, dw, 24, temp_edit.model_state[i + 1], minecraft_asset_get_name("modelstatevalue", temp_edit.model_state[i + 1]), (temp_edit.type = e_temp_type.BODYPART) ? action_lib_bodypart_model_state : action_lib_model_state, false, null, null, "", c_white, 1, capwid)
 				dyy += 32
 			}
