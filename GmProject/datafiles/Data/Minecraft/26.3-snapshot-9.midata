@@ -1,5 +1,5 @@
 {
-	"version": "26.2",
+	"version": "26.3-snapshot-9",
 	"patch": 0,
 	"format": 9,
 	"characters": [
@@ -1140,6 +1140,7 @@
 					{ "value": "mangrove", "texture": "block/mangrove_sign" },
 					{ "value": "cherry", "texture": "block/cherry_sign" },
 					{ "value": "pale_oak", "texture": "block/pale_oak_sign" },
+					{ "value": "poplar", "texture": "block/poplar_sign" },
 					{ "value": "bamboo", "texture": "block/bamboo_sign" },
 					{ "value": "crimson", "texture": "block/crimson_sign" },
 					{ "value": "warped", "texture": "block/warped_sign" }
@@ -1165,6 +1166,7 @@
 					{ "value": "mangrove", "texture": "block/mangrove_hanging_sign" },
 					{ "value": "cherry", "texture": "block/cherry_hanging_sign" },
 					{ "value": "pale_oak", "texture": "block/pale_oak_hanging_sign" },
+					{ "value": "poplar", "texture": "block/poplar_hanging_sign" },
 					{ "value": "bamboo", "texture": "block/bamboo_hanging_sign" },
 					{ "value": "crimson", "texture": "block/crimson_hanging_sign" },
 					{ "value": "warped", "texture": "block/warped_hanging_sign" }
@@ -1186,6 +1188,7 @@
 					{ "value": "mangrove", "texture": "block/mangrove_planks" },
 					{ "value": "cherry", "texture": "block/cherry_planks" },
 					{ "value": "pale_oak", "texture": "block/pale_oak_planks" },
+					{ "value": "poplar", "texture": "block/poplar_planks" },
 					{ "value": "bamboo", "file": "fence_gate_custom.mimodel", "texture": "block/bamboo_fence_gate" },
 					{ "value": "crimson", "texture": "block/crimson_planks" },
 					{ "value": "warped", "texture": "block/warped_planks" }
@@ -1437,6 +1440,7 @@
 					{ "value": "mangrove", "shape_texture": { "boat": "entity/boat/mangrove", "boat_chest": "entity/chest_boat/mangrove", "chest": "entity/chest_boat/mangrove" } },
 					{ "value": "cherry", "shape_texture": { "boat": "entity/boat/cherry", "boat_chest": "entity/chest_boat/cherry", "chest": "entity/chest_boat/cherry" } },
 					{ "value": "pale_oak", "shape_texture": { "boat": "entity/boat/pale_oak", "boat_chest": "entity/chest_boat/pale_oak", "chest": "entity/chest_boat/pale_oak" } },
+					{ "value": "poplar", "shape_texture": { "boat": "entity/boat/poplar", "boat_chest": "entity/chest_boat/poplar", "chest": "entity/chest_boat/poplar" } },
 					{ "value": "bamboo", "file": "raft.mimodel", "shape_texture": { "raft": "entity/boat/bamboo", "raft_chest": "entity/chest_boat/bamboo", "chest": "entity/chest_boat/bamboo" } }
 				],
 				"chest": [
@@ -1547,6 +1551,31 @@
 				]
 			},
 			"default_state": "variant=standing"
+		},
+		{
+			"name": "cushion",
+			"file": "cushion.mimodel",
+			"states": {
+				"color": [
+					{ "value": "white", "texture": "entity/cushion/white_cushion" },
+					{ "value": "orange", "texture": "entity/cushion/orange_cushion" },
+					{ "value": "magenta", "texture": "entity/cushion/magenta_cushion" },
+					{ "value": "light_blue", "texture": "entity/cushion/light_blue_cushion" },
+					{ "value": "yellow", "texture": "entity/cushion/yellow_cushion" },
+					{ "value": "lime", "texture": "entity/cushion/lime_cushion" },
+					{ "value": "pink", "texture": "entity/cushion/pink_cushion" },
+					{ "value": "gray", "texture": "entity/cushion/gray_cushion" },
+					{ "value": "light_gray", "texture": "entity/cushion/light_gray_cushion" },
+					{ "value": "cyan", "texture": "entity/cushion/cyan_cushion" },
+					{ "value": "purple", "texture": "entity/cushion/purple_cushion" },
+					{ "value": "blue", "texture": "entity/cushion/blue_cushion" },
+					{ "value": "brown", "texture": "entity/cushion/brown_cushion" },
+					{ "value": "green", "texture": "entity/cushion/green_cushion" },
+					{ "value": "red", "texture": "entity/cushion/red_cushion" },
+					{ "value": "black", "texture": "entity/cushion/black_cushion" }
+				]
+			},
+			"default_state": "color=red"
 		},
 		{
 			"name": "armor_stand",
@@ -1826,6 +1855,7 @@
 					{ "value": "mangrove", "file": "mangrove_planks.json" },
 					{ "value": "cherry", "file": "cherry_planks.json" },
 					{ "value": "pale_oak", "file": "pale_oak_planks.json" },
+					{ "value": "poplar", "file": "poplar_planks.json" },
 					{ "value": "bamboo", "file": "bamboo_planks.json" },
 					{ "value": "bamboo_mosaic", "file": "bamboo_mosaic.json" },
 					{ "value": "crimson", "file": "crimson_planks.json" },
@@ -1843,6 +1873,7 @@
 				"minecraft:mangrove_planks": "variant=mangrove",
 				"minecraft:cherry_planks": "variant=cherry",
 				"minecraft:pale_oak_planks": "variant=pale_oak",
+				"minecraft:poplar_planks": "variant=poplar",
 				"minecraft:bamboo_planks": "variant=bamboo",
 				"minecraft:bamboo_mosaic": "variant=bamboo_mosaic",
 				"minecraft:crimson_planks": "variant=crimson",
@@ -1860,7 +1891,8 @@
 					{ "value": "acacia", "file": "acacia_sapling.json" },
 					{ "value": "dark_oak", "file": "dark_oak_sapling.json" },
 					{ "value": "cherry", "file": "cherry_sapling.json" },
-					{ "value": "pale_oak", "file": "pale_oak_sapling.json" }
+					{ "value": "pale_oak", "file": "pale_oak_sapling.json" },
+					{ "value": "poplar", "file": "poplar_sapling.json" }
 				],
 				"stage": [ "0", "1" ]
 			},
@@ -1878,7 +1910,8 @@
 				"minecraft:acacia_sapling": "variant=acacia",
 				"minecraft:dark_oak_sapling": "variant=dark_oak",
 				"minecraft:cherry_sapling": "variant=cherry",
-				"minecraft:pale_oak_sapling": "variant=pale_oak"
+				"minecraft:pale_oak_sapling": "variant=pale_oak",
+				"minecraft:poplar_sapling": "variant=poplar"
 			}
 		},
 		{
@@ -1993,11 +2026,12 @@
 					{ "value": "mangrove", "file": "mangrove_log.json" },
 					{ "value": "cherry", "file": "cherry_log.json" },
 					{ "value": "pale_oak", "file": "pale_oak_log.json" },
+					{ "value": "poplar", "file": "poplar_log.json" },
 					{ "value": "bamboo_block", "file": "bamboo_block.json" },
 					{ "value": "crimson_stem", "file": "crimson_stem.json" },
 					{ "value": "warped_stem", "file": "warped_stem.json" }
 				],
-				"axis": [ "x", "y", "z" ]
+				"axis": [ "y", "x", "z" ]
 			},
 			"default_state": "variant=oak,axis=y",
 			"id": {
@@ -2010,6 +2044,7 @@
 				"minecraft:mangrove_log": "variant=mangrove",
 				"minecraft:cherry_log": "variant=cherry",
 				"minecraft:pale_oak_log": "variant=pale_oak",
+				"minecraft:poplar_log": "variant=poplar",
 				"minecraft:bamboo_block": "variant=bamboo_block",
 				"minecraft:crimson_stem": "variant=crimson_stem",
 				"minecraft:warped_stem": "variant=warped_stem"
@@ -2028,11 +2063,12 @@
 					{ "value": "mangrove", "file": "stripped_mangrove_log.json" },
 					{ "value": "cherry", "file": "stripped_cherry_log.json" },
 					{ "value": "pale_oak", "file": "stripped_pale_oak_log.json" },
+					{ "value": "poplar", "file": "stripped_poplar_log.json" },
 					{ "value": "bamboo_block", "file": "stripped_bamboo_block.json" },
 					{ "value": "crimson_stem", "file": "stripped_crimson_stem.json" },
 					{ "value": "warped_stem", "file": "stripped_warped_stem.json" }
 				],
-				"axis": [ "x", "y", "z" ]
+				"axis": [ "y", "x", "z" ]
 			},
 			"default_state": "variant=oak,axis=y",
 			"id": {
@@ -2045,6 +2081,7 @@
 				"minecraft:stripped_mangrove_log": "variant=mangrove",
 				"minecraft:stripped_cherry_log": "variant=cherry",
 				"minecraft:stripped_pale_oak_log": "variant=pale_oak",
+				"minecraft:stripped_poplar_log": "variant=poplar",
 				"minecraft:stripped_bamboo_block": "variant=bamboo_block",
 				"minecraft:stripped_crimson_stem": "variant=crimson_stem",
 				"minecraft:stripped_warped_stem": "variant=warped_stem"
@@ -2063,10 +2100,11 @@
 					{ "value": "mangrove", "file": "mangrove_wood.json" },
 					{ "value": "cherry", "file": "cherry_wood.json" },
 					{ "value": "pale_oak", "file": "pale_oak_wood.json" },
+					{ "value": "poplar", "file": "poplar_wood.json" },
 					{ "value": "crimson_hyphae", "file": "crimson_hyphae.json" },
 					{ "value": "warped_hyphae", "file": "warped_hyphae.json" }
 				],
-				"axis": [ "x", "y", "z" ]
+				"axis": [ "y", "x", "z" ]
 			},
 			"default_state": "variant=oak,axis=y",
 			"id": {
@@ -2079,6 +2117,7 @@
 				"minecraft:mangrove_wood": "variant=mangrove",
 				"minecraft:cherry_wood": "variant=cherry",
 				"minecraft:pale_oak_wood": "variant=pale_oak",
+				"minecraft:poplar_wood": "variant=poplar",
 				"minecraft:crimson_hyphae": "variant=crimson_hyphae",
 				"minecraft:warped_hyphae": "variant=warped_hyphae"
 			}
@@ -2096,10 +2135,11 @@
 					{ "value": "mangrove", "file": "stripped_mangrove_wood.json" },
 					{ "value": "cherry", "file": "stripped_cherry_wood.json" },
 					{ "value": "pale_oak", "file": "stripped_pale_oak_wood.json" },
+					{ "value": "poplar", "file": "stripped_poplar_wood.json" },
 					{ "value": "crimson_hyphae", "file": "stripped_crimson_hyphae.json" },
 					{ "value": "warped_hyphae", "file": "stripped_warped_hyphae.json" }
 				],
-				"axis": [ "x", "y", "z" ]
+				"axis": [ "y", "x", "z" ]
 			},
 			"default_state": "variant=oak,axis=y",
 			"id": {
@@ -2112,6 +2152,7 @@
 				"minecraft:stripped_mangrove_wood": "variant=mangrove",
 				"minecraft:stripped_cherry_wood": "variant=cherry",
 				"minecraft:stripped_pale_oak_wood": "variant=pale_oak",
+				"minecraft:stripped_poplar_wood": "variant=poplar",
 				"minecraft:stripped_crimson_hyphae": "variant=crimson_hyphae",
 				"minecraft:stripped_warped_hyphae": "variant=warped_hyphae"
 			}
@@ -2130,6 +2171,9 @@
 					{ "value": "mangrove", "file": "mangrove_leaves.json" },
 					{ "value": "cherry", "file": "cherry_leaves.json" },
 					{ "value": "pale_oak", "file": "pale_oak_leaves.json" },
+					{ "value": "red_poplar", "file": "red_poplar_leaves.json" },
+					{ "value": "orange_poplar", "file": "orange_poplar_leaves.json" },
+					{ "value": "yellow_poplar", "file": "yellow_poplar_leaves.json" },
 					{ "value": "azalea", "file": "azalea_leaves.json" },
 					{ "value": "flowering_azalea", "file": "flowering_azalea_leaves.json" }
 				]
@@ -2149,6 +2193,9 @@
 				"minecraft:mangrove_leaves": "variant=mangrove",
 				"minecraft:cherry_leaves": "variant=cherry",
 				"minecraft:pale_oak_leaves": "variant=pale_oak",
+				"minecraft:red_poplar_leaves": "variant=red_poplar",
+				"minecraft:orange_poplar_leaves": "variant=orange_poplar",
+				"minecraft:yellow_poplar_leaves": "variant=yellow_poplar",
 				"minecraft:azalea_leaves": "variant=azalea",
 				"minecraft:flowering_azalea_leaves": "variant=flowering_azalea"
 			}
@@ -2243,10 +2290,11 @@
 					{ "value": "brown", "file": "brown_bed.json" },
 					{ "value": "red", "file": "red_bed.json" },
 					{ "value": "green", "file": "green_bed.json" },
-					{ "value": "black", "file": "black_bed.json" }
+					{ "value": "black", "file": "black_bed.json" },
+					{ "value": "straw_bed", "file": "straw_bed.json" }
 				],
 				"facing": [ "north", "south", "east", "west" ],
-				"part": [ "head", "foot" ]
+				"part": [ "foot", "head" ]
 			},
 			"default_state": "color=red,facing=east",
 			"id": {
@@ -2265,7 +2313,8 @@
 				"minecraft:brown_bed": "color=brown",
 				"minecraft:green_bed": "color=green",
 				"minecraft:red_bed": "color=red",
-				"minecraft:black_bed": "color=black"
+				"minecraft:black_bed": "color=black",
+				"minecraft:straw_bed": "color=straw_bed"
 			}
 		},
 		{
@@ -2324,6 +2373,7 @@
 					{ "value": "short_grass", "file": "short_grass.json", "random_offset": true },
 					{ "value": "fern", "file": "fern.json", "random_offset": true },
 					{ "value": "bush", "file": "bush.json" },
+					{ "value": "red_shrub", "file": "red_shrub.json" },
 					{ "value": "short_dry_grass", "file": "short_dry_grass.json", "random_offset": true },
 					{ "value": "tall_dry_grass", "file": "tall_dry_grass.json", "random_offset": true },
 					{ "value": "dead_bush", "file": "dead_bush.json" }
@@ -2339,6 +2389,7 @@
 				"minecraft:short_grass": "type=short_grass",
 				"minecraft:fern": "type=fern",
 				"minecraft:bush": "type=bush",
+				"minecraft:red_shrub": "type=red_shrub",
 				"minecraft:short_dry_grass": "type=short_dry_grass",
 				"minecraft:tall_dry_grass": "type=tall_dry_grass",
 				"minecraft:dead_bush": "type=dead_bush"
@@ -2475,6 +2526,17 @@
 			"id": "minecraft:red_mushroom"
 		},
 		{
+			"name": "shelf_mushroom",
+			"file": "shelf_mushroom.json",
+			"states": {
+				"facing": [ "north", "south", "east", "west" ],
+				"age": [ "0", "1" ]
+			},
+			"default_state": "facing=west,age=0",
+			"subsurface": 1,
+			"id": "minecraft:shelf_mushroom"
+		},
+		{
 			"name": "gold_block",
 			"file": "gold_block.json",
 			"id": "minecraft:gold_block"
@@ -2497,6 +2559,7 @@
 					{ "value": "mangrove", "file": "mangrove_slab.json" },
 					{ "value": "cherry", "file": "cherry_slab.json" },
 					{ "value": "pale_oak", "file": "pale_oak_slab.json" },
+					{ "value": "poplar", "file": "poplar_slab.json" },
 					{ "value": "bamboo", "file": "bamboo_slab.json" },
 					{ "value": "bamboo_mosaic", "file": "bamboo_mosaic_slab.json" },
 					{ "value": "crimson", "file": "crimson_slab.json" },
@@ -2555,9 +2618,41 @@
 					{ "value": "cinnabar", "file": "cinnabar_slab.json" },
 					{ "value": "polished_cinnabar", "file": "polished_cinnabar_slab.json" },
 					{ "value": "cinnabar_bricks", "file": "cinnabar_brick_slab.json" },
-					{ "value": "resin_bricks", "file": "resin_brick_slab.json" }
+					{ "value": "resin_bricks", "file": "resin_brick_slab.json" },
+					{ "value": "white_wool", "file": "white_wool_slab.json" },
+					{ "value": "orange_wool", "file": "orange_wool_slab.json" },
+					{ "value": "magenta_wool", "file": "magenta_wool_slab.json" },
+					{ "value": "light_blue_wool", "file": "light_blue_wool_slab.json" },
+					{ "value": "yellow_wool", "file": "yellow_wool_slab.json" },
+					{ "value": "lime_wool", "file": "lime_wool_slab.json" },
+					{ "value": "pink_wool", "file": "pink_wool_slab.json" },
+					{ "value": "gray_wool", "file": "gray_wool_slab.json" },
+					{ "value": "light_gray_wool", "file": "light_gray_wool_slab.json" },
+					{ "value": "cyan_wool", "file": "cyan_wool_slab.json" },
+					{ "value": "purple_wool", "file": "purple_wool_slab.json" },
+					{ "value": "blue_wool", "file": "blue_wool_slab.json" },
+					{ "value": "brown_wool", "file": "brown_wool_slab.json" },
+					{ "value": "green_wool", "file": "green_wool_slab.json" },
+					{ "value": "red_wool", "file": "red_wool_slab.json" },
+					{ "value": "black_wool", "file": "black_wool_slab.json" },
+					{ "value": "white_concrete", "file": "white_concrete_slab.json" },
+					{ "value": "orange_concrete", "file": "orange_concrete_slab.json" },
+					{ "value": "magenta_concrete", "file": "magenta_concrete_slab.json" },
+					{ "value": "light_blue_concrete", "file": "light_blue_concrete_slab.json" },
+					{ "value": "yellow_concrete", "file": "yellow_concrete_slab.json" },
+					{ "value": "lime_concrete", "file": "lime_concrete_slab.json" },
+					{ "value": "pink_concrete", "file": "pink_concrete_slab.json" },
+					{ "value": "gray_concrete", "file": "gray_concrete_slab.json" },
+					{ "value": "light_gray_concrete", "file": "light_gray_concrete_slab.json" },
+					{ "value": "cyan_concrete", "file": "cyan_concrete_slab.json" },
+					{ "value": "purple_concrete", "file": "purple_concrete_slab.json" },
+					{ "value": "blue_concrete", "file": "blue_concrete_slab.json" },
+					{ "value": "brown_concrete", "file": "brown_concrete_slab.json" },
+					{ "value": "green_concrete", "file": "green_concrete_slab.json" },
+					{ "value": "red_concrete", "file": "red_concrete_slab.json" },
+					{ "value": "black_concrete", "file": "black_concrete_slab.json" }
 				],
-				"type": [ "top", "bottom", "double" ]
+				"type": [ "bottom", "top", "double" ]
 			},
 			"default_state": "variant=oak,type=bottom",
 			"id": {
@@ -2570,6 +2665,7 @@
 				"minecraft:mangrove_slab": "variant=mangrove",
 				"minecraft:cherry_slab": "variant=cherry",
 				"minecraft:pale_oak_slab": "variant=pale_oak",
+				"minecraft:poplar_slab": "variant=poplar",
 				"minecraft:bamboo_slab": "variant=bamboo",
 				"minecraft:bamboo_mosaic_slab": "variant=bamboo_mosaic",
 				"minecraft:crimson_slab": "variant=crimson",
@@ -2628,7 +2724,39 @@
 				"minecraft:cinnabar_slab": "variant=cinnabar",
 				"minecraft:polished_cinnabar_slab": "variant=polished_cinnabar",
 				"minecraft:cinnabar_brick_slab": "variant=cinnabar_bricks",
-				"minecraft:resin_brick_slab": "variant=resin_bricks"
+				"minecraft:resin_brick_slab": "variant=resin_bricks",
+				"minecraft:white_wool_slab": "variant=white_wool",
+				"minecraft:orange_wool_slab": "variant=orange_wool",
+				"minecraft:magenta_wool_slab": "variant=magenta_wool",
+				"minecraft:light_blue_wool_slab": "variant=light_blue_wool",
+				"minecraft:yellow_wool_slab": "variant=yellow_wool",
+				"minecraft:lime_wool_slab": "variant=lime_wool",
+				"minecraft:pink_wool_slab": "variant=pink_wool",
+				"minecraft:gray_wool_slab": "variant=gray_wool",
+				"minecraft:light_gray_wool_slab": "variant=light_gray_wool",
+				"minecraft:cyan_wool_slab": "variant=cyan_wool",
+				"minecraft:purple_wool_slab": "variant=purple_wool",
+				"minecraft:blue_wool_slab": "variant=blue_wool",
+				"minecraft:brown_wool_slab": "variant=brown_wool",
+				"minecraft:green_wool_slab": "variant=green_wool",
+				"minecraft:red_wool_slab": "variant=red_wool",
+				"minecraft:black_wool_slab": "variant=black_wool",
+				"minecraft:white_concrete_slab": "variant=white_concrete",
+				"minecraft:orange_concrete_slab": "variant=orange_concrete",
+				"minecraft:magenta_concrete_slab": "variant=magenta_concrete",
+				"minecraft:light_blue_concrete_slab": "variant=light_blue_concrete",
+				"minecraft:yellow_concrete_slab": "variant=yellow_concrete",
+				"minecraft:lime_concrete_slab": "variant=lime_concrete",
+				"minecraft:pink_concrete_slab": "variant=pink_concrete",
+				"minecraft:gray_concrete_slab": "variant=gray_concrete",
+				"minecraft:light_gray_concrete_slab": "variant=light_gray_concrete",
+				"minecraft:cyan_concrete_slab": "variant=cyan_concrete",
+				"minecraft:purple_concrete_slab": "variant=purple_concrete",
+				"minecraft:blue_concrete_slab": "variant=blue_concrete",
+				"minecraft:brown_concrete_slab": "variant=brown_concrete",
+				"minecraft:green_concrete_slab": "variant=green_concrete",
+				"minecraft:red_concrete_slab": "variant=red_concrete",
+				"minecraft:black_concrete_slab": "variant=black_concrete"
 			}
 		},
 		{
@@ -2674,6 +2802,7 @@
 					{ "value": "mangrove", "file": "mangrove_shelf.json" },
 					{ "value": "cherry", "file": "cherry_shelf.json" },
 					{ "value": "pale_oak", "file": "pale_oak_shelf.json" },
+					{ "value": "poplar", "file": "poplar_shelf.json" },
 					{ "value": "bamboo", "file": "bamboo_shelf.json" },
 					{ "value": "crimson", "file": "crimson_shelf.json" },
 					{ "value": "warped", "file": "warped_shelf.json" }
@@ -2693,6 +2822,7 @@
 				"minecraft:mangrove_shelf": "variant=mangrove",
 				"minecraft:cherry_shelf": "variant=cherry",
 				"minecraft:pale_oak_shelf": "variant=pale_oak",
+				"minecraft:poplar_shelf": "variant=poplar",
 				"minecraft:bamboo_shelf": "variant=bamboo",
 				"minecraft:crimson_shelf": "variant=crimson",
 				"minecraft:warped_shelf": "variant=warped"
@@ -2783,6 +2913,7 @@
 					{ "value": "mangrove", "file": "mangrove_stairs.json" },
 					{ "value": "cherry", "file": "cherry_stairs.json" },
 					{ "value": "pale_oak", "file": "pale_oak_stairs.json" },
+					{ "value": "poplar", "file": "poplar_stairs.json" },
 					{ "value": "bamboo", "file": "bamboo_stairs.json" },
 					{ "value": "bamboo_mosaic", "file": "bamboo_mosaic_stairs.json" },
 					{ "value": "crimson", "file": "crimson_stairs.json" },
@@ -2837,10 +2968,42 @@
 					{ "value": "cinnabar", "file": "cinnabar_stairs.json" },
 					{ "value": "polished_cinnabar", "file": "polished_cinnabar_stairs.json" },
 					{ "value": "cinnabar_bricks", "file": "cinnabar_brick_stairs.json" },
-					{ "value": "resin_bricks", "file": "resin_brick_stairs.json" }
+					{ "value": "resin_bricks", "file": "resin_brick_stairs.json" },
+					{ "value": "white_wool", "file": "white_wool_stairs.json" },
+					{ "value": "orange_wool", "file": "orange_wool_stairs.json" },
+					{ "value": "magenta_wool", "file": "magenta_wool_stairs.json" },
+					{ "value": "light_blue_wool", "file": "light_blue_wool_stairs.json" },
+					{ "value": "yellow_wool", "file": "yellow_wool_stairs.json" },
+					{ "value": "lime_wool", "file": "lime_wool_stairs.json" },
+					{ "value": "pink_wool", "file": "pink_wool_stairs.json" },
+					{ "value": "gray_wool", "file": "gray_wool_stairs.json" },
+					{ "value": "light_gray_wool", "file": "light_gray_wool_stairs.json" },
+					{ "value": "cyan_wool", "file": "cyan_wool_stairs.json" },
+					{ "value": "purple_wool", "file": "purple_wool_stairs.json" },
+					{ "value": "blue_wool", "file": "blue_wool_stairs.json" },
+					{ "value": "brown_wool", "file": "brown_wool_stairs.json" },
+					{ "value": "green_wool", "file": "green_wool_stairs.json" },
+					{ "value": "red_wool", "file": "red_wool_stairs.json" },
+					{ "value": "black_wool", "file": "black_wool_stairs.json" },
+					{ "value": "white_concrete", "file": "white_concrete_stairs.json" },
+					{ "value": "orange_concrete", "file": "orange_concrete_stairs.json" },
+					{ "value": "magenta_concrete", "file": "magenta_concrete_stairs.json" },
+					{ "value": "light_blue_concrete", "file": "light_blue_concrete_stairs.json" },
+					{ "value": "yellow_concrete", "file": "yellow_concrete_stairs.json" },
+					{ "value": "lime_concrete", "file": "lime_concrete_stairs.json" },
+					{ "value": "pink_concrete", "file": "pink_concrete_stairs.json" },
+					{ "value": "gray_concrete", "file": "gray_concrete_stairs.json" },
+					{ "value": "light_gray_concrete", "file": "light_gray_concrete_stairs.json" },
+					{ "value": "cyan_concrete", "file": "cyan_concrete_stairs.json" },
+					{ "value": "purple_concrete", "file": "purple_concrete_stairs.json" },
+					{ "value": "blue_concrete", "file": "blue_concrete_stairs.json" },
+					{ "value": "brown_concrete", "file": "brown_concrete_stairs.json" },
+					{ "value": "green_concrete", "file": "green_concrete_stairs.json" },
+					{ "value": "red_concrete", "file": "red_concrete_stairs.json" },
+					{ "value": "black_concrete", "file": "black_concrete_stairs.json" }
 				],
 				"facing": [ "north", "south", "east", "west" ],
-				"half": [ "top", "bottom" ],
+				"half": [ "bottom", "top" ],
 				"shape": [ "straight", "inner_left", "inner_right", "outer_left", "outer_right" ]
 			},
 			"default_state": "variant=oak,facing=east,half=bottom,shape=straight",
@@ -2854,6 +3017,7 @@
 				"minecraft:mangrove_stairs": "variant=mangrove",
 				"minecraft:cherry_stairs": "variant=cherry",
 				"minecraft:pale_oak_stairs": "variant=pale_oak",
+				"minecraft:poplar_stairs": "variant=poplar",
 				"minecraft:bamboo_stairs": "variant=bamboo",
 				"minecraft:bamboo_mosaic_stairs": "variant=bamboo_mosaic",
 				"minecraft:crimson_stairs": "variant=crimson",
@@ -2908,14 +3072,46 @@
 				"minecraft:cinnabar_stairs": "variant=cinnabar",
 				"minecraft:polished_cinnabar_stairs": "variant=polished_cinnabar",
 				"minecraft:cinnabar_brick_stairs": "variant=cinnabar_bricks",
-				"minecraft:resin_brick_stairs": "variant=resin_bricks"
+				"minecraft:resin_brick_stairs": "variant=resin_bricks",
+				"minecraft:white_wool_stairs": "variant=white_wool",
+				"minecraft:orange_wool_stairs": "variant=orange_wool",
+				"minecraft:magenta_wool_stairs": "variant=magenta_wool",
+				"minecraft:light_blue_wool_stairs": "variant=light_blue_wool",
+				"minecraft:yellow_wool_stairs": "variant=yellow_wool",
+				"minecraft:lime_wool_stairs": "variant=lime_wool",
+				"minecraft:pink_wool_stairs": "variant=pink_wool",
+				"minecraft:gray_wool_stairs": "variant=gray_wool",
+				"minecraft:light_gray_wool_stairs": "variant=light_gray_wool",
+				"minecraft:cyan_wool_stairs": "variant=cyan_wool",
+				"minecraft:purple_wool_stairs": "variant=purple_wool",
+				"minecraft:blue_wool_stairs": "variant=blue_wool",
+				"minecraft:brown_wool_stairs": "variant=brown_wool",
+				"minecraft:green_wool_stairs": "variant=green_wool",
+				"minecraft:red_wool_stairs": "variant=red_wool",
+				"minecraft:black_wool_stairs": "variant=black_wool",
+				"minecraft:white_concrete_stairs": "variant=white_concrete",
+				"minecraft:orange_concrete_stairs": "variant=orange_concrete",
+				"minecraft:magenta_concrete_stairs": "variant=magenta_concrete",
+				"minecraft:light_blue_concrete_stairs": "variant=light_blue_concrete",
+				"minecraft:yellow_concrete_stairs": "variant=yellow_concrete",
+				"minecraft:lime_concrete_stairs": "variant=lime_concrete",
+				"minecraft:pink_concrete_stairs": "variant=pink_concrete",
+				"minecraft:gray_concrete_stairs": "variant=gray_concrete",
+				"minecraft:light_gray_concrete_stairs": "variant=light_gray_concrete",
+				"minecraft:cyan_concrete_stairs": "variant=cyan_concrete",
+				"minecraft:purple_concrete_stairs": "variant=purple_concrete",
+				"minecraft:blue_concrete_stairs": "variant=blue_concrete",
+				"minecraft:brown_concrete_stairs": "variant=brown_concrete",
+				"minecraft:green_concrete_stairs": "variant=green_concrete",
+				"minecraft:red_concrete_stairs": "variant=red_concrete",
+				"minecraft:black_concrete_stairs": "variant=black_concrete"
 			}
 		},
 		{
 			"name": "chest",
 			"type": "chest",
 			"states": {
-				"type": [ "legacy", "single", "right", "left" ],
+				"type": [ "single", "right", "left", "legacy" ],
 				"facing": [ "north", "south", "east", "west" ],
 				"double": [ "false", "true" ]
 			},
@@ -3014,8 +3210,8 @@
 		{
 			"name": "sign",
 			"states": {
-				"wood": [ "oak", "spruce", "birch", "jungle", "acacia", "dark_oak", "mangrove", "cherry", "pale_oak", "bamboo", "crimson", "warped" ],
-				"rotation": [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15" ]
+				"wood": [ "oak", "spruce", "birch", "jungle", "acacia", "dark_oak", "mangrove", "cherry", "pale_oak", "poplar", "bamboo", "crimson", "warped" ],
+				"rotation": [ "8", "9", "10", "11", "12", "13", "14", "15", "0", "1", "2", "3", "4", "5", "6", "7" ]
 			},
 			"default_state": "rotation=0,wood=oak",
 			"timeline": {
@@ -3030,6 +3226,7 @@
 					"wood=mangrove": "wood=mangrove,variant=standing",
 					"wood=cherry": "wood=cherry,variant=standing",
 					"wood=pale_oak": "wood=pale_oak,variant=standing",
+					"wood=poplar": "wood=poplar,variant=standing",
 					"wood=bamboo": "wood=bamboo,variant=standing",
 					"wood=crimson": "wood=crimson,variant=standing",
 					"wood=warped": "wood=warped,variant=standing"
@@ -3077,6 +3274,7 @@
 				"minecraft:mangrove_sign": "wood=mangrove",
 				"minecraft:cherry_sign": "wood=cherry",
 				"minecraft:pale_oak_sign": "wood=pale_oak",
+				"minecraft:poplar_sign": "wood=poplar",
 				"minecraft:bamboo_sign": "wood=bamboo",
 				"minecraft:crimson_sign": "wood=crimson",
 				"minecraft:warped_sign": "wood=warped"
@@ -3096,6 +3294,7 @@
 					{ "value": "mangrove", "file": "mangrove_door.json" },
 					{ "value": "cherry", "file": "cherry_door.json" },
 					{ "value": "pale_oak", "file": "pale_oak_door.json" },
+					{ "value": "poplar", "file": "poplar_door.json" },
 					{ "value": "bamboo", "file": "bamboo_door.json" },
 					{ "value": "crimson", "file": "crimson_door.json" },
 					{ "value": "warped", "file": "warped_door.json" },
@@ -3109,16 +3308,16 @@
 					{ "value": "waxed_weathered_copper", "file": "waxed_weathered_copper_door.json" },
 					{ "value": "waxed_oxidized_copper", "file": "waxed_oxidized_copper_door.json" }
 				],
-				"hinge": [ "right", "left" ],
+				"hinge": [ "left", "right" ],
 				"facing": [ "north", "south", "east", "west" ],
 				"open": [ "false", "true" ],
 				"half": [ "lower", "upper" ],
 				"location": [ "north_west", "north_east", "south_west", "south_east" ],
 				"direction": [ "north", "south", "east", "west" ]
 			},
-			"default_state": "variant=oak,hinge=right,facing=west,open=false",
+			"default_state": "variant=oak,hinge=left,facing=west,open=false",
 			"timeline": {
-				"rotation_point": [ 1.5, 0, 1.5 ],
+				"rotation_point": [ 14.5, 0, 1.5 ],
 				"position": {
 					"location=north_west": [ 1.5, 0, 1.5 ],
 					"location=north_east": [ 14.5, 0, 1.5 ],
@@ -3126,10 +3325,10 @@
 					"location=south_east": [ 14.5, 0, 14.5 ]
 				},
 				"rotation": {
-					"direction=north": [ 0, 90, 0 ],
-					"direction=south": [ 0, -90, 0 ],
-					"direction=east": [ 0, 0, 0 ],
-					"direction=west": [ 0, 180, 0 ]
+					"direction=north": [ 0, -90, 0 ],
+					"direction=south": [ 0, 90, 0 ],
+					"direction=east": [ 0, 180, 0 ],
+					"direction=west": [ 0, 0, 0 ]
 				}
 			},
 			"id": {
@@ -3142,6 +3341,7 @@
 				"minecraft:mangrove_door": "variant=mangrove",
 				"minecraft:cherry_door": "variant=cherry",
 				"minecraft:pale_oak_door": "variant=pale_oak",
+				"minecraft:poplar_door": "variant=poplar",
 				"minecraft:bamboo_door": "variant=bamboo",
 				"minecraft:crimson_door": "variant=crimson",
 				"minecraft:warped_door": "variant=warped",
@@ -3177,7 +3377,7 @@
 		{
 			"name": "wall_sign",
 			"states": {
-				"wood": [ "oak", "spruce", "birch", "jungle", "acacia", "dark_oak", "mangrove", "cherry", "pale_oak", "bamboo", "crimson", "warped" ],
+				"wood": [ "oak", "spruce", "birch", "jungle", "acacia", "dark_oak", "mangrove", "cherry", "pale_oak", "poplar", "bamboo", "crimson", "warped" ],
 				"facing": [ "north", "south", "east", "west" ]
 			},
 			"default_state": "facing=west,wood=oak",
@@ -3193,6 +3393,7 @@
 					"wood=mangrove": "wood=mangrove,variant=wall",
 					"wood=cherry": "wood=cherry,variant=wall",
 					"wood=pale_oak": "wood=pale_oak,variant=wall",
+					"wood=poplar": "wood=poplar,variant=wall",
 					"wood=bamboo": "wood=bamboo,variant=wall",
 					"wood=crimson": "wood=crimson,variant=wall",
 					"wood=warped": "wood=warped,variant=wall"
@@ -3233,6 +3434,7 @@
 				"minecraft:mangrove_wall_sign": "wood=mangrove",
 				"minecraft:cherry_wall_sign": "wood=cherry",
 				"minecraft:pale_oak_wall_sign": "wood=pale_oak",
+				"minecraft:poplar_wall_sign": "wood=poplar",
 				"minecraft:bamboo_wall_sign": "wood=bamboo",
 				"minecraft:crimson_wall_sign": "wood=crimson",
 				"minecraft:warped_wall_sign": "wood=warped"
@@ -3241,8 +3443,8 @@
 		{
 			"name": "hanging_sign",
 			"states": {
-				"wood": [ "oak", "spruce", "birch", "jungle", "acacia", "dark_oak", "mangrove", "cherry", "pale_oak", "bamboo", "crimson", "warped" ],
-				"rotation": [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15" ],
+				"wood": [ "oak", "spruce", "birch", "jungle", "acacia", "dark_oak", "mangrove", "cherry", "pale_oak", "poplar", "bamboo", "crimson", "warped" ],
+				"rotation": [ "8", "9", "10", "11", "12", "13", "14", "15", "0", "1", "2", "3", "4", "5", "6", "7" ],
 				"attached": [ "false", "true" ]
 			},
 			"default_state": "rotation=0,wood=oak,attached=false",
@@ -3258,6 +3460,7 @@
 					"wood=mangrove,attached=false": "wood=mangrove,variant=hanging",
 					"wood=cherry,attached=false": "wood=cherry,variant=hanging",
 					"wood=pale_oak,attached=false": "wood=pale_oak,variant=hanging",
+					"wood=poplar,attached=false": "wood=poplar,variant=hanging",
 					"wood=bamboo,attached=false": "wood=bamboo,variant=hanging",
 					"wood=crimson,attached=false": "wood=crimson,variant=hanging",
 					"wood=warped,attached=false": "wood=warped,variant=hanging",
@@ -3270,6 +3473,7 @@
 					"wood=mangrove,attached=true": "wood=mangrove,variant=attached",
 					"wood=cherry,attached=true": "wood=cherry,variant=attached",
 					"wood=pale_oak,attached=true": "wood=pale_oak,variant=attached",
+					"wood=poplar,attached=true": "wood=poplar,variant=attached",
 					"wood=bamboo,attached=true": "wood=bamboo,variant=attached",
 					"wood=crimson,attached=true": "wood=crimson,variant=attached",
 					"wood=warped,attached=true": "wood=warped,variant=attached"
@@ -3316,6 +3520,7 @@
 				"minecraft:mangrove_hanging_sign": "wood=mangrove",
 				"minecraft:cherry_hanging_sign": "wood=cherry",
 				"minecraft:pale_oak_hanging_sign": "wood=pale_oak",
+				"minecraft:poplar_hanging_sign": "wood=poplar",
 				"minecraft:bamboo_hanging_sign": "wood=bamboo",
 				"minecraft:crimson_hanging_sign": "wood=crimson",
 				"minecraft:warped_hanging_sign": "wood=warped"
@@ -3324,7 +3529,7 @@
 		{
 			"name": "wall_hanging_sign",
 			"states": {
-				"wood": [ "oak", "spruce", "birch", "jungle", "acacia", "dark_oak", "mangrove", "cherry", "pale_oak", "bamboo", "crimson", "warped" ],
+				"wood": [ "oak", "spruce", "birch", "jungle", "acacia", "dark_oak", "mangrove", "cherry", "pale_oak", "poplar", "bamboo", "crimson", "warped" ],
 				"facing": [ "north", "south", "east", "west" ]
 			},
 			"default_state": "facing=west,wood=oak",
@@ -3340,6 +3545,7 @@
 					"wood=mangrove": "wood=mangrove,variant=wall",
 					"wood=cherry": "wood=cherry,variant=wall",
 					"wood=pale_oak": "wood=pale_oak,variant=wall",
+					"wood=poplar": "wood=poplar,variant=wall",
 					"wood=bamboo": "wood=bamboo,variant=wall",
 					"wood=crimson": "wood=crimson,variant=wall",
 					"wood=warped": "wood=warped,variant=wall"
@@ -3374,6 +3580,7 @@
 				"minecraft:mangrove_wall_hanging_sign": "wood=mangrove",
 				"minecraft:cherry_wall_hanging_sign": "wood=cherry",
 				"minecraft:pale_oak_wall_hanging_sign": "wood=pale_oak",
+				"minecraft:poplar_wall_hanging_sign": "wood=poplar",
 				"minecraft:bamboo_wall_hanging_sign": "wood=bamboo",
 				"minecraft:crimson_wall_hanging_sign": "wood=crimson",
 				"minecraft:warped_wall_hanging_sign": "wood=warped"
@@ -3384,7 +3591,7 @@
 			"file": "lever.json",
 			"type": "redstone_connect",
 			"states": {
-				"face": [ "ceiling", "wall", "floor" ],
+				"face": [ "wall", "ceiling", "floor" ],
 				"facing": [ "north", "south", "east", "west" ],
 				"powered": [ "false", "true" ]
 			},
@@ -3432,6 +3639,7 @@
 					{ "value": "mangrove", "file": "mangrove_pressure_plate.json" },
 					{ "value": "cherry", "file": "cherry_pressure_plate.json" },
 					{ "value": "pale_oak", "file": "pale_oak_pressure_plate.json" },
+					{ "value": "poplar", "file": "poplar_pressure_plate.json" },
 					{ "value": "bamboo", "file": "bamboo_pressure_plate.json" },
 					{ "value": "crimson", "file": "crimson_pressure_plate.json" },
 					{ "value": "warped", "file": "warped_pressure_plate.json" },
@@ -3455,6 +3663,7 @@
 				"minecraft:mangrove_pressure_plate": "variant=mangrove",
 				"minecraft:cherry_pressure_plate": "variant=cherry",
 				"minecraft:pale_oak_pressure_plate": "variant=pale_oak",
+				"minecraft:poplar_pressure_plate": "variant=poplar",
 				"minecraft:bamboo_pressure_plate": "variant=bamboo",
 				"minecraft:crimson_pressure_plate": "variant=crimson",
 				"minecraft:warped_pressure_plate": "variant=warped",
@@ -3484,11 +3693,11 @@
 			"file": "redstone_torch.json",
 			"states": {
 				"lit": [
-					{ "value": "false" },
-					{ "value": "true", "emissive": 0.75 }
+					{ "value": "true", "emissive": 0.75 },
+					{ "value": "false" }
 				]
 			},
-			"default_state": "lit=false",
+			"default_state": "lit=true",
 			"id": "minecraft:redstone_torch"
 		},
 		{
@@ -3496,12 +3705,12 @@
 			"file": "redstone_wall_torch.json",
 			"states": {
 				"lit": [
-					{ "value": "false" },
-					{ "value": "true", "emissive": 0.75 }
+					{ "value": "true", "emissive": 0.75 },
+					{ "value": "false" }
 				],
 				"facing": [ "north", "east", "south", "west" ]
 			},
-			"default_state": "lit=false,facing=east",
+			"default_state": "lit=true,facing=east",
 			"id": "minecraft:redstone_wall_torch"
 		},
 		{
@@ -3519,12 +3728,13 @@
 					{ "value": "mangrove", "file": "mangrove_button.json" },
 					{ "value": "cherry", "file": "cherry_button.json" },
 					{ "value": "pale_oak", "file": "pale_oak_button.json" },
+					{ "value": "poplar", "file": "poplar_button.json" },
 					{ "value": "bamboo", "file": "bamboo_button.json" },
 					{ "value": "crimson", "file": "crimson_button.json" },
 					{ "value": "warped", "file": "warped_button.json" },
 					{ "value": "polished_blackstone", "file": "polished_blackstone_button.json" }
 				],
-				"face": [ "ceiling", "wall", "floor" ],
+				"face": [ "wall", "ceiling", "floor" ],
 				"facing": [ "north", "south", "east", "west" ],
 				"powered": [ "false", "true" ]
 			},
@@ -3565,6 +3775,7 @@
 				"minecraft:mangrove_button": "variant=mangrove",
 				"minecraft:cherry_button": "variant=cherry",
 				"minecraft:pale_oak_button": "variant=pale_oak",
+				"minecraft:poplar_button": "variant=poplar",
 				"minecraft:bamboo_button": "variant=bamboo",
 				"minecraft:crimson_button": "variant=crimson",
 				"minecraft:warped_button": "variant=warped",
@@ -3628,6 +3839,7 @@
 					{ "value": "mangrove", "file": "mangrove_fence.json" },
 					{ "value": "cherry", "file": "cherry_fence.json" },
 					{ "value": "pale_oak", "file": "pale_oak_fence.json" },
+					{ "value": "poplar", "file": "poplar_fence.json" },
 					{ "value": "bamboo", "file": "bamboo_fence.json" },
 					{ "value": "crimson", "file": "crimson_fence.json" },
 					{ "value": "warped", "file": "warped_fence.json" },
@@ -3649,6 +3861,7 @@
 				"minecraft:mangrove_fence": "variant=mangrove",
 				"minecraft:cherry_fence": "variant=cherry",
 				"minecraft:pale_oak_fence": "variant=pale_oak",
+				"minecraft:poplar_fence": "variant=poplar",
 				"minecraft:bamboo_fence": "variant=bamboo",
 				"minecraft:crimson_fence": "variant=crimson",
 				"minecraft:warped_fence": "variant=warped",
@@ -3824,6 +4037,7 @@
 					{ "value": "mangrove", "file": "mangrove_trapdoor.json" },
 					{ "value": "cherry", "file": "cherry_trapdoor.json" },
 					{ "value": "pale_oak", "file": "pale_oak_trapdoor.json" },
+					{ "value": "poplar", "file": "poplar_trapdoor.json" },
 					{ "value": "bamboo", "file": "bamboo_trapdoor.json" },
 					{ "value": "crimson", "file": "crimson_trapdoor.json" },
 					{ "value": "warped", "file": "warped_trapdoor.json" },
@@ -3839,7 +4053,7 @@
 				],
 				"facing": [ "north", "south", "east", "west" ],
 				"open": [ "false", "true" ],
-				"half": [ "top", "bottom" ]
+				"half": [ "bottom", "top" ]
 			},
 			"default_state": "variant=oak,facing=west,open=false,half=bottom",
 			"timeline": {
@@ -3880,6 +4094,7 @@
 				"minecraft:mangrove_trapdoor": "variant=mangrove",
 				"minecraft:cherry_trapdoor": "variant=cherry",
 				"minecraft:pale_oak_trapdoor": "variant=pale_oak",
+				"minecraft:poplar_trapdoor": "variant=poplar",
 				"minecraft:bamboo_trapdoor": "variant=bamboo",
 				"minecraft:crimson_trapdoor": "variant=crimson",
 				"minecraft:warped_trapdoor": "variant=warped",
@@ -3924,7 +4139,7 @@
 					{ "value": "chiseled_stone_bricks", "file": "infested_chiseled_stone_bricks.json" },
 					{ "value": "deepslate", "file": "infested_deepslate.json" }
 				],
-				"axis": [ "x", "y", "z" ]
+				"axis": [ "y", "x", "z" ]
 			},
 			"default_state": "variant=stone,axis=y",
 			"id": {
@@ -3941,12 +4156,12 @@
 			"name": "brown_mushroom_block",
 			"file": "brown_mushroom_block.json",
 			"states": {
-				"north": [ "false", "true" ],
-				"south": [ "false", "true" ],
-				"east": [ "false", "true" ],
-				"west": [ "false", "true" ],
-				"up": [ "false", "true" ],
-				"down": [ "false", "true" ]
+				"north": [ "true", "false" ],
+				"south": [ "true", "false" ],
+				"east": [ "true", "false" ],
+				"west": [ "true", "false" ],
+				"up": [ "true", "false" ],
+				"down": [ "true", "false" ]
 			},
 			"default_state": "north=true,south=true,east=true,west=true,up=true,down=true",
 			"id": "minecraft:brown_mushroom_block"
@@ -3955,12 +4170,12 @@
 			"name": "red_mushroom_block",
 			"file": "red_mushroom_block.json",
 			"states": {
-				"north": [ "false", "true" ],
-				"south": [ "false", "true" ],
-				"east": [ "false", "true" ],
-				"west": [ "false", "true" ],
-				"up": [ "false", "true" ],
-				"down": [ "false", "true" ]
+				"north": [ "true", "false" ],
+				"south": [ "true", "false" ],
+				"east": [ "true", "false" ],
+				"west": [ "true", "false" ],
+				"up": [ "true", "false" ],
+				"down": [ "true", "false" ]
 			},
 			"default_state": "north=true,south=true,east=true,west=true,up=true,down=true",
 			"id": "minecraft:red_mushroom_block"
@@ -3969,12 +4184,12 @@
 			"name": "mushroom_stem",
 			"file": "mushroom_stem.json",
 			"states": {
-				"north": [ "false", "true" ],
-				"south": [ "false", "true" ],
-				"east": [ "false", "true" ],
-				"west": [ "false", "true" ],
-				"up": [ "false", "true" ],
-				"down": [ "false", "true" ]
+				"north": [ "true", "false" ],
+				"south": [ "true", "false" ],
+				"east": [ "true", "false" ],
+				"west": [ "true", "false" ],
+				"up": [ "true", "false" ],
+				"down": [ "true", "false" ]
 			},
 			"default_state": "north=true,south=true,east=true,west=true,up=true,down=true",
 			"id": "minecraft:mushroom_stem"
@@ -4112,6 +4327,7 @@
 					{ "value": "mangrove", "file": "mangrove_fence_gate.json" },
 					{ "value": "cherry", "file": "cherry_fence_gate.json" },
 					{ "value": "pale_oak", "file": "pale_oak_fence_gate.json" },
+					{ "value": "poplar", "file": "poplar_fence_gate.json" },
 					{ "value": "bamboo", "file": "bamboo_fence_gate.json" },
 					{ "value": "crimson", "file": "crimson_fence_gate.json" },
 					{ "value": "warped", "file": "warped_fence_gate.json" }
@@ -4133,6 +4349,7 @@
 					"variant=mangrove": "variant=mangrove",
 					"variant=cherry": "variant=cherry",
 					"variant=pale_oak": "variant=pale_oak",
+					"variant=poplar": "variant=poplar",
 					"variant=bamboo": "variant=bamboo",
 					"variant=crimson": "variant=crimson",
 					"variant=warped": "variant=warped"
@@ -4158,6 +4375,7 @@
 				"minecraft:mangrove_fence_gate": "variant=mangrove",
 				"minecraft:cherry_fence_gate": "variant=cherry",
 				"minecraft:pale_oak_fence_gate": "variant=pale_oak",
+				"minecraft:poplar_fence_gate": "variant=poplar",
 				"minecraft:bamboo_fence_gate": "variant=bamboo",
 				"minecraft:crimson_fence_gate": "variant=crimson",
 				"minecraft:warped_fence_gate": "variant=warped"
@@ -4312,11 +4530,9 @@
 		{
 			"name": "ender_chest",
 			"states": {
-				"type": [ "legacy" , "single", "right", "left" ],
-				"facing": [ "north", "south", "east", "west" ],
-				"double": [ "false", "true" ]
+				"facing": [ "north", "south", "east", "west" ]
 			},
-			"default_state": "facing=west,type=legacy",
+			"default_state": "facing=west",
 			"timeline": {
 				"model": "chest",
 				"model_state": "variant=ender",
@@ -4432,7 +4648,7 @@
 				"south": [ "none", "low", "tall" ],
 				"east": [ "none", "low", "tall" ],
 				"west": [ "none", "low", "tall" ],
-				"up": [ "false", "true" ]
+				"up": [ "true", "false" ]
 			},
 			"default_state": "variant=cobblestone,north=none,south=none,east=none,west=none,up=true",
 			"id": {
@@ -4486,6 +4702,7 @@
 					{ "value": "mangrove_propagule", "file": "potted_mangrove_propagule.json" },
 					{ "value": "cherry_sapling", "file": "potted_cherry_sapling.json" },
 					{ "value": "pale_oak_sapling", "file": "potted_pale_oak_sapling.json" },
+					{ "value": "poplar_sapling", "file": "potted_poplar_sapling.json" },
 					{ "value": "red_mushroom", "file": "potted_red_mushroom.json" },
 					{ "value": "brown_mushroom", "file": "potted_brown_mushroom.json" },
 					{ "value": "cactus", "file": "potted_cactus.json" },
@@ -4529,6 +4746,7 @@
 				"minecraft:potted_mangrove_propagule": "contents=mangrove_propagule",
 				"minecraft:potted_cherry_sapling": "contents=cherry_sapling",
 				"minecraft:potted_pale_oak_sapling": "contents=pale_oak_sapling",
+				"minecraft:potted_poplar_sapling": "contents=poplar_sapling",
 				"minecraft:potted_red_mushroom": "contents=red_mushroom",
 				"minecraft:potted_brown_mushroom": "contents=brown_mushroom",
 				"minecraft:potted_cactus": "contents=cactus",
@@ -4696,7 +4914,7 @@
 			"name": "trapped_chest",
 			"type": "chest",
 			"states": {
-				"type": [ "legacy" , "single", "right", "left" ],
+				"type": [ "single", "right", "left", "legacy" ],
 				"facing": [ "north", "south", "east", "west" ],
 				"double": [ "false", "true" ]
 			},
@@ -4782,7 +5000,7 @@
 			"name": "hopper",
 			"file": "hopper.json",
 			"states": {
-				"facing": [ "north", "south", "east", "west", "down" ]
+				"facing": [ "down", "north", "south", "east", "west" ]
 			},
 			"default_state": "facing=down",
 			"id": "minecraft:hopper"
@@ -4797,7 +5015,7 @@
 					{ "value": "smooth", "file": "smooth_quartz.json" },
 					{ "value": "bricks", "file": "quartz_bricks.json" }
 				],
-				"axis": [ "x", "y", "z" ]
+				"axis": [ "y", "x", "z" ]
 			},
 			"default_state": "variant=default,axis=y",
 			"id": {
@@ -4939,7 +5157,6 @@
 			"states": {
 				"rotation": [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12", "13", "14", "15" ],
 				"color": [
-					{ "value": "red" },
 					{ "value": "white" },
 					{ "value": "orange" },
 					{ "value": "magenta" },
@@ -4954,6 +5171,7 @@
 					{ "value": "blue" },
 					{ "value": "brown" },
 					{ "value": "green" },
+					{ "value": "red" },
 					{ "value": "black" }
 				]
 			},
@@ -5007,7 +5225,6 @@
 			"states": {
 				"facing": [ "north", "south", "east", "west" ],
 				"color": [
-					{ "value": "red" },
 					{ "value": "white" },
 					{ "value": "orange" },
 					{ "value": "magenta" },
@@ -5022,6 +5239,7 @@
 					{ "value": "blue" },
 					{ "value": "brown" },
 					{ "value": "green" },
+					{ "value": "red" },
 					{ "value": "black" }
 				]
 			},
@@ -5083,7 +5301,7 @@
 			"name": "hay_block",
 			"file": "hay_block.json",
 			"states": {
-				"axis": [ "x", "y", "z" ]
+				"axis": [ "y", "x", "z" ]
 			},
 			"default_state": "axis=y",
 			"id": "minecraft:hay_block"
@@ -5199,7 +5417,7 @@
 			"name": "end_rod",
 			"file": "end_rod.json",
 			"states": {
-				"facing": [ "north", "south", "east", "west", "up", "down" ]
+				"facing": [ "up", "down", "north", "south", "east", "west" ]
 			},
 			"default_state": "facing=up",
 			"emissive": 0.75,
@@ -5239,7 +5457,7 @@
 			"name": "purpur_pillar",
 			"file": "purpur_pillar.json",
 			"states": {
-				"axis": [ "x", "y", "z" ]
+				"axis": [ "y", "x", "z" ]
 			},
 			"default_state": "axis=y",
 			"id": "minecraft:purpur_pillar"
@@ -5356,7 +5574,7 @@
 			"name": "bone_block",
 			"file": "bone_block.json",
 			"states": {
-				"axis": [ "x", "y", "z" ]
+				"axis": [ "y", "x", "z" ]
 			},
 			"default_state": "axis=y",
 			"id": "minecraft:bone_block"
@@ -5365,7 +5583,7 @@
 			"name": "observer",
 			"file": "observer.json",
 			"states": {
-				"facing": [ "north", "south", "east", "west", "up", "down" ],
+				"facing": [ "south", "east", "west", "north", "up", "down" ],
 				"powered": [ "false", "true" ]
 			},
 			"default_state": "facing=west,powered=false",
@@ -5375,7 +5593,7 @@
 			"name": "shulker_box",
 			"states": {
 				"color": [ "none", "white", "orange", "magenta", "light_blue", "yellow", "lime", "pink", "gray", "light_gray", "cyan", "purple", "blue", "brown", "green", "red", "black" ],
-				"facing": [ "north", "south", "east", "west", "up", "down" ]
+				"facing": [ "up", "down", "north", "south", "east", "west" ]
 			},
 			"default_state": "color=none,facing=up",
 			"timeline": {
@@ -5551,6 +5769,7 @@
 		},
 		{
 			"name": "conduit",
+			"waterlogged": true,
 			"states": {
 				"open": [ "false", "true" ]
 			},
@@ -5564,9 +5783,10 @@
 		{
 			"name": "sea_pickle",
 			"file": "sea_pickle.json",
+			"waterlogged": true,
 			"states": {
 				"pickles": [ "1", "2", "3", "4" ],
-				"waterlogged": [ "false", "true" ]
+				"waterlogged": [ "true", "false" ]
 			},
 			"default_state": "pickles=1,waterlogged=false",
 			"emissive": 0.5,
@@ -5642,6 +5862,7 @@
 		},
 		{
 			"name": "coral",
+			"waterlogged": true,
 			"states": {
 				"variant": [
 					{ "value": "tube", "file": "tube_coral.json" },
@@ -5663,6 +5884,7 @@
 		},
 		{
 			"name": "coral_fan",
+			"waterlogged": true,
 			"states": {
 				"variant": [
 					{ "value": "tube", "file": "tube_coral_fan.json" },
@@ -5684,6 +5906,7 @@
 		},
 		{
 			"name": "coral_wall_fan",
+			"waterlogged": true,
 			"states": {
 				"variant": [
 					{ "value": "tube", "file": "tube_coral_wall_fan.json" },
@@ -5726,6 +5949,7 @@
 		},
 		{
 			"name": "dead_coral",
+			"waterlogged": true,
 			"states": {
 				"variant": [
 					{ "value": "tube", "file": "dead_tube_coral.json" },
@@ -5747,6 +5971,7 @@
 		},
 		{
 			"name": "dead_coral_fan",
+			"waterlogged": true,
 			"states": {
 				"variant": [
 					{ "value": "tube", "file": "dead_tube_coral_fan.json" },
@@ -5768,6 +5993,7 @@
 		},
 		{
 			"name": "dead_coral_wall_fan",
+			"waterlogged": true,
 			"states": {
 				"variant": [
 					{ "value": "tube", "file": "dead_tube_coral_wall_fan.json" },
@@ -5850,7 +6076,7 @@
 				"facing": [ "north", "south", "east", "west", "up", "down" ],
 				"open": [ "false", "true" ]
 			},
-			"default_state": "facing=west,open=false",
+			"default_state": "facing=up,open=false",
 			"id": "minecraft:barrel"
 		},
 		{
@@ -5887,7 +6113,7 @@
 			"name": "grindstone",
 			"file": "grindstone.json",
 			"states": {
-				"face": [ "floor", "wall", "ceiling" ],
+				"face": [ "wall", "ceiling", "floor" ],
 				"facing": [ "north", "south", "east", "west" ]
 			},
 			"default_state": "facing=west,face=floor",
@@ -5987,8 +6213,8 @@
 				],
 				"facing": [ "north", "south", "east", "west" ],
 				"lit": [
-					{ "value": "false" },
-					{ "value": "true", "emissive": 0.75 }
+					{ "value": "true", "emissive": 0.75 },
+					{ "value": "false" }
 				]
 			},
 			"default_state": "variant=normal,facing=west,lit=true",
@@ -6019,9 +6245,9 @@
 			"name": "structure_block",
 			"file": "structure_block.json",
 			"states": {
-				"mode": [ "save", "load", "corner", "data" ]
+				"mode": [ "load", "corner", "save", "data" ]
 			},
-			"default_state": "mode=save",
+			"default_state": "mode=load",
 			"id": "minecraft:structure_block"
 		},
 		{
@@ -6195,7 +6421,7 @@
 					{ "value": "polished_basalt", "file": "polished_basalt.json" },
 					{ "value": "smooth_basalt", "file": "smooth_basalt.json" }
 				],
-				"axis": [ "x", "y", "z" ]
+				"axis": [ "y", "x", "z" ]
 			},
 			"default_state": "variant=normal,axis=y",
 			"id": {
@@ -6279,7 +6505,7 @@
 					{ "value": "waxed_weathered_copper_chain", "file": "waxed_weathered_copper_chain.json" },
 					{ "value": "waxed_oxidized_copper_chain", "file": "waxed_oxidized_copper_chain.json" }
 				],
-				"axis": [ "x", "y", "z" ]
+				"axis": [ "y", "x", "z" ]
 			},
 			"default_state": "variant=iron_chain,axis=y",
 			"id": {
@@ -6366,7 +6592,7 @@
 					{ "value": "large", "file": "large_amethyst_bud.json" },
 					{ "value": "cluster", "file": "amethyst_cluster.json" }
 				],
-				"facing": [ "north", "south", "east", "west", "up", "down" ]
+				"facing": [ "up", "down", "north", "south", "east", "west" ]
 			},
 			"default_state": "variant=cluster,facing=up",
 			"emissive": 0.5,
@@ -6467,7 +6693,7 @@
 			"name": "sculk_sensor",
 			"file": "sculk_sensor.json",
 			"states": {
-				"sculk_sensor_phase": [ "active", "cooldown", "inactive" ]
+				"sculk_sensor_phase": [ "inactive", "active", "cooldown" ]
 			},
 			"default_state": "sculk_sensor_phase=inactive",
 			"id": "minecraft:sculk_sensor"
@@ -6477,7 +6703,7 @@
 			"file": "calibrated_sculk_sensor.json",
 			"states": {
 				"facing": [ "north", "south", "east", "west" ],
-				"sculk_sensor_phase": [ "active", "cooldown", "inactive" ]
+				"sculk_sensor_phase": [ "inactive", "active", "cooldown" ]
 			},
 			"default_state": "facing=east,sculk_sensor_phase=inactive",
 			"id": "minecraft:calibrated_sculk_sensor"
@@ -6773,7 +6999,7 @@
 					{ "value": "waxed_weathered_lightning_rod", "file": "waxed_weathered_lightning_rod.json" },
 					{ "value": "waxed_oxidized_lightning_rod", "file": "waxed_oxidized_lightning_rod.json" }
 				],
-				"facing": [ "north", "south", "east", "west", "up", "down" ],
+				"facing": [ "up", "down", "north", "south", "east", "west" ],
 				"powered": [ "false", "true" ]
 			},
 			"default_state": "variant=lightning_rod,facing=up,powered=false",
@@ -6970,7 +7196,7 @@
 					{ "value": "cracked_deepslate_tiles", "file": "cracked_deepslate_tiles.json" },
 					{ "value": "chiseled_deepslate", "file": "chiseled_deepslate.json" }
 				],
-				"axis": [ "x", "y", "z" ]
+				"axis": [ "y", "x", "z" ]
 			},
 			"default_state": "variant=deepslate,axis=y",
 			"id": {
@@ -7020,7 +7246,7 @@
 			"name": "muddy_mangrove_roots",
 			"file": "muddy_mangrove_roots.json",
 			"states": {
-				"axis": [ "x", "y", "z" ]
+				"axis": [ "y", "x", "z" ]
 			},
 			"default_state": "axis=y",
 			"id": "minecraft:muddy_mangrove_roots"
@@ -7048,7 +7274,7 @@
 					{ "value": "pearlescent", "file": "pearlescent_froglight.json" },
 					{ "value": "verdant", "file": "verdant_froglight.json" }
 				],
-				"axis": [ "x", "y", "z" ]
+				"axis": [ "y", "x", "z" ]
 			},
 			"default_state": "variant=ochre,axis=y",
 			"emissive": 0.75,
@@ -7167,7 +7393,7 @@
 			"name": "pale_moss_carpet",
 			"file": "pale_moss_carpet.json",
 			"states": {
-				"bottom": [ "false", "true" ],
+				"bottom": [ "true", "false" ],
 				"north": [ "none", "low", "tall" ],
 				"south": [ "none", "low", "tall" ],
 				"east": [ "none", "low", "tall" ],
@@ -7187,7 +7413,7 @@
 			"type": "pale_hanging_moss",
 			"require_models": true,
 			"states": {
-				"tip": [ "false", "true" ]
+				"tip": [ "true", "false" ]
 			},
 			"default_state": "tip=true",
 			"subsurface": 1,
@@ -7200,7 +7426,7 @@
 			"name": "creaking_heart",
 			"file": "creaking_heart.json",
 			"states": {
-				"axis": [ "x", "y", "z" ],
+				"axis": [ "y", "x", "z" ],
 				"creaking_heart_state": [
 					{ "value": "uprooted" },
 					{ "value": "dormant", "emissive": 0.05 },
@@ -7345,6 +7571,7 @@
 		"entity/boat/mangrove",
 		"entity/boat/oak",
 		"entity/boat/pale_oak",
+		"entity/boat/poplar",
 		"entity/boat/spruce",
 		"entity/breeze/breeze",
 		"entity/breeze/breeze_eyes",
@@ -7409,6 +7636,7 @@
 		"entity/chest_boat/mangrove",
 		"entity/chest_boat/oak",
 		"entity/chest_boat/pale_oak",
+		"entity/chest_boat/poplar",
 		"entity/chest_boat/spruce",
 		"entity/chicken/chicken_cold",
 		"entity/chicken/chicken_cold_baby",
@@ -7441,6 +7669,22 @@
 		"entity/creaking/creaking",
 		"entity/creaking/creaking_eyes",
 		"entity/creeper/creeper",
+		"entity/cushion/black_cushion",
+		"entity/cushion/blue_cushion",
+		"entity/cushion/brown_cushion",
+		"entity/cushion/cyan_cushion",
+		"entity/cushion/gray_cushion",
+		"entity/cushion/green_cushion",
+		"entity/cushion/light_blue_cushion",
+		"entity/cushion/light_gray_cushion",
+		"entity/cushion/lime_cushion",
+		"entity/cushion/magenta_cushion",
+		"entity/cushion/orange_cushion",
+		"entity/cushion/pink_cushion",
+		"entity/cushion/purple_cushion",
+		"entity/cushion/red_cushion",
+		"entity/cushion/white_cushion",
+		"entity/cushion/yellow_cushion",
 		"entity/decorated_pot/decorated_pot_base",
 		"entity/decorated_pot/decorated_pot_side",
 		"entity/decorated_pot/angler_pottery_pattern",
@@ -7985,6 +8229,7 @@
 		"block/mangrove_sign",
 		"block/oak_sign",
 		"block/pale_oak_sign",
+		"block/poplar_sign",
 		"block/spruce_sign",
 		"block/warped_sign",
 		"block/acacia_hanging_sign",
@@ -7997,6 +8242,7 @@
 		"block/mangrove_hanging_sign",
 		"block/oak_hanging_sign",
 		"block/pale_oak_hanging_sign",
+		"block/poplar_hanging_sign",
 		"block/spruce_hanging_sign",
 		"block/warped_hanging_sign",
 		"block/brown_mushroom",
@@ -8013,6 +8259,7 @@
 		"block/cherry_planks",
 		"block/bamboo_fence_gate",
 		"block/pale_oak_planks",
+		"block/poplar_planks",
 		"block/crimson_planks",
 		"block/warped_planks",
 		"block/piston_top_sticky",
@@ -8078,23 +8325,23 @@
 		"painting/water",
 		"painting/wind",
 		"painting/wither",
-		"trims/color_palettes/amethyst",
-		"trims/color_palettes/copper",
-		"trims/color_palettes/copper_darker",
-		"trims/color_palettes/diamond",
-		"trims/color_palettes/diamond_darker",
-		"trims/color_palettes/emerald",
-		"trims/color_palettes/gold",
-		"trims/color_palettes/gold_darker",
-		"trims/color_palettes/iron",
-		"trims/color_palettes/iron_darker",
-		"trims/color_palettes/lapis",
-		"trims/color_palettes/netherite",
-		"trims/color_palettes/netherite_darker",
-		"trims/color_palettes/quartz",
-		"trims/color_palettes/redstone",
-		"trims/color_palettes/resin",
-		"trims/color_palettes/trim_palette",
+		"palettes/trim/amethyst",
+		"palettes/trim/copper",
+		"palettes/trim/copper_darker",
+		"palettes/trim/diamond",
+		"palettes/trim/diamond_darker",
+		"palettes/trim/emerald",
+		"palettes/trim/gold",
+		"palettes/trim/gold_darker",
+		"palettes/trim/iron",
+		"palettes/trim/iron_darker",
+		"palettes/trim/lapis",
+		"palettes/trim/netherite",
+		"palettes/trim/netherite_darker",
+		"palettes/trim/quartz",
+		"palettes/trim/redstone",
+		"palettes/trim/resin",
+		"palettes/trim_base",
 		"trims/entity/humanoid/bolt",
 		"trims/entity/humanoid/coast",
 		"trims/entity/humanoid/dune",
@@ -9380,7 +9627,42 @@
 		"block/black_bed_foot_west",
 		"block/black_bed_head_up",
 		"block/black_bed_head_east",
-		"block/black_bed_head_west"
+		"block/black_bed_head_west",
+		"block/poplar_door_bottom",
+		"block/poplar_door_top",
+		"block/poplar_log",
+		"block/poplar_log_top",
+		"block/poplar_planks",
+		"block/poplar_sapling",
+		"block/poplar_trapdoor",
+		"block/stripped_poplar_log",
+		"block/stripped_poplar_log_top",
+		"block/poplar_shelf_back",
+		"block/poplar_shelf_front",
+		"block/poplar_shelf_front_powered_1",
+		"block/poplar_shelf_front_powered_2",
+		"block/red_poplar_leaves",
+		"block/red_poplar_leaves opaque",
+		"block/orange_poplar_leaves",
+		"block/orange_poplar_leaves opaque",
+		"block/yellow_poplar_leaves",
+		"block/yellow_poplar_leaves opaque",
+		"block/red_shrub",
+		"block/shelf_mushroom_stage0_top",
+		"block/shelf_mushroom_stage0_sides",
+		"block/shelf_mushroom_stage1_top",
+		"block/shelf_mushroom_stage1_sides",
+		"block/shelf_mushroom_stage1_bottom",
+		"block/straw_bed_head_up",
+		"block/straw_bed_head_down",
+		"block/straw_bed_head_sides_1",
+		"block/straw_bed_head_sides_2",
+		"block/straw_bed_head_pillow_frills",
+		"block/straw_bed_foot_up",
+		"block/straw_bed_foot_down",
+		"block/straw_bed_foot_sides",
+		"block/straw_bed_foot_frills_1",
+		"block/straw_bed_foot_frills_2"
 	],
 	"block_animated_sheet_size": [ 32, 2, 64 ],
 	"block_textures_animated": [
@@ -9485,6 +9767,7 @@
 		"dark_oak_sapling.json": { "colorY": "#265216" },
 		"cherry_sapling.json": { "colorY": "#E986BB" },
 		"pale_oak_sapling.json": { "colorY": "#81726D" },
+		"poplar_sapling.json": { "colorY": "#4C9484" },
 		"gold_ore.json": { "colorY": "#BDB664" },
 		"deepslate_gold_ore.json": { "colorY": "#A69F4D" },
 		"iron_ore.json": { "colorY": "#99897D" },
@@ -9528,6 +9811,7 @@
 		"golden_dandelion.json": { "colorY": "#DBA213" },
 		"brown_mushroom.json": { "colorY": "#CC9978" },
 		"red_mushroom.json": { "colorY": "#FE2A2A" },
+		"shelf_mushroom.json": { "colorY": "#DF944B", "colorZ": "#DBB579" },
 		"tnt.json": { "colorY": "#912D11", "colorZ": "#DB2F1A" },
 		"torch.json": { "colorY": null },
 		"soul_torch.json": { "colorY": null },
@@ -9613,6 +9897,7 @@
 		"potted_mangrove_propagule.json": { "colorY": "#7FBF56", "colorZ": "#834939" },
 		"potted_cherry_sapling.json": { "colorY": "#E986BB", "colorZ": "#834939" },
 		"potted_pale_oak_sapling.json": { "colorY": "#81726D", "colorZ": "#834939" },
+		"potted_poplar_sapling.json": { "colorY": "#4C9484", "colorZ": "#834939" },
 		"potted_red_mushroom.json": { "colorY": "#FE2A2A", "colorZ": "#834939" },
 		"potted_brown_mushroom.json": { "colorY": "#CC9978", "colorZ": "#834939" },
 		"potted_cactus.json": { "colorY": "#649832", "colorZ": "#834939" },
@@ -9664,6 +9949,14 @@
 		"bell.json": { "colorY": "#4F3218", "colorZ": "#FFEC4F" },
 		"lantern.json": { "colorY": "#495065", "colorZ": "#F9C966" },
 		"soul_lantern.json": { "colorY": "#495065", "colorZ": "#6DEDF1" },
+		"copper_lantern.json": { "colorY": "#C26B4C", "colorZ": "#99EB99" },
+		"exposed_copper_lantern.json": { "colorY": "#BA8277", "colorZ": "#99EB99" },
+		"weathered_copper_lantern.json": { "colorY": "#6C975C", "colorZ": "#99EB99" },
+		"oxidized_copper_lantern.json": { "colorY": "#4C9484", "colorZ": "#99EB99" },
+		"waxed_copper_lantern.json": { "colorY": "#C26B4C", "colorZ": "#99EB99" },
+		"waxed_exposed_copper_lantern.json": { "colorY": "#BA8277", "colorZ": "#99EB99" },
+		"waxed_weathered_copper_lantern.json": { "colorY": "#6C975C", "colorZ": "#99EB99" },
+		"waxed_oxidized_copper_lantern.json": { "colorY": "#4C9484", "colorZ": "#99EB99" },
 		"campfire.json": { "colorY": "#DFA21B", "colorZ": "#917142" },
 		"soul_campfire.json": { "colorY": "#5BE3E8", "colorZ": "#917142" },
 		"crimson_fungus.json": { "colorY": "#941818" },
@@ -9973,7 +10266,7 @@
 		"item/music_disc_pigstep",
 		"item/structure_void",
 		"item/shulker_shell",
-		"item/filled_map_markings",
+		"",
 		"item/cod_bucket",
 		"item/salmon_bucket",
 		"item/tropical_fish_bucket",
@@ -10292,6 +10585,43 @@
 		"item/sulfur_cube_bucket",
 		"item/sulfur_spike",
 		"item/music_disc_bounce",
+		"item/poplar_boat",
+		"item/poplar_chest_boat",
+		"item/poplar_door",
+		"item/poplar_sign",
+		"item/poplar_hanging_sign",
+		"item/white_cushion",
+		"item/orange_cushion",
+		"item/magenta_cushion",
+		"item/light_blue_cushion",
+		"item/yellow_cushion",
+		"item/lime_cushion",
+		"item/pink_cushion",
+		"item/gray_cushion",
+		"item/light_gray_cushion",
+		"item/cyan_cushion",
+		"item/purple_cushion",
+		"item/blue_cushion",
+		"item/brown_cushion",
+		"item/green_cushion",
+		"item/red_cushion",
+		"item/black_cushion",
+		"item/abandoned_camp_map",
+		"item/buried_ancient_city_map",
+		"item/buried_mineshaft_map",
+		"item/buried_treasure_map",
+		"item/desert_pyramid_map",
+		"item/desert_village_map",
+		"item/jungle_temple_map",
+		"item/ocean_monument_map",
+		"item/plains_village_map",
+		"item/savanna_village_map",
+		"item/snowy_village_map",
+		"item/swamp_hut_map",
+		"item/taiga_village_map",
+		"item/trial_chamber_map",
+		"item/warm_ocean_ruins_map",
+		"item/woodland_mansion_map",
 		"item/allay_spawn_egg",
 		"item/armadillo_spawn_egg",
 		"item/axolotl_spawn_egg",
@@ -10380,7 +10710,6 @@
 		"item/zombified_piglin_spawn_egg",
 		"item/wither_spawn_egg",
 		"item/ender_dragon_spawn_egg",
-		"item/light",
 		"item/light_00",
 		"item/light_01",
 		"item/light_02",
@@ -10685,6 +11014,18 @@
 		"particle/pale_oak_9",
 		"particle/pale_oak_10",
 		"particle/pale_oak_11",
+		"particle/red_poplar_1",
+		"particle/red_poplar_2",
+		"particle/red_poplar_3",
+		"particle/red_poplar_4",
+		"particle/orange_poplar_1",
+		"particle/orange_poplar_2",
+		"particle/orange_poplar_3",
+		"particle/orange_poplar_4",
+		"particle/yellow_poplar_1",
+		"particle/yellow_poplar_2",
+		"particle/yellow_poplar_3",
+		"particle/yellow_poplar_4",
 		"particle/raid_omen",
 		"particle/sculk_charge_0",
 		"particle/sculk_charge_1",
@@ -10922,6 +11263,36 @@
 			"name": "pale_oak",
 			"texture": "particle/pale_oak",
 			"frames": 12,
+			"size": 5
+		},
+		{
+			"name": "red_poplar",
+			"textures": [
+				"particle/red_poplar_1",
+				"particle/red_poplar_2",
+				"particle/red_poplar_3",
+				"particle/red_poplar_4"
+			],
+			"size": 5
+		},
+		{
+			"name": "orange_poplar",
+			"textures": [
+				"particle/orange_poplar_1",
+				"particle/orange_poplar_2",
+				"particle/orange_poplar_3",
+				"particle/orange_poplar_4"
+			],
+			"size": 5
+		},
+		{
+			"name": "yellow_poplar",
+			"textures": [
+				"particle/yellow_poplar_1",
+				"particle/yellow_poplar_2",
+				"particle/yellow_poplar_3",
+				"particle/yellow_poplar_4"
+			],
 			"size": 5
 		},
 		{
@@ -11182,6 +11553,13 @@
 					"grass": "#778272",
 					"dry_foliage": "#A0A69C",
 					"water": "#76889D"
+				},
+				{
+					"name": "dappled_forest",
+					"foliage": "#E68E30",
+					"grass": "#DF6827",
+					"dry_foliage": "#8C3A04",
+					"water": "#375154"
 				}
 			]
 		},

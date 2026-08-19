@@ -116,18 +116,13 @@ namespace CppProject
 
 	StringType NbtStream::ReadString()
 	{
-		int16_t len;
+		uint16_t len;
 		ds >> len;
-		if (stringSkipMc && len > MINECRAFT_ID_LENGTH)
-		{
-			ds.skipRawData(MINECRAFT_ID_LENGTH);
-			len -= MINECRAFT_ID_LENGTH;
-		}
 
 		char* str = new char[len + 1];
 		ds.readRawData(str, len);
 		str[len] = '\0';
-		QString qStr(str);
+		QString qStr = QString::fromUtf8(str, len);
 		delete[] str;
 
 		return qStr;
@@ -135,7 +130,7 @@ namespace CppProject
 
 	void NbtStream::SkipString()
 	{
-		int16_t len;
+		uint16_t len;
 		ds >> len;
 		ds.skipRawData(len);
 	}
@@ -234,18 +229,15 @@ namespace CppProject
 			if (!type)
 				break;
 
-			BoolType resetSkipMcId = false, resetFilter = false;
+			BoolType resetFilter = false;
 			StringType name = stream.ReadString();
 			if (!name.IsEmpty())
 			{
 				if (name == "palette" && type == TAG_LIST) // Skip minecraft: in biome ids and disable filter
-					stream.stringSkipMc = true, stream.filterEnabled = false, resetSkipMcId = true, resetFilter = true;
+					stream.filterEnabled = false, resetFilter = true;
 
 				else if (name == "palette" || name == "Palette" || name == "block_entities" || name == "TileEntities") // Disable filter for block palette/entities
 					stream.filterEnabled = false, resetFilter = true;
-
-				else if (name == "Name") // Skip minecraft: in block ids
-					stream.stringSkipMc = true, resetSkipMcId = true;
 
 				else if (stream.filterEnabled && !stream.filter.isEmpty()) // Check name with filter
 				{
@@ -264,12 +256,17 @@ namespace CppProject
 			}
 
 			value[name] = stream.ReadTag((NbtType)type);
+			if (name == "Name" && type == TAG_STRING) // Remove "minecraft:" from "Name" string values
+			{
+				NbtString* str = (NbtString*)value[name];
+
+				if (str->value.StartsWith("minecraft:"))
+					str->value = str->value.Mid(MINECRAFT_ID_LENGTH);
+			}
 
 			if (stream.debug)
 				Printer::indent--;
 
-			if (resetSkipMcId)
-				stream.stringSkipMc = false;
 			if (resetFilter)
 				stream.filterEnabled = true;
 		}

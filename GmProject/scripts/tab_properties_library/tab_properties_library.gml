@@ -261,9 +261,13 @@ function tab_properties_library()
 		
 		case e_temp_type.BLOCK:
 		{
+			var text = "";
+			if (!is_undefined(mc_assets.block_name_map[?temp_edit.block_name]))
+				text = minecraft_asset_get_name("block", mc_assets.block_name_map[?temp_edit.block_name].name)
+			
 			// Block
 			tab_control(24)
-			draw_label_value(dx, dy, dw - 32, 24, text_get("typeblock"), minecraft_asset_get_name("block", mc_assets.block_name_map[?temp_edit.block_name].name))
+			draw_label_value(dx, dy, dw - 32, 24, text_get("typeblock"), text)
 			
 			// Change
 			if (draw_button_icon("libraryblockchange", dx + dw - 24, dy, 24, 24, template_editor.show, icons.PENCIL, null, false, "tooltipchangeblock"))
@@ -295,7 +299,6 @@ function tab_properties_library()
 		case e_temp_type.BODYPART:
 		{
 			var text;
-			
 			if (temp_edit.model_file != null)
 				text = text_get("librarybodypartof", minecraft_asset_get_name("modelpart", temp_edit.model_part_name), minecraft_asset_get_name("model", temp_edit.model_name))
 			else

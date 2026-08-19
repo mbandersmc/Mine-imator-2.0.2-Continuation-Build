@@ -29,10 +29,10 @@ namespace CppProject
 			NbtStream stream(data, {
 				{ TAG_BYTE, { "Y" } },
 				{ TAG_BYTE_ARRAY, { "SkyLight", "BlockLight", "Blocks", "Data", "Biomes", "Add" }},
-				{ TAG_COMPOUND, { "Level", "Properties", "block_states", "block_entities", "TileEntities", "biomes" }},
+				{ TAG_COMPOUND, { "Level", "properties", "Properties", "block_states", "block_entities", "TileEntities", "biomes" }},
 				{ TAG_LIST, { "sections", "Sections", "palette", "Palette" }},
 				{ TAG_LONG_ARRAY, { "data", "BlockStates"}},
-				{ TAG_STRING, { "Name", "Status" }},
+				{ TAG_STRING, { "Name", "id", "Status", "" }},
 				{ TAG_INT, { "DataVersion", "xPos", "zPos" }},
 			});
 			NbtCompound chunkCompound(stream);
@@ -42,7 +42,9 @@ namespace CppProject
 			if (chunkCompound.HasKey("DataVersion"))
 			{
 				IntType dataVersion = chunkCompound.Int("DataVersion");
-				if (dataVersion >= JAVA_1_18)
+				if (dataVersion >= JAVA_26_3)
+					format = JAVA_26_3;
+				else if (dataVersion >= JAVA_1_18)
 					format = JAVA_1_18;
 				else if (dataVersion >= JAVA_1_16)
 					format = JAVA_1_16;
@@ -371,7 +373,7 @@ namespace CppProject
 	void Chunk::GenerateFaceTriangles(Mesh& mesh, Chunk::FaceDirection dir, Heap<FaceData>& faceData, uint16_t x, uint16_t y, uint16_t z, const WorldVec& startPos, const WorldVec& endPos)
 	{
 		IntType faceDataIndex = (y & SECTION_SIZEM1) * faceDataSizeXZ + (z - startPos.z) * faceDataSizeX + (x - startPos.x);
-		const uint16_t& blockData = faceData.Value(faceDataIndex).blockData[dir];
+		const uint32_t& blockData = faceData.Value(faceDataIndex).blockData[dir];
 		if (!blockData)
 			return;
 
@@ -380,7 +382,7 @@ namespace CppProject
 		WorldVec pos = { x, y, z };
 
 		// Returns whether the current data is equal to another face at a given position in the chunk
-		auto faceMatch = [&](const WorldVec& pos, uint16_t*& outBlockData)
+		auto faceMatch = [&](const WorldVec& pos, uint32_t*& outBlockData)
 		{
 			if (pos.x < startPos.x || pos.y < 0 || pos.z < startPos.z ||
 				pos.x == endPos.x || pos.y >= CHUNK_HEIGHT_SIZE || pos.z == endPos.z)
@@ -400,7 +402,7 @@ namespace CppProject
 		for (d0 = 1; d0 < SECTION_SIZE; d0++)
 		{
 			WorldVec offset = blockFaceMergeVec[dir][0] * d0;
-			uint16_t* offsetBlockData = nullptr;
+			uint32_t* offsetBlockData = nullptr;
 			if (!faceMatch(pos + offset, offsetBlockData))
 				break;
 		
@@ -409,7 +411,7 @@ namespace CppProject
 		}
 		
 		// Resize in second direction
-		uint16_t* offsetBlockData[SECTION_SIZE];
+		uint32_t* offsetBlockData[SECTION_SIZE];
 		for (uint8_t d1 = 1, d2; d1 < SECTION_SIZE; d1++)
 		{
 			WorldVec offset = blockFaceMergeVec[dir][1] * d1;

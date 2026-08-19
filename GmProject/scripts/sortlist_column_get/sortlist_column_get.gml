@@ -27,7 +27,10 @@ function sortlist_column_get(slist, value, col)
 			return minecraft_asset_get_name("model", mc_assets.model_name_map[?value].name)
 		
 		case "blockname":
+			if (is_undefined(mc_assets.block_name_map[?value]))
+				return 0
 			return minecraft_asset_get_name("block", mc_assets.block_name_map[?value].name)
+		
 		case "blockfilter":
 			return minecraft_asset_get_name("block", mc_assets.block_list[|value].name)
 		

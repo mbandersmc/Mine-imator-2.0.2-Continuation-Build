@@ -24,6 +24,8 @@ function view_shape_camera(tl)
 	
 		mat = matrix_multiply(shakemat, mat)
 	}
+ 	
+	matrix_remove_scale(mat)
 	
 	// Box
 	view_shape_box(point3D(-3.5, -5, -4), point3D(3.5, 5, 4), tl.matrix)

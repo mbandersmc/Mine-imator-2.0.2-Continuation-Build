@@ -134,7 +134,8 @@ function popup_about_draw()
 		if (i % 2 = 1)
 		{
 			dx -= 130 + 24
-			dy += 19
+			if (i < array_length(list) - 1)
+				dy += 19
 		}
 		else
 			dx += 130 + 24

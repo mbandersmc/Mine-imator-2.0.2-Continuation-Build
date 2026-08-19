@@ -97,7 +97,7 @@ function tab_template_editor()
 				
 				var state = temp_edit.model_state[i];
 				menu_model_current = model
-				menu_model_state_current = model.states_map[?state]
+				menu_model_state_current = model ? model.states_map[?state] : null
 				
 				tab_control(ui_small_height)
 				
@@ -205,7 +205,7 @@ function tab_template_editor()
 				
 				var state = temp_edit.block_state[i];
 				menu_block_current = block
-				menu_block_state_current = block.states_map[?state]
+				menu_block_state_current = block ? block.states_map[?state] : null
 				
 				tab_control(ui_small_height)
 				
@@ -233,7 +233,7 @@ function tab_template_editor()
 				
 				var state = temp_edit.block_state[i];
 				menu_block_current = block
-				menu_block_state_current = block.states_map[?state]
+				menu_block_state_current = block ? block.states_map[?state] : null
 				draw_button_menu(state, e_menu.LIST, dx, dyy, dw, 24, temp_edit.block_state[i + 1], minecraft_asset_get_name("blockstatevalue", temp_edit.block_state[i + 1]), action_lib_block_state, false, null, null, "", c_white, 1, capwid)
 				dyy += 32
 			}

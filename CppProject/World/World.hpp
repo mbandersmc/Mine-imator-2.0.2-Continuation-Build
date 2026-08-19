@@ -87,7 +87,7 @@ namespace CppProject
 	// Compressed block vertex
 	struct WorldVertex
 	{
-		WorldVertex(const WorldVec& regionPos, uint16_t blockData);
+		WorldVertex(const WorldVec& regionPos, uint32_t blockData);
 
 		// Setup shader attributes
 		static void SetAttributes();
@@ -99,7 +99,7 @@ namespace CppProject
 	// Stores color tint of a biome.
 	struct BiomeTint
 	{
-		IntType grass, foliage; //, water; // TODO: fix water tint
+		IntType grass, foliage, water;
 	};
 
 	// Determines how a block will be rendered in the preview, compressed into a 8 bit value.
@@ -131,8 +131,8 @@ namespace CppProject
 		{
 			NONE,
 			GRASS,
-			FOLIAGE
-			//WATER // TODO: fix water tint
+			FOLIAGE,
+			WATER
 		};
 
 		uint16_t topPos, sidePos;
@@ -168,6 +168,7 @@ namespace CppProject
 	struct SaveInfo
 	{
 		QString name;
+		IntType version;
 		BoolType hasPlayer;
 		VecType spawnPos, playerPos, playerRot;
 		QString playerDim;
@@ -480,7 +481,8 @@ namespace CppProject
 			JAVA_1_2, // Anvil format, sections with byte arrays
 			JAVA_1_13 = 1451, // The flattening, palettes in sections
 			JAVA_1_16 = 2529, // Long array index bits snapped to 64
-			JAVA_1_18 = 2838 // Lowercase keys in sections
+			JAVA_1_18 = 2838, // Lowercase keys in sections
+			JAVA_26_3 = 5009 // Palette string lists, empty names, lowercase properties
 		};
 
 		// Face direction
@@ -498,7 +500,7 @@ namespace CppProject
 		// Stores the faces added to a block in the section.
 		struct FaceData
 		{
-			uint16_t blockData[FaceDirectionAmount];
+			uint32_t blockData[FaceDirectionAmount];
 		};
 
 		// Stores the vertices in a chunk.

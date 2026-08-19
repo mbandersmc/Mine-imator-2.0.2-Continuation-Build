@@ -53,7 +53,7 @@ function minecraft_update_armor_generate(model, data, res = null)
 		// Trim
 		if (model != "armor_baby" && (trimpat != "none" && trimmat != "none"))
 		{
-			var palette = res.model_texture_map[?"trims/color_palettes/" + trimmat + (trimmat = basemat ? "_darker" : "")];
+			var palette = res.model_texture_map[?"palettes/trim/" + trimmat + (trimmat = basemat ? "_darker" : "")];
 			
 			surface_set_target(armorsurf)
 			{
@@ -62,7 +62,7 @@ function minecraft_update_armor_generate(model, data, res = null)
 				with (render_shader_obj)
 				{
 					shader_set(shader)
-					shader_palette_set(palette, res.model_texture_map[?"trims/color_palettes/trim_palette"])
+					shader_palette_set(palette, res.model_texture_map[?"palettes/trim_base"])
 				}
 				
 				draw_sprite(res.model_texture_map[?"trims/entity/" + layername + "/" + trimpat], 0, 0, 0)

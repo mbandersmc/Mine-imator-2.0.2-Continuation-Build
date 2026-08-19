@@ -275,34 +275,77 @@ namespace CppProject
 			BoolType waterlogged;
 		};
 		FastVector<PreviewPaletteEntry> blockStylePalette;
+		StringType propertiesName, idName;
+		bool emptyNames = false;
+
+		if (format >= Chunk::JAVA_26_3)
+		{
+			propertiesName = "properties";
+			idName = "id";
+			emptyNames = true;
+		}
+		else
+		{
+			propertiesName = "Properties";
+			idName = "Name";
+		}
 
 		if (nbt->HasKey(paletteName))
 		{
-			QVector<NbtCompound*> paletteComp = nbt->List<TAG_COMPOUND, NbtCompound>(paletteName);
-			blockStylePalette.Alloc(paletteComp.size());
-			for (NbtCompound* entry : paletteComp)
+			auto parsePaletteEntry = [&](StringType id, NbtCompound* entry = nullptr)
 			{
-				// Parse ID
-				StringType id = entry->String("Name");
-				if (id != "air") // Non air
-				{
-					// Check waterlogged status
-					BoolType waterlogged = false;
-					if (entry->HasKey("Properties"))
-					{
-						NbtCompound* props = entry->Compound("Properties");
-						if (props->HasKey("waterlogged") && !World::waterRemoved) // Waterlogged status
-							waterlogged = (props->String("waterlogged") == "true");
-					}
-
-					preview.hasBlocks = true;
-					blockStylePalette.Append({
-						Preview::filteredMcBlockIdStyleIndexMap.value(id),
-						(waterlogged || World::filteredMcBlockIdWaterloggedMap.value(id, false))
-					});
-				}
-				else
+				id = id.Replaced("minecraft:", "");
+				if (id == "air") { // Air blocks
 					blockStylePalette.Append({ 0, false });
+					return;
+				}
+
+				// Check waterlogged status
+				BoolType waterlogged = false;
+				if (entry && entry->HasKey(propertiesName))
+				{
+					NbtCompound* props = entry->Compound(propertiesName);
+					if (props->HasKey("waterlogged") && !World::waterRemoved) // Waterlogged status
+						waterlogged = (props->String("waterlogged") == "true");
+				}
+
+				preview.hasBlocks = true;
+				blockStylePalette.Append({
+					Preview::filteredMcBlockIdStyleIndexMap.value(id),
+					(waterlogged || World::filteredMcBlockIdWaterloggedMap.value(id, false))
+				});
+			};
+
+			NbtTag* paletteTag = nbt->value.value(paletteName);
+			if (paletteTag->type != TAG_LIST) {
+				WARNING("Invalid section: Unexpected Palette tag type");
+				return;
+			}
+
+			NbtType paletteType = ((NbtList*)paletteTag)->listType;
+			if (paletteType != TAG_COMPOUND && paletteType != TAG_STRING) {
+				WARNING("Invalid section: Unexpected Palette tag list type");
+				return;
+			}
+
+			// List of compounds
+			if (paletteType == TAG_COMPOUND)
+			{
+				QVector<NbtCompound*> paletteComps = nbt->List<TAG_COMPOUND, NbtCompound>(paletteName);
+				for (NbtCompound* entry : paletteComps)
+				{
+					if (entry->HasKey(idName))
+						parsePaletteEntry(entry->String(idName), entry);
+					else if (emptyNames && entry->HasKey(""))
+						parsePaletteEntry(entry->String(""), entry);
+				}
+			}
+			// List of strings
+			else
+			{
+				QVector<NbtString*> paletteStrings = nbt->List<TAG_STRING, NbtString>(paletteName);
+				for (NbtString* entry : paletteStrings)
+					parsePaletteEntry(entry->value);
 			}
 		}
 
@@ -365,7 +408,7 @@ namespace CppProject
 			QVector<NbtString*> paletteStrings = biomesRoot->List<TAG_STRING, NbtString>("palette");
 			biomePalette.Alloc(paletteStrings.size());
 			for (NbtString* entry : paletteStrings)
-				biomePalette.Append(Preview::mcBiomeIdIndexMap.value(entry->value));
+				biomePalette.Append(Preview::mcBiomeIdIndexMap.value(entry->value.Replaced("minecraft:", "")));
 
 			if (biomesRoot->HasKey("data")) // Has array
 			{
@@ -394,15 +437,27 @@ namespace CppProject
 	void Section::ParseBlockPaletteBuilder(NbtCompound* nbt, StringType paletteName, StringType dataName, Chunk::Format format)
 	{
 		QVector<BoolType> paletteHasTimeline;
+		StringType propertiesName, idName;
+		bool emptyNames = false;
 
+		if (format >= Chunk::JAVA_26_3)
+		{
+			propertiesName = "properties";
+			idName = "id";
+			emptyNames = true;
+		}
+		else
+		{
+			propertiesName = "Properties";
+			idName = "Name";
+		}
+
+		// Convert NBT palette into builder palette
 		if (nbt->HasKey(paletteName))
 		{
-			// Convert NBT palette into builder palette
-			QVector<NbtCompound*> paletteComp = nbt->List<TAG_COMPOUND, NbtCompound>(paletteName);
-			builder.palette.Alloc(paletteComp.size());
-			for (NbtCompound* entry : paletteComp)
+			auto parsePaletteEntry = [&](StringType id, NbtCompound* entry = nullptr)
 			{
-				StringType id = entry->String("Name");
+				id = id.Replaced("minecraft:", "");
 				if (id != "air") // Non air
 				{
 					if (obj_block* block = Builder::filteredMcBlockIdObjMap.value(id, nullptr))
@@ -410,9 +465,9 @@ namespace CppProject
 						BuilderState state = { (uint16_t)block->block_id, 0, World::filteredMcBlockIdWaterloggedMap.value(id, false) };
 						ArrType vars = Builder::mcBlockIdStateVarsMap.value(id, ArrType());
 
-						if (entry->HasKey("Properties")) // Parse properties
+						if (entry && entry->HasKey(propertiesName)) // Parse properties
 						{
-							NbtCompound* propertiesComp = entry->Compound("Properties");
+							NbtCompound* propertiesComp = entry->Compound(propertiesName);
 							QHashIterator<StringType, NbtTag*> propIt(propertiesComp->value);
 							while (propIt.hasNext())
 							{
@@ -434,19 +489,54 @@ namespace CppProject
 								}
 							}
 						}
+						else
+							state.waterlogged = block->waterlogged; // If block is waterlogged by default
 
 						if (vars.Size()) // Array to id
 							state.stateId = block_get_state_id(block->id, vars);
 
 						builder.palette.Append(state);
 						paletteHasTimeline.append(block->timeline);
-						continue;
+						return;
 					}
 				}
 
-				// Air
 				builder.palette.Append({ 0, 0, false });
 				paletteHasTimeline.append(false);
+			};
+
+			NbtTag* paletteTag = nbt->value.value(paletteName);
+			if (paletteTag->type != TAG_LIST) {
+				WARNING("Invalid section: Unexpected Palette tag type");
+				return;
+			}
+
+			NbtType paletteType = ((NbtList*)paletteTag)->listType;
+			if (paletteType != TAG_COMPOUND && paletteType != TAG_STRING) {
+				WARNING("Invalid section: Unexpected Palette tag list type");
+				return;
+			}
+
+			// List of compounds
+			if (paletteType == TAG_COMPOUND)
+			{
+				QVector<NbtCompound*> paletteComps = nbt->List<TAG_COMPOUND, NbtCompound>(paletteName);
+				builder.palette.Alloc(paletteComps.size());
+				for (NbtCompound* entry : paletteComps)
+				{
+					if (entry->HasKey(idName))
+						parsePaletteEntry(entry->String(idName), entry);
+					else if (emptyNames && entry->HasKey(""))
+						parsePaletteEntry(entry->String(""), entry);
+				}
+			}
+			// List of strings
+			else
+			{
+				QVector<NbtString*> paletteStrings = nbt->List<TAG_STRING, NbtString>(paletteName);
+				builder.palette.Alloc(paletteStrings.size());
+				for (NbtString* entry : paletteStrings)
+					parsePaletteEntry(entry->value);
 			}
 		}
 
@@ -679,6 +769,10 @@ namespace CppProject
 
 	BuilderState& Section::GetBuilderState(const WorldVec& pos)
 	{
+		static BuilderState emptyState = { 0, 0, false };
+		if (!builder.palette.Size())
+			return emptyState;
+
 		if (builder.palette.Size() == 1)
 			return builder.palette[0];
 

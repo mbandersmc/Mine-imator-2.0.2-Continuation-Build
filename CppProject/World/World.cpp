@@ -54,7 +54,7 @@ namespace CppProject
 			}
 
 			Preview::mcBiomeIdIndexMap[name] = Preview::biomeTints.size();
-			Preview::biomeTints.append({ grassColor, foliageColor }); //, biome->color_water }); // TODO: fix water tint
+			Preview::biomeTints.append({ grassColor, foliageColor, biome->color_water });
 		}
 
 		// Iterate Minecraft IDs and make id->texture position map
@@ -94,8 +94,8 @@ namespace CppProject
 						tint = BlockStyle::GRASS;
 					else if (model->preview_tint == "foliage")
 						tint = BlockStyle::FOLIAGE;
-					//else if (model->preview_tint == "water")
-					//	tint = BlockStyle::WATER; // TODO: fix water tint
+					else if (model->preview_tint == "water")
+						tint = BlockStyle::WATER;
 
 					styleIndex = BlockStyle::Create(
 						model->preview_color_zp, model->preview_alpha_zp,
@@ -113,7 +113,7 @@ namespace CppProject
 
 		// Water/Lava
 		Preview::mcBlockIdStyleIndexMap["water"] =
-		Preview::mcBlockIdStyleIndexMap["flowing_water"] = BlockStyle::Create(make_color_rgb(41, 76, 148), 0.7, -1, 1.0, BlockStyle::NONE); //BlockStyle::Create(make_color_rgb(165, 165, 165), 0.7, -1, 1.0, BlockStyle::WATER); // TODO: fix water tint
+		Preview::mcBlockIdStyleIndexMap["flowing_water"] = BlockStyle::Create(make_color_rgb(165, 165, 165), 0.7, -1, 1.0, BlockStyle::WATER);
 		Preview::mcBlockIdStyleIndexMap["lava"] =
 		Preview::mcBlockIdStyleIndexMap["flowing_lava"] = BlockStyle::Create(make_color_rgb(255, 100, 0), 1.0, -1, 1.0, BlockStyle::NONE, 26);
 
@@ -285,7 +285,7 @@ namespace CppProject
 				{ TAG_STRING, { "LevelName", "Dimension" }},
 				{ TAG_LIST, { "Pos", "Rotation" }},
 				{ TAG_COMPOUND, { "Data", "Player", "spawn" }},
-				{ TAG_INT_ARRAY, { "pos" } }
+				{ TAG_INT_ARRAY, { "pos" }}
 				}));
 			NbtCompound saveData(stream);
 			if (!saveData.HasKey("Data"))
@@ -310,13 +310,13 @@ namespace CppProject
 				info.name = newName;
 			}
 
+			info.version = data->Int("version");
+
 			if (data->HasKey("spawn"))
 			{
-				// TODO: figure out how to read an nbt int array
-				//NbtCompound* spawn = data->Compound("spawn");
-				//log({ spawn->IntArray("pos") });
-
-				info.spawnPos = { 0, 80, 0 };
+				NbtCompound* spawn = data->Compound("spawn");
+				Heap<int32_t>& spawnPos = spawn->IntArray("pos");
+				info.spawnPos = { (RealType)spawnPos[0], (RealType)spawnPos[1], (RealType)spawnPos[2] };
 			}
 			else if ((data->GetType("SpawnX") == TAG_INT))
 				info.spawnPos = { (RealType)data->Int("SpawnX"), (RealType)data->Int("SpawnY"), (RealType)data->Int("SpawnZ") };
@@ -325,21 +325,17 @@ namespace CppProject
 
 			info.playerDim = "overworld";
 
-			// Parse single player
-			// TODO: update for 26.1 format (how to get player pos from singleplayer_uuid ?)
-			if (info.hasPlayer = data->HasKey("Player"))
-			{
-				NbtCompound* player = data->Compound("Player");
+			auto loadPlayerData = [&info](NbtCompound* player) {
 				QVector<NbtDouble*> playerPos = player->List<NbtType::TAG_DOUBLE, NbtDouble>("Pos");
 				QVector<NbtFloat*> playerRot = player->List<NbtType::TAG_FLOAT, NbtFloat>("Rotation");
 				info.playerPos = { (RealType)playerPos[0]->value, (RealType)playerPos[1]->value, (RealType)playerPos[2]->value };
 				info.playerRot = { -(RealType)playerRot[1]->value, mod_fix(180 - (RealType)playerRot[0]->value, 360), 0.0 };
 
-				if (data->Int("version") >= 19133) // Offset by head position in new worlds
+				if (info.version >= 19133) // Offset by head position in new worlds
 					info.playerPos.y += 24.0 / 16.0;
 
 				if (player->GetType("Dimension") == TAG_STRING) // String dimension
-					info.playerDim = player->String("Dimension").Replaced("minecraft:", "");
+					info.playerDim = player->String("Dimension").Replaced("minecraft:", ""); //.Replaced("the_", "");
 
 				else // Integer dimension
 					switch (player->Int("Dimension"))
@@ -348,6 +344,40 @@ namespace CppProject
 						case -1: info.playerDim = "the_nether"; break;
 						case 1: info.playerDim = "the_end"; break;
 					}
+
+				info.hasPlayer = true;
+			};
+
+			// Load player
+			if (data->HasKey("Player"))
+				loadPlayerData(data->Compound("Player"));
+
+			else
+			{
+				// Get player from newest <UUID>.dat file
+				QDir playerDir(dir + "/playerdata");
+				if (!playerDir.exists())
+					playerDir = QDir(dir + "/players/data");
+
+				QFileInfoList playerFiles = playerDir.entryInfoList(
+					{ "*.dat" },
+					QDir::Files | QDir::NoSymLinks | QDir::Readable,
+					QDir::Time | QDir::Reversed // Newest first
+				);
+
+				if (!playerFiles.isEmpty())
+				{
+					QByteArray playerBytesRaw;
+					Gzip::Decompress(playerFiles.first().absoluteFilePath(), playerBytesRaw);
+
+					NbtStream playerStream(playerBytesRaw, QHash<NbtType, QVector<StringType>>({
+						{ TAG_INT, { "Dimension" }},
+						{ TAG_STRING, { "Dimension" }},
+						{ TAG_LIST, { "Pos", "Rotation" }},
+						}));
+					NbtCompound playerData(playerStream);
+					loadPlayerData(&playerData);
+				}
 			}
 		}
 		catch (const QString& str)
@@ -361,15 +391,15 @@ namespace CppProject
 		QDir dimensionsDir(dir + "/dimensions/minecraft");
 		if (dimensionsDir.exists())
 		{
-			overworldPath = (dir + "/dimensions/minecraft/overworld/region");
-			netherPath = (dir + "/dimensions/minecraft/the_nether/region");
-			endPath = (dir + "/dimensions/minecraft/the_end/region");
+			overworldPath = dir + "/dimensions/minecraft/overworld/region";
+			netherPath = dir + "/dimensions/minecraft/the_nether/region";
+			endPath = dir + "/dimensions/minecraft/the_end/region";
 		}
 		else // Pre-26.1
 		{
-			overworldPath = (dir + "/region");
-			netherPath = (dir + "/DIM-1/region");
-			endPath = (dir + "/DIM1/region");
+			overworldPath = dir + "/region";
+			netherPath = dir + "/DIM-1/region";
+			endPath = dir + "/DIM1/region";
 		}
 
 		StringType filter = "*.mca";

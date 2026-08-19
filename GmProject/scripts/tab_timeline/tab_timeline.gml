@@ -134,6 +134,9 @@ function tab_timeline()
 	
 	timex += 8
 	
+	// Right click timeline timer
+	context_menu_area(headerx, headery, timex, headerh, "toolbarviewtimelineplayback", null, null, null, null)
+	
 	var buttonsxstart, buttonsx, buttonsy;
 	buttonsxstart = (timeline_settings_w = null ? 0 : floor((headerx + headerw/2) - timeline_settings_w/2))
 	buttonsx = max(timex, buttonsxstart)

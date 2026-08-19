@@ -317,7 +317,7 @@ function tl_update_values()
 	}
 	
 	// Texture
-	if (value_type[e_value_type.MATERIAL_TEXTURE])
+	if (value_type[e_value_type.MATERIAL_TEXTURE] || value_type[e_value_type.ITEM])
 	{
 		tl_update_values_ease(e_value.TEXTURE_OBJ)
 		tl_update_values_ease(e_value.TEXTURE_MATERIAL_OBJ)
@@ -351,9 +351,6 @@ function tl_update_values()
 	{
 		tl_update_values_ease(e_value.CUSTOM_ITEM_SLOT)
 		tl_update_values_ease(e_value.ITEM_SLOT)
-		tl_update_values_ease(e_value.TEXTURE_OBJ)
-		tl_update_values_ease(e_value.TEXTURE_MATERIAL_OBJ)
-		tl_update_values_ease(e_value.TEXTURE_NORMAL_OBJ)
 	}
 	
 	// Visible

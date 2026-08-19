@@ -7,14 +7,14 @@ function list_init(name)
 	list_init_start()
 	
 	// Model state
-	if (menu_model_current != null)
+	if (menu_model_current != null && !is_undefined(menu_model_state) && menu_model_state != null)
 	{
 		for (var i = 0; i < menu_model_state.value_amount; i++)
 			menu_add_item(menu_model_state.value_name[i], minecraft_asset_get_name("modelstatevalue", menu_model_state.value_name[i]))
 	}
 	
 	// Block state
-	if (menu_block_current != null)
+	if (menu_block_current != null && !is_undefined(menu_block_state) && menu_block_state != null)
 	{
 		for (var i = 0; i < menu_block_state.value_amount; i++)
 			menu_add_item(menu_block_state.value_name[i], minecraft_asset_get_name("blockstatevalue", menu_block_state.value_name[i]))

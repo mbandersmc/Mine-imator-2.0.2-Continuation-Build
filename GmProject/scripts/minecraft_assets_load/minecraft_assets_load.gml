@@ -428,7 +428,7 @@ function minecraft_assets_load()
 				
 				load_assets_progress = 0.6 + 0.4 * (load_assets_block_index / ds_list_size(blockslist))
 				
-				if (dev_mode_skip_blocks)
+				if (dev_mode_skip_blocks && load_assets_block_index >= 20)
 					load_assets_stage = "done"
 				
 				// Skip to the last 10 blocks to debug newer blocks
